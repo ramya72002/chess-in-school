@@ -1,0 +1,67 @@
+.chess-puzzles {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+/* Main title */
+.main-title {
+  font-size: 3rem;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+
+/* Puzzle container */
+.puzzle-container {
+  background-color: #f0e68c;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff69b4;
+  height:220px;
+}
+.puzzle-container1 {
+  background-color: #f0e68c;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ff69b4;
+
+}
+
+/* Puzzle title */
+.puzzle-title {
+  font-size: 2rem;
+  color: #ff6347;
+  margin-bottom: 10px;
+}
+
+/* Puzzle instructions */
+.puzzle-instructions {
+  font-size: 1.5rem;
+  color: #20b2aa;
+  margin-bottom: 20px;
+}
+
+/* Puzzle options button */
+.puzzle-option {
+  cursor: pointer;
+  padding: 15px 25px;
+  margin: 10px;
+  background-color: #ff69b4; /* Bright Pink */
+  color: white;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1.2rem;
+  border: none;
+}
+
+.puzzle-option:hover {
+  background-color: #ff1493; /* Darker Pink */
+  transform: scale(1.05);
+}

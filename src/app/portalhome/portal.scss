@@ -1,0 +1,313 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&family=Matemasie&display=swap');
+.hero {
+  background-color: #2b87e2;
+  border-radius: 5px;
+  padding: 20px;
+
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  
+    h2 {
+      margin: 0;
+      font-size: 68px; /* Larger font size */
+      font-weight: bold; /* Bold text */
+      font-family: "Matemasie", sans-serif;
+      background: linear-gradient(90deg, #fdfdfd, #ffffff, #fcfcfc); /* Gradient background */
+      -webkit-background-clip: text; /* Clipping the background to text */
+      -webkit-text-fill-color: transparent; 
+      -webkit-text-stroke: 1px rgb(4, 0, 255);/* Text color becomes transparent to show gradient */
+
+      letter-spacing: 3px; /* More spacing between letters */
+      animation: textGlow 1.5s ease-in-out infinite alternate; /* Glow animation */
+      
+      span {
+        color: #06d6a0; /* Bright, contrasting color for dynamic text */
+        font-size: 72px; /* Slightly larger for emphasis */
+        animation: textGlow 1.5s ease-in-out infinite alternate; /* Same glow animation */
+      }
+    }
+  }
+  
+  
+  .journey-container {
+    border: 2px solid #505050; /* Bright, playful border color */
+    border-radius: 12px; /* Rounder corners for a softer look */
+    padding: 20px; /* Space inside the border */
+    margin: 20px 0; /* Space outside the border */
+    background-color: #2b87e2; /* Light, engaging background color */
+     font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
+    color: #f9fbfb; /* Contrasting text color for better readability */
+  }
+  
+
+  .journey {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    .level {
+      flex: 1;
+      margin: 0 10px;
+
+      h3 {
+        color: #ffffff;
+        font-size: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+        gap: 10px; /* Space between items */
+        
+        .step {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          border: 1px solid rgb(53, 52, 52);
+          background-color: #a8dadc;
+          border-radius: 5px;
+      
+          .icon {
+            font-size: 80px;
+            margin-right: 10px;
+          }
+      
+          h4 {
+            margin: 0 0 5px 0;
+            color: #1d3557;
+          }
+      
+          p {
+            margin: 0;
+            color: #457b9d;
+          }
+        }
+      }
+      
+    }
+  }
+
+  .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+
+    .stat {
+      background-color: #ffbe0b;
+      border: 1px solid rgb(56, 55, 55);
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      width: 300px;
+      height: 120px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative; /* Ensure proper positioning of the image */
+      margin: 10px;
+      .number {
+        font-size: 24px;
+        font-weight: bold;
+        margin-right: 160px;
+        margin-top: 7px;
+        margin-left: 30px;
+      }
+
+      .label {
+        margin-top: 10px;
+        margin-right: 122px;
+        font-weight: bolder;
+      }
+
+      .stat-icon {
+        position: absolute;
+        right: 40px; /* Adjust based on your design */
+        top: 50%;
+        border-radius: 50px;
+        transform: translateY(-50%);
+        width: 80px; /* Adjust size as needed */
+        height: auto;
+      }
+    }
+  }
+
+  .activities {
+    background-color: #8338ec;
+    padding: 10px;
+    border: 1px solid rgb(65, 64, 64);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+  
+    h3 {
+      color: #ffffff;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  
+    .activity {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #1faa12;
+      border: 1px solid rgb(66, 66, 66);
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+  
+      .details {
+        display: flex;          // Makes details horizontal
+        flex-direction: row;    // Ensures children are in a row
+        color: #ffffff;
+        gap:250px;              // Adds spacing between details
+  
+        div {
+          margin-right: 10px;   // Space between each detail
+        }
+      }
+  
+      .details-button {
+        display: flex;
+        background-color: #ff006e;
+        border: 1px solid rgb(49, 49, 49);
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: #ffffff;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #d00057;
+        }
+      }
+    }
+  }
+  .learnings {
+    background-color: #fb9907; /* Bright yellow background */
+    padding: 15px;
+    border: 1px solid #ff9900; /* Orange border for contrast */
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 25px;
+
+    h3 {
+      color: #ffffff; /* White text color */
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .learn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #00bfff; /* Bright sky blue background */
+      border: 1px solid #1e90ff; /* Slightly darker blue border */
+      margin: 8px 0;
+      padding: 12px;
+      border-radius: 8px;
+
+      .details {
+        display: flex;
+        flex-direction: row;
+        color: #ffffff;
+        gap: 150px;
+
+        div {
+          margin-right: 15px;
+        }
+      }
+
+      .start-button {
+        display: flex;
+        background-color: #ff4500; /* Bright orange-red button color */
+        border: 1px solid #ff6347; /* Slightly lighter red border */
+        padding: 6px 12px;
+        border-radius: 8px;
+        color: #ffffff;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #ff0000; /* Bright red hover color */
+        }
+      }
+    }
+}
+
+
+}
+.chess-journey {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 10px;
+  
+
+  .level {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  // This line spaces the icons evenly
+    background-color: #2b87e2;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%; // Ensure the level container spans the entire width
+    gap: 30px; /* Adjust gap as needed */
+    position: relative;
+    z-index: 1;
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      background-color: #2b87e2;
+      border-radius: 50%;
+      padding: 10px;
+      overflow: hidden;
+  
+      .icon {
+        width: 100px;
+        height: 100px;
+        border: 3px solid #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80px;
+        margin-bottom: 10px;
+        background-color: #2b87e2;
+        z-index: 2; /* Ensure the icon is above the line */
+      }
+  
+      p {
+        color: #fff;
+        font-size: 10px;
+      }
+  
+      &.active {
+        .icon {
+          background-color: #f26722;
+        }
+      }
+    }
+  }
+ 
+
+  .connector {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    z-index: 1;
+    transform: translateY(-100%);
+  }
+}
+
+

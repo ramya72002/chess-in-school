@@ -1,0 +1,17 @@
+.loading-container {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.8); // Use rgba to add transparency
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Ensure it takes the full screen height
+  position: fixed; // Make sure the loading container covers the entire screen
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000; // Ensure it overlays above all other content
+}
+
+.loading-gif {
+  width: 550px;
+  height: 550px;
+}

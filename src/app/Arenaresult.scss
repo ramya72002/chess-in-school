@@ -1,0 +1,107 @@
+.arena-result {
+  position: fixed; /* Use fixed positioning to stay in place */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  width: 80%; /* Adjust width as needed */
+  max-height: 80vh; /* Restrict the height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 20px;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background-color: #f0f8ff;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it's above other elements */
+
+  .close-button {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transition: background-color 0.3s ease;
+    
+    &:hover {
+      background-color: #e53e3e;
+    }
+  }
+
+  .arena-result-content {
+    max-height: calc(80vh - 40px); /* Adjust for padding and close button */
+    overflow-y: auto; /* Enable vertical scrolling within content */
+  }
+
+  .user-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    th, td {
+      border: 2px solid #ffeb3b;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #ffeb3b;
+      color: #212121;
+    }
+
+    .user-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #ffeb3b;
+    }
+  }
+
+  .scores-table, .puzzles-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+
+    th, td {
+      border: 2px solid #4caf50;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #4caf50;
+      color: white;
+    }
+  }
+
+  .puzzle-arena-section {
+    margin-bottom: 20px;
+
+    h3 {
+      margin: 10px 0;
+      font-size: 1.5em;
+      color: #ff5722;
+    }
+
+    .puzzle-category {
+      margin-bottom: 15px;
+
+      h4 {
+        margin: 5px 0;
+        font-size: 1.3em;
+        color: #009688;
+      }
+    }
+  }
+
+  /* Additional styles */
+  p {
+    font-size: 1.2em;
+    color: #2196f3;
+    text-align: center;
+  }
+}

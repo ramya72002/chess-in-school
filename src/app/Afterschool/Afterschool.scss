@@ -1,0 +1,90 @@
+.account-page {
+  font-family: Arial, sans-serif;
+  background-image: url('/images/im4.png');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0;
+}
+h1 {
+  font-size: 30px;
+  color: #f9f6f6;
+  font-weight: bold;
+}
+
+.account-header {
+  text-align: center;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  background: linear-gradient(180deg, #FF0075, #8C52FF);
+  color: white;
+}
+
+.courses-info1 {
+  text-align: center;
+
+  h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+  }
+}
+
+.courses-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // gap: 20px;
+  margin: 0; // Remove any extra margin from the grid container
+  padding: 0;
+}
+
+.course-card {
+  position: relative;
+  background-color: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  height: 90%; // Set a full height for all cards
+  padding: 0;
+  margin: 0;
+
+  &:hover {
+    transform: translateY(-10px);
+  }
+}
+
+.course-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px; // Set a fixed height for the image container
+  margin: 0;
+  padding: 0;
+}
+
+.course-image {
+  object-fit: cover; // Ensure the image covers the container fully
+}
+
+.in-progress-button {
+  position: absolute;
+  font-size: 13px;
+  top: 80px;
+  right:15px;
+  padding: 4px 6px;
+  background-color: #006653;
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(68, 68, 68);
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 15px;
+
+  &:hover {
+    background-color: #013b28;
+    color: white;
+  }
+}

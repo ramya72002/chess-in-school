@@ -1,0 +1,171 @@
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.tabs button.activeTab {
+  border-bottom: 2px solid #007bff;
+  color: #007bff;
+}
+
+.tabs button:hover {
+  color: #007bff;
+}
+
+/* Tournaments List */
+.tournamentsList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tournamentCard {
+  padding: 20px;
+  border: 1px solid #a1a0a0;
+  border-radius: 8px;
+  background-color: #e78b60;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tournamentCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.tournamentCard h3,
+.tournamentCard p,
+.tournamentCard h4 {
+  margin-top: 0;
+  border: 1px solid #6d6c6c;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #ace0e7;
+}
+
+.tournamentCard h3 {
+  font-size: 18px;
+  color: #a14900;
+  background-color: #fddfe9;
+}
+
+.tournamentCard p {
+  margin: 5px 0;
+  color: #555;
+  background-color: #ebc4f1;
+}
+
+.tournamentCard h4 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+  color: #0d20ce;
+  background-color: #cfeed1;
+}
+
+.tournamentCard .button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: 1px solid rgb(48, 47, 47);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tournamentCard .button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Edit Form */
+.editForm {
+  flex: 1;
+  background-color: #bd62cf;
+  border: 1px solid rgb(104, 103, 103);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.editForm:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.editForm h2,
+.editForm label,
+.editForm input {
+  border: 1px solid #686666;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.editForm h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #007bff;
+  background-color: #ffecb3;
+}
+
+.editForm label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: #333;
+  background-color: #dcedc8;
+}
+
+.editForm label input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.editForm button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 1px solid rgb(48, 47, 47);
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.editForm button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.editForm button:not(:last-child) {
+  margin-right: 10px;
+}

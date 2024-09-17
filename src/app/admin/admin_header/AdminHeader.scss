@@ -1,0 +1,109 @@
+.adminHeader {
+    background-color: #343a40;
+    padding: 1rem;
+    font-family: 'sans-serif';
+  
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .menu {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .menuItem {
+      margin: 0 1rem;
+      
+  
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+  
+        &:hover,
+        &:focus {
+          color: #007bff;
+          outline: none;
+        }
+  
+        p {
+          margin: 0;
+          font-size: 23px;
+        }
+      }
+    }
+  }
+  .logoutButton{
+
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 5px;
+        margin-left: 50px;
+        background-color: rgb(248, 55, 55);
+        border-radius: 8px;
+        color: #ffffff;
+        font-size: 1.1rem;
+        transition: color 0.3s;
+  
+        &:hover,
+        &:focus {
+          background-color: rgb(255, 0, 0);
+          color: #ffffff;
+          outline: none;
+        }
+  }
+  .adminHeader {
+    background-color: #e57440;
+    padding: 1rem;
+  
+    nav {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .menu {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .menuItem {
+      margin: 0 1rem;
+      position: relative; /* Ensure position is relative for absolute positioning */
+  
+      a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+  
+        &:hover,
+        &:focus {
+          color: #10100f;
+          outline: none;
+        }
+      }
+  
+      /* Animation for underline effect */
+      &:before {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        bottom: -1px;
+        left: 0;
+        background-color: #e8e6ea;
+        transition: width 0.3s ease;
+      }
+  
+      &:hover:before {
+        width: 100%;
+      }
+    }
+  }

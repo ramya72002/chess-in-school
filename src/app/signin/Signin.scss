@@ -1,0 +1,210 @@
+.rounded-10 {
+    border-radius: 10px;
+  }
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-content p {
+    margin: 0;
+  }
+  
+  .popup-content p.text-orange-500 {
+    color: #f97316;
+    cursor: pointer;
+  }
+  
+   
+  
+  button {
+    background-color: #4e89e3;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background-color: #004a9c;
+  }
+  
+  .signup-background {
+    background-image: url('/images/signupbg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+ 
+  .signup-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 70%; /* Adjust this value to move the form to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    max-width: 500px; /* Adjust the width as needed */
+  }
+  
+  
+  .signup-form-container {
+    position: relative;
+    width: 30%;
+    max-width: 1100px; /* Adjust the max-width as needed */
+  }
+  .email-box {
+    transform: translateX(0); /* Initially position email box */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+  
+  .signin-box {
+    transform: translateX(0); /* Initially position sign-in box */
+    transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+  }
+  
+ 
+  .signup-field {
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: slide-in 0.5s forwards;
+  }
+  
+  .signup-label {
+    display: block;
+    color: #333;
+    margin-bottom: 0.1rem;
+    font-weight: 600;
+  }
+  
+  .signup-input, .signup-select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #f3efef;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4e89e3;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    opacity: 0;
+    animation: slide-in 0.5s forwards;
+    animation-delay: 0.4s;
+  }
+  
+  .signup-field:nth-child(1) {
+    animation-name: slide-in-left;
+    animation-delay: 0.1s;
+  }
+  
+  .signup-field:nth-child(2) {
+    animation-name: slide-in-right;
+    animation-delay: 0.2s;
+  }
+  
+  .signup-field:nth-child(3) {
+    animation-name: slide-in-left;
+    animation-delay: 0.3s;
+  }
+  
+  @keyframes slide-in {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slide-in-left {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .signup-button:hover {
+    background-color: #098cff;
+  }
+  
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; // Ensure it takes the full screen height
+  }
+  
+  .loading-gif {
+    width: 350px;
+    height: 350px;
+  }
+  .text-red-500 {
+    color: #f56565;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  
+  .text-black {
+    color: #000;
+  }
