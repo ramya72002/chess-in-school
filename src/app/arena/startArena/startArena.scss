@@ -1,0 +1,140 @@
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #15dd6f;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  color: #c74316;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.imageGallery div {
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.imageGallery img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  }
+  .container {
+    text-align: center;
+  }
+  
+  .infoTable {
+    margin: 0 auto;
+    padding-bottom: 20px;
+  
+    table {
+      width: auto;
+      border-collapse: collapse;
+      margin: 0 auto;
+      border: 2px solid #003366;
+  
+      th, td {
+        border: 1px solid #003366;
+        padding: 8px 12px;
+        text-align: center;
+      }
+  
+      th {
+        background-color: #003366;
+        color: white;
+      }
+    }
+  }
+  
+  .title {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .imageGallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  
+    img {
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageText {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  
+  button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .puzzleButton {
+    background-color: #d21733;
+    color: #f4f1f1;
+    font-weight: bold;
+   
+  }
+
+  .statusButton {
+    background-color: #0cb0e6;
+    color: #f9f3f3;
+   
+  }
+}
+  }
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  
+  img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 20px;
+}

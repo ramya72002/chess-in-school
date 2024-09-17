@@ -8,6 +8,7 @@ import { UserDetails } from '../../types/types';
 import withAuth from '@/app/withAuth';
 
 interface Puzzle {
+  level:string;
   category: string;
   title: string;
   dateAndtime: string;
@@ -23,20 +24,13 @@ const M1: React.FC = () => {
   const [puzzlesWithStatus, setPuzzlesWithStatus] = useState<Puzzle[]>([]);
   
   const puzzles = [
-    { title: "dsdfgh", level: "Pawn", category: "Middlegame", dateAndtime: "2024-08-02T13:35", total_puz_count: 1, statusFlag: "Not Started" },
+    { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
     { title: "hih", level: "Pawn", category: "Endgame", dateAndtime: "2024-09-19T12:42", total_puz_count: 1, statusFlag: "Not Started" }
   ];
 
-  const levelMapping: Record<string, string> = {
-    level1: "Pawn",
-    level2: "Knight",
-    level3: "Bishop",
-    level4: "Rook",
-    level5: "Queen",
-    level6: "King",
-  };
-
+  
   const handleButtonClick = async (
+    level:string,
     title: string,
     category: string,
     date_time: string,
@@ -51,14 +45,14 @@ const M1: React.FC = () => {
 
     if (email) {
       try {
-        const createArenaApiUrl = 'https://backend-dev-chess.vercel.app/create_Arena_user';
-        const imagesApiUrl = `https://backend-dev-chess.vercel.app/images/title?level=${encodeURIComponent(levelMapping[storedUserDetails.level])}&category=${encodeURIComponent(category)}&title=${encodeURIComponent(title)}`;
+        const createArenaApiUrl = 'https://backend-chess-tau.vercel.app/create_Arena_user_inschool';
+        const imagesApiUrl = `https://backend-chess-tau.vercel.app/images/title?level=${encodeURIComponent(level)}&category=${encodeURIComponent(category)}&title=${encodeURIComponent(title)}`;
 
         const createArenaResponse = await axios.post(createArenaApiUrl, { email, category, title, puzzle_no });
 
         if (createArenaResponse.data.success) {
           const imagesResponse = await axios.get(imagesApiUrl);
-          router.push(`/arena/startArena?title=${encodeURIComponent(title)}&level=${encodeURIComponent(levelMapping[storedUserDetails.level])}&category=${encodeURIComponent(category)}&date_time=${encodeURIComponent(date_time)}&score=${encodeURIComponent(score)}`);
+          router.push(`/arena/startArena?title=${encodeURIComponent(title)}&level=${encodeURIComponent(level)}&category=${encodeURIComponent(category)}&date_time=${encodeURIComponent(date_time)}&score=${encodeURIComponent(score)}`);
         } else {
           setError('Failed to create or update PuzzleArena. Please try again later.');
         }
@@ -84,7 +78,7 @@ const M1: React.FC = () => {
   
           for (const item of puzzles) {
             try {
-              const arenaUserResponse = await axios.get('https://backend-dev-chess.vercel.app/get_Arena_user', {
+              const arenaUserResponse = await axios.get('https://backend-chess-tau.vercel.app/get_Arena_user_inschool', {
                 params: {
                   email: storedUserDetails.email,
                   category: item.category,
@@ -157,7 +151,7 @@ const M1: React.FC = () => {
         };
     
         // Make the POST request to the API
-        const response = await axios.post('https://backend-dev-chess.vercel.app/update-course-completion', requestData);
+        const response = await axios.post('https://backend-chess-tau.vercel.app/update-course-completion', requestData);
     
         // Handle the response
         console.log('API Response:', response.data);
@@ -250,6 +244,7 @@ const M1: React.FC = () => {
           <p className='loading-page'>
             <button onClick={() =>
                           handleButtonClick(
+                            puzzle.level,                            
                             puzzle.title,
                             puzzle.category,
                             puzzle.dateAndtime,

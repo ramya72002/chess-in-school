@@ -16,46 +16,38 @@ const Hero = () => {
       if (typeof window !== 'undefined') {
         const userDetailsString = localStorage.getItem('userDetails');
         const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-        console.log("local",storedUserDetails)
-        setUserDetails(storedUserDetails);
-
-        try {
-          const response = await axios.get(
-            `https://backend-dev-chess.vercel.app/getuserdetails?email=${storedUserDetails.email}`
-          );
-          setUserDetails(response.data.data);
-        } catch (error) {
-          console.error('Error fetching user details:', error);
+  
+        if (storedUserDetails) {
+          console.log("localt", storedUserDetails.level);
+          setUserDetails(storedUserDetails); // Set user details from localStorage
+  
+          try {
+            const response = await axios.get(
+              `https://backend-chess-tau.vercel.app/getinschooldetails?email=${storedUserDetails.email}`
+            );
+            setUserDetails(response.data.data); // Update with data from API
+            console.log("api", response.data.data);
+          } catch (error) {
+            console.error('Error fetching user details:', error);
+          }
         }
       }
     };
-
-    const fetchUpcomingActivities = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get('https://backend-dev-chess.vercel.app/sessions');
-        setUpcomingActivities(response.data[0].upcoming_activities);
-      } catch (error) {
-        console.error('Error fetching Upcoming Activities:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
+  
     fetchUserDetails();
-    fetchUpcomingActivities();
   }, []);
+  
 
   const getActiveClass = (level: string) => {
     if (!userDetails) return '';
 
     const levelMap: { [key: string]: number } = {
-      level1: 1,
-      level2: 2,
-      level3: 3,
-      level4: 4,
-      level5: 5,
-      level6: 6,
+      "Level 1": 1,
+      "Level 2": 2,
+      "Level 3": 3,
+      "Level 4": 4,
+      "Level 5": 5,
+      "Level 6": 6,
     };
 
     const userLevel = levelMap[userDetails.level];
@@ -84,31 +76,31 @@ const Hero = () => {
             <svg className="connector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 10" preserveAspectRatio="none">
               <line x1="0" y1="5" x2="1000" y2="5" stroke="white" strokeWidth="5"/>
             </svg>
-            <div className={`step ${getActiveClass('level1')}`}>
+            <div className={`step ${getActiveClass('Level 1')}`}>
             <div className="icon pawn">♟</div>              <p>Pawn</p>
               <p>(Beginner)</p>
             </div>
-            <div className={`step ${getActiveClass('level2')}`}>
+            <div className={`step ${getActiveClass('Level 2')}`}>
               <div className="icon knight">♞</div>
               <p>Knight</p>
               <p>(Intermediate)</p>
             </div>
-            <div className={`step ${getActiveClass('level3')}`}>
+            <div className={`step ${getActiveClass('Level 3')}`}>
               <div className="icon bishop">♝</div>
               <p>Bishop</p>
               <p>(Proficient)</p>
             </div>
-            <div className={`step ${getActiveClass('level4')}`}>
+            <div className={`step ${getActiveClass('Level 4')}`}>
               <div className="icon rook">♜</div>
               <p>Rook</p>
               <p>(Advanced)</p>
             </div>
-            <div className={`step ${getActiveClass('level5')}`}>
+            <div className={`step ${getActiveClass('Level 5')}`}>
               <div className="icon queen">♛</div>
               <p>Queen</p>
               <p>(Expert)</p>
             </div>
-            <div className={`step ${getActiveClass('level6')}`}>
+            <div className={`step ${getActiveClass('Level 6')}`}>
               <div className="icon king">♔</div>
               <p>King</p>
               <p>(Master)</p>

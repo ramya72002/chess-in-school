@@ -48,7 +48,7 @@ const SignIn = () => {
     try {
       const deviceType = getDeviceType(); // Get device type
 
-      const loginResponse = await axios.post('https://backend-dev-chess.vercel.app/login', {
+      const loginResponse = await axios.post('https://backend-chess-tau.vercel.app/signin_inschool', {
         email: emailToSignIn,
         device_name: deviceType // Send device type to the backend
       });
@@ -62,7 +62,7 @@ const SignIn = () => {
         setShowOtpInput(loginResponse.data.otp_required); // Show OTP input if required
         localStorage.setItem('email', emailToSignIn);
 
-        const userDetailsResponse = await axios.get('https://backend-dev-chess.vercel.app/getuserdetails', {
+        const userDetailsResponse = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
           params: { email: emailToSignIn }
         });
 
@@ -88,7 +88,7 @@ const SignIn = () => {
     if (email) {
       try {
         // Make API call to delete the session
-        const response = await axios.post('https://backend-dev-chess.vercel.app/delete_session', { email });
+        const response = await axios.post('https://backend-chess-tau.vercel.app/delete_session_inschool', { email });
 
         if (response.data.success) {
           // Automatically click the sign-in button to retry the sign-in process
@@ -108,7 +108,7 @@ const SignIn = () => {
   const verifyOtp = async () => {
     setLoading(true); // Start loading
     try {
-      const verifyOtpResponse = await axios.post('https://backend-dev-chess.vercel.app/verify_otp', { email, otp });
+      const verifyOtpResponse = await axios.post('https://backend-chess-tau.vercel.app/verify_otp_inschool', { email, otp });
       console.log('Verify OTP response:', verifyOtpResponse.data);
   
       if (verifyOtpResponse.data.success) {
