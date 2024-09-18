@@ -60,33 +60,37 @@ h1 {
 }
 
 .course-image-container {
-  // background-color: transparent;p
 
   position: relative;
   width: 100%;
   height: 200px;
-  margin: 0;
-  padding: 0;
 }
 
 .course-image {
   object-fit: cover;
 }
 
-.status-button {
+.status-container {
   position: absolute;
+  top: 65px;
+  right: 5px;
+  display: flex;
+  flex-direction: column; // Stack buttons vertically
+  gap: 10px; // Space between the buttons
+}
+
+.status-button, .completion-button {
   font-size: 13px;
-  top: 80px;
-  right: 15px;
-  padding: 4px 6px;
+  padding: 1px 4px;
   border: 1px solid rgb(68, 68, 68);
   border-radius: 25px;
   cursor: pointer;
   font-size: 15px;
+}
 
+.status-button {
   &.Not-Started {
     background-color: red;
-    // color: black;
   }
 
   &.In-Progress {
@@ -97,9 +101,19 @@ h1 {
   &.Completed {
     background-color: green;
   }
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.completion-button {
+  background-color: blue;
+  color: white;
 
   &:hover {
     opacity: 0.8;
   }
 }
+
 

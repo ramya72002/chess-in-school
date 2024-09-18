@@ -34,9 +34,14 @@ const courseImages: CoursePaths = {
   'chessStudyPlan': '/images/9.png'
 };
 
+interface CourseStatus {
+  status: string;
+  completed: number;
+}
+
 const MyAccount = () => {
   const router = useRouter();
-  const [courseStatuses, setCourseStatuses] = useState<CoursePaths>({});
+  const [courseStatuses, setCourseStatuses] = useState<{ [key: string]: CourseStatus }>({});
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -51,8 +56,8 @@ const MyAccount = () => {
 
           if (response.data.success) {
             const registeredCourses = response.data.data.registered_inschool_courses;
-            const statuses = registeredCourses.reduce((acc: CoursePaths, course: { course_title: string, status: string }) => {
-              acc[course.course_title] = course.status;
+            const statuses = registeredCourses.reduce((acc: { [key: string]: CourseStatus }, course: { course_title: string, status: string, completed: number }) => {
+              acc[course.course_title] = { status: course.status, completed: course.completed };
               return acc;
             }, {});
 
@@ -75,7 +80,7 @@ const MyAccount = () => {
       try {
         const userDetailsString = localStorage.getItem('userDetails');
         const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-  
+
         if (storedUserDetails && storedUserDetails.email) {
           // Call API to update status to "In Progress"
           const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
@@ -83,16 +88,16 @@ const MyAccount = () => {
             course_title: courseTitle,
             status: 'In Progress',
           });
-  
+
           if (response.data.success) {
             console.log('Course status updated successfully');
             
             // Update local status
             setCourseStatuses(prev => ({
               ...prev,
-              [courseTitle]: 'In Progress',
+              [courseTitle]: { ...prev[courseTitle], status: 'In Progress' }
             }));
-  
+
             // Navigate to the course path
             router.push(path);  // Always navigate regardless of status
           } else {
@@ -106,7 +111,36 @@ const MyAccount = () => {
       console.error('Path not found for course:', courseTitle);
     }
   };
-  
+
+  const handleCompleteCourse = async (courseTitle: string) => {
+    try {
+      const userDetailsString = localStorage.getItem('userDetails');
+      const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+
+      if (storedUserDetails && storedUserDetails.email) {
+        // Call API to mark course as completed
+        const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+          email: storedUserDetails.email,
+          course_title: courseTitle,
+          status: 'Completed',
+        });
+
+        if (response.data.success) {
+          console.log('Course marked as completed');
+
+          // Update local status
+          setCourseStatuses(prev => ({
+            ...prev,
+            [courseTitle]: { ...prev[courseTitle], status: 'Completed', completed: 100 }
+          }));
+        } else {
+          console.error('Failed to mark course as completed:', response.data.message);
+        }
+      }
+    } catch (error) {
+      console.error('Error marking course as completed:', error);
+    }
+  };
 
   return (
     <div className="account-page">
@@ -126,14 +160,22 @@ const MyAccount = () => {
                 className="course-image"
               />
               <div className="image-overlay">
-              <button
-                className={`status-button ${courseStatuses[course]?.replace(' ', '-') || 'Not-Started'}`}
-                onClick={() => handleViewProgress(course)}
-              >
-                {courseStatuses[course] === 'In Progress' ? 'In Progress' : courseStatuses[course] === 'Completed' ? 'Completed' : 'Not Started'}
-              </button>
+              <div className="status-container">
+  <button
+    className={`status-button ${courseStatuses[course]?.status.replace(' ', '-') || 'Not-Started'}`}
+    onClick={() => handleViewProgress(course)}
+  >
+    {courseStatuses[course]?.status || 'Not Started'}
+  </button>
+  <button
+    className="completion-button"
+    onClick={() => handleViewProgress(course)}
+  >
+    {courseStatuses[course]?.completed || 0}% Complete
+  </button>
+</div>
 
-
+            
               </div>
             </div>
           </div>
