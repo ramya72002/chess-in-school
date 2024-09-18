@@ -12,14 +12,14 @@ interface CoursePaths {
 
 const coursePaths: CoursePaths = {
   'chessOpening': '/modules/chessOpening/11',
-  'tactics1': '/modules/tactics1/11',
-  'tactics2': '/modules/tactics2/11',
-  'positionalCalculations': '/modules/positionalCalculations/11',
-  'strategyAndPlanning': '/modules/strategyAndPlanning/11',
-  'checkAndCheckmates': '/modules/checkAndCheckmates/11',
-  'checkmatePatterns': '/modules/checkmatePatterns/11',
-  'gameAnalysis': '/modules/gameAnalysis/11',
-  'chessStudyPlan': '/modules/chessStudyPlan/11'
+  'tactics1': '/modules/tactics1/21',
+  'tactics2': '/modules/tactics2/31',
+  'positionalCalculations': '/modules/positionalCalculations/41',
+  'strategyAndPlanning': '/modules/strategyAndPlanning/51',
+  'checkAndCheckmates': '/modules/checkAndCheckmates/61',
+  'checkmatePatterns': '/modules/checkmatePatterns/71',
+  'gameAnalysis': '/modules/gameAnalysis/81',
+  'chessStudyPlan': '/modules/chessStudyPlan/91'
 };
 
 const courseImages: CoursePaths = {
