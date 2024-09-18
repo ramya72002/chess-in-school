@@ -147,7 +147,7 @@ const M1: React.FC = () => {
         const requestData = {
           email: storedEmail,
           course_title: 'tactics2',
-          completed: 5
+          completed: 42
         };
     
         // Make the POST request to the API
