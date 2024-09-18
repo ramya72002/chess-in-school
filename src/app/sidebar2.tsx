@@ -28,68 +28,68 @@ const topics = [
     title: "3. Tactics [2]",
     completed: true,
     submodules: [
-      { title: "Decoy", completed: true },
-      { title: "Overloading", completed: true },
-      { title: "X-Ray attack", completed: true },
-      { title: "Zwischenzug (Intermezzo):", completed: true },
-      { title: "Desperado", completed: true },
-      { title: "Interference", completed: true },
-      { title: "Back Rank Tactics", completed: true }
+      { title: "3.1 Decoy", completed: true },
+      { title: "3.2 Overloading", completed: true },
+      { title: "3.3 X-Ray attack", completed: true },
+      { title: "3.4 Zwischenzug (Intermezzo):", completed: true },
+      { title: "3.5 Desperado", completed: true },
+      { title: "3.6 Interference", completed: true },
+      { title: "3.7 Back Rank Tactics", completed: true }
     ]
   },
   {
     title: "4. Positional Calculations",
     completed: true,
     submodules: [
-      { title: "Middlegame: Art of Calculation", completed: true },
-      { title: "Pawn Structures", completed: true },
-      { title: "Piece Activity", completed: true },
-      { title: "Manoeuvring", completed: true }
+      { title: "4.1 Middlegame: Art of Calculation", completed: true },
+      { title: "4.2 Pawn Structures", completed: true },
+      { title: "4.3 Piece Activity", completed: true },
+      { title: "4.4 Manoeuvring", completed: true }
     ]
   },
   {
     title: "5. Strategy & Planning",
     completed: true,
     submodules: [
-      { title: "Pawn breaks", completed: true },
-      { title: "Weak squares", completed: true },
-      { title: "Piece coordination", completed: true }
+      { title: "5.1 Pawn breaks", completed: true },
+      { title: "5.2 Weak squares", completed: true },
+      { title: "5.3 Piece coordination", completed: true }
     ]
   },
   {
     title: "6. Checks & Checkmates",
     completed: true,
     submodules: [
-      { title: "Mate in 1", completed: true },
-      { title: "Mate in 2", completed: true }
+      { title: "6.1 Mate in 1", completed: true },
+      { title: "6.2 Mate in 2", completed: true }
     ]
   },
   {
     title: "7. Chackmate Patterns",
     completed: true,
     submodules: [
-      { title: "Anastasia’s Mate", completed: true },
-      { title: "Back Rank Mate", completed: true },
-      { title: "Blackburne’s Mate", completed: true },
-      { title: "Box Mate (Rook Mate)", completed: true },
-      { title: "Fool's Mate", completed: true },
-      { title: "Morphy's Mate", completed: true },
-      { title: "Scholar's Mate", completed: true },
-      { title: "Smothered Mate", completed: true }
+      { title: "7.1 Anastasia’s Mate", completed: true },
+      { title: "7.2 Back Rank Mate", completed: true },
+      { title: "7.3 Blackburne’s Mate", completed: true },
+      { title: "7.4 Box Mate (Rook Mate)", completed: true },
+      { title: "7.5 Fool's Mate", completed: true },
+      { title: "7.6 Morphy's Mate", completed: true },
+      { title: "7.7 Scholar's Mate", completed: true },
+      { title: "7.8 Smothered Mate", completed: true }
     ]
   },
   {
     title: "8. Game Analysis",
     completed: true,
     submodules: [
-      { title: "Game Analysis", completed: true }
+      { title: "8.1 Game Analysis", completed: true }
     ]
   },
   {
     title: "9. Chess Study Plan",
     completed: true,
     submodules: [
-      { title: "Chess Study Plan", completed: true }
+      { title: "9.1 Chess Study Plan", completed: true }
     ]
   }
   // Other modules...
