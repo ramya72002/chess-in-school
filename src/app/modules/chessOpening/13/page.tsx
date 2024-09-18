@@ -160,14 +160,20 @@ const M1: React.FC = () => {
         const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
   
         if (storedUserDetails && storedUserDetails.email) {
-          // Call API to update status to "In Progress"
           const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+            email: storedUserDetails.email,
+            course_title: "chessOpening",
+            status: 'Completed',
+          });
+  
+          // Call API to update status to "In Progress"
+          const response1 = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
             email: storedUserDetails.email,
             course_title: "tactics1",
             status: 'In Progress',
           });
   
-          if (response.data.success) {
+          if (response1.data.success) {
             router.push('/modules/tactics1/21'); // Redirect to the M2 page
 
             
