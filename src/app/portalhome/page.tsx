@@ -66,7 +66,7 @@ const Hero = () => {
       <div className="hero">
         <div className="header">
           <h2>
-            Chess Journey of <span>{userDetails.name}</span>
+            Chess Journey 
           </h2>
         </div>
 

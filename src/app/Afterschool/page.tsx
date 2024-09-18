@@ -169,7 +169,7 @@ const MyAccount = () => {
   </button>
   <button
     className="completion-button"
-    onClick={() => handleViewProgress(course)}
+    // onClick={() => handleViewProgress(course)}
   >
     {courseStatuses[course]?.completed || 0}% Complete
   </button>
