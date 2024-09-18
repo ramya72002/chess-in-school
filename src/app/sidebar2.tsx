@@ -105,9 +105,9 @@ const Sidebar2: React.FC = () => {
   const handleSubmoduleClick = (title: string) => {
     const submodulePaths: Record<string, string> = {
       // Chess Openings
-      "1.1 Opening Principles": "/modules/chessOpening/12",
-      "1.2 White Opening": "/modules/chessOpening/13",
-      "1.3 Black Opening": "/modules/chessOpening/14",
+      "1.1 Opening Principles": "/modules/chessOpening/11",
+      "1.2 White Opening": "/modules/chessOpening/12",
+      "1.3 Black Opening": "/modules/chessOpening/13",
       
       // Tactics [1]
       "2.1 Pins": "/modules/tactics1/21",
