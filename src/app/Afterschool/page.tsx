@@ -11,34 +11,27 @@ interface CoursePaths {
 }
 
 const coursePaths: CoursePaths = {
-  'Basic Checkmates - 2': '/basic-checkmates-2/modules/m1',
-  'Basics of Chess': '/modules/m1',
-  'Good Bishop Bad Bishop': '/good-bishop-bad-bishop/modules/m1',
-  'Basic Checkmates': '/basic-checkmates/modules/m1',
-  'Basic Checkmates - 3': '/basic-checkmates-2/modules/m1',
-  'Basics of Chess 1': '/modules/m1?afterschool=true',
-  'Basic Checkmates - 4': '/basic-checkmates-2/modules/m1',
-  'Basics of Chess 2': '/modules/m1?afterschool=true',
-  'Good Bishop Bad Bishop 1': '/good-bishop-bad-bishop/modules/m1'
+  'chessOpening': '/modules/chessOpening/11',
+  'tactics1': '/modules/tactics1/11',
+  'tactics2': '/modules/tactics2/11',
+  'positionalCalculations': '/modules/positionalCalculations/11',
+  'strategyAndPlanning': '/modules/strategyAndPlanning/11',
+  'checkAndCheckmates': '/modules/checkAndCheckmates/11',
+  'checkmatePatterns': '/modules/checkmatePatterns/11',
+  'gameAnalysis': '/modules/gameAnalysis/11',
+  'chessStudyPlan': '/modules/chessStudyPlan/11'
 };
 
 const courseImages: CoursePaths = {
-  'Basic Checkmates - 2': '/images/1.png',
-  'Basics of Chess': '/images/2.png',
-  'Good Bishop Bad Bishop': '/images/3.png',
-  'Basic Checkmates': '/images/4.png',
-  'Basic Checkmates - 3': '/images/5.png',
-  'Basics of Chess 1': '/images/6.png',
-  'Basic Checkmates - 4': '/images/7.png',
-  'Basics of Chess 2': '/images/8.png',
-  'Good Bishop Bad Bishop 1': '/images/9.png'
-};
-
-const courseStyles: CoursePaths = {
-  'Basic Checkmates - 2': 'recently-used',
-  'Basics of Chess': 'shapes',
-  'Good Bishop Bad Bishop': 'graphics',
-  'Basic Checkmates': 'stickers'
+  'chessOpening': '/images/1.png',
+  'tactics1': '/images/2.png',
+  'tactics2': '/images/3.png',
+  'positionalCalculations': '/images/4.png',
+  'strategyAndPlanning': '/images/5.png',
+  'checkAndCheckmates': '/images/6.png',
+  'checkmatePatterns': '/images/7.png',
+  'gameAnalysis': '/images/8.png',
+  'chessStudyPlan': '/images/9.png'
 };
 
 const MyAccount = () => {
@@ -123,7 +116,7 @@ const MyAccount = () => {
 
       <section className="courses-section">
         {Object.entries(coursePaths).map(([course, path], index) => (
-          <div key={index} className={`course-card ${courseStyles[course]}`}>
+          <div key={index}>
             <div className="course-image-container">
               <Image
                 src={courseImages[course]}

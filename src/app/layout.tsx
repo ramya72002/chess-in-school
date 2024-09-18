@@ -37,7 +37,7 @@ export default function RootLayout({
                     pathname === "/modules/m3" ||
                     pathname === "/modules/m4" ||
                     pathname === "/modules/m5" ||
-                    pathname === "/modules/m6"
+                    pathname === "/modules/chessOpening/11"
                   ) && <Sidebar2 />}
                     
                   <div className="content-container">
