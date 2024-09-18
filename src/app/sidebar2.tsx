@@ -133,13 +133,13 @@ const Sidebar2: React.FC = () => {
       "4.4 Manoeuvring": "/modules/positionalCalculations/44",
   
       // Strategy & Planning
-      "5.1 Pawn breaks": "/modules/strategyPlanning/51",
-      "5.2 Weak squares": "/modules/strategyPlanning/52",
-      "5.3 Piece coordination": "/modules/strategyPlanning/53",
+      "5.1 Pawn breaks": "/modules/strategyAndPlanning/51",
+      "5.2 Weak squares": "/modules/strategyAndPlanning/52",
+      "5.3 Piece coordination": "/modules/strategyAndPlanning/53",
   
       // Checks & Checkmates
-      "6.1 Mate in 1": "/modules/checksCheckmates/61",
-      "6.2 Mate in 2": "/modules/checksCheckmates/62",
+      "6.1 Mate in 1": "/modules/checkAndCheckmates/61",
+      "6.2 Mate in 2": "/modules/checkAndCheckmates/62",
   
       // Checkmate Patterns
       "7.1 Anastasia’s Mate": "/modules/checkmatePatterns/71",

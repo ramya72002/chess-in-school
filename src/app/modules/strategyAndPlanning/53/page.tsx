@@ -155,11 +155,38 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/checkAndCheckmates/61'); // Redirect to the M2 page
+        //add 3.1
+        const userDetailsString = localStorage.getItem('userDetails');
+        const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+  
+        if (storedUserDetails && storedUserDetails.email) {
+          const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+            email: storedUserDetails.email,
+            course_title: "strategyAndPlanning",
+            status: 'Completed',
+          });
+  
+          // Call API to update status to "In Progress"
+          const response1 = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+            email: storedUserDetails.email,
+            course_title: "checkAndCheckmates",
+            status: 'In Progress',
+          });
+  
+          if (response1.data.success) {
+
+            router.push('/modules/checkAndCheckmates/61'); // Redirect to the M2 page  
+            
+             
+          } else {
+            console.error('Failed to update course status:', response.data.message);
+          }
+        }
       } catch (error) {
-        console.error('API Error:', error);
+        console.error('Error updating course status:', error);
       }
     };
+       
   return (
     <div className="lesson-content">
       <h3>1.1 Introduction</h3>
