@@ -25,22 +25,11 @@ h1 {
   color: white;
 }
 
-.courses-info1 {
-  text-align: center;
-
-  h3 {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 15px;
-    color: #333;
-  }
-}
-
 .courses-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 15px; /* Horizontal gap */
-  grid-row-gap: 0px; /* Vertical gap */
+  grid-column-gap: 15px;
+  grid-row-gap: 15px;
   margin: 0;
   padding: 0;
 }
@@ -73,7 +62,7 @@ h1 {
   bottom: 0;
   left: 20px;
   width: 100%;
-  height: 70%; /* Cover the bottom half of the card */
+  height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -98,7 +87,6 @@ h1 {
   margin-top: 50px;
   font-size: 15px;
   position: relative;
-  // transform: translateY(50%); /* Move the button 50% down, making half of it visible */
 }
 
 .status-button {
@@ -108,15 +96,16 @@ h1 {
 
   &.In-Progress {
     background-color: rgb(249, 233, 9);
-    color: black; /* Optional, for better contrast with yellow background */
+    color: black;
   }
 
   &.Completed {
     background-color: rgb(40, 145, 40);
   }
-  
-  &:hover {
-    opacity: 0.9;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
   }
 }
 

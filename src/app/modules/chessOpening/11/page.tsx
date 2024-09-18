@@ -283,7 +283,7 @@ const M1: React.FC = () => {
 
       {/* Navigation Buttons */}
       <section className="navigation-buttons">
-        {/* <button onClick={handlePreviousClick} className="previous-button">Previous Page</button> */}
+        <button className="previous-button"></button>
         <button onClick={handleNextClick} className="next-button">Next</button>
       </section>
     </div>
