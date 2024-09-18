@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import '../../chessOpening/1.scss';
-import { UserDetails } from '../../../types/types';
+import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 
 interface Puzzle {
@@ -160,7 +160,7 @@ const M1: React.FC = () => {
         console.error('API Error:', error);
       }
     }; const handlePreviousClick = () => {
-      router.push('/modules/level2/chessOpening/11'); // Redirect to the previous page (adjust the path as needed)
+      router.push('/modules/level2/tactics2/31'); // Redirect to the previous page (adjust the path as needed)
     };
   return (
     <div className="lesson-content">

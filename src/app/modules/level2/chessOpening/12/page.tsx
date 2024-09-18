@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import '../../chessOpening/1.scss';
-import { UserDetails } from '../../../types/types';
+import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 
 interface Puzzle {

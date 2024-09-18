@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import '../../chessOpening/1.scss';
-import { UserDetails } from '../../../types/types';
+import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 
 interface Puzzle {
@@ -185,6 +185,9 @@ const M1: React.FC = () => {
       } catch (error) {
         console.error('Error updating course status:', error);
       }
+    };
+    const handlePreviousClick = () => {
+      router.push('/modules/level2/positionalCalculations/43'); // Redirect to the previous page (adjust the path as needed)
     };
        
   return (

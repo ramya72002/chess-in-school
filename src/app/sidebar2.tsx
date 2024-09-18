@@ -31,7 +31,7 @@ const topics = [
       { title: "3.1 Decoy", completed: true },
       { title: "3.2 Overloading", completed: true },
       { title: "3.3 X-Ray attack", completed: true },
-      { title: "3.4 Zwischenzug (Intermezzo):", completed: true },
+      { title: "3.4 Zwischenzug (Intermezzo)", completed: true },
       { title: "3.5 Desperado", completed: true },
       { title: "3.6 Interference", completed: true },
       { title: "3.7 Back Rank Tactics", completed: true }
