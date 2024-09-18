@@ -160,6 +160,9 @@ const M1: React.FC = () => {
         console.error('API Error:', error);
       }
     };
+    const handlePreviousClick = () => {
+      router.push('/modules/chessOpening/11'); // Redirect to the previous page (adjust the path as needed)
+    };
   return (
     <div className="lesson-content">
       <h3>1.2 Introduction</h3>
@@ -282,10 +285,10 @@ const M1: React.FC = () => {
       </section>
 
       {/* Navigation Buttons */}
-      <div className="navigation-buttons">
-        <button className="prev-button"></button>
-        <button className="next-button"  onClick={handleNextClick}>Next</button>
-      </div>
+      <section className="navigation-buttons">
+        <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>
+        <button onClick={handleNextClick} className="next-button">Next</button>
+      </section>
     </div>
   );
 };
