@@ -190,7 +190,7 @@ const M1: React.FC = () => {
      
   return (
     <div className="lesson-content">
-      <h3>1.1 Introduction</h3>
+      <h3>3.7 Introduction</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}
