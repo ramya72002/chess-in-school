@@ -41,7 +41,7 @@ function StudentDetails() {
   }, []);
 
   const fetchStudents = () => {
-    axios.get('http://127.0.0.1:80/studentList')
+    axios.get('https://backend-chess-tau.vercel.app/studentList')
       .then(response => {
         setStudents(response.data);
       })
@@ -51,7 +51,7 @@ function StudentDetails() {
   };
 
   const deleteStudent = (email: string) => {
-    axios.delete('http://127.0.0.1:80/del-student', { data: { email } })
+    axios.delete('https://backend-chess-tau.vercel.app/del-student', { data: { email } })
       .then(() => {
         fetchStudents(); // Fetch the updated list after deletion
         setConfirmDelete(null); // Reset confirmation state

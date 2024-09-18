@@ -23,7 +23,7 @@ const Hero = () => {
   
           try {
             const response = await axios.get(
-              `http://127.0.0.1:80/getinschooldetails?email=${storedUserDetails.email}`
+              `https://backend-chess-tau.vercel.app/getinschooldetails?email=${storedUserDetails.email}`
             );
             setUserDetails(response.data.data); // Update with data from API
             console.log("api", response.data.data);

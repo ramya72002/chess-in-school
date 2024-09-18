@@ -52,7 +52,7 @@ const MyAccount = () => {
 
       if (storedUserDetails && storedUserDetails.email) {
         try {
-          const response = await axios.get('http://127.0.0.1:80/getinschooldetails', {
+          const response = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
             params: { email: storedUserDetails.email }
           });
 
@@ -85,7 +85,7 @@ const MyAccount = () => {
   
         if (storedUserDetails && storedUserDetails.email) {
           // Call API to update status to "In Progress"
-          const response = await axios.post('http://127.0.0.1:80/update_registered_courses_inschool', {
+          const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
             email: storedUserDetails.email,
             course_title: courseTitle,
             status: 'In Progress',

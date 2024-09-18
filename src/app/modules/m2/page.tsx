@@ -49,8 +49,8 @@ const M2: React.FC = () => {
   
       if (email) {
         try {
-          const createArenaApiUrl = 'http://127.0.0.1:80/create_Arena_user_inschool';
-          const imagesApiUrl = `http://127.0.0.1:80/images/title?level=${encodeURIComponent(levelMapping[storedUserDetails.level])}&category=${encodeURIComponent(category)}&title=${encodeURIComponent(title)}`;
+          const createArenaApiUrl = 'https://backend-chess-tau.vercel.app/create_Arena_user_inschool';
+          const imagesApiUrl = `https://backend-chess-tau.vercel.app/images/title?level=${encodeURIComponent(levelMapping[storedUserDetails.level])}&category=${encodeURIComponent(category)}&title=${encodeURIComponent(title)}`;
   
           const createArenaResponse = await axios.post(createArenaApiUrl, { email, category, title, puzzle_no });
   
@@ -82,7 +82,7 @@ const M2: React.FC = () => {
     
             for (const item of puzzles) {
               try {
-                const arenaUserResponse = await axios.get('http://127.0.0.1:80/get_Arena_user_inschool', {
+                const arenaUserResponse = await axios.get('https://backend-chess-tau.vercel.app/get_Arena_user_inschool', {
                   params: {
                     email: storedUserDetails.email,
                     category: item.category,
@@ -155,7 +155,7 @@ const M2: React.FC = () => {
         };
     
         // Make the POST request to the API
-        const response = await axios.post('http://127.0.0.1:80/update-course-completion', requestData);
+        const response = await axios.post('https://backend-chess-tau.vercel.app/update-course-completion', requestData);
     
         // Handle the response
         console.log('API Response:', response.data);

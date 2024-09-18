@@ -20,7 +20,7 @@ const Arenaresult: React.FC<ArenaresultProps> = ({ isOpen, onClose }) => {
 
       if (email) {
         try {
-          const response = await axios.get(`http://127.0.0.1:80/getinschooldetails?email=${email}`);
+          const response = await axios.get(`https://backend-chess-tau.vercel.app/getinschooldetails?email=${email}`);
           if (response.data.success) {
             setUserDetails(response.data.data);
           } else {

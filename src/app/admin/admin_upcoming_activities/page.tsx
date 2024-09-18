@@ -24,7 +24,7 @@ const AdminUpcomingActivities = () => {
   const fetchUpcomingActivities = async () => {
     setLoading(true);
     try {
-      const response = await axios.get('http://127.0.0.1:80/sessions');
+      const response = await axios.get('https://backend-chess-tau.vercel.app/sessions');
       const data = response.data[0].upcoming_activities;
       setUpcomingActivities(data);
     } catch (error) {
@@ -42,7 +42,7 @@ const AdminUpcomingActivities = () => {
     }
 
     try {
-      await axios.post('http://127.0.0.1:80/add-upcomingActivities', {
+      await axios.post('https://backend-chess-tau.vercel.app/add-upcomingActivities', {
         title,
         date,
         time,
@@ -62,7 +62,7 @@ const AdminUpcomingActivities = () => {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete('http://127.0.0.1:80/del-upcomingActivitiess', {
+      await axios.delete('https://backend-chess-tau.vercel.app/del-upcomingActivitiess', {
         data: {
           title: activityToDelete.title,
           date: activityToDelete.date,
