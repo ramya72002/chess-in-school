@@ -146,8 +146,8 @@ const M1: React.FC = () => {
         // Sample data to send in the POST request
         const requestData = {
           email: storedEmail,
-          course_title: 'tactics1',
-          completed: 5
+          course_title: 'chessOpening',
+          completed: 100
         };
     
         // Make the POST request to the API
@@ -155,9 +155,29 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/tactics1/21'); // Redirect to the M2 page
+        //add 2.1
+        const userDetailsString = localStorage.getItem('userDetails');
+        const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+  
+        if (storedUserDetails && storedUserDetails.email) {
+          // Call API to update status to "In Progress"
+          const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+            email: storedUserDetails.email,
+            course_title: "tactics1",
+            status: 'In Progress',
+          });
+  
+          if (response.data.success) {
+            router.push('/modules/tactics1/21'); // Redirect to the M2 page
+
+            
+             
+          } else {
+            console.error('Failed to update course status:', response.data.message);
+          }
+        }
       } catch (error) {
-        console.error('API Error:', error);
+        console.error('Error updating course status:', error);
       }
     };
   return (
