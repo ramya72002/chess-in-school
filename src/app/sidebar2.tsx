@@ -112,7 +112,7 @@ const Sidebar2: React.FC = () => {
 
   const toggleSidebar = () => setIsSidebarMinimized(!isSidebarMinimized);
 
-  const handleGoBack = () => router.push('/learning');
+  const handleGoBack = () => router.push('/Afterschool');
 
   const handleSubmoduleClick = (title: string) => {
     if (title === "a.Opening Principles") {

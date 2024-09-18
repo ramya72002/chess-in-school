@@ -32,7 +32,7 @@ const Admin: React.FC = () => {
     const fetchSessions = async () => {
       setLoading(true);
       try {
-        const response = await axios.get('https://backend-dev-chess.vercel.app/sessions');
+        const response = await axios.get('https://backend-chess-tau.vercel.app/sessions');
         setSessions(response.data[0].sessions);
       } catch (error) {
         console.error('Error fetching sessions:', error);
@@ -72,7 +72,7 @@ const Admin: React.FC = () => {
 
       const formattedData = formatFormData(formData);
 
-      const response = await axios.post('https://backend-dev-chess.vercel.app/add-session', formattedData);
+      const response = await axios.post('https://backend-chess-tau.vercel.app/add-session', formattedData);
       console.log('Session added successfully:', response.data);
 
       setFormData(initialFormData);
@@ -91,7 +91,7 @@ const Admin: React.FC = () => {
         time
       };
 
-      const response = await axios.delete('https://backend-dev-chess.vercel.app/del-sessions', { data });
+      const response = await axios.delete('https://backend-chess-tau.vercel.app/delete_session_inschool', { data });
       console.log('Session deleted successfully:', response.data);
 
       setSessions(prevSessions => prevSessions.filter(session => session.date !== date || session.time !== time));

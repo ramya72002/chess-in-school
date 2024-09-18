@@ -1,0 +1,296 @@
+.puzzle-container {
+  background-color: #60a3d9;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  height:800px;
+
+  .puzzle-header {
+    margin-bottom: 20px;
+    background-color: #60a3d9;
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 80%;
+      color: black;
+
+      th, td {
+        padding: 10px;
+        font-size: 17px;
+        border: 1px solid black;
+        text-align: center;
+      }
+
+      th {
+        background-color: #111181;
+        color: white;
+      }
+      td {
+        background-color: white;
+      }
+    }
+  }
+
+  .puzzle-content {
+    position: relative;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: flex-start;
+    height: 600px;
+    width: 80%; // Adjust the width as needed
+    margin: 0 auto; // Centers the div horizontally
+    background-color: #20460b;
+    padding: 10px; // Adjust padding as needed
+
+    .chessboard {
+      margin-top: 25px;
+      position: relative;
+      margin-left: 10px;
+      background-color: #60a3d9;
+      width: 480px;
+
+      img {
+        width: 100%;
+        border: 3px solid #4b494a;
+      }
+
+      .move-indicator {
+        position: absolute;
+        border-radius: 5px;
+        width: 100%;
+        background-color: #ff8c00;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        bottom: -50px;
+        left: 0;
+      }
+    }
+
+    .puzzle-info {
+      margin-top: 20px;
+      background-color: #20460b;
+      padding:10px;
+      width: 280px;
+
+      .navigation-buttons {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+    
+        button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          font-weight: bold;
+          cursor: pointer;
+          background-color: #fdd243;
+          color: rgb(0, 0, 0);
+        }
+      }
+
+      h2 {
+        margin-bottom: 7px;
+        font-size: 20px;
+      }
+
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 13px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.9;
+        }
+
+        &.timer-btn {
+          background-color: #162e9c;
+          color: white;
+        }
+
+        &.solution-btn {
+          background-color: #162e9c;
+          color: white;
+        }
+
+        &.ask-sid-btn {
+          background-color: #162e9c;
+          color: white;
+        }
+      }
+      .sid-link-content {
+        background-color: #f0f0f0;
+        color: black;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+        word-break: break-word; /* Ensures long words/links break */
+        overflow-wrap: break-word; /* Handles overflow */
+      }
+      
+      .sid-link-content a {
+        color: #1a73e8; /* Color for the link */
+        text-decoration: none;
+        font-weight: bold;
+      
+        &:hover {
+          text-decoration: underline; /* Underline on hover */
+        }
+      }
+      
+
+      .solution-content {
+        background-color: #f0f0f0;
+        color: black;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      a {
+        color: #1a73e8; /* Color for the link */
+        text-decoration: none;
+        font-weight: bold;
+    
+        &:hover {
+          text-decoration: underline; /* Underline on hover */
+        }
+      }
+    }
+  }
+  .response-buttons1 {
+    background-color: #ff8c00;
+    border-radius: 5px;
+    padding:8px;
+  }
+  .response-buttons {
+    background-color: rgb(235, 234, 234);
+    border-radius: 5px;
+    margin-top: 20px;
+    display: flex;
+    padding: 10px;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center buttons horizontally */
+  h1{
+    color: black;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+    button {
+      padding: 10px 20px;
+      margin-bottom: 10px; /* Add some space between buttons */
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+  
+      &.correct-btn {
+        background-color: #00a86b;
+        color: white;
+        &:disabled {
+          background-color: #b3d9b3; /* Light green for disabled state */
+          color: #66c2a5; /* Slightly darker green for text */
+          cursor: not-allowed;
+        }
+      }
+  
+      &.incorrect-btn {
+        background-color: #d9534f;
+        color: white;
+        &:disabled {
+          background-color: #f5b4b4; /* Light red for disabled state */
+          color: #d9534f; /* Slightly darker red for text */
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  
+
+  .congratulations-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .congratulations-btn {
+      background-color: #fff;
+      color: #4CAF50;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: #14abe7;
+  color: #0b0b0b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+
+  p {
+    margin-bottom: 20px;
+  }
+
+  .close-popup-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+

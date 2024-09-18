@@ -84,7 +84,8 @@ export interface Session {
     };
   }
   export interface UserDetails {
-    name: string;
+    profile_id: string | "student";
+    name: string; // Full name, we'll combine first and last
     email: string;
     image: string;
     level: string;
@@ -100,13 +101,28 @@ export interface Session {
           [puzzle: string]: {
             started: boolean;
             option_guessed: number | null;
-            timer:number|0;
+            timer: number | 0;
             score: number;
           };
         };
       };
     };
+    phone?: string; // New fields
+    payment_status?: string;
+    child_name?: {
+      first: string;
+      last: string;
+    };
+    parent_name?: {
+      first: string;
+      last: string;
+    };
+    school_name?: string;
+    group?: string;
+    session_id?: string;
+    RequestFinancialAssistance?: boolean;
   }
+  
 
   export interface ImageData {
     id: string;
