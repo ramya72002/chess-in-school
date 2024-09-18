@@ -19,7 +19,7 @@ const Sidebar = () => {
     if (email) {
       try {
         // Make API call to delete the session_id field
-        await axios.post('https://backend-chess-tau.vercel.app/delete_session_inschool', { email });
+        await axios.post('http://127.0.0.1:80/delete_session_inschool', { email });
   
         // Clear local storage
         localStorage.clear();
@@ -60,7 +60,7 @@ const Sidebar = () => {
         try {
           if(email){
            
-          const response = await axios.get(`https://backend-chess-tau.vercel.app/getinschooldetails?email=${email}`);
+          const response = await axios.get(`http://127.0.0.1:80/getinschooldetails?email=${email}`);
           setUserDetails(response.data.data); // Assuming response.data.data contains user details
 
           if (response.data.data) {
@@ -101,7 +101,7 @@ const Sidebar = () => {
         };
   
         // Call API to update image in the database
-        const response = await axios.post('https://backend-chess-tau.vercel.app/imageupdateinschool', data);
+        const response = await axios.post('http://127.0.0.1:80/imageupdateinschool', data);
         console.log('API Response:', response.data);
   
         if (response.data.success) {
@@ -180,9 +180,8 @@ const Sidebar = () => {
     </div>
   )}
 </div>
-        <div className="name">{userDetails ? userDetails.name : 'Student'}</div>
-        <div className="role">{userDetails?.child_name?.first}</div>
-        <div className="role">{userDetails?.profile_id}</div>
+<div className="role">{userDetails?.child_name?.first}</div>
+{/* <div className="profile-id">{userDetails?.profile_id}</div> */}
         <button onClick={handleViewProfile} className="viewProfile">
       Home
     </button>      </div>

@@ -37,7 +37,7 @@ const PuzzlePageContent = () => {
 
   const checkPuzzleStatus = async (email: string) => {
     try {
-      const response = await axios.get(`https://backend-chess-tau.vercel.app/get_visited_info_inschool`, {
+      const response = await axios.get(`http://127.0.0.1:80/get_visited_info_inschool`, {
         params: { email, category, title, puzzle_no: `Puzzle${puzzle_number}` }
       });
       if (response.data.success) {
@@ -87,7 +87,7 @@ const PuzzlePageContent = () => {
 
   const fetchImageFile = (id: string) => {
     axios.post(
-        'https://backend-chess-tau.vercel.app/image_get_fileid',
+        'http://127.0.0.1:80/image_get_fileid',
         { file_id: id },
         { responseType: 'blob' }
       )
@@ -103,7 +103,7 @@ const PuzzlePageContent = () => {
   };
 
   const fetchSolutions = () => {
-    axios.get(`https://backend-chess-tau.vercel.app/images/solutions?title=${title}&level=${level}&category=${category}&id=${fileId}`)
+    axios.get(`http://127.0.0.1:80/images/solutions?title=${title}&level=${level}&category=${category}&id=${fileId}`)
       .then(response => {
         setSolutions(response.data.images);
         console.log(`Fetched solutions:`, response.data.images);
@@ -169,7 +169,7 @@ const PuzzlePageContent = () => {
         const email = storedUserDetails ? storedUserDetails.email : '';
   
         try {
-          await axios.post('https://backend-chess-tau.vercel.app/update_puzzle_started_inschool', {
+          await axios.post('http://127.0.0.1:80/update_puzzle_started_inschool', {
             email,
             category,
             title,
@@ -204,7 +204,7 @@ const PuzzlePageContent = () => {
         const email = storedUserDetails ? storedUserDetails.email : '';
 
       try {
-        await axios.post('https://backend-chess-tau.vercel.app/update_puzzle_started_inschool', {
+        await axios.post('http://127.0.0.1:80/update_puzzle_started_inschool', {
           email,
           category,
           title,

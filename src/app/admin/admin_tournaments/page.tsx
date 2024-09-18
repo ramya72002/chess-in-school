@@ -13,7 +13,7 @@ const AdminTournaments: React.FC = () => {
 
   const fetchTournaments = async () => {
     try {
-      const response = await axios.get<{ tournaments: Tournament[] }[]>('https://backend-chess-tau.vercel.app/tournaments');
+      const response = await axios.get<{ tournaments: Tournament[] }[]>('http://127.0.0.1:80/tournaments');
       console.log("Response data:", response.data);
       if (response.data.length > 0) {
         setTournaments(response.data[0].tournaments);
@@ -34,7 +34,7 @@ const AdminTournaments: React.FC = () => {
   const handleSave = async () => {
     if (editingTournament) {
       try {
-        await axios.put('https://backend-chess-tau.vercel.app/update-tournament', {
+        await axios.put('http://127.0.0.1:80/update-tournament', {
           type: editingTournament.type,
           tournament: editingTournament,
         });

@@ -47,7 +47,7 @@ const StartArena = () => {
         const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
         const email = storedUserDetails ? storedUserDetails.email : '';
         try {
-          const response = await axios.get(`https://backend-chess-tau.vercel.app/get_Arena_user_inschool`, {
+          const response = await axios.get(`http://127.0.0.1:80/get_Arena_user_inschool`, {
             params: {
               email: email,
               category: category,
@@ -70,7 +70,7 @@ const StartArena = () => {
     if (title && level) {
       const fetchImages = async () => {
         try {
-          const response = await axios.get(`https://backend-chess-tau.vercel.app/images/title?level=${encodeURIComponent(level)}&category=${encodeURIComponent(category)}&title=${encodeURIComponent(title)}`);
+          const response = await axios.get(`http://127.0.0.1:80/images/title?level=${encodeURIComponent(level)}&category=${encodeURIComponent(category)}&title=${encodeURIComponent(title)}`);
           const imagesData: ImageData[] = response.data.images;
           setImages(imagesData);
           fetchAllImages(imagesData); // Fetch the image files
@@ -93,7 +93,7 @@ const StartArena = () => {
   };
 
   const fetchImageFile = (fileId: string) => {
-    axios.post('https://backend-chess-tau.vercel.app/image_get_fileid', { file_id: fileId }, { responseType: 'blob' })
+    axios.post('http://127.0.0.1:80/image_get_fileid', { file_id: fileId }, { responseType: 'blob' })
       .then(response => {
         const url = URL.createObjectURL(new Blob([response.data], { type: response.headers['content-type'] }));
         setImageUrls(prevState => ({ ...prevState, [fileId]: url }));
@@ -111,7 +111,7 @@ const StartArena = () => {
 
     // Call API to update puzzle started flag
     try {
-      await axios.post('https://backend-chess-tau.vercel.app/update_puzzle_started_inschool', {
+      await axios.post('http://127.0.0.1:80/update_puzzle_started_inschool', {
         email,
         category,
         title,

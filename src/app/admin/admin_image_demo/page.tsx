@@ -40,7 +40,7 @@ const Admin_image_demo: React.FC = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://backend-chess-tau.vercel.app/imagesets');
+      const response = await fetch('http://127.0.0.1:80/imagesets');
       if (!response.ok) {
         throw new Error('Failed to fetch puzzle data');
       }
@@ -86,7 +86,7 @@ const Admin_image_demo: React.FC = () => {
     }
 
     try {
-      const response = await fetch('https://backend-chess-tau.vercel.app/upload', {
+      const response = await fetch('http://127.0.0.1:80/upload', {
         method: 'POST',
         body: formDataToSend,
       });
@@ -130,7 +130,7 @@ const Admin_image_demo: React.FC = () => {
   
     try {
       // Call the /updatelivepuzzle API to update the puzzle
-      const response = await fetch('https://backend-chess-tau.vercel.app/updatelivepuzzle', {
+      const response = await fetch('http://127.0.0.1:80/updatelivepuzzle', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -192,7 +192,7 @@ const Admin_image_demo: React.FC = () => {
 
       try {
         setIsLoading(true); // Start loading
-        const response = await fetch('https://backend-chess-tau.vercel.app/upload', {
+        const response = await fetch('http://127.0.0.1:80/upload', {
           method: 'POST',
           body: formData,
         });
@@ -235,7 +235,7 @@ const Admin_image_demo: React.FC = () => {
     }
 
     try {
-      const apiUrl = `https://backend-chess-tau.vercel.app/getpuzzleid?level=${encodeURIComponent(puzzle.level)}&category=${encodeURIComponent(puzzle.category)}&title=${encodeURIComponent(puzzle.title)}&live=${encodeURIComponent(puzzle.live)}&puzzle_number=${puzzleKey.replace('puzzle', '')}`;
+      const apiUrl = `http://127.0.0.1:80/getpuzzleid?level=${encodeURIComponent(puzzle.level)}&category=${encodeURIComponent(puzzle.category)}&title=${encodeURIComponent(puzzle.title)}&live=${encodeURIComponent(puzzle.live)}&puzzle_number=${puzzleKey.replace('puzzle', '')}`;
       const response = await fetch(apiUrl);
       if (!response.ok) {
         const data = await response.json();
@@ -254,7 +254,7 @@ const Admin_image_demo: React.FC = () => {
   const handleDelete = async (puzzle: PuzzleData) => {
     if (window.confirm('Are you sure you want to delete this puzzle?')) {
       try {
-        const response = await fetch('https://backend-chess-tau.vercel.app/delete-arena-title', {
+        const response = await fetch('http://127.0.0.1:80/delete-arena-title', {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -273,7 +273,7 @@ const Admin_image_demo: React.FC = () => {
 
         alert('Puzzle deleted successfully!');
         // Refresh the puzzle data
-        const updatedResponse = await fetch('https://backend-chess-tau.vercel.app/imagesets');
+        const updatedResponse = await fetch('http://127.0.0.1:80/imagesets');
         const updatedData = await updatedResponse.json();
         setPuzzleData(updatedData);
       } catch (error) {

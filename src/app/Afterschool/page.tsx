@@ -52,7 +52,7 @@ const MyAccount = () => {
 
       if (storedUserDetails && storedUserDetails.email) {
         try {
-          const response = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
+          const response = await axios.get('http://127.0.0.1:80/getinschooldetails', {
             params: { email: storedUserDetails.email }
           });
 
@@ -85,7 +85,7 @@ const MyAccount = () => {
   
         if (storedUserDetails && storedUserDetails.email) {
           // Call API to update status to "In Progress"
-          const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+          const response = await axios.post('http://127.0.0.1:80/update_registered_courses_inschool', {
             email: storedUserDetails.email,
             course_title: courseTitle,
             status: 'In Progress',
@@ -134,11 +134,12 @@ const MyAccount = () => {
               />
               <div className="image-overlay">
               <button
-  className={`status-button ${courseStatuses[course] || 'Not Started'}`}
-  onClick={() => handleViewProgress(course)}
->
-  {courseStatuses[course] === 'In Progress' ? 'In Progress' : courseStatuses[course] === 'Completed' ? 'Completed' : 'Not Started'}
-</button>
+                className={`status-button ${courseStatuses[course]?.replace(' ', '-') || 'Not-Started'}`}
+                onClick={() => handleViewProgress(course)}
+              >
+                {courseStatuses[course] === 'In Progress' ? 'In Progress' : courseStatuses[course] === 'Completed' ? 'Completed' : 'Not Started'}
+              </button>
+
 
               </div>
             </div>

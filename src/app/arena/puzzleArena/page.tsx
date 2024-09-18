@@ -123,7 +123,7 @@ const PuzzleArena = () => {
               setDataFetched(true);
 
               const scoreResponse = await axios.post(
-                'https://backend-chess-tau.vercel.app/calculate_scores',
+                'http://127.0.0.1:80/calculate_scores',
                 {
                   email: storedUserDetails.email,
                 }
@@ -145,7 +145,7 @@ const PuzzleArena = () => {
               }
 
               const response = await axios.get(
-                `https://backend-chess-tau.vercel.app/get_level?level=${levelMapping[storedUserDetails.level]}`
+                `http://127.0.0.1:80/get_level?level=${levelMapping[storedUserDetails.level]}`
               );
               const data = response.data;
 
@@ -157,7 +157,7 @@ const PuzzleArena = () => {
                       .map(async (item: Puzzle) => {
                         try {
                           const arenaUserResponse = await axios.get(
-                            'https://backend-chess-tau.vercel.app/get_Arena_user_inschool',
+                            'http://127.0.0.1:80/get_Arena_user_inschool',
                             {
                               params: {
                                 email: storedUserDetails.email,
@@ -268,8 +268,8 @@ const PuzzleArena = () => {
     if (email) {
       try {
         const createArenaApiUrl =
-          'https://backend-chess-tau.vercel.app/create_Arena_user';
-        const imagesApiUrl = `https://backend-chess-tau.vercel.app/images/title?level=${encodeURIComponent(
+          'http://127.0.0.1:80/create_Arena_user';
+        const imagesApiUrl = `http://127.0.0.1:80/images/title?level=${encodeURIComponent(
           levelMapping[storedUserDetails.level]
         )}&category=${encodeURIComponent(
           category

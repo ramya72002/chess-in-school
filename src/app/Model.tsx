@@ -20,7 +20,7 @@ const Modal: React.FC<ModelProps> = ({ isOpen, onClose, puzzleData, columnName }
     setIsLoading(true);
 
     try {
-      const response = await axios.put('https://backend-chess-tau.vercel.app/get_puzzle_sol', {
+      const response = await axios.put('http://127.0.0.1:80/get_puzzle_sol', {
         level: puzzleData.level,
         category: puzzleData.category,
         title: puzzleData.title,
