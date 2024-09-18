@@ -146,7 +146,7 @@ const M1: React.FC = () => {
         // Sample data to send in the POST request
         const requestData = {
           email: storedEmail,
-          course_title: 'positionalCalculations',
+          course_title: 'tactics2',
           completed: 100
         };
     
