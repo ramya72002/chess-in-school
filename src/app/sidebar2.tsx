@@ -7,7 +7,7 @@ const topics = [
     title: "1. Chess Openings",
     completed: true,
     submodules: [
-      { title: "1.1 Opening Principles", completed: true },
+      { title: "1.1 Opening Principles", completed: true ,path:'/modules/chessOpening/12'},
       { title: "1.2 White Opening", completed: true },
       { title: "1.3 Black Opening", completed: true }
     ]
@@ -92,7 +92,6 @@ const topics = [
       { title: "9.1 Chess Study Plan", completed: true }
     ]
   }
-  // Other modules...
 ];
 
 const Sidebar2: React.FC = () => {
@@ -104,17 +103,69 @@ const Sidebar2: React.FC = () => {
   const handleGoBack = () => router.push('/Afterschool');
 
   const handleSubmoduleClick = (title: string) => {
-    if (title === "a.Opening Principles") {
-      router.push("/modules/m1");
-    } else if (title === "b.White Opening") {
-      router.push("/modules/m2");
-    } else if (title === "c.Black Opening") {
-      router.push("/modules/m3");
+    const submodulePaths: Record<string, string> = {
+      // Chess Openings
+      "1.1 Opening Principles": "/modules/chessOpening/12",
+      "1.2 White Opening": "/modules/chessOpening/13",
+      "1.3 Black Opening": "/modules/chessOpening/14",
+      
+      // Tactics [1]
+      "2.1 Pins": "/modules/tactics1/21",
+      "2.2 Forks": "/modules/tactics1/22",
+      "2.3 Skewers": "/modules/tactics1/23",
+      "2.4 Double Attack": "/modules/tactics1/24",
+      "2.5 Remove of Defender": "/modules/tactics1/25",
+      "2.6 Deflection": "/modules/tactics1/26",
+  
+      // Tactics [2]
+      "3.1 Decoy": "/modules/tactics2/31",
+      "3.2 Overloading": "/modules/tactics2/32",
+      "3.3 X-Ray attack": "/modules/tactics2/33",
+      "3.4 Zwischenzug (Intermezzo)": "/modules/tactics2/34",
+      "3.5 Desperado": "/modules/tactics2/35",
+      "3.6 Interference": "/modules/tactics2/36",
+      "3.7 Back Rank Tactics": "/modules/tactics2/37",
+  
+      // Positional Calculations
+      "4.1 Middlegame: Art of Calculation": "/modules/positionalCalculations/41",
+      "4.2 Pawn Structures": "/modules/positionalCalculations/42",
+      "4.3 Piece Activity": "/modules/positionalCalculations/43",
+      "4.4 Manoeuvring": "/modules/positionalCalculations/44",
+  
+      // Strategy & Planning
+      "5.1 Pawn breaks": "/modules/strategyPlanning/51",
+      "5.2 Weak squares": "/modules/strategyPlanning/52",
+      "5.3 Piece coordination": "/modules/strategyPlanning/53",
+  
+      // Checks & Checkmates
+      "6.1 Mate in 1": "/modules/checksCheckmates/61",
+      "6.2 Mate in 2": "/modules/checksCheckmates/62",
+  
+      // Checkmate Patterns
+      "7.1 Anastasia’s Mate": "/modules/checkmatePatterns/71",
+      "7.2 Back Rank Mate": "/modules/checkmatePatterns/72",
+      "7.3 Blackburne’s Mate": "/modules/checkmatePatterns/73",
+      "7.4 Box Mate (Rook Mate)": "/modules/checkmatePatterns/74",
+      "7.5 Fool's Mate": "/modules/checkmatePatterns/75",
+      "7.6 Morphy's Mate": "/modules/checkmatePatterns/76",
+      "7.7 Scholar's Mate": "/modules/checkmatePatterns/77",
+      "7.8 Smothered Mate": "/modules/checkmatePatterns/78",
+  
+      // Game Analysis
+      "8.1 Game Analysis": "/modules/gameAnalysis/81",
+  
+      // Chess Study Plan
+      "9.1 Chess Study Plan": "/modules/chessStudyPlan/91"
+    };
+  
+    const path = submodulePaths[title];
+    if (path) {
+      router.push(path);
     } else {
-      const formattedSubmodule = title.toLowerCase().replace(/\s+/g, '-');
-      router.push(`/level1Modules/${formattedSubmodule}`);
+      console.error("Submodule path not found for:", title);
     }
   };
+  
 
   return (
     <div className={`course-content ${isSidebarMinimized ? "minimized" : ""}`}>
