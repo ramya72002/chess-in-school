@@ -37,7 +37,15 @@ export default function RootLayout({
                     pathname === "/modules/m3" ||
                     pathname === "/modules/m4" ||
                     pathname === "/modules/m5" ||
-                    pathname === "/modules/chessOpening/11"
+                    pathname === "/modules/chessOpening/11"||pathname === "/modules/chessOpening/12"||pathname === "/modules/chessOpening/13" ||
+                    pathname === "/modules/tactics1/21"||pathname === "/modules/tactics1/22"||pathname === "/modules/tactics1/23" ||pathname === "/modules/tactics1/24"||pathname === "/modules/tactics1/25"||pathname === "/modules/tactics1/26" ||
+                    pathname === "/modules/tactics2/31"||pathname === "/modules/tactics2/32"||pathname === "/modules/tactics2/33" ||pathname === "/modules/tactics2/34"||pathname === "/modules/tactics2/35"||pathname === "/modules/tactics2/36" ||pathname === "/modules/tactics2/37" ||
+                    pathname === "/modules/positionalCalculations/41"||pathname === "/modules/positionalCalculations/42"||pathname === "/modules/positionalCalculations/43" ||pathname === "/modules/positionalCalculations/44"||
+                     pathname === "/modules/strategyAndPlanning/51"||pathname === "/modules/strategyAndPlanning/52"||pathname === "/modules/strategyAndPlanning/53"||
+                     pathname === "/modules/checkAndCheckmates/61"||pathname === "/modules/checkAndCheckmates/62"||
+                     pathname === "/modules/checkmatePatterns/71"||pathname === "/modules/checkmatePatterns/72"||pathname === "/modules/checkmatePatterns/73" ||pathname === "/modules/checkmatePatterns/74"||pathname === "/modules/checkmatePatterns/75"||pathname === "/modules/checkmatePatterns/76" ||pathname === "/modules/checkmatePatterns/77"  ||pathname === "/modules/checkmatePatterns/78" ||
+                     pathname === "/modules/gameAnalysis/81"||
+                     pathname === "/modules/chessStudyPlan/91"
                   ) && <Sidebar2 />}
                     
                   <div className="content-container">

@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f7f7f7; /* Light grey for a modern background */
+}
+.theme-practice {
+  background-color: #861cdd;
+  border: 1px solid #000;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+
+  .filter-container {
+    margin-bottom: 10px;
+
+    p {
+      font-size: 1.5rem; 
+      margin-bottom: 30px;
+      margin-top: 10px;
+      color: white;
+    }
+  }
+
+  .category-boxes {
+    display: flex;
+justify-content: space-around; // Distribute space evenly
+margin-bottom: 20px; // Space below the category boxes
+
+  }
+
+  .category-box {
+    background-color: #48b906; // Default background color
+    border: 1px solid #e3dbdb; // Border color
+    padding: 10px 20px; // Padding inside the box
+    color: white; // Text color
+    width: 200px;
+    text-align: center;
+    cursor: pointer; // Pointer cursor on hover
+    transition: background-color 0.3s ease, transform 0.3s ease; // Smooth transition for background color and transform
+  
+    &:hover {
+      background-color: #3a9706; // Darker green on hover
+      transform: scale(1.05); // Slight zoom effect on hover
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); // Shadow effect
+    }
+  
+    &.Opening {
+      background-color: #d59114; // Custom color for Opening
+      &:hover {
+        background-color: #b57612; // Darker shade on hover
+      }
+      &.active {
+        background-color: #ff9e01; // Highlight color for active tab
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
+        transform: scale(1.1); // Slightly larger scale for active tab
+      }
+    }
+  
+    &.Middlegame {
+      background-color: #00a6ff; // Custom color for Middlegame
+      &:hover {
+        background-color: #008dcc; // Darker shade on hover
+      }
+      &.active {
+        background-color: #1912f3; // Highlight color for active tab
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
+        transform: scale(1.1); // Slightly larger scale for active tab
+      }
+    }
+  
+    &.Endgame {
+      background-color: #73bf9a; // Custom color for Endgame
+      &:hover {
+        background-color: #7ac19c; // Darker shade on hover
+      }
+      &.active {
+        background-color: #0cc155; // Highlight color for active tab
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
+        transform: scale(1.1); // Slightly larger scale for active tab
+      }
+    }
+  
+    &.Mixed {
+      background-color: #cc5f00; // Custom color for Mixed
+      &:hover {
+        background-color: #a64c00; // Darker shade on hover
+      }
+      &.active {
+        background-color: rgb(218, 66, 12); // Highlight color for active tab
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
+        transform: scale(1.1); // Slightly larger scale for active tab
+      }
+    }
+  
+   
+  }
+
+  .practice-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5ecd32;
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+
+    p {
+      margin: 0;
+      color: white;
+    }
+
+    .clickable-link {
+      cursor: pointer;
+      color: blue; /* Add styles to indicate it's clickable */
+      text-decoration: underline;
+    }
+
+    .start-button, .return-button, .completed-button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #FFA500;
+      border: 1px solid #000;
+      color: white;
+    }
+
+    .join-button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: #ff5500;
+      border: 1px solid #000;
+      color: white;
+    }
+  }
+}
+
+.lesson-content { 
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    font-size: 32px;
+    color: #f3f6f8; /* Deep, professional color */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  h3 {
+    font-size: 24px;
+    color: #000000; /* Bright yet professional red */
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .chessboard-info {
+    margin-bottom: 20px;
+
+    .video-container {
+      margin-bottom: 20px;
+      text-align: center;
+
+      video {
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #3498db; /* Vibrant blue for headings */
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #7f8c8d; /* Soft grey for text */
+      margin-bottom: 10px;
+    }
+
+    .pieces-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+
+      .piece {
+        background-color: #ecf0f1; /* Light, neutral background */
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        border: 2px solid #3498db; /* Blue border for vibrancy */
+
+        h3 {
+          font-size: 20px;
+          color: #2980b9; /* Bold blue for piece titles */
+        }
+
+        p {
+          font-size: 14px;
+          color: #2c3e50; /* Deep, readable color */
+        }
+      }
+    }
+
+    .chessboard-info,
+    .pieces-info {
+      background-color: #fdfefe; /* Very light blue tint for a modern look */
+    }
+  }
+
+  .downloads, .practice-links, .reference-links {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ecf0f1;
+
+    h3 {
+      font-size: 22px;
+      color: #e67e22; /* Warm, inviting orange */
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #7f8c8d;
+      margin-bottom: 15px;
+    }
+  }
+
+  .navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #e74c3c; /* Bold red for buttons */
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #c0392b; /* Darker shade for hover */
+      }
+    }
+  }
+
+  .additional-sections {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border: 1px solid #bdc3c7;
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #9b59b6; /* Vibrant purple for accents */
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      border-bottom: 2px solid #9b59b6;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin-bottom: 12px;
+
+        a {
+          text-decoration: none;
+          color: #3498db; /* Blue for links */
+          font-family: 'Montserrat', sans-serif;
+          font-size: 1rem;
+          transition: color 0.3s ease, transform 0.3s ease;
+
+          &:hover {
+            color: #2980b9;
+            text-decoration: underline;
+            transform: translateX(4px);
+          }
+
+          &:visited {
+            color: #8e44ad; /* Purple for visited links */
+          }
+        }
+      }
+    }
+  }
+}
