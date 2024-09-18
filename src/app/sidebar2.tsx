@@ -105,57 +105,57 @@ const Sidebar2: React.FC = () => {
   const handleSubmoduleClick = (title: string) => {
     const submodulePaths: Record<string, string> = {
       // Chess Openings
-      "1.1 Opening Principles": "/modules/chessOpening/11",
-      "1.2 White Opening": "/modules/chessOpening/12",
-      "1.3 Black Opening": "/modules/chessOpening/13",
+      "1.1 Opening Principles": "/modules/level2/chessOpening/11",
+      "1.2 White Opening": "/modules/level2/chessOpening/12",
+      "1.3 Black Opening": "/modules/level2/chessOpening/13",
       
       // Tactics [1]
-      "2.1 Pins": "/modules/tactics1/21",
-      "2.2 Forks": "/modules/tactics1/22",
-      "2.3 Skewers": "/modules/tactics1/23",
-      "2.4 Double Attack": "/modules/tactics1/24",
-      "2.5 Remove of Defender": "/modules/tactics1/25",
-      "2.6 Deflection": "/modules/tactics1/26",
+      "2.1 Pins": "/modules/level2/tactics1/21",
+      "2.2 Forks": "/modules/level2/tactics1/22",
+      "2.3 Skewers": "/modules/level2/tactics1/23",
+      "2.4 Double Attack": "/modules/level2/tactics1/24",
+      "2.5 Remove of Defender": "/modules/level2/tactics1/25",
+      "2.6 Deflection": "/modules/level2/tactics1/26",
   
       // Tactics [2]
-      "3.1 Decoy": "/modules/tactics2/31",
-      "3.2 Overloading": "/modules/tactics2/32",
-      "3.3 X-Ray attack": "/modules/tactics2/33",
-      "3.4 Zwischenzug (Intermezzo)": "/modules/tactics2/34",
-      "3.5 Desperado": "/modules/tactics2/35",
-      "3.6 Interference": "/modules/tactics2/36",
-      "3.7 Back Rank Tactics": "/modules/tactics2/37",
+      "3.1 Decoy": "/modules/level2/tactics2/31",
+      "3.2 Overloading": "/modules/level2/tactics2/32",
+      "3.3 X-Ray attack": "/modules/level2/tactics2/33",
+      "3.4 Zwischenzug (Intermezzo)": "/modules/level2/tactics2/34",
+      "3.5 Desperado": "/modules/level2/tactics2/35",
+      "3.6 Interference": "/modules/level2/tactics2/36",
+      "3.7 Back Rank Tactics": "/modules/level2/tactics2/37",
   
       // Positional Calculations
-      "4.1 Middlegame: Art of Calculation": "/modules/positionalCalculations/41",
-      "4.2 Pawn Structures": "/modules/positionalCalculations/42",
-      "4.3 Piece Activity": "/modules/positionalCalculations/43",
-      "4.4 Manoeuvring": "/modules/positionalCalculations/44",
+      "4.1 Middlegame: Art of Calculation": "/modules/level2/positionalCalculations/41",
+      "4.2 Pawn Structures": "/modules/level2/positionalCalculations/42",
+      "4.3 Piece Activity": "/modules/level2/positionalCalculations/43",
+      "4.4 Manoeuvring": "/modules/level2/positionalCalculations/44",
   
       // Strategy & Planning
-      "5.1 Pawn breaks": "/modules/strategyAndPlanning/51",
-      "5.2 Weak squares": "/modules/strategyAndPlanning/52",
-      "5.3 Piece coordination": "/modules/strategyAndPlanning/53",
+      "5.1 Pawn breaks": "/modules/level2/strategyAndPlanning/51",
+      "5.2 Weak squares": "/modules/level2/strategyAndPlanning/52",
+      "5.3 Piece coordination": "/modules/level2/strategyAndPlanning/53",
   
       // Checks & Checkmates
-      "6.1 Mate in 1": "/modules/checkAndCheckmates/61",
-      "6.2 Mate in 2": "/modules/checkAndCheckmates/62",
+      "6.1 Mate in 1": "/modules/level2/checkAndCheckmates/61",
+      "6.2 Mate in 2": "/modules/level2/checkAndCheckmates/62",
   
       // Checkmate Patterns
-      "7.1 Anastasia’s Mate": "/modules/checkmatePatterns/71",
-      "7.2 Back Rank Mate": "/modules/checkmatePatterns/72",
-      "7.3 Blackburne’s Mate": "/modules/checkmatePatterns/73",
-      "7.4 Box Mate (Rook Mate)": "/modules/checkmatePatterns/74",
-      "7.5 Fool's Mate": "/modules/checkmatePatterns/75",
-      "7.6 Morphy's Mate": "/modules/checkmatePatterns/76",
-      "7.7 Scholar's Mate": "/modules/checkmatePatterns/77",
-      "7.8 Smothered Mate": "/modules/checkmatePatterns/78",
+      "7.1 Anastasia’s Mate": "/modules/level2/checkmatePatterns/71",
+      "7.2 Back Rank Mate": "/modules/level2/checkmatePatterns/72",
+      "7.3 Blackburne’s Mate": "/modules/level2/checkmatePatterns/73",
+      "7.4 Box Mate (Rook Mate)": "/modules/level2/checkmatePatterns/74",
+      "7.5 Fool's Mate": "/modules/level2/checkmatePatterns/75",
+      "7.6 Morphy's Mate": "/modules/level2/checkmatePatterns/76",
+      "7.7 Scholar's Mate": "/modules/level2/checkmatePatterns/77",
+      "7.8 Smothered Mate": "/modules/level2/checkmatePatterns/78",
   
       // Game Analysis
-      "8.1 Game Analysis": "/modules/gameAnalysis/81",
+      "8.1 Game Analysis": "/modules/level2/gameAnalysis/81",
   
       // Chess Study Plan
-      "9.1 Chess Study Plan": "/modules/chessStudyPlan/91"
+      "9.1 Chess Study Plan": "/modules/level2/chessStudyPlan/91"
     };
   
     const path = submodulePaths[title];
