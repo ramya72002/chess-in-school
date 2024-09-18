@@ -146,16 +146,16 @@ const M1: React.FC = () => {
         // Sample data to send in the POST request
         const requestData = {
           email: storedEmail,
-          title: 'Basics of Chess',
-          completed: 1
+          course_title: 'chessOpening',
+          completed: 5
         };
     
         // Make the POST request to the API
-        const response = await axios.post('https://backend-chess-tau.vercel.app/update-course-completion', requestData);
+        const response = await axios.post('https://backend-chess-tau.vercel.app/update-course-completion-inschool', requestData);
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/m2'); // Redirect to the M2 page
+        router.push('/modules/chessOpening/12'); // Redirect to the M2 page
       } catch (error) {
         console.error('API Error:', error);
       }
