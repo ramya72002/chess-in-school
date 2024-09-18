@@ -7,7 +7,7 @@ const topics = [
     title: "1. Chess Openings",
     completed: true,
     submodules: [
-      { title: "1.1 Opening Principles", completed: true ,path:'/modules/chessOpening/12'},
+      { title: "1.1 Opening Principles", completed: true},
       { title: "1.2 White Opening", completed: true },
       { title: "1.3 Black Opening", completed: true }
     ]
@@ -21,7 +21,7 @@ const topics = [
       { title: "2.3 Skewers", completed: true },
       { title: "2.4 Double Attack", completed: true },
       { title: "2.5 Remove of Defender", completed: true },
-      { title: "2.6 DEflection", completed: true }
+      { title: "2.6 Deflection", completed: true }
     ]
   },
   {
