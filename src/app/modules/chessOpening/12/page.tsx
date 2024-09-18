@@ -155,7 +155,7 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/chessOpening/12'); // Redirect to the M2 page
+        router.push('/modules/chessOpening/13'); // Redirect to the M2 page
       } catch (error) {
         console.error('API Error:', error);
       }
