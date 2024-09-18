@@ -138,8 +138,8 @@ const Sidebar2: React.FC = () => {
       "5.3 Piece coordination": "/modules/strategyAndPlanning/53",
   
       // Checks & Checkmates
-      "6.1 Mate in 1": "/modules/checksCheckmates/61",
-      "6.2 Mate in 2": "/modules/checksCheckmates/62",
+      "6.1 Mate in 1": "/modules/checkAndCheckmates/61",
+      "6.2 Mate in 2": "/modules/checkAndCheckmates/62",
   
       // Checkmate Patterns
       "7.1 Anastasia’s Mate": "/modules/checkmatePatterns/71",
