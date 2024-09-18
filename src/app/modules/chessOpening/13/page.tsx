@@ -186,6 +186,9 @@ const M1: React.FC = () => {
         console.error('Error updating course status:', error);
       }
     };
+    const handlePreviousClick = () => {
+      router.push('/modules/chessOpening/12'); // Redirect to the previous page (adjust the path as needed)
+    };
   return (
     <div className="lesson-content">
       <h3>1.3 Introduction</h3>
@@ -307,11 +310,10 @@ const M1: React.FC = () => {
         </ul>
       </section>
 
-      {/* Navigation Buttons */}
-      <div className="navigation-buttons">
-        <button className="prev-button"></button>
-        <button className="next-button"  onClick={handleNextClick}>Next</button>
-      </div>
+      <section className="navigation-buttons">
+        <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>
+        <button onClick={handleNextClick} className="next-button">Next</button>
+      </section>
     </div>
   );
 };
