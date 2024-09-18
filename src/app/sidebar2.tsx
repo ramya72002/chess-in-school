@@ -21,7 +21,7 @@ const topics = [
       { title: "2.3 Skewers", completed: true },
       { title: "2.4 Double Attack", completed: true },
       { title: "2.5 Remove of Defender", completed: true },
-      { title: "2.6 DEflection", completed: true }
+      { title: "2.6 Deflection", completed: true }
     ]
   },
   {
