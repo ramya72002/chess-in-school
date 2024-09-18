@@ -186,29 +186,18 @@ const Sidebar = () => {
       Home
     </button>      </div>
     <nav className="nav">
-  {/* <a href="/learning" className="navItem tests">
-    <FaGraduationCap /> Learning
-  </a> */}
+
   
   <a href="/Afterschool" className="navItem school">
     <FaCalendarAlt /> Learning
   </a>
   
-  {/* <a href="/coaching" className="navItem test">
-    <FaChalkboardTeacher /> Coaching
-  </a>
 
-  <a href="/learnclass" className="navItem classes">
-    <FaQuestionCircle /> Learning Classes
-  </a> */}
 
   <a href="/arena/puzzleArena" className="navItem teachers">
     <FaPuzzlePiece /> Puzzle Arena
   </a>
 
-  {/* <a href="/tournaments" className="navItem events">
-    <FaTrophy /> Tournaments
-  </a> */}
 
   <a onClick={handleSignOut} className="navItem logout">
     <FaSignOutAlt /> Logout
