@@ -95,35 +95,36 @@ h1 {
   border: 1px solid rgb(68, 68, 68);
   border-radius: 25px;
   cursor: pointer;
+  margin-top: 50px;
   font-size: 15px;
   position: relative;
-  transform: translateY(50%); /* Move the button 50% down, making half of it visible */
+  // transform: translateY(50%); /* Move the button 50% down, making half of it visible */
 }
 
 .status-button {
   &.Not-Started {
-    background-color: red;
+    background-color: rgb(224, 64, 43);
   }
 
   &.In-Progress {
-    background-color: yellow;
+    background-color: rgb(241, 227, 29);
     color: black; /* Optional, for better contrast with yellow background */
   }
 
   &.Completed {
-    background-color: green;
+    background-color: rgb(40, 145, 40);
   }
   
   &:hover {
-    opacity: 0.2;
+    opacity: 0.9;
   }
 }
 
 .completion-button {
-  background-color: blue;
+  background-color: rgb(23, 69, 196);
   color: white;
 
   &:hover {
-    opacity: 0.8;
+    opacity: 0.9;
   }
 }
