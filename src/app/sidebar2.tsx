@@ -4,99 +4,103 @@ import { useRouter } from "next/navigation";
 
 const topics = [
   {
-    title: "1. Introduction",
+    title: "1. Chess Openings",
     completed: true,
     submodules: [
-      { title: "1.1 Introduction", completed: true },
+      { title: "a.Opening Principles", completed: true },
+      { title: "b.White Opening", completed: true },
+      { title: "c.Black Opening", completed: true }
     ]
   },
   {
-    title: "2. The Chessboard",
+    title: "2. Tactics and Calculations - Level 1",
     completed: true,
     submodules: [
-      { title: "2.1 Board Set-up", completed: true },
-      { title: "2.2 Letters & Numbers", completed: true },
-      { title: "2.3 Understanding 'File'", completed: true },
-      { title: "2.4 Understanding 'Rank'", completed: true },
-      { title: "2.5 Understanding 'Diagonals'", completed: true },
-      { title: "2.6 Name of the Squares", completed: true }
+      { title: "a.Pins", completed: true },
+      { title: "b.Forks", completed: true },
+      { title: "c.Skewers", completed: true }
     ]
   },
   {
-    title: "3. Introduction to Pieces",
+    title: "3. Tactics and Calculations - Level 2",
     completed: true,
     submodules: [
-      { title: "3.1 Know the Pieces", completed: true },
-      { title: "3.2 'Major' and 'Minor' Pieces", completed: true },
-      { title: "3.3 Understanding the ‘King’", completed: true },
-      { title: "3.4 Understanding the ‘Bishop’", completed: true },
-      { title: "3.5 Understanding the 'Rook’", completed: true },
-      { title: "3.6 Understanding the ‘Knight’", completed: true },
-      { title: "3.7 Understanding the ‘Pawn’", completed: true },
-      { title: "3.8 Understanding the ‘Queen’", completed: true }
+      { title: "a.Double Attack", completed: true },
+      { title: "b.Removal of Defender", completed: true },
+      { title: "c.Deflection", completed: true }
     ]
   },
   {
-    title: "4. Arraignment of Pieces",
+    title: "4. Tactics and Calculations - Level 3",
     completed: true,
     submodules: [
-      { title: "4.1 Light Side", completed: true },
-      { title: "4.2 Dark Side", completed: true }
+      { title: "a.Decoy", completed: true },
+      { title: "b.Overloading", completed: true },
+      { title: "c.X-Ray attack", completed: true }
     ]
   },
   {
-    title: "5. Special Moves",
+    title: "5. Tactics and Calculations - Level 5",
     completed: true,
     submodules: [
-      { title: "5.1 Castling", completed: true },
-      { title: "5.2 Promotion", completed: true },
-      { title: "5.3 En-passant", completed: true }
+      { title: "a.Zwischenzug (Intermezzo):", completed: true },
+      { title: "b.Desperado", completed: true },
+      { title: "c.Interference", completed: true }
     ]
   },
   {
-    title: "6. Winning in Chess",
+    title: "6. Positional Calculations",
     completed: true,
     submodules: [
-      { title: "6.1 Checkmate", completed: true },
-      { title: "6.2 Checks", completed: true },
-      { title: "6.3 Stalemate", completed: true },
-      { title: "6.4 Principles of Attacking", completed: true },
-      { title: "6.5 Art of Attacking – Capture", completed: true },
-      { title: "6.6  Draw", completed: true }
+      { title: "a.Pawn Structures", completed: true },
+      { title: "b.Piece Activity", completed: true },
+      { title: "c.Manoeuvring", completed: true }
     ]
   },
   {
-    title: "7. Understanding Piece Exchanges",
+    title: "7. Strategy & Planning",
     completed: true,
     submodules: [
-      { title: "7.1 Fair Trade", completed: true },
-      { title: "7.2 Exchange Up", completed: true },
-      { title: "7.3 Exchange Down", completed: true },
-      { title: "7.4 Material Up", completed: true },
-      { title: "7.5 Material Down", completed: true },
+      { title: "a.Pawn breaks", completed: true },
+      { title: "b.Weak squares", completed: true },
+      { title: "c.Piece coordination", completed: true }
     ]
   },
   {
-    title: "8. Let’s Start Playing 3 Stages of the Game: Opening, Middlegame and Endgam",
+    title: "8. Checkmates - Introduction",
     completed: true,
     submodules: [
-      { title: "8.1 Opening", completed: true },
-      { title: "8.2 Middlegame", completed: true },
-      { title: "8.3 Endgame", completed: true }
+      { title: "a.Mate in 1", completed: true },
+      { title: "b.Mate in 2", completed: true },
+      { title: "c.Back Rank Tactics", completed: true }
     ]
   },
   {
-    title: "9. Understanding Notations",
+    title: "9. Checkmate Patterns",
     completed: true,
     submodules: [
-      { title: "9.1 Understanding Notations", completed: true }
+      { title: "a.Anastasia’s Mate", completed: true },
+      { title: "b.Back Rank Mate", completed: true },
+      { title: "c.Blackburne’s Mate", completed: true },
+      { title: "d.Box Mate (Rook Mate)", completed: true },
+      { title: "e.Fool's Mate", completed: true },
+      { title: "f.Morphy's Mate", completed: true },
+      { title: "g.Scholar's Mate", completed: true },
+      { title: "h.Smothered Mate", completed: true }
     ]
   },
   {
-    title: "10. Chess Game: Let’s study a game",
+    title: "10. Game Analysis",
     completed: true,
     submodules: [
-      { title: "10.1 Chess Game: Let’s study a game", completed: true }
+      { title: "Game Analysis", completed: true }
+    ]
+  },
+  {
+    title: "11.Chess Study Plan",
+    completed: true,
+    submodules: [
+      { title: "Chess Study Plan", completed: true }
     ]
   }
   // Other modules...
@@ -111,11 +115,11 @@ const Sidebar2: React.FC = () => {
   const handleGoBack = () => router.push('/learning');
 
   const handleSubmoduleClick = (title: string) => {
-    if (title === "1.1 Chessboard and Pieces Overview") {
+    if (title === "a.Opening Principles") {
       router.push("/modules/m1");
-    } else if (title === "1.2 Basic Chess Rules") {
+    } else if (title === "b.White Opening") {
       router.push("/modules/m2");
-    } else if (title === "1.3 Chess Notation Basics") {
+    } else if (title === "c.Black Opening") {
       router.push("/modules/m3");
     } else {
       const formattedSubmodule = title.toLowerCase().replace(/\s+/g, '-');
