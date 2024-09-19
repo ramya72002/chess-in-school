@@ -107,10 +107,13 @@ const Sidebar2: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false); // Add state for alert
   useEffect(() => {
     const fetchUserCourses = async () => {
-      try {
-        const response = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
-          params: { email: "nsriramya7@gmail.com" }
-        });
+      const userDetailsString = localStorage.getItem('userDetails');
+      const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+      const email = storedUserDetails ? storedUserDetails.email : '';
+
+      if (email) {
+        try {
+          const response = await axios.get(`https://backend-chess-tau.vercel.app/getinschooldetails?email=${email}`);
 
         const data = response.data;
         console.log("pp", data["data"]["registered_inschool_courses"]);
@@ -129,7 +132,7 @@ const Sidebar2: React.FC = () => {
         console.error("Error fetching user courses:", error);
         setUserCourses([]);
       }
-    };
+    }};
 
     fetchUserCourses();
   }, []);

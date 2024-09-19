@@ -22,7 +22,7 @@ const M1: React.FC = () => {
   const [loading, setLoading] = useState<{ [key: number]: boolean }>({});
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [puzzlesWithStatus, setPuzzlesWithStatus] = useState<Puzzle[]>([]);
-  
+
   const puzzles = [
     { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
     { title: "hih", level: "Pawn", category: "Endgame", dateAndtime: "2024-09-19T12:42", total_puz_count: 1, statusFlag: "Not Started" }
@@ -70,12 +70,12 @@ const M1: React.FC = () => {
       if (typeof window !== 'undefined') {
         const userDetailsString = localStorage.getItem('userDetails');
         const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-  
+
         if (storedUserDetails) {
           setUserDetails(storedUserDetails);
-  
+
           const updatedPuzzlesSet = new Set<string>();
-  
+
           for (const item of puzzles) {
             try {
               const arenaUserResponse = await axios.get('https://backend-chess-tau.vercel.app/get_Arena_user_inschool', {
@@ -87,7 +87,7 @@ const M1: React.FC = () => {
                   file_ids: {},
                 },
               });
-  
+
               if (!arenaUserResponse.data.success) {
                 // API returned success as false, handle it here
                 const updatedPuzzle: Puzzle = {
@@ -103,7 +103,7 @@ const M1: React.FC = () => {
                   const score = typeof arenaPuzzle.score === 'number' ? arenaPuzzle.score : 0;
                   return sum + score;
                 }, 0);
-  
+
                 let statusFlag = 'Not Started';
                 if (Object.values(puzzleArena).every((arenaPuzzle: any) => arenaPuzzle.option_guessed !== null)) {
                   statusFlag = 'Completed';
@@ -112,13 +112,13 @@ const M1: React.FC = () => {
                 } else if (Object.values(puzzleArena).some((arenaPuzzle: any) => arenaPuzzle.option_guessed !== null)) {
                   statusFlag = 'Started';
                 }
-  
+
                 const updatedPuzzle: Puzzle = {
                   ...item,
                   statusFlag,
                   scoreSum: scoreSum as number,
                 };
-  
+
                 updatedPuzzlesSet.add(JSON.stringify(updatedPuzzle));
               }
             } catch (error) {
@@ -131,39 +131,39 @@ const M1: React.FC = () => {
               updatedPuzzlesSet.add(JSON.stringify(updatedPuzzle));
             }
           }
-  
+
           setPuzzlesWithStatus(Array.from(updatedPuzzlesSet).map((item: string) => JSON.parse(item) as Puzzle));
         }
       }
     };
-  
+
     fetchUserDetails();
   }, []);
-  
-    const handleNextClick = async () => {
-      const storedEmail = localStorage.getItem('email');
-      try {
+
+  const handleNextClick = async () => {
+    const storedEmail = localStorage.getItem('email');
+    try {
         // Sample data to send in the POST request
-        const requestData = {
-          email: storedEmail,
-          course_title: 'chessOpening',
-          completed: 40
-        };
-    
+      const requestData = {
+        email: storedEmail,
+        course_title: 'chessOpening',
+        completed: 40
+      };
+
         // Make the POST request to the API
-        const response = await axios.post('https://backend-chess-tau.vercel.app/update-course-completion-inschool', requestData);
-    
+      const response = await axios.post('https://backend-chess-tau.vercel.app/update-course-completion-inschool', requestData);
+
         // Handle the response
-        console.log('API Response:', response.data);
+      console.log('API Response:', response.data);
         router.push('/modules/level2/chessOpening/12'); // Redirect to the M2 page
-      } catch (error) {
-        console.error('API Error:', error);
-      }
-    };
+    } catch (error) {
+      console.error('API Error:', error);
+    }
+  };
   return (
     <div className="lesson-content">
       <h3>1.1 Introduction</h3>
-      
+
       <section className="chessboard-info">
         {/* Video Section */}
         <div className="video-container">
@@ -182,10 +182,10 @@ const M1: React.FC = () => {
         <p>
           To understand the naming of squares on a chessboard, think of the files (vertical columns) as first names and the ranks (horizontal rows) as last names. The files are labeled from A to H, starting from the leftmost column (A) to the rightmost column (H). The ranks are numbered from 1 to 8, starting from the bottom row (1) to the top row (8). Each square is uniquely identified by combining the file letter and the rank number, similar to combining a first name and a last name to identify a person. For example, the square at the intersection of the D file (fourth column) and the 4th rank (fourth row) is called D4. Similarly, the square at the intersection of the B file (second column) and the 6th rank (sixth row) is called B6. This system helps players communicate their moves and positions accurately, ensuring clarity and precision in the game.
         </p>
-        
+
         <h2>Introduction to Chess Pieces</h2>
         <p>Let's introduce you to the chess pieces! - Before we start, I would like to talk about the major pieces and the minor pieces.</p>
-        
+
         <p>
           In chess, pieces are categorized into minor and major types, each with distinct roles and values. Minor pieces, consisting of knights and bishops, are valued at 3 points each. Knights navigate with an L-shaped move, while bishops control long diagonals. Major pieces include rooks, queens, and the king. Rooks are worth 5 points and excel on open files and ranks, queens, valued at 9 points, combine the power of both rooks and bishops, and the king, while not assigned a point value, is crucial as the game's objective is to protect it.
         </p>
@@ -230,11 +230,11 @@ const M1: React.FC = () => {
         <p>
           <strong>Castling:</strong> Castling is a unique move involving the king and a rook. To castle, several conditions must be met: neither the king nor the rook involved can have moved previously; the squares between the king and the rook must be unoccupied; the king cannot be in check, nor can it move through or end up on a square that is under attack.
         </p>
-      </section> 
+      </section>
       <div className="theme-practice">
-      
+
       <h1>Theme Practice</h1>
-      {puzzlesWithStatus.map((puzzle, index) => (
+        {puzzlesWithStatus.map((puzzle, index) => (
         <div key={index} className="practice-item">
           <p>{puzzle.category}: {puzzle.title}</p>
           <p>Date&Time:{puzzle.dateAndtime} </p>
@@ -256,8 +256,8 @@ const M1: React.FC = () => {
               View
             </button>
           </p>
-        </div>
-      ))}
+          </div>
+        ))}
     </div>
 
       {/* New Sections */}
