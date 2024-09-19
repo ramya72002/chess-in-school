@@ -1,99 +1,117 @@
 .puzzle-arena-page {
-  padding: 30px;
-  background-color: #f0f4f8;
+  padding: 20px;
+  background-color: #f7f9fc;
   min-height: 100vh;
 }
 
 .puzzle-arena-container {
-  background-color: #276089;
-  border-radius: 10px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  max-width: 1000px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
   margin: auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-.title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-}
-
-.top-section {
-  display: flex;
-  justify-content: space-between;
   padding: 20px;
+  color: #333;
 }
 
-.left-section img {
-  max-width: 100%;
-  height: auto;
-  width: 70%;
-  border-radius: 50%;
-  border: 5px solid #fff;
-  transition: transform 0.3s ease;
-}
+.header {
+  text-align: center;
+  margin-bottom: 20px;
 
-.left-section img:hover {
-  transform: scale(1.05);
+  .header-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .header-title {
+    font-size: 2.4rem;
+    color: #0056b3;
+  }
 }
 
 .arena-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+
   .score-item {
-    background-color: #48b906;
-    padding: 15px;
+    background: #f5f9ff;
+    border: 1px solid #dcdcdc;
     border-radius: 8px;
-    margin-bottom: 15px;
-    font-size: 1.3rem;
-    display: flex;
-    justify-content: space-between;
-    transition: background-color 0.3s ease;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
 
     &:hover {
-      background-color: #3d9d06;
+      background: #e3f2fd;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     }
+
+    &.active {
+      background: #d0e3f0;
+      border-color: #0056b3;
+    }
+
+    .arena-name {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .score-value {
+      color: #007bff;
+      font-weight: bold;
+    }
+  }
+
+  .total-score {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
   }
 }
 
 .puzzle-details {
-  margin-top: 20px;
-
-  .part-header {
-    font-size: 1.6rem;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px 0;
-    border-bottom: 1px solid #fff;
-  }
-
-  .puzzle-table {
+  table {
     width: 100%;
-    margin-top: 10px;
     border-collapse: collapse;
-    
+    margin-top: 20px;
+
     th, td {
       border: 1px solid #ddd;
-      padding: 8px;
+      padding: 12px;
       text-align: center;
     }
 
     th {
-      background-color: #4caf50;
-      color: white;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
+      background-color: #f1f1f1;
+      font-weight: bold;
     }
 
     tr:hover {
-      background-color: #ddd;
-    }
-
-    td {
-      color: #333;
+      background-color: #f9f9f9;
     }
   }
+
+  .part-header {
+    font-size: 1.5rem;
+    color: #0056b3;
+    cursor: pointer;
+    margin: 10px 0;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #003d7a;
+    }
+  }
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 20px 0;
 }
