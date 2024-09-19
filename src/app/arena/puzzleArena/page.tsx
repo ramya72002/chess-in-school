@@ -48,7 +48,16 @@ const PuzzleArena = () => {
     setExpandedPart(prev => prev === part ? null : part); // Toggle visibility
   };
 
+  // Calculate total score with safety check
+  const calculateTotalScore = () => {
+    const scores = userDetails?.scores;
+    if (!scores) return 0;
+    return ['Opening', 'Middlegame', 'Endgame', 'Mixed']
+      .reduce((total, arena) => total + (scores[arena as Arena] || 0), 0);
+  };
+
   const arenaScore = userDetails?.scores?.[selectedArena] || 0;
+  const totalScore = calculateTotalScore();
 
   return (
     <div className="puzzle-arena-page">
@@ -74,6 +83,10 @@ const PuzzleArena = () => {
                     <span className="score-value">{userDetails?.scores?.[arena as Arena] || 0}</span>
                   </div>
                 ))}
+                <div className="score-item total-score">
+                  <span className="arena-name">Total Arena Score:</span>
+                  <span className="score-value">{totalScore}</span>
+                </div>
                 <div className="total-score">
                   Selected Arena: <strong>{selectedArena}</strong>
                 </div>
