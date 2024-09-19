@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&family=Matemasie&display=swap');
 .puzzle-arena-page {
   padding: 20px;
@@ -31,8 +32,8 @@
   .header-title {
     font-size: 3rem;
     color: #ffffff; // Bright blue for the header title
-    font-family: "Matemasie", sans-serif; // Fun font
-    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     margin-left: 10px;
     margin-top:80px;
   }
@@ -118,7 +119,8 @@
     color: #ffffff;
     cursor: pointer;
     margin: 12px 0;
-    font-family: "Matemasie", sans-serif;
+    font-family: 'Montserrat', sans-serif;
+
     
     font-weight: 100;
     transition: color 0.3s;
