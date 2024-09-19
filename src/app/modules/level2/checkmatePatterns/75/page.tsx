@@ -165,6 +165,7 @@ const M1: React.FC = () => {
       setIsLoadingPage(false); // Reset loading state after the request
     }
   }; const handlePreviousClick = () => {
+      setIsLoadingPage(true);
       router.push('/modules/level2/checkmatePatterns/74'); // Redirect to the previous page (adjust the path as needed)
     };
   return (

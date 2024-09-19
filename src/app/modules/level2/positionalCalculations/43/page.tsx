@@ -166,6 +166,7 @@ const M1: React.FC = () => {
     }
   };
     const handlePreviousClick = () => {
+      setIsLoadingPage(true);
       router.push('/modules/level2/positionalCalculations/42'); // Redirect to the previous page (adjust the path as needed)
     };
   return (

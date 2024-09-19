@@ -190,6 +190,7 @@ const M1: React.FC = () => {
       }
     };
     const handlePreviousClick = () => {
+      setIsLoadingPage(true);
       router.push('/modules/level2/checkmatePatterns/78'); // Redirect to the previous page (adjust the path as needed)
     };
        
