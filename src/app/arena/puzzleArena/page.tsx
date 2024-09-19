@@ -21,8 +21,17 @@ const PuzzleArena = () => {
     const fetchUserDetails = async () => {
       setLoading(true);
       try {
-        const email = "nsriramya7@gmail.com";
-        const response = await axios.get(`https://backend-chess-tau.vercel.app/getinschooldetails?email=${email}`);
+        const userDetailsString = localStorage.getItem('userDetails');
+        const storedUserDetails = userDetailsString
+          ? JSON.parse(userDetailsString)
+          : null;
+          const scoreResponse = await axios.post(
+            'https://backend-chess-tau.vercel.app/calculate_scores_inschool',
+            {
+              email: storedUserDetails.email,
+            }
+          );        
+        const response = await axios.get(`https://backend-chess-tau.vercel.app/getinschooldetails?email=${storedUserDetails.email}`);
         
         if (response.data.success) {
           setUserDetails(response.data.data);
