@@ -14,7 +14,7 @@ const PuzzleArena = () => {
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [selectedArena, setSelectedArena] = useState<Arena>('Opening');
+  const [selectedArena, setSelectedArena] = useState<Arena | null>(null);
   const [expandedPart, setExpandedPart] = useState<string | null>(null); // Track expanded part
 
   useEffect(() => {
@@ -25,12 +25,12 @@ const PuzzleArena = () => {
         const storedUserDetails = userDetailsString
           ? JSON.parse(userDetailsString)
           : null;
-          const scoreResponse = await axios.post(
-            'https://backend-chess-tau.vercel.app/calculate_scores_inschool',
-            {
-              email: storedUserDetails.email,
-            }
-          );        
+        const scoreResponse = await axios.post(
+          'https://backend-chess-tau.vercel.app/calculate_scores_inschool',
+          {
+            email: storedUserDetails.email,
+          }
+        );        
         const response = await axios.get(`https://backend-chess-tau.vercel.app/getinschooldetails?email=${storedUserDetails.email}`);
         
         if (response.data.success) {
@@ -65,7 +65,7 @@ const PuzzleArena = () => {
       .reduce((total, arena) => total + (scores[arena as Arena] || 0), 0);
   };
 
-  const arenaScore = userDetails?.scores?.[selectedArena] || 0;
+  const arenaScore = selectedArena ? userDetails?.scores?.[selectedArena] || 0 : 0;
   const totalScore = calculateTotalScore();
 
   return (
@@ -97,7 +97,7 @@ const PuzzleArena = () => {
                   <span className="score-value">{totalScore}</span>
                 </div>
                 <div className="total-score">
-                  Selected Arena: <strong>{selectedArena}</strong>
+                  Selected Arena: <strong>{selectedArena || 'None'}</strong>
                 </div>
               </div>
 
