@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&family=Matemasie&display=swap');
 .puzzle-arena-page {
   padding: 20px;
-  background-color: #e0f7fa; // Light cyan background for a fresh look
+  background-color: #ffffff; // Light cyan background for a fresh look
   min-height: 100vh;
 }
 
 .puzzle-arena-container {
-  background-color: #ffffff;
+  background-color: #1d2246;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -16,20 +17,24 @@
 }
 
 .header {
+  display: flex;
   text-align: center;
-  margin-bottom: 20px;
+  margin-left: 20px;
 
   .header-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
     margin-bottom: 10px;
   }
 
   .header-title {
-    font-size: 2.6rem;
-    color: #0288d1; // Bright blue for the header title
-    font-family: 'Comic Sans MS', cursive; // Fun font
+    font-size: 3rem;
+    color: #ffffff; // Bright blue for the header title
+    font-family: "Matemasie", sans-serif; // Fun font
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    margin-left: 10px;
+    margin-top:80px;
   }
 }
 
@@ -43,12 +48,12 @@
     background: #b3e5fc; // Light blue background
     border: 1px solid #81d4fa; // Slightly darker blue border
     border-radius: 10px;
-    padding: 16px;
+    padding: 12px;
     cursor: pointer;
     transition: background 0.3s, box-shadow 0.3s;
 
     &:hover {
-      background: #81d4fa; // Darker blue on hover
+      background: #fffec0; // Darker blue on hover
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     }
 
@@ -60,7 +65,7 @@
     .arena-name {
       font-weight: bold;
       margin-right: 12px;
-      color: #01579b; // Darker blue for text
+      color: #000000; // Darker blue for text
     }
 
     .score-value {
@@ -70,14 +75,19 @@
   }
 
   .total-score {
+    padding: 11px;
     margin-top: 12px;
     font-size: 1.4rem;
     font-weight: bold;
-    color: #333;
+    color: #ffffff;
   }
 }
 
 .puzzle-details {
+
+  h3{
+    color: white;
+  }
   table {
     width: 100%;
     border-collapse: collapse;
@@ -94,7 +104,7 @@
       font-weight: bold;
     }
 
-    tr:nth-child(even) {
+    tr {
       background-color: #e1f5fe; // Alternating row color
     }
 
@@ -105,13 +115,16 @@
 
   .part-header {
     font-size: 1.6rem;
-    color: #0288d1;
+    color: #ffffff;
     cursor: pointer;
     margin: 12px 0;
+    font-family: "Matemasie", sans-serif;
+    
+    font-weight: 100;
     transition: color 0.3s;
 
     &:hover {
-      color: #01579b;
+      color: #ffcf87;
     }
   }
 }
