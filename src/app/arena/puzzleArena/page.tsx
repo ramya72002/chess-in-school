@@ -7,151 +7,130 @@ import { UserDetails } from '../../types/types';
 import Loading from '@/app/Loading';
 import withAuth from '@/app/withAuth';
 
-// Define types for file_ids and puzzles
-type FileIdDetail = {
-  id: string;
-  move: string;
-  sid_link: string;
-  solution: string;
-};
-
-type FileIds = {
-  [key: string]: FileIdDetail;
-};
-
-type Puzzle = {
-  title: string;
-  category: string;
-  date_time: string;
-  live_link: string;
-  file_ids?: FileIds;
-  total_title_category_score?: number;
-  statusFlag: string;
-};
-
-type Scores = {
-  Opening: number;
-  Middlegame: number;
-  Endgame: number;
-  Mixed: number;
-  total: number;
-};
-
 const PuzzleArena = () => {
   const router = useRouter();
-  const levelMapping: Record<string, string> = {
-    level1: "Pawn",
-    level2: "Knight",
-    level3: "Bishop",
-    level4: "Rook",
-    level5: "Queen",
-    level6: "King",
-  };
-
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [dataFetched, setDataFetched] = useState<boolean>(false);
-  const [loading, setLoading] = useState<{ [key: number]: boolean }>({});
-  const [scores, setScores] = useState<Scores>({
-    Opening: 0,
-    Middlegame: 0,
-    Endgame: 0,
-    Mixed: 0,
-    total: 0,
-  });
-  const [showArenaResult, setShowArenaResult] = useState<boolean>(false);
- 
-  
+  const [loading, setLoading] = useState(false);
+  const [selectedArena, setSelectedArena] = useState<'Opening' | 'Middlegame' | 'Endgame' | 'Mixed'>('Opening');
+  const [selectedPart, setSelectedPart] = useState<string | null>(null); // Track selected part in an arena
+
   useEffect(() => {
     const fetchUserDetails = async () => {
-      if (typeof window !== 'undefined') {
-        const userDetailsString = localStorage.getItem('userDetails');
-        const storedUserDetails = userDetailsString
-          ? JSON.parse(userDetailsString)
-          : null;
-
-        if (storedUserDetails) {
-          setUserDetails(storedUserDetails);
-          try {
-            if (!dataFetched) {
-              setDataFetched(true);
-
-              const scoreResponse = await axios.post(
-                'http://127.0.0.1:80/calculate_scores_inschool',
-                {
-                  email: storedUserDetails.email,
-                }
-              );
-              if (scoreResponse.data.success) {
-                const fetchedScores = scoreResponse.data.scores as Scores;
-                setScores({
-                  Opening: fetchedScores.Opening || 0,
-                  Middlegame: fetchedScores.Middlegame || 0,
-                  Endgame: fetchedScores.Endgame || 0,
-                  Mixed: fetchedScores.Mixed || 0,
-                  total: Object.values(fetchedScores).reduce(
-                    (a, b) => (typeof b === 'number' ? a + b : a),
-                    0
-                  ),
-                });
-              } else {
-                setError('Failed to fetch scores.');
-              }
-
-            }
-          } catch (error) {
-            console.error('Error fetching user details:', error);
-          }
+      setLoading(true);
+      try {
+        const email = "nsriramya7@gmail.com";
+        const response = await axios.get(`http://127.0.0.1:80/getinschooldetails?email=${email}`);
+        
+        if (response.data.success) {
+          setUserDetails(response.data.data);
+        } else {
+          setError(response.data.message);
         }
+      } catch (err) {
+        console.error("Error fetching user details:", err);
+        setError('Failed to fetch user details.');
       }
+      setLoading(false);
     };
 
     fetchUserDetails();
-  }, [dataFetched]);
+  }, []);
 
-  const handleClick = () => {
-    console.log("button clicked")
-    setShowArenaResult(true);
+  const handleArenaClick = (arena: 'Opening' | 'Middlegame' | 'Endgame' | 'Mixed') => {
+    setSelectedArena(arena);
+    setSelectedPart(null); // Reset selected part when switching arenas
   };
- 
+
+  const handlePartClick = (part: string) => {
+    setSelectedPart(part);
+  };
+
   return (
     <div className="puzzle-arena-page">
-    {Object.values(loading).some((isLoading) => isLoading) && (
-      <Loading />
-    )}
-    <div className="puzzle-arena-container">
-        <div className="top-section">
-          <div className="left-section">
-            <img src="/images/puzzlearena.png" alt="Puzzle Arena" />
+      {loading ? <Loading /> : (
+        <div className="puzzle-arena-container">
+          <div className="top-section">
+            <div className="left-section">
+              <img src="/images/puzzlearena.png" alt="Puzzle Arena" />
+            </div>
+            <div className="right-section">
+              <div className="header">
+                <p className="title">Puzzle Arena Performance Summary</p>
+              </div>
+
+              {error ? (
+                <p className="error-message">{error}</p>
+              ) : (
+                <>
+                  <div className="arena-scores">
+                    <div className="score-item clickable-link" onClick={() => handleArenaClick('Opening')}>
+                      Opening Arena: <span>{userDetails?.scores?.Opening || 0}</span>
+                    </div>
+                    <div className="score-item clickable-link" onClick={() => handleArenaClick('Middlegame')}>
+                      Middlegame Arena: <span>{userDetails?.scores?.Middlegame || 0}</span>
+                    </div>
+                    <div className="score-item clickable-link" onClick={() => handleArenaClick('Endgame')}>
+                      Endgame Arena: <span>{userDetails?.scores?.Endgame || 0}</span>
+                    </div>
+                    <div className="score-item clickable-link" onClick={() => handleArenaClick('Mixed')}>
+                      Mixed Arena: <span>{userDetails?.scores?.Mixed || 0}</span>
+                    </div>
+
+                    <div className="total-score">
+                      Selected Arena: <strong>{selectedArena}</strong>
+                    </div>
+                  </div>
+
+                  {/* Display selected Puzzle Arena details */}
+                  <div className="puzzle-details">
+                    {selectedArena && (
+                      <div>
+                        <h3>{selectedArena} Puzzle Details</h3>
+                        {/* Table to display parts in selected arena */}
+                        {Object.keys(userDetails?.PuzzleArena?.[selectedArena] || {}).map(part => (
+                          <div key={part}>
+                            <h4 className="part-header clickable-link" onClick={() => handlePartClick(part)}>
+                              {part}
+                            </h4>
+                            {selectedPart === part && (
+                              <table className="puzzle-table">
+                                <thead>
+                                  <tr>
+                                    <th>Puzzle</th>
+                                    <th>Started</th>
+                                    <th>Option Guessed</th>
+                                    <th>Timer (seconds)</th>
+                                    <th>Score</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {Object.keys(userDetails?.PuzzleArena?.[selectedArena]?.[part] || {}).map(puzzle => {
+                                    const puzzleData = userDetails?.PuzzleArena?.[selectedArena]?.[part]?.[puzzle];
+                                    return (
+                                      <tr key={puzzle}>
+                                        <td><strong>{puzzle}</strong></td>
+                                        <td>{puzzleData?.started ? 'Yes' : 'No'}</td>
+                                        <td>{puzzleData?.option_guessed !== null ? (puzzleData?.option_guessed ? 'Yes' : 'No') : 'None'}</td>
+                                        <td>{puzzleData?.timer || 0}</td>
+                                        <td>{puzzleData?.score || 0}</td>
+                                      </tr>
+                                    );
+                                  })}
+                                </tbody>
+                              </table>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
-
-          <div className="right-section">
-            <div className="header">
-              <p className="title">Puzzle Arena Performance Summary</p>
-            </div>
-
-            <div className="arena-scores">
-              <div className="score-item1">
-                Opening Arena : <span>{scores.Opening}</span>
-              </div>
-              <div className="score-item2">
-                Middlegame Arena : <span>{scores.Middlegame}</span>
-              </div>
-              <div className="score-item3">
-                Endgame Arena : <span>{scores.Endgame}</span>
-              </div>
-              <div className="score-item">
-                Mixed Arena : <span>{scores.Mixed}</span>
-              </div>
-              <div className="total-score">
-                Puzzle Arena Score: <span onClick={handleClick} className="clickable-link">{scores.total}</span>
-              </div>
-
-            </div>
-            </div>
-          </div>
-       
-      </div>
+        </div>
+      )}
     </div>
   );
 };
