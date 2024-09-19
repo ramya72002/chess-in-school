@@ -6,6 +6,7 @@ import axios from 'axios';
 import '../../chessOpening/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
+import Loading from '@/app/Loading';
 
 interface Puzzle {
   level:string;
@@ -22,7 +23,8 @@ const M1: React.FC = () => {
   const [loading, setLoading] = useState<{ [key: number]: boolean }>({});
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [puzzlesWithStatus, setPuzzlesWithStatus] = useState<Puzzle[]>([]);
-  
+  const [isLoadingPage, setIsLoadingPage] = useState(false); // Add a state to manage page loading
+
   const puzzles = [
     { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
     { title: "hih", level: "Pawn", category: "Endgame", dateAndtime: "2024-09-19T12:42", total_puz_count: 1, statusFlag: "Not Started" }
@@ -141,11 +143,12 @@ const M1: React.FC = () => {
   }, []);
   
     const handleNextClick = async () => {
-      const storedEmail = localStorage.getItem('email');
-      try {
-        // Sample data to send in the POST request
-        const requestData = {
-          email: storedEmail,
+    setIsLoadingPage(true); // Set loading state before making the request
+    const storedEmail = localStorage.getItem('email');
+    try {
+      // Sample data to send in the POST request
+      const requestData = {
+        email: storedEmail,
           course_title: 'chessStudyPlan',
           completed: 100
         };
@@ -156,15 +159,18 @@ const M1: React.FC = () => {
         // Handle the response
         console.log('API Response:', response.data);
         router.push('/AfterSchool'); // Redirect to the M2 page
-      } catch (error) {
-        console.error('API Error:', error);
-      }
-    };
+} catch (error) {
+      console.error('API Error:', error);
+    } finally {
+      setIsLoadingPage(false); // Reset loading state after the request
+    }
+  };
     const handlePreviousClick = () => {
       router.push('/modules/level2/gameAnalysis/81'); // Redirect to the previous page (adjust the path as needed)
     };
   return (
     <div className="lesson-content">
+      {isLoadingPage && <Loading />}
       <h3>9.1 Introduction</h3>
       
       <section className="chessboard-info">
