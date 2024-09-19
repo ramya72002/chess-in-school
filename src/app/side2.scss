@@ -2,9 +2,9 @@
 
 .course-content {
   width: 350px;
-  max-height: 100vh; /* Set a maximum height */
-  overflow-y: auto; /* Enable vertical scrolling */
-  background-color: #ffffff; /* Lighter background */
+  max-height: 100vh;
+  overflow-y: auto;
+  background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -15,22 +15,21 @@
     width: 80px;
   }
 
-  /* Customize the scrollbar for WebKit browsers */
   &::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px;
   }
 
   &::-webkit-scrollbar-track {
-    background-color: #e6e6e6; /* Light grey for scrollbar track */
+    background-color: #e6e6e6;
     border-radius: 12px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #888888; /* Neutral grey for scrollbar thumb */
+    background-color: #888888;
     border-radius: 12px;
 
     &:hover {
-      background-color: #555555; /* Darker grey on hover */
+      background-color: #555555;
     }
   }
 
@@ -41,7 +40,7 @@
     margin-bottom: 16px;
 
     .toggle-button {
-      background-color: #333333; /* Dark grey for toggle button */
+      background-color: #333333;
       color: #ffffff;
       border: none;
       border-radius: 50%;
@@ -56,13 +55,13 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        background-color: #555555; /* Slightly lighter grey on hover */
+        background-color: #555555;
         transform: scale(1.1);
       }
     }
 
     .go-back-button {
-      background-color: #0056b3; /* Professional blue for go-back button */
+      background-color: #0056b3;
       color: #ffffff;
       border: none;
       border-radius: 8px;
@@ -72,7 +71,7 @@
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: #003f7f; /* Darker blue on hover */
+        background-color: #003f7f;
       }
     }
   }
@@ -83,22 +82,22 @@
       justify-content: space-between;
       align-items: center;
       padding-bottom: 12px;
-      border-bottom: 2px solid #cccccc; /* Light grey border */
+      border-bottom: 2px solid #cccccc;
       margin-bottom: 12px;
 
       span {
         font-size: 18px;
-        color: #333333; /* Dark grey for text */
+        color: #333333;
 
         &.progress {
           font-weight: 700;
 
           .topics-count {
-            color: #666666; /* Medium grey for topic count */
+            color: #666666;
           }
 
           .quizzes-count {
-            color: #0056b3; /* Blue for quizzes count */
+            color: #0056b3;
           }
         }
       }
@@ -107,16 +106,16 @@
     .topics {
       .topic {
         display: flex;
-        flex-direction: column; /* Arrange the title and submodules vertically */
+        flex-direction: column;
         padding: 12px 0;
-        border-bottom: 1px solid #e6e6e6; /* Light grey for dividers */
+        border-bottom: 1px solid #e6e6e6;
         font-size: 18px;
         cursor: pointer;
         transition: background-color 0.3s ease, transform 0.3s ease;
         border-radius: 8px;
 
         &:hover {
-          background-color: #f0f0f0; /* Subtle grey on hover */
+          background-color: #f0f0f0;
           transform: translateX(8px);
         }
 
@@ -136,14 +135,14 @@
           }
 
           .title {
-            color: #0056b3; /* Blue for titles */
+            color: #0056b3;
             margin-left: 0;
             flex: 1;
           }
         }
 
         &.completed .icon.check {
-          background-color: #28a745; /* Green for completed topics */
+          background-color: #28a745;
         }
 
         .submodules {
@@ -154,14 +153,14 @@
             display: flex;
             align-items: center;
             padding: 8px 0;
-            border-bottom: 1px solid #e6e6e6; /* Light grey for submodule dividers */
+            border-bottom: 1px solid #e6e6e6;
             font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
             border-radius: 8px;
 
             &:hover {
-              background-color: #f0f0f0; /* Subtle grey on hover */
+              background-color: #f0f0f0;
               transform: translateX(8px);
             }
 
@@ -177,16 +176,76 @@
             }
 
             .title {
-              color: #0056b3; /* Blue for submodule titles */
-              margin-left: 0;
+              color: #0056b3;
             }
 
             &.completed .icon.check {
-              background-color: #6c65c5; /* Violet for completed submodules */
+              background-color: #28a745;
             }
           }
         }
       }
     }
   }
+
+  .alert-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 450px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    padding: 25px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  
+    .alert-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+  
+      h2 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+  
+      p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 25px;
+        line-height: 1.5;
+      }
+  
+      .close-button {
+        background-color: #4caf50;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        // padding: 12px 24px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin-top: 130px; // Ensures space between text and button
+  
+        &:hover {
+          background-color: #45a049;
+          // transform: scale(1.05);
+        }
+      }
+    }
+  }
+  
+  
 }

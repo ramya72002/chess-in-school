@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./side2.scss";
 import { useRouter } from "next/navigation";
 
+// Define the topics structure (unchanged)
 const topics = [
   {
     title: "1. Chess Openings",
     completed: true,
     submodules: [
-      { title: "1.1 Opening Principles", completed: true},
+      { title: "1.1 Opening Principles", completed: true },
       { title: "1.2 White Opening", completed: true },
       { title: "1.3 Black Opening", completed: true }
     ]
@@ -92,11 +95,48 @@ const topics = [
       { title: "9.1 Chess Study Plan", completed: true }
     ]
   }
+
+
+  // Additional topics here
 ];
 
 const Sidebar2: React.FC = () => {
   const router = useRouter();
   const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
+  const [userCourses, setUserCourses] = useState<string[]>([]);
+  const [showAlert, setShowAlert] = useState(false); // Add state for alert
+  useEffect(() => {
+    const fetchUserCourses = async () => {
+      try {
+        const response = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
+          params: { email: "nsriramya7@gmail.com" }
+        });
+
+        const data = response.data;
+        console.log("pp", data["data"]["registered_inschool_courses"]);
+
+        // Check if registered_inschool_courses exists and is an array
+        if (data && data["data"] && Array.isArray(data["data"]["registered_inschool_courses"])) {
+          const courseTitles = data["data"]["registered_inschool_courses"]
+            .map((course: { course_title: string }) => course.course_title.trim().toLowerCase());
+          setUserCourses(courseTitles);
+          console.log("pp", userCourses);
+        } else {
+          console.error("Data is not available or registered_inschool_courses is not an array");
+          setUserCourses([]);
+        }
+      } catch (error) {
+        console.error("Error fetching user courses:", error);
+        setUserCourses([]);
+      }
+    };
+
+    fetchUserCourses();
+  }, []);
+
+  useEffect(() => {
+    console.log("User Courses after setting:", userCourses);
+  }, [userCourses]);
 
   const toggleSidebar = () => setIsSidebarMinimized(!isSidebarMinimized);
 
@@ -157,15 +197,40 @@ const Sidebar2: React.FC = () => {
       // Chess Study Plan
       "9.1 Chess Study Plan": "/modules/level2/chessStudyPlan/91"
     };
-  
-    const path = submodulePaths[title];
-    if (path) {
+
+    const submoduleTitles = Object.keys(submodulePaths);
+    if (submoduleTitles.includes(title) && isAccessible(title)) {
+      const path = submodulePaths[title];
       router.push(path);
     } else {
-      console.error("Submodule path not found for:", title);
+      setShowAlert(true); // Show alert popup  
     }
+      };
+      const closeAlert = () => setShowAlert(false); // Close the alert popup
+
+
+  const isAccessible = (title: string) => {
+    if (title.startsWith("1.")) {
+      return userCourses.includes("chessopening");
+    } else if (title.startsWith("2.")) {
+      return userCourses.includes("tactics1");
+    } else if (title.startsWith("3.")) {
+      return userCourses.includes("tactics2");
+    } else if (title.startsWith("4.")) {
+      return userCourses.includes("positionalcalculations");
+    } else if (title.startsWith("5.")) {
+      return userCourses.includes("strategyandplanning");
+    } else if (title.startsWith("6.")) {
+      return userCourses.includes("checkandcheckmates");
+    } else if (title.startsWith("7.")) {
+      return userCourses.includes("checkmatepatterns");
+    } else if (title.startsWith("8.")) {
+      return userCourses.includes("gameanalysis");
+    } else if (title.startsWith("9.")) {
+      return userCourses.includes("chessStudyplan");
+    }
+    return false;
   };
-  
 
   return (
     <div className={`course-content ${isSidebarMinimized ? "minimized" : ""}`}>
@@ -184,8 +249,8 @@ const Sidebar2: React.FC = () => {
           <div className="module-header">
             <span>Learn Chess</span>
             <span className="progress">
-              <span className="topics-count">{topics.length} Topics</span> 
-             </span>
+              <span className="topics-count">{topics.length} Topics</span>
+            </span>
           </div>
           <div className="topics">
             {topics.map((topic, index) => (
@@ -213,6 +278,16 @@ const Sidebar2: React.FC = () => {
           </div>
         </div>
       )}
+     {showAlert && (
+  <div className="alert-popup">
+    <div className="alert-content">
+      <h2>Module Access Restricted</h2>
+      <p>It looks like you've made great progress! To continue, please complete the previous modules to unlock this one.</p>
+      <button className="close-button" onClick={closeAlert}>Got It</button>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };

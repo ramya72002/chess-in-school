@@ -84,11 +84,48 @@ export interface Session {
     };
   }
   export interface UserDetails {
-    profile_id: string | "student"; // User role can be "student" or a specific profile ID
-    name: string; // Full name (first and last combined)
+    _id: {
+      $oid: string; // MongoDB Object ID
+    };
+    profile_id: string; // User profile ID or "student"
+    parent_name: {
+      first: string;
+      last: string;
+    };
+    child_name: {
+      first: string;
+      last: string;
+    };
+    child_grade: string; // Grade of the child
     email: string;
+    phone: string; // Phone number
+    RequestFinancialAssistance: boolean; // Whether financial assistance is requested
+    SchoolName: string; // Name of the school
+    group: string; // Group or program
+    level: string; // User's current level
+    payment_status: string; // Payment status (e.g., "paid", "pending")
     image: string; // URL to the user's profile image
-    level: string; // User's current level in chess
+    device_name: string; // Device used by the user
+    session_id: string; // Identifier for the user's current session
+  
+    registered_inschool_courses?: {
+      course_title: string; // Title of the course
+      status: string; // Status of the course (e.g., "Completed", "In Progress")
+      completed: number; // Percentage of course completion
+    }[];
+  
+    PuzzleArena?: {
+      [category: string]: {
+        [part: string]: {
+          [puzzle: string]: {
+            started: boolean; // Whether the puzzle has started
+            option_guessed: boolean | null; // Option guessed by the user
+            timer: number; // Time spent on the puzzle
+            score: number; // Score achieved in the puzzle
+          };
+        };
+      };
+    };
   
     scores?: {
       Opening: number;
@@ -96,38 +133,6 @@ export interface Session {
       Endgame: number;
       Mixed: number;
     };
-  
-    PuzzleArena?: {
-      [category: string]: {
-        [part: string]: {
-          [puzzle: string]: {
-            started: boolean; // Whether the puzzle has started
-            option_guessed: number | null; // Option guessed by the user
-            timer: number | 0; // Time spent on the puzzle
-            score: number; // Score achieved in the puzzle
-          };
-        };
-      };
-    };
-  
-    phone?: string; // Optional phone number field
-    payment_status?: string; // Status of user's payment (e.g., "paid", "pending", etc.)
-    
-    child_name?: {
-      first: string;
-      last: string;
-    };
-  
-    parent_name?: {
-      first: string;
-      last: string;
-    };
-  
-    school_name?: string; // Name of the school, optional
-    group?: string; // Group or team the user belongs to, optional
-    session_id?: string; // Identifier for the user's current session
-  
-    RequestFinancialAssistance?: boolean; // Indicates if the user has requested financial assistance
   }
   
   

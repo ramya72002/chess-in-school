@@ -59,7 +59,7 @@ const Arenaresult: React.FC<ArenaresultProps> = ({ isOpen, onClose }) => {
             <tbody>
               <tr>
                 <td>Name</td>
-                <td>{userDetails.name}</td>
+                <td>{userDetails.child_name.first}</td>
               </tr>
               <tr>
                 <td>Email</td>
