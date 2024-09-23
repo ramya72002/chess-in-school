@@ -188,9 +188,34 @@ const Sidebar = () => {
     <nav className="nav">
 
   
-  <a href="/Afterschool" className="navItem school">
-    <FaCalendarAlt /> Learning
-  </a>
+    <a
+  onClick={() => {
+    if (userDetails) {
+      const level = userDetails.level; // Adjust based on how the level is stored
+      if (level === "Level 1") {
+        router.push("/Afterschool1");
+      } else if (level === "Level 2") {
+        router.push("/Afterschool2");
+      } else if (level === "Level 3") {
+        router.push("/Afterschool3");
+      } else if (level === "Level 4") {
+        router.push("/Afterschool4");
+      } else if (level === "Level 5") {
+        router.push("/Afterschool5");
+      } else if (level === "Level 6") {
+        router.push("/Afterschool6");
+      } else {
+        console.error("Invalid Level:", level);
+      }
+    } else {
+      console.error("User details not available");
+    }
+  }}
+  className="navItem school"
+>
+  <FaCalendarAlt /> Learning
+</a>
+
   
 
 

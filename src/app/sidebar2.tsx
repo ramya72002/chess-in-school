@@ -143,7 +143,7 @@ const Sidebar2: React.FC = () => {
 
   const toggleSidebar = () => setIsSidebarMinimized(!isSidebarMinimized);
 
-  const handleGoBack = () => router.push('/Afterschool');
+  const handleGoBack = () => router.push('/Afterschool2');
 
   const handleSubmoduleClick = (title: string) => {
     const submodulePaths: Record<string, string> = {
@@ -250,7 +250,7 @@ const Sidebar2: React.FC = () => {
       {!isSidebarMinimized && (
         <div className="module">
           <div className="module-header">
-            <span>Learn Chess</span>
+            <span>Knight level</span>
             <span className="progress">
               <span className="topics-count">{topics.length} Topics</span>
             </span>
