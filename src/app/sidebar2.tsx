@@ -262,7 +262,7 @@ const Sidebar2: React.FC = () => {
                 key={index}
               >
                 <div>
-                  <span className="title">{topic.title}</span>
+                  <span className="titles">{topic.title}</span>
                 </div>
                 <div className="submodules">
                   {topic.submodules.map((submodule, subIndex) => (
@@ -272,7 +272,7 @@ const Sidebar2: React.FC = () => {
                       onClick={() => handleSubmoduleClick(submodule.title)}
                     >
                       <span className={`icon ${submodule.completed ? "check" : ""}`}></span>
-                      <span className="title">{submodule.title}</span>
+                      <span className="titles">{submodule.title}</span>
                     </div>
                   ))}
                 </div>
