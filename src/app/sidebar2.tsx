@@ -19,25 +19,23 @@ const topics = [
     title: "2. Tactics [1]",
     completed: true,
     submodules: [
-      { title: "2.1 Pins", completed: true },
-      { title: "2.2 Forks", completed: true },
-      { title: "2.3 Skewers", completed: true },
-      { title: "2.4 Double Attack", completed: true },
-      { title: "2.5 Remove of Defender", completed: true },
-      { title: "2.6 Deflection", completed: true }
+      { title: "2.1 Pins & Skewers", completed: true },
+      { title: "2.2 Forks & Double Attacks", completed: true },
+      { title: "2.3 Removal of Defender", completed: true }, //Skewers
+      { title: "2.4 Deflection", completed: true },
+      { title: "2.5 Decoy", completed: true }
     ]
   },
   {
     title: "3. Tactics [2]",
     completed: true,
     submodules: [
-      { title: "3.1 Decoy", completed: true },
-      { title: "3.2 Overloading", completed: true },
-      { title: "3.3 X-Ray attack", completed: true },
-      { title: "3.4 Zwischenzug (Intermezzo)", completed: true },
-      { title: "3.5 Desperado", completed: true },
-      { title: "3.6 Interference", completed: true },
-      { title: "3.7 Back Rank Tactics", completed: true }
+      { title: "3.1 Overloading", completed: true },
+      { title: "3.2 X-Ray attack", completed: true },
+      { title: "3.3 Zwischenzug (Intermezzo)", completed: true },
+      { title: "3.4 Desperado", completed: true },
+      { title: "3.5 Interference", completed: true },
+      { title: "3.6 Back Rank Tactics", completed: true }
     ]
   },
   {

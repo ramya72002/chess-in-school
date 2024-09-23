@@ -150,7 +150,7 @@ const M1: React.FC = () => {
       const requestData = {
         email: storedEmail,
           course_title: 'tactics1',
-          completed: 80
+          completed: 100
         };
     
         // Make the POST request to the API
@@ -158,16 +158,40 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/level2/tactics1/26'); // Redirect to the M2 page
-} catch (error) {
-      console.error('API Error:', error);
-    } finally {
-      setIsLoadingPage(false); // Reset loading state after the request
+         // Redirect to the M2 page
+      //add 3.1
+      const userDetailsString = localStorage.getItem('userDetails');
+      const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+
+      if (storedUserDetails && storedUserDetails.email) {
+        const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+          email: storedUserDetails.email,
+          course_title: "tactics1",
+          status: 'Completed',
+        });
+
+        // Call API to update status to "In Progress"
+        const response1 = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+          email: storedUserDetails.email,
+          course_title: "tactics2",
+          status: 'In Progress',
+        });
+
+        if (response1.data.success) {
+          router.push('/modules/level2/tactics2/31');
+
+          
+           
+        } else {
+          console.error('Failed to update course status:', response.data.message);
+        }
+      }
+    } catch (error) {
+      console.error('Error updating course status:', error);
     }
   }; const handlePreviousClick = () => {
-      setIsLoadingPage(true);
-      router.push('/modules/level2/tactics1/24'); // Redirect to the previous page (adjust the path as needed)
-    };
+    router.push('/modules/level2/tactics1/24'); // Redirect to the previous page (adjust the path as needed)
+  };
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
