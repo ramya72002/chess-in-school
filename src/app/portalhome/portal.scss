@@ -6,19 +6,20 @@
   border-radius: 5px;
   padding: 20px;
 
-  .header {
+  .headers {
     text-align: center;
     margin-bottom: 20px;
   
     h2 {
+      text-align: center;
       margin: 0;
       font-size: 68px; /* Larger font size */
       font-weight: bold; /* Bold text */
-      font-family: "Matemasie", sans-serif;
+      font-family: 'Montserrat', sans-serif;
       background: linear-gradient(90deg, #fdfdfd, #ffffff, #fcfcfc); /* Gradient background */
       -webkit-background-clip: text; /* Clipping the background to text */
       -webkit-text-fill-color: transparent; 
-      -webkit-text-stroke: 1px rgb(4, 0, 255);/* Text color becomes transparent to show gradient */
+      // -webkit-text-stroke: 1px rgb(4, 0, 255);/* Text color becomes transparent to show gradient */
 
       letter-spacing: 3px; /* More spacing between letters */
       animation: textGlow 1.5s ease-in-out infinite alternate; /* Glow animation */

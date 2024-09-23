@@ -26,10 +26,10 @@ const M1: React.FC = () => {
   const [isLoadingPage, setIsLoadingPage] = useState(false); // Add a state to manage page loading
 
   const puzzles = [
+    { title: "Forks and Double Attacks - Part 2", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
     { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
     { title: "hih", level: "Pawn", category: "Endgame", dateAndtime: "2024-09-19T12:42", total_puz_count: 1, statusFlag: "Not Started" }
   ];
-
 
   const handleButtonClick = async (
     level:string,

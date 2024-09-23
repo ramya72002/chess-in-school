@@ -64,7 +64,7 @@ const Hero = () => {
   return (
     <div style={{ padding: '20px' }}>
       <div className="hero">
-        <div className="header">
+        <div className="headers">
           <h2>
             Chess Journey 
           </h2>
