@@ -176,7 +176,7 @@ const M1: React.FC = () => {
         {/* Video Section */}
         <div className="video-container">
           <video controls width="100%">
-            <source src="/videos/video1.mp4" type="video/mp4" />
+            <source src="/videos/level1/1.1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
