@@ -11,8 +11,7 @@ interface CoursePaths {
 }
 
 const coursePaths: CoursePaths = {
-  'introduction': '/modules/level1/introduction/11',
-  'theChessboard': '/modules/level1/theChessboard/21',
+  'theChessboard': '/modules/level1/introduction/11',
   'introductionToPieces': '/modules/level1/introductionToPieces/31',
   'ArrangnmentOfPieces': '/modules/level1/ArrangnmentOfPieces/41',
   'specialMoves': '/modules/level1/specialMoves/51',
@@ -20,20 +19,20 @@ const coursePaths: CoursePaths = {
   'understandingPieceExchanges': '/modules/level1/understandingPieceExchanges/71',
   'stagesOfTheGame': '/modules/level1/stagesOfTheGame/81',
   'notation': '/modules/level1/notation/91',
-  // 'chessGame': '/modules/level1/chessStudyPlan/101'
+  'chessGame': '/modules/level1/chessStudyPlan/101'
 
 };
 
 const courseImages: CoursePaths = {
-  'introduction': '/images/level1/1.png',
-  'theChessboard': '/images/level1/2.png',
-  'introductionToPieces': '/images/level1/3.png',
-  'ArrangnmentOfPieces': '/images/level1/4.png',
-  'specialMoves': '/images/level1/5.png',
-  'winningInChess': '/images/level1/6.png',
-  'understandingPieceExchanges': '/images/level1/7.png',
-  'stagesOfTheGame': '/images/level1/8.png',
-  'notation': '/images/level1/9.png'
+  'theChessboard': '/images/level1/1.png',
+  'introductionToPieces': '/images/level1/2.png',
+  'ArrangnmentOfPieces': '/images/level1/3.png',
+  'specialMoves': '/images/level1/4.png',
+  'winningInChess': '/images/level1/5.png',
+  'understandingPieceExchanges': '/images/level1/6.png',
+  'stagesOfTheGame': '/images/level1/7.png',
+  'notation': '/images/level1/8.png',
+  'chessGame': '/images/level1/9.png'
 };
 
 interface CourseStatus {

@@ -146,42 +146,41 @@ const Sidebar1: React.FC = () => {
 
   const handleSubmoduleClick = (title: string) => {
   const submodulePaths: Record<string, string> = {
-            "1.1 Introduction": "/modules/level1/introduction/11",
-            "2.1 Board Set-up": "/modules/level1/theChessboard/21",
-            "2.2 Letters & Numbers": "/modules/level1/theChessboard/22",
-            "2.3 Understanding ‘File’": "/modules/level1/theChessboard/23",
-            "2.4 Understanding ‘Rank’": "/modules/level1/theChessboard/24",
-            "2.5 Understanding ‘Diagonals’": "/modules/level1/theChessboard/25",
-            "2.6 Name of the Squares": "/modules/level1/theChessboard/26",
-            "3.1 Know the pieces": "/modules/level1/introductionToPieces/31",
-            "3.2 ‘Major’ and ‘Minor’ Pieces": "/modules/level1/introductionToPieces/32",
-            "3.3 Understanding the ‘King’": "/modules/level1/introductionToPieces/33",
-            "3.4 Understanding the ‘Bishop’": "/modules/level1/introductionToPieces/34",
-            "3.5 Understanding the ‘Rook’": "/modules/level1/introductionToPieces/35",
-            "3.6 Understanding the ‘Knight’": "/modules/level1/introductionToPieces/36",
-            "3.7 Understanding the ‘Pawn’": "/modules/level1/introductionToPieces/37",
-            "3.8 Understanding the ‘Queen’": "/modules/level1/introductionToPieces/38",
-            "4.1 Light Side": "/modules/level1/ArrangnmentOfPieces/41",
-            "4.2 Dark Side": "/modules/level1/ArrangnmentOfPieces/42",
-            "5.1 Castling": "/modules/level1/specialMoves/51",
-            "5.2 Promotion": "/modules/level1/specialMoves/52",
-            "5.3 En-passant": "/modules/level1/specialMoves/53",
-            "6.1 Checkmate": "/modules/level1/winningInChess/61",
-            "6.2 Checks": "/modules/level1/winningInChess/62",
-            "6.3 Stalemate": "/modules/level1/winningInChess/63",
-            "6.4 Attack & Defense": "/modules/level1/winningInChess/64",
-            "6.5 Capture": "/modules/level1/winningInChess/65",
-            "6.6 Draw": "/modules/level1/winningInChess/66",
-            "7.1 Fair Trade": "/modules/level1/understandingPieceExchanges/71",
-            "7.2 Exchange Up": "/modules/level1/understandingPieceExchanges/72",
-            "7.3 Exchange Down": "/modules/level1/understandingPieceExchanges/73",
-            "7.4 Material Up": "/modules/level1/understandingPieceExchanges/74",
-            "7.5 Material Down": "/modules/level1/understandingPieceExchanges/75",
-            "8.1 Opening": "/modules/level1/stagesOfTheGame/81",
-            "8.2 Middlegame": "/modules/level1/stagesOfTheGame/82",
-            "8.3 Endgame": "/modules/level1/stagesOfTheGame/83",
-            "9.1 Notation": "/modules/level1/notation/91",
-            "10.1 Chess Game": "/modules/level1/chessGame/101"
+            "1.1 Board Set-up": "/modules/level1/theChessboard/11",
+            "1.2 Letters & Numbers": "/modules/level1/theChessboard/12",
+            "1.3 Understanding ‘File’": "/modules/level1/theChessboard/13",
+            "1.4 Understanding ‘Rank’": "/modules/level1/theChessboard/14",
+            "1.5 Understanding ‘Diagonals’": "/modules/level1/theChessboard/15",
+            "1.6 Name of the Squares": "/modules/level1/theChessboard/16",
+            "2.1 Know the pieces": "/modules/level1/introductionToPieces/21",
+            "2.2 ‘Major’ and ‘Minor’ Pieces": "/modules/level1/introductionToPieces/22",
+            "2.3 Understanding the ‘King’": "/modules/level1/introductionToPieces/23",
+            "2.4 Understanding the ‘Bishop’": "/modules/level1/introductionToPieces/24",
+            "2.5 Understanding the ‘Rook’": "/modules/level1/introductionToPieces/25",
+            "2.6 Understanding the ‘Knight’": "/modules/level1/introductionToPieces/26",
+            "2.7 Understanding the ‘Pawn’": "/modules/level1/introductionToPieces/27",
+            "2.8 Understanding the ‘Queen’": "/modules/level1/introductionToPieces/28",
+            "3.1 Light Side": "/modules/level1/ArrangnmentOfPieces/31",
+            "3.2 Dark Side": "/modules/level1/ArrangnmentOfPieces/32",
+            "4.1 Castling": "/modules/level1/specialMoves/41",
+            "4.2 Promotion": "/modules/level1/specialMoves/42",
+            "4.3 En-passant": "/modules/level1/specialMoves/43",
+            "5.1 Checkmate": "/modules/level1/winningInChess/51",
+            "5.2 Checks": "/modules/level1/winningInChess/52",
+            "5.3 Stalemate": "/modules/level1/winningInChess/53",
+            "5.4 Attack & Defense": "/modules/level1/winningInChess/54",
+            "5.5 Capture": "/modules/level1/winningInChess/55",
+            "5.6 Draw": "/modules/level1/winningInChess/56",
+            "6.1 Fair Trade": "/modules/level1/understandingPieceExchanges/61",
+            "6.2 Exchange Up": "/modules/level1/understandingPieceExchanges/62",
+            "6.3 Exchange Down": "/modules/level1/understandingPieceExchanges/63",
+            "6.4 Material Up": "/modules/level1/understandingPieceExchanges/64",
+            "6.5 Material Down": "/modules/level1/understandingPieceExchanges/65",
+            "7.1 Opening": "/modules/level1/stagesOfTheGame/71",
+            "7.2 Middlegame": "/modules/level1/stagesOfTheGame/72",
+            "7.3 Endgame": "/modules/level1/stagesOfTheGame/73",
+            "8.1 Notation": "/modules/level1/notation/81",
+            "9.1 Chess Game": "/modules/level1/chessGame/91",
           
     };
 
@@ -198,24 +197,22 @@ const Sidebar1: React.FC = () => {
 
   const isAccessible = (title: string) => {
     if (title.startsWith("1.")) {
-      return userCourses.includes("introduction");
-    } else if (title.startsWith("2.")) {
       return userCourses.includes("theChessboard");
-    } else if (title.startsWith("3.")) {
+    } else if (title.startsWith("2.")) {
       return userCourses.includes("introductionToPieces");
-    } else if (title.startsWith("4.")) {
+    } else if (title.startsWith("3.")) {
       return userCourses.includes("ArrangnmentOfPieces");
-    } else if (title.startsWith("5.")) {
+    } else if (title.startsWith("4.")) {
       return userCourses.includes("specialMoves");
-    } else if (title.startsWith("6.")) {
+    } else if (title.startsWith("5.")) {
       return userCourses.includes("winningInChess");
-    } else if (title.startsWith("7.")) {
+    } else if (title.startsWith("6.")) {
       return userCourses.includes("understandingPieceExchanges");
-    } else if (title.startsWith("8.")) {
+    } else if (title.startsWith("7.")) {
       return userCourses.includes("stagesOfTheGame");
-    } else if (title.startsWith("9.")) {
+    } else if (title.startsWith("8.")) {
       return userCourses.includes("notation");
-    }else if (title.startsWith("10.")) {
+    }else if (title.startsWith("9.")) {
         return userCourses.includes("chessGame");
     }
     return false;

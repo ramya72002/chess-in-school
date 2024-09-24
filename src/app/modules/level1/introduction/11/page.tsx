@@ -149,8 +149,8 @@ const M1: React.FC = () => {
       // Sample data to send in the POST request
       const requestData = {
         email: storedEmail,
-        course_title: 'introduction',
-        completed: 100
+        course_title: 'theChessboard',
+        completed: 10
       };
 
       // Make the POST request to the API
