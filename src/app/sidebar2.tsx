@@ -151,21 +151,19 @@ const Sidebar2: React.FC = () => {
       "1.3 Black Opening": "/modules/level2/chessOpening/13",
       
       // Tactics [1]
-      "2.1 Pins": "/modules/level2/tactics1/21",
-      "2.2 Forks": "/modules/level2/tactics1/22",
-      "2.3 Skewers": "/modules/level2/tactics1/23",
-      "2.4 Double Attack": "/modules/level2/tactics1/24",
-      "2.5 Remove of Defender": "/modules/level2/tactics1/25",
-      "2.6 Deflection": "/modules/level2/tactics1/26",
+      "2.1 Pins & Skewers": "/modules/level2/tactics1/21",
+      "2.2 Forks & Double Attacks": "/modules/level2/tactics1/22",
+      "2.3 Removal of Defender": "/modules/level2/tactics1/23",
+      "2.4 Deflection": "/modules/level2/tactics1/24",
+      "2.5 Decoy": "/modules/level2/tactics1/25",
   
       // Tactics [2]
-      "3.1 Decoy": "/modules/level2/tactics2/31",
-      "3.2 Overloading": "/modules/level2/tactics2/32",
-      "3.3 X-Ray attack": "/modules/level2/tactics2/33",
-      "3.4 Zwischenzug (Intermezzo)": "/modules/level2/tactics2/34",
-      "3.5 Desperado": "/modules/level2/tactics2/35",
-      "3.6 Interference": "/modules/level2/tactics2/36",
-      "3.7 Back Rank Tactics": "/modules/level2/tactics2/37",
+      "3.1 Overloading": "/modules/level2/tactics2/31",
+      "3.2 X-Ray attack": "/modules/level2/tactics2/32",
+      "3.3 Zwischenzug (Intermezzo)": "/modules/level2/tactics2/33",
+      "3.4 Desperado": "/modules/level2/tactics2/34",
+      "3.5 Interference": "/modules/level2/tactics2/35",
+      "3.6 Back Rank Tactics": "/modules/level2/tactics2/36",
   
       // Positional Calculations
       "4.1 Middlegame: Art of Calculation": "/modules/level2/positionalCalculations/41",
