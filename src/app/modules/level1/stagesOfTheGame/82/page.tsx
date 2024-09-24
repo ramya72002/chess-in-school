@@ -142,15 +142,15 @@ const M1: React.FC = () => {
     fetchUserDetails();
   }, []);
   
-    const handleNextClick = async () => {
+  const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
     const storedEmail = localStorage.getItem('email');
     try {
       // Sample data to send in the POST request
       const requestData = {
         email: storedEmail,
-          course_title: 'gameAnalysis',
-          completed: 100
+          course_title: 'stagesOfTheGame',
+          completed: 70
         };
     
         // Make the POST request to the API
@@ -158,46 +158,21 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        
-        //add 3.1
-        const userDetailsString = localStorage.getItem('userDetails');
-        const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-  
-        if (storedUserDetails && storedUserDetails.email) {
-          const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
-            email: storedUserDetails.email,
-            course_title: "gameAnalysis",
-            status: 'Completed',
-          });
-  
-          // Call API to update status to "In Progress"
-          const response1 = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
-            email: storedUserDetails.email,
-            course_title: "chessStudyPlan",
-            status: 'In Progress',
-          });
-  
-          if (response1.data.success) {
-            router.push('/modules/level2/chessStudyPlan/91'); // Redirect to the M2 page  
-            
-             
-          } else {
-            console.error('Failed to update course status:', response.data.message);
-          }
-        }
-      } catch (error) {
-        console.error('Error updating course status:', error);
-      }
-    };
-    const handlePreviousClick = () => {
+        router.push('/modules/level1/stagesOfTheGame/83'); // Redirect to the M2 page
+} catch (error) {
+      console.error('API Error:', error);
+    } finally {
+      setIsLoadingPage(false); // Reset loading state after the request
+    }
+  };
+   const handlePreviousClick = () => {
       setIsLoadingPage(true);
-      router.push('/modules/level2/checkmatePatterns/78'); // Redirect to the previous page (adjust the path as needed)
+      router.push('/modules/level1/stagesOfTheGame/81'); // Redirect to the previous page (adjust the path as needed)
     };
-       
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>8.1 Introduction</h3>
+      <h3>8.2 Middlegame</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}

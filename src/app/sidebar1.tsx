@@ -204,7 +204,7 @@ const Sidebar1: React.FC = () => {
     } else if (title.startsWith("3.")) {
       return userCourses.includes("introductionToPieces");
     } else if (title.startsWith("4.")) {
-      return userCourses.includes("arrangnmentOfPieces");
+      return userCourses.includes("ArrangnmentOfPieces");
     } else if (title.startsWith("5.")) {
       return userCourses.includes("specialMoves");
     } else if (title.startsWith("6.")) {

@@ -142,15 +142,15 @@ const M1: React.FC = () => {
     fetchUserDetails();
   }, []);
   
-    const handleNextClick = async () => {
+  const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
     const storedEmail = localStorage.getItem('email');
     try {
       // Sample data to send in the POST request
       const requestData = {
         email: storedEmail,
-          course_title: 'checkmatePatterns',
-          completed: 36
+          course_title: 'understandingPieceExchanges',
+          completed: 60
         };
     
         // Make the POST request to the API
@@ -158,20 +158,21 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/level2/checkmatePatterns/74'); // Redirect to the M2 page
+        router.push('/modules/level1/understandingPieceExchanges/74'); // Redirect to the M2 page
 } catch (error) {
       console.error('API Error:', error);
     } finally {
       setIsLoadingPage(false); // Reset loading state after the request
     }
-  }; const handlePreviousClick = () => {
+  };
+   const handlePreviousClick = () => {
       setIsLoadingPage(true);
-      router.push('/modules/level2/checkmatePatterns/72'); // Redirect to the previous page (adjust the path as needed)
+      router.push('/modules/level1/understandingPieceExchanges/72'); // Redirect to the previous page (adjust the path as needed)
     };
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>7.3 Introduction</h3>
+      <h3>7.3 Exchange Down</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}

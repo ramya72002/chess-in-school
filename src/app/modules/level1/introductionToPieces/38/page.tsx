@@ -149,7 +149,7 @@ const M1: React.FC = () => {
       // Sample data to send in the POST request
       const requestData = {
         email: storedEmail,
-          course_title: 'tactics2',
+          course_title: 'introductionToPieces',
           completed: 100
         };
     
@@ -166,19 +166,19 @@ const M1: React.FC = () => {
       if (storedUserDetails && storedUserDetails.email) {
         const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
           email: storedUserDetails.email,
-          course_title: "tactics2",
+          course_title: "introductionToPieces",
           status: 'Completed',
         });
 
         // Call API to update status to "In Progress"
         const response1 = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
           email: storedUserDetails.email,
-          course_title: "positionalCalculations",
+          course_title: "ArrangnmentOfPieces",
           status: 'In Progress',
         });
 
         if (response1.data.success) {
-          router.push('/modules/level2/positionalCalculations/41');
+          router.push('/modules/level1/ArrangnmentOfPieces/41');
 
           
            
@@ -191,12 +191,12 @@ const M1: React.FC = () => {
     }
   };
   const handlePreviousClick = () => {
-    router.push('/modules/level2/tactics2/36'); // Redirect to the previous page (adjust the path as needed)
+    router.push('/modules/level1/introductionToPieces/37'); // Redirect to the previous page (adjust the path as needed)
   };
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>3.7 Introduction</h3>
+      <h3>3.8 Understanding the ‘Queen’</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}

@@ -149,7 +149,7 @@ const M1: React.FC = () => {
       // Sample data to send in the POST request
       const requestData = {
         email: storedEmail,
-          course_title: 'strategyAndPlanning',
+          course_title: 'specialMoves',
           completed: 100
         };
     
@@ -165,20 +165,20 @@ const M1: React.FC = () => {
         if (storedUserDetails && storedUserDetails.email) {
           const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
             email: storedUserDetails.email,
-            course_title: "strategyAndPlanning",
+            course_title: "specialMoves",
             status: 'Completed',
           });
   
           // Call API to update status to "In Progress"
           const response1 = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
             email: storedUserDetails.email,
-            course_title: "checkAndCheckmates",
+            course_title: "winningInChess",
             status: 'In Progress',
           });
   
           if (response1.data.success) {
 
-            router.push('/modules/level2/checkAndCheckmates/61'); // Redirect to the M2 page  
+            router.push('/modules/level1/winningInChess/61'); // Redirect to the M2 page  
             
              
           } else {
@@ -191,12 +191,12 @@ const M1: React.FC = () => {
     };
     const handlePreviousClick = () => {
       setIsLoadingPage(true);
-      router.push('/modules/level2/strategyAndPlanning/52'); // Redirect to the previous page (adjust the path as needed)
+      router.push('/modules/level1/specialMoves/52'); // Redirect to the previous page (adjust the path as needed)
     };
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>5.3 Introduction</h3>
+      <h3>5.3 En-passant</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}

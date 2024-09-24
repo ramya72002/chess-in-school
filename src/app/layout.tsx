@@ -40,7 +40,7 @@ export default function RootLayout({
                       pathname === "/modules/level1/introductionToPieces/33" || pathname === "/modules/level1/introductionToPieces/34" || 
                       pathname === "/modules/level1/introductionToPieces/35" || pathname === "/modules/level1/introductionToPieces/36" || 
                       pathname === "/modules/level1/introductionToPieces/37" || pathname === "/modules/level1/introductionToPieces/38" || 
-                      pathname === "/modules/level1/arrangnmentOfPieces/41" || pathname === "/modules/level1/arrangnmentOfPieces/42" || 
+                      pathname === "/modules/level1/ArrangnmentOfPieces/41" || pathname === "/modules/level1/ArrangnmentOfPieces/42" || 
                       pathname === "/modules/level1/specialMoves/51" || pathname === "/modules/level1/specialMoves/52" || pathname === "/modules/level1/specialMoves/53" || 
                       pathname === "/modules/level1/winningInChess/61" || pathname === "/modules/level1/winningInChess/62" || 
                       pathname === "/modules/level1/winningInChess/63" || pathname === "/modules/level1/winningInChess/64" || pathname === "/modules/level1/winningInChess/65" || pathname === "/modules/level1/winningInChess/66" || 

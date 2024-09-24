@@ -142,14 +142,14 @@ const M1: React.FC = () => {
     fetchUserDetails();
   }, []);
   
-    const handleNextClick = async () => {
+  const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
     const storedEmail = localStorage.getItem('email');
     try {
       // Sample data to send in the POST request
       const requestData = {
         email: storedEmail,
-          course_title: 'strategyAndPlanning',
+          course_title: 'specialMoves',
           completed: 35
         };
     
@@ -158,7 +158,7 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/level2/strategyAndPlanning/52'); // Redirect to the M2 page
+        router.push('/modules/level1/specialMoves/52'); // Redirect to the M2 page
 } catch (error) {
       console.error('API Error:', error);
     } finally {
@@ -167,12 +167,12 @@ const M1: React.FC = () => {
   };
     const handlePreviousClick = () => {
       setIsLoadingPage(true);
-      router.push('/modules/level2/positionalCalculations/44'); // Redirect to the previous page (adjust the path as needed)
+      router.push('/modules/level1/ArrangnmentOfPieces/42'); // Redirect to the previous page (adjust the path as needed)
     };
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>5.1 Introduction</h3>
+      <h3>5.1 Castling</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}

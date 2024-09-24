@@ -149,8 +149,8 @@ const M1: React.FC = () => {
       // Sample data to send in the POST request
       const requestData = {
         email: storedEmail,
-          course_title: 'tactics2',
-          completed: 84
+          course_title: 'introductionToPieces',
+          completed: 85
         };
     
         // Make the POST request to the API
@@ -158,7 +158,7 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/modules/level2/tactics2/37'); // Redirect to the M2 page
+        router.push('/modules/level1/introductionToPieces/37'); // Redirect to the M2 page
 } catch (error) {
       console.error('API Error:', error);
     } finally {
@@ -166,12 +166,12 @@ const M1: React.FC = () => {
     }
   }; const handlePreviousClick = () => {
       setIsLoadingPage(true);
-      router.push('/modules/level2/tactics2/35'); // Redirect to the previous page (adjust the path as needed)
+      router.push('/modules/level1/introductionToPieces/35'); // Redirect to the previous page (adjust the path as needed)
     };
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>3.6 Introduction</h3>
+      <h3>3.6 Understanding the ‘Knight’</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}

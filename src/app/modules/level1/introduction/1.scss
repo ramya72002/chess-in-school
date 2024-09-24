@@ -18,6 +18,7 @@ body {
     margin-bottom: 10px;
 
     p {
+      font-family: 'Montserrat', sans-serif;
       font-size: 1.5rem; 
       margin-bottom: 30px;
       margin-top: 10px;
@@ -110,6 +111,7 @@ margin-bottom: 20px; // Space below the category boxes
     margin-bottom: 10px;
 
     p {
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
       color: white;
     }
@@ -159,7 +161,9 @@ margin-bottom: 20px; // Space below the category boxes
   }
   
   h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
+    font-weight: bold;
     color: #000000; /* Bright yet professional red */
     margin-bottom: 20px;
     text-align: center;
@@ -168,9 +172,15 @@ margin-bottom: 20px; // Space below the category boxes
   .chessboard-info {
     margin-bottom: 20px;
 
+    .p{
+      font-family: 'Montserrat', sans-serif;
+    }
+
     .video-container {
       margin-bottom: 20px;
       text-align: center;
+
+
 
       video {
         max-width: 100%;
@@ -186,8 +196,9 @@ margin-bottom: 20px; // Space below the category boxes
     }
 
     p {
+      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
-      color: #7f8c8d; /* Soft grey for text */
+      color: #232424; /* Soft grey for text */
       margin-bottom: 10px;
     }
 
