@@ -158,13 +158,26 @@ const M1: React.FC = () => {
     
         // Handle the response
         console.log('API Response:', response.data);
-        router.push('/AfterSchool'); // Redirect to the M2 page
-} catch (error) {
-      console.error('API Error:', error);
-    } finally {
-      setIsLoadingPage(false); // Reset loading state after the request
-    }
-  };
+        
+        //add 3.1
+        const userDetailsString = localStorage.getItem('userDetails');
+        const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+  
+        if (storedUserDetails && storedUserDetails.email) {
+          const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
+            email: storedUserDetails.email,
+            course_title: "chessStudyPlan",
+            status: 'Completed',
+          });
+  
+          // Call API to update status to "In Progress"
+        router.push('/AfterSchool2'); // Redirect to the M2 page
+          
+        }
+      } catch (error) {
+        console.error('Error updating course status:', error);
+      }
+    };
     const handlePreviousClick = () => {
       setIsLoadingPage(true);
       router.push('/modules/level2/gameAnalysis/81'); // Redirect to the previous page (adjust the path as needed)
