@@ -142,7 +142,7 @@ const M1: React.FC = () => {
     fetchUserDetails();
   }, []);
   
-  const handleNextClick = async () => {
+    const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
     const storedEmail = localStorage.getItem('email');
     try {
@@ -171,19 +171,8 @@ const M1: React.FC = () => {
           });
   
           // Call API to update status to "In Progress"
-          const response1 = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
-            email: storedUserDetails.email,
-            course_title: "chessopening",
-            status: 'In Progress',
-          });
-  
-          if (response1.data.success) {
-            router.push('/modules/level2/chessOpening/11'); // Redirect to the M2 page  
-            
-             
-          } else {
-            console.error('Failed to update course status:', response.data.message);
-          }
+        router.push('/AfterSchool1'); // Redirect to the M2 page
+          
         }
       } catch (error) {
         console.error('Error updating course status:', error);
@@ -193,7 +182,6 @@ const M1: React.FC = () => {
       setIsLoadingPage(true);
       router.push('/modules/level1/notation/91'); // Redirect to the previous page (adjust the path as needed)
     };
-       
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}

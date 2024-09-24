@@ -180,13 +180,13 @@ const M1: React.FC = () => {
     };
     const handlePreviousClick = () => {
       setIsLoadingPage(true);
-      router.push('/modules/level1/stagesOfTheGame/82'); // Redirect to the previous page (adjust the path as needed)
+      router.push('/modules/level1/understandingPieceExchanges/74'); // Redirect to the previous page (adjust the path as needed)
     };
        
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>8.3 Endgame</h3>
+      <h3>7.5 Material Down</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}
