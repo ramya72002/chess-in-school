@@ -171,7 +171,7 @@ const M1: React.FC = () => {
           });
   
           // Call API to update status to "In Progress"
-        router.push('/AfterSchool1'); // Redirect to the M2 page
+        router.push('/Afterschool1'); // Redirect to the M2 page
           
         }
       } catch (error) {
