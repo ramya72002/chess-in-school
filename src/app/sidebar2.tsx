@@ -94,8 +94,6 @@ const topics = [
     ]
   }
 
-
-  // Additional topics here
 ];
 
 const Sidebar2: React.FC = () => {

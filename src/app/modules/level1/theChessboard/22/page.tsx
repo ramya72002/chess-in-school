@@ -171,7 +171,7 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
-      <h3>2.2  Letters & Numbers</h3>
+      <h3>1.3  Letters & Numbers</h3>
       
       <section className="chessboard-info">
         {/* Video Section */}
