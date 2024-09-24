@@ -178,7 +178,7 @@ const M1: React.FC = () => {
         });
 
         if (response1.data.success) {
-          router.push('/modules/level1/introductionToPieces/31');
+          router.push('/Afterschool1'); //temper
 
           
            
