@@ -25,15 +25,15 @@ const coursePaths: CoursePaths = {
 };
 
 const courseImages: CoursePaths = {
-  'introduction': '/images/level2/1.png',
-  'theChessboard': '/images/level2/2.png',
-  'introductionToPieces': '/images/level2/3.png',
-  'ArrangnmentOfPieces': '/images/level2/4.png',
-  'specialMoves': '/images/level2/5.png',
-  'winningInChess': '/images/level2/6.png',
-  'understandingPieceExchanges': '/images/level2/7.png',
-  'stagesOfTheGame': '/images/level2/8.png',
-  'notation': '/images/level2/9.png'
+  'introduction': '/images/level1/1.png',
+  'theChessboard': '/images/level1/2.png',
+  'introductionToPieces': '/images/level1/3.png',
+  'ArrangnmentOfPieces': '/images/level1/4.png',
+  'specialMoves': '/images/level1/5.png',
+  'winningInChess': '/images/level1/6.png',
+  'understandingPieceExchanges': '/images/level1/7.png',
+  'stagesOfTheGame': '/images/level1/8.png',
+  'notation': '/images/level1/9.png'
 };
 
 interface CourseStatus {
