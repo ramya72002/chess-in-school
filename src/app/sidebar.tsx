@@ -7,9 +7,17 @@ import axios from 'axios';
 import './side.scss';
 import { UserDetails } from './types/types';
 
+interface SidebarProps {
+  isOpen: boolean;
+}
 
-const Sidebar = () => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
   const router = useRouter();
+  const [sidebarOpen, setSidebarOpen] = useState(isOpen); // Renamed the local state
+
+  const toggleSidebar = () => {
+    setSidebarOpen(!sidebarOpen); // Toggle the sidebar state
+  };
   const handleViewProfile = () => {
     router.push('/portalhome');
   };
@@ -146,8 +154,9 @@ const Sidebar = () => {
     // Add more boy avatar images as needed
   ];
 
+  
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
       <div className="profile">
       <div className="avatarContainer" onClick={() => setShowAvatarOptions(!showAvatarOptions)}>
   <Image src={profilePic} alt="Profile Picture" width={200} height={200} className="avatar" />

@@ -1,6 +1,6 @@
 .account-page {
   font-family: Arial, sans-serif;
-  background-image: url('/images/im4.png');
+  background-color: whitesmoke;
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -17,8 +17,10 @@ h1 {
 }
 
 .account-header {
+  border-radius: 5px;
   text-align: center;
   padding: 10px;
+  margin-bottom: 50px;
   font-size: 30px;
   font-weight: bold;
   background: linear-gradient(180deg, #FF0075, #8C52FF);
@@ -104,7 +106,6 @@ h1 {
   }
 
   &:disabled {
-    // opacity: 0.5;
     cursor: not-allowed;
   }
 }
@@ -115,5 +116,46 @@ h1 {
 
   &:hover {
     opacity: 0.9;
+  }
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .courses-section {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .course-image-container {
+    height: 130px; /* Adjust image size */
+  }
+
+  .status-button, .completion-button {
+    font-size: 12px;
+    padding: 8px 16px; /* Adjust padding */
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .courses-section {
+    grid-template-columns: 1fr; /* 1 column for mobile */
+    grid-row-gap: 20px; /* Increase row gap */
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  .course-image-container {
+    height: 120px; /* Further adjust image size */
+  }
+
+  .status-button, .completion-button {
+    font-size: 11px;
+    padding: 6px 12px; /* Adjust padding for smaller screens */
   }
 }

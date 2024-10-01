@@ -8,7 +8,25 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  transition: all 0.3s ease;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  
+  &.closed {
+    width: 0;
+    overflow: hidden;
+  }
+  
+  @media (max-width: 768px) {
+    width: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+
+    &.open {
+      width: 250px;
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+    }
+  }
 
   .profile {
     text-align: center;
