@@ -5,6 +5,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Sidebar from "./sidebar";
 import AdminHeader from "./admin/admin_header/adminHeader";
 import "./globals.css";
+import "./si.scss";
 import SignIn from "./signin/page";
 import Sidebar2 from "./sidebar2";
 import { Suspense, useState } from "react"; // Import useState for managing sidebar state
