@@ -181,12 +181,12 @@ const M1: React.FC = () => {
           </video>
         </div>
  
-
-    <p>
+        <br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Removing an opponent’s piece from the board by moving one of your pieces to its square is known as a normal capture. Normal captures involve moving a piece to a square occupied by an opponent’s piece to remove it from the board. Special captures include en passant, a special pawn capture, castling, which involves moving the king and rook in a single move, and pawn promotion, which allows a pawn to be replaced by any other piece upon reaching the opposite end of the board.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         This is an illustration of the queen capturing the pawn on c4.
     </p>
  

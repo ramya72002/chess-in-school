@@ -180,14 +180,14 @@ const M1: React.FC = () => {
     </video>
   </div>
 
-  <section className="knight-details">
-    <p>
+  <section className="knight-details"><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       The knight, worth three points, moves in an L-shape: two squares in one direction and then one square perpendicular. This unique movement allows the knight to "jump" over other pieces, making it valuable for navigating crowded positions and executing tactical maneuvers. The knight's ability to reach squares that other pieces might not can be crucial for creating opportunities and threats.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <strong>Movement:</strong> The knight moves in an "L" shape on the chessboard. It goes two squares in one direction (either up, down, left, or right) and then one square at a right angle (to the left or right if it first moved up or down, or up or down if it first moved left or right). Unlike other pieces, the knight can jump over other pieces in its path.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Knights are strongest when centralized on the board, and they become powerful when positioned on protected squares in the opponent's territory, known as outposts. They are also skilled at creating tactical tricks, such as forks, where they can attack multiple pieces simultaneously.
     </p>
   </section>

@@ -203,13 +203,13 @@ const M1: React.FC = () => {
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Finally, the endgame is where our plans come to fruition. The primary objective here is often to promote a pawn to a queen or another powerful piece to secure a decisive material advantage. Mastering the concept of opposition in king and pawn endgames is key to gaining crucial tempos and improving our position. The king, which was a passive piece earlier, becomes a powerful force in the endgame, actively participating in both attack and defense. Simplification is another important strategy—trading pieces down to a simpler endgame can be advantageous, especially when we have a material lead. Effective time management becomes critical as the game approaches its final stage to avoid blunders under pressure.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In conclusion, each stage of the game demands a different approach and understanding. By mastering the opening, middlegame, and endgame, we can enhance our chess skills and increase our chances of victory.
     </p>
 

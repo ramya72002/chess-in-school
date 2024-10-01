@@ -180,12 +180,12 @@ const M1: React.FC = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-    
-    <p>
+    <br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         A situation in chess where the player whose turn it is has no legal moves and their king is not in check. It results in a draw, meaning neither player wins the game. Stalemates occur when a player’s position is such that all moves either place the king in check or are otherwise illegal, but the king itself is not under direct threat. Understanding and recognizing stalemate positions is crucial, as it can turn a lost game into a draw and prevent an opponent from winning.
-    </p>
+    </p><br />
     
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In this example, the White king is not under check but has no legal move. This situation is a stalemate.
     </p>
 

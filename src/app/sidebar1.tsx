@@ -174,7 +174,7 @@ const Sidebar1: React.FC = () => {
             "6.2 Exchange Up": "/modules/level1/understandingPieceExchanges/72",
             "6.3 Exchange Down": "/modules/level1/understandingPieceExchanges/73",
             "6.4 Material Up": "/modules/level1/understandingPieceExchanges/74",
-            "6.5 Material Down": "/modules/level1/understandingPieceExchanges75",
+            "6.5 Material Down": "/modules/level1/understandingPieceExchanges/75",
             "7.1 Opening": "/modules/level1/stagesOfTheGame/81",
             "7.2 Middlegame": "/modules/level1/stagesOfTheGame/82",
             "7.3 Endgame": "/modules/level1/stagesOfTheGame/83",

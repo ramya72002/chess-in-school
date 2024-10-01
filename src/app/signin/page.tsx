@@ -29,7 +29,7 @@ const SignIn = () => {
   const [showOtpInput, setShowOtpInput] = useState(false); // State to show OTP input
   const [loading, setLoading] = useState(false); // Add loading state
   const [emailError, setEmailError] = useState(''); // Add email error state
-  const [messageText, setMessageText] = useState('Only one concurrent login supported at given time.'); // Default message
+  const [messageText, setMessageText] = useState(''); // Default message
   const router = useRouter();
   const signInButtonRef = useRef<HTMLButtonElement>(null); // Ref for the sign-in button
 
@@ -180,7 +180,7 @@ const SignIn = () => {
             </button>
             <p className="text-pink-500 mb-4 text-center">{messageText}</p>
             <div className="text-center mt-4">
-              <p className="text-gray-700">Don't have an account? <a href="/signup" className="text-blue-500 hover:underline">Sign Up</a></p>
+              <p className="text-gray-700"> <a href="/signup" className="text-blue-500 hover:underline"></a></p>
             </div>
           </div>
         </div>

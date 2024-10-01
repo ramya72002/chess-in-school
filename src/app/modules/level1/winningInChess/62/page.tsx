@@ -180,16 +180,16 @@ const M1: React.FC = () => {
             Your browser does not support the video tag.
           </video>
         </div>
-    
-    <p>
+    <br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, a check occurs when a king is directly attacked by an opponent's piece, which requires an immediate response. Players can respond to a check by moving the king, blocking the attack, or capturing the attacking piece. Strategically, checks can be used to force the opponent into specific moves, creating tactical opportunities. There are different types of checks, with key examples including the double check and discovered check.
-    </p>
+    </p><br />
     
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Moving a piece to attack the king is called a check. Always declare “Check” when you put your opponent’s king in check.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         When defending against a check in chess, there are three primary rules to follow. First, you can "Fight" by using another piece to capture the attacking piece. Second, you can "Fend" by blocking the check with another piece. Lastly, you can "Flight" by moving the king out of the line of attack. It is important to note that in the case of a check, you must choose one of these defensive moves; no other move is allowed.
     </p>
 

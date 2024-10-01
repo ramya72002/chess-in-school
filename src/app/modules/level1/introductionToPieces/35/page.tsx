@@ -180,26 +180,26 @@ const M1: React.FC = () => {
     </video>
   </div>
 
-  <section className="rook-details">
-    <p>
+  <section className="rook-details"><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       The rook moves straightforwardly—up, down, left, and right—covering any number of squares along those lines. Valued at 5 points, it plays a key role in castling and becomes especially powerful in the endgame, particularly when positioned on the seventh rank. Its ability to control open files and ranks makes it an asset in both offense and defense.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <strong>Movement:</strong> The rook can move any number of squares vertically or horizontally.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <strong>Open/ Semi-Open Files:</strong> Rooks are strong on open or semi-open files with no blocking pieces.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <strong>Castling:</strong> The rook helps in castling, which protects the king.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <strong>Coordination:</strong> Two rooks work well together on the same file or rank.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <strong>Endgame Power:</strong> Rooks are very powerful in the endgame, especially on the 7th and 8th ranks.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       The rook always moves in a straight path—up, down, left, and right—covering any number of squares along those lines.
     </p>
   </section>

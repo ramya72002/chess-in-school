@@ -146,7 +146,7 @@ export default function RootLayout({
                       pathname === "/admin/StudentDetails") && <AdminHeader />}
                     
                     {/* Conditional rendering of the hamburger button */}
-                    {pathname !== "/" && !pathname.startsWith("/modules/level1/") && !pathname.startsWith("/modules/level2/") && (
+                    {pathname !== "/" && pathname !== "/signin" && !pathname.startsWith("/modules/level1/") && !pathname.startsWith("/modules/level2/") && (
                       <button className="menu-button" onClick={toggleSidebar}>
                         ☰
                       </button>

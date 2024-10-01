@@ -172,7 +172,7 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
   {isLoadingPage && <Loading />}
-  <h3>4.1 Arraignment of Pieces</h3>
+  <h3>3.1 Light Side</h3>
 
   <div className="video-container">
     <video controls width="100%">
@@ -181,8 +181,8 @@ const M1: React.FC = () => {
     </video>
   </div>
 
-  <section className="arraignment-details">
-    <p>
+  <section className="arraignment-details"><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       From the light side perspective, the chess pieces are arranged with the board positioned so that a white square is on the player’s right-hand side. The back row, starting from left to right, is set up with a rook, knight, bishop, and the white queen on a white square, followed by the king, bishop, knight, and rook. The row in front is filled with pawns, poised to advance and control the center, setting the stage for an aggressive opening.
     </p>
    

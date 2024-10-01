@@ -180,18 +180,19 @@ const M1: React.FC = () => {
         </div>
 
   <section className="pieces-introduction">
-    <p>
+    <br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Just like in any strategic war game, chess involves two opposing sides, each striving for victory. One side uses the Light pieces, typically white, while the other uses the Dark pieces, usually black.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Regardless of their color, the pieces are divided into six broad categories. I will introduce these categories here and delve into each of them in more detail in the following lessons.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       In chess, two players face off on opposite sides of the board, with one controlling the light-colored pieces and the other the dark-colored pieces. Each player commands a set of pieces, each with unique roles and abilities.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       The king is the most important piece, as the game is won by checkmating the opponent's king. The queen is the most powerful, capable of moving in multiple directions. The knight is unique in its ability to jump over other pieces. The bishop excels in long-range attacks on diagonals, while the rook is unstoppable, especially as a pair. Lastly, the pawn, though small, can deliver big damage, often determining the game's outcome.
-    </p>
+    </p><br />
   </section>
 
   {/* Navigation Buttons */}

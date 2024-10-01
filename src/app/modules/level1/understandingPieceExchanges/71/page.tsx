@@ -172,24 +172,23 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
     {isLoadingPage && <Loading />}
-    <h3>6. Understanding Piece Exchanges</h3>
     <h3>6.1 Fair Trade</h3>
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, fair trade refers to the exchange of pieces of equal value, maintaining balance in material and ensuring that neither player gains an immediate advantage from the trade. Pawns, worth one point, are the most basic units and are often exchanged with other pawns in the opening to control the center or create open lines. Knights and bishops, each worth three points, are typically traded with each other when players seek to simplify the position or create specific strategic opportunities. Rooks, valued at 5 points, are often exchanged in the endgame to reduce material and head towards a more manageable conclusion. Queens, worth nine points, are usually traded to neutralize threats or transition into a simpler, more predictable endgame.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, trading pieces can be a strategic decision that involves careful consideration of the position. Fair trade is often made to simplify the position, eliminating unnecessary complexity, and making the board easier to manage, especially as the game approaches the endgame, which is a concept that will be discussed later. Another reason for a fair trade might be to eliminate a threat; by trading a piece that poses a significant danger, a player can neutralize an opponent's attack or disrupt their strategy. Additionally, creating balance is an important aspect of fair trading, as it helps maintain material parity and prevents one side from gaining a decisive advantage.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         However, there are situations where trading pieces might not be advisable. For example, if you have a positional advantage, where your piece holds a strong position or exerts significant influence on the board, it might be better to avoid trading. Another reason to refrain from trading is when your piece has greater dynamic potential than your opponent's. If your piece is more active or has the potential to become more powerful, keeping it on the board might allow you to leverage its strength to gain an advantage.
     </p>
 

@@ -172,38 +172,36 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
     {isLoadingPage && <Loading />}
-    <h3>5. Winning in Chess (CCA)</h3>
-    <h4>5.1 Checkmate</h4>
+    <h3>5.1 Checkmate</h3>
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
     
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Understanding and avoiding checkmates in chess is crucial for players. Checkmate occurs when the opponent’s king is placed in a position of direct threat, or "check," from which there is no escape. This ends the game, granting victory to the player who delivered the checkmate. To achieve checkmate, you must coordinate your pieces to control key squares around the king, ensuring that all escape routes are blocked. This often involves using a combination of rooks, queens, and sometimes bishops or knights to deliver the check and cover the king’s potential moves. Learning common checkmate patterns, such as using a queen and king, two rooks, or a rook and king combination, is essential for improving your game. Additionally, always ensure your king has an escape route to avoid being checkmated. The key is to create a situation where the king is in check and cannot move to any safe square, be protected by another piece, or block the attack, thus ending the game with a decisive victory.
     </p>
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         This diagram shows how the Black King and Queen work together to checkmate the White King. The Queen delivers the check while the Black King controls key escape squares. With no safe moves left for the White King, this position results in a checkmate.
-    </p>
+    </p><br />
 
     <section className="chessboard-info">
         
         <br />
-        <p>
+        <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
             In addition to Ranks and Files, there are also Diagonals on the chessboard. Diagonals are
             the slanting lines that connect squares of the same color. Each Diagonal is named based on
             its starting and ending squares, such as A1-H8.
         </p>
         <br />
-        <p>
+        <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
             While Diagonals are important for understanding board dynamics, they are not commonly
             referenced in game notations. For now, we will simply introduce the concept and move
             forward.
         </p>
-        <br />
     </section>
 
     {/* Navigation Buttons */}

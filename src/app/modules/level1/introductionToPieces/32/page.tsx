@@ -181,31 +181,32 @@ const M1: React.FC = () => {
   </div>
 
   <section className="pieces-classification">
-    <p>
+    <br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Now that we know about the different chess pieces, it is crucial to understand their importance in the game. This knowledge is vital when you are deciding whether to attack, defend, capture, or sacrifice a piece. Understanding the value of each piece will help you make informed decisions in these situations.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Each piece is assigned a numerical value that represents its importance in the game:
-    </p>
-    <ul>
+    </p><br />
+    <ul  style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <li>Queen: 9 Points</li>
       <li>Rook: 5 Points</li>
       <li>Bishop: 3 Points</li>
       <li>Knight: 3 Points</li>
       <li>Pawn: 1 Point</li>
-    </ul>
-    <p>
+    </ul><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Based on their assigned values, chess pieces are classified into two categories: major (more important) pieces and minor (less important) pieces.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       The Queen and Rook are classified as major pieces due to their higher value and significant influence on the game.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       The Bishop, Knight, and Pawn are considered minor pieces, as they have lower values and more limited power.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       The King is the most important piece on the board, but it does not fall under either classification because its significance is unique—if the King is captured, the game is lost.
-    </p>
+    </p><br />
   </section>
 
   {/* Navigation Buttons */}

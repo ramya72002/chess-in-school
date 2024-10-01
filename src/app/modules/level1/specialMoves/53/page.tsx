@@ -198,9 +198,7 @@ const M1: React.FC = () => {
     {isLoadingPage && <Loading />}
     <h3>4.3 En Passant</h3>
     
-    <p>
-        En passant is a special pawn capture that occurs when a pawn moves two squares forward, and an adjacent opposing pawn captures it as if it had only moved one square. This capture must be made immediately after the opponent's pawn makes its two-square move, or the opportunity is lost. The en passant capture is time-sensitive; if not taken immediately, the option disappears. Strategically, en passant can be used to disrupt your opponent's pawn structure and open lines for your pieces.
-    </p>
+    
     
     <section className="chessboard-info">
         {/* Video Section */}
@@ -210,19 +208,21 @@ const M1: React.FC = () => {
                 Your browser does not support the video tag.
             </video>
         </div>
+        <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
+        En passant is a special pawn capture that occurs when a pawn moves two squares forward, and an adjacent opposing pawn captures it as if it had only moved one square. This capture must be made immediately after the opponent's pawn makes its two-square move, or the opportunity is lost. The en passant capture is time-sensitive; if not taken immediately, the option disappears. Strategically, en passant can be used to disrupt your opponent's pawn structure and open lines for your pieces.
+        </p>
         <br />
-        <p>
+        <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
             In addition to Ranks and Files, there are also Diagonals on the chessboard. Diagonals are
             the slanting lines that connect squares of the same color. Each Diagonal is named based on
             its starting and ending squares, such as A1-H8.
         </p>
         <br />
-        <p>
+        <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
             While Diagonals are important for understanding board dynamics, they are not commonly
             referenced in game notations. For now, we will simply introduce the concept and move
             forward.
         </p>
-        <br />
     </section>
 
     {/* Navigation Buttons */}

@@ -205,14 +205,14 @@ const M1: React.FC = () => {
       </video>
     </div>
   
-    <section className="queen-details">
-      <p>
+    <section className="queen-details"><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         The queen is the most powerful piece on the board, valued at 9 points. It moves any number of squares in any direction—vertically, horizontally, or diagonally—combining the strengths of both the rook and bishop. This versatility makes the queen a crucial tool for controlling the board and launching attacks, playing a central role in both strategy and tactics.
-      </p>
-      <p>
+      </p><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         The queen is the most versatile and powerful piece on the chessboard, able to move any number of squares in any direction. This unique combination of the movements of the rook, bishop, and pawn makes it a formidable force in both offense and defense. Centralizing the queen maximizes its control over the board, allowing it to influence a larger number of squares. Effective coordination with other pieces enhances its ability to execute powerful attacks.
-      </p>
-      <p>
+      </p><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In the endgame, the queen’s role becomes crucial, either delivering checkmate or supporting pawns as they advance towards promotion, which is a topic that will be covered in the future.
       </p>
     </section>

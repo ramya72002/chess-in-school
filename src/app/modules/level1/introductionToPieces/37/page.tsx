@@ -181,14 +181,14 @@ const M1: React.FC = () => {
     </video>
   </div>
 
-  <section className="pawn-details">
-    <p>
+  <section className="pawn-details"><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Pawns are worth one point each, making them the least valuable pieces on the board. Despite their low value, they play a crucial role in controlling key squares and forming the foundation of strategic play. Their coordinated movements can create strong structures, bolster defenses, or initiate attacks.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Pawns move forward one square but capture diagonally. If a pawn reaches the other side of the board, it can be promoted, usually becoming a queen. Pawns can also capture using a special move called <strong>en passant</strong> when an opponent’s pawn moves two squares forward from its starting position. They form the structure of your position, protecting your pieces, and are strongest when they support each other in chains.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <strong>Movement:</strong> Pawns move forward one square at a time, but they capture by moving one square diagonally. On their first move, pawns have the option to move two squares forward instead of one. Unlike other pieces, pawns cannot move backward. Their special moves include promotion (when they reach the other side of the board) and en passant (a unique capture). We'll cover these special moves as we progress through the journey.
     </p>
   </section>

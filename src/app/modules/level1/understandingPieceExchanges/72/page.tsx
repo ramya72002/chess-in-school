@@ -178,17 +178,17 @@ const M1: React.FC = () => {
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, being "exchange up" refers to gaining a material advantage by capturing a higher-value piece, typically a rook, in exchange for a lower-value piece, usually a knight or bishop. The value of this exchange lies in the material gain: in standard piece valuation, a rook is worth five points, while a knight or bishop is worth three points. Therefore, capturing a rook in exchange for a knight or bishop results in a net gain of two points.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Strategically, being exchanged offers several benefits. One significant advantage is in the endgame, where having a rook instead of a knight or bishop can provide a powerful edge, as rooks are more effective in open positions and can control more squares. Additionally, a rook's ability to dominate open files and ranks contributes to increased board control, making it easier to pressure the opponent and potentially force mistakes.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         When aiming for an exchange up in chess, it is important to identify key moments that can lead to a material advantage. Look for tactical opportunities where your opponent's rook is vulnerable to a trade with your knight or bishop, especially if this exchange results in a material gain or weakens their position. Additionally, trading a knight or bishop for a rook can help simplify the position, making it easier to transition into the endgame and improving your chances of winning.
     </p>
 

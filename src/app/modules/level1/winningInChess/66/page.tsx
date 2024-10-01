@@ -203,14 +203,14 @@ const M1: React.FC = () => {
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
  
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         A draw in chess occurs when neither player wins, resulting in a tie where each player receives half a point. Common types of draws include stalemate, which happens when a player has no legal moves and their king is not in check, ending the game in a draw. Another type is threefold repetition, where the game is drawn if an identical position occurs three times with the same player to move and the same available moves. Additionally, the fifty-move rule allows a draw to be claimed if fifty consecutive moves are made without any pawn movement or piece capture.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         A draw in chess can occur in several ways. Insufficient material happens when neither player has enough pieces to checkmate the opponent, such as in a king versus king scenario. Players can also agree to a draw at any point during the game, often in equal or unclear positions. Additionally, a draw can be forced through perpetual check, where one player gives a series of checks that the opponent cannot escape from, leading to an endless cycle of checks.
     </p>
 

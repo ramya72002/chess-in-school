@@ -172,28 +172,28 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
     {isLoadingPage && <Loading />}
-    <h3>6. Understanding Piece Exchanges</h3>
+    
     <h3>6.4 Material Up</h3>
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, being "material up" means having more valuable pieces or pawns than your opponent, providing you with either a numerical or positional advantage. To gain a material advantage, you can focus on capturing your opponent’s pieces—such as a knight, bishop, or even a queen—without losing a piece of equal or greater value. Additionally, winning extra pawns can give you an edge, especially if it leads to passed pawns or weakens your opponent's pawn structure.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Once you have a material advantage, converting it into a win involves simplifying the position by trading down pieces. This makes it easier to push your advantage without giving your opponent opportunities for counterplay. Playing cautiously to avoid unnecessary risks, such as sacrifices or tactical blunders, is key to maintaining your edge and preventing your opponent from recovering material or equalizing the position.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         When you are material up in chess, several strategic benefits come into play. First, having more material allows you to control the game by exerting greater influence over the board, dominating key squares, and limiting your opponent’s options. This extra material also enhances your attack, enabling you to launch stronger threats that are harder for your opponent to counter. Furthermore, in the endgame, having a material advantage—especially with extra pawns—gives you a higher chance of promoting a pawn and securing checkmate.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         However, being material up can lead to common pitfalls. Overconfidence may cause players to overlook their opponent’s threats or make careless moves. Additionally, having a material advantage does not always guarantee victory. Ignoring important positional factors, such as king safety, pawn structure, or piece activity, can result in blunders or stalemates.
     </p>
 

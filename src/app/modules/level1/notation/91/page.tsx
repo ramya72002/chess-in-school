@@ -197,15 +197,15 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
     {isLoadingPage && <Loading />}
-    <h4>8.1 Notations</h4>
+    <h3>8.1 Notations</h3>
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Chess notation is a system used for recording moves in chess, akin to a language that facilitates game review and strategy sharing. It helps players document and analyze games efficiently. The chessboard is an 8x8 grid with rows labeled 1 to 8 and columns labeled a to h, with squares identified by a letter and number combination, such as a1 (bottom-left) and h8 (top-right), resembling coordinates. Each piece is denoted by a specific letter: K for King, Q for Queen, R for Rook, B for Bishop, N for Knight, and P for Pawn (often omitted in notation). Moves are recorded by writing the piece’s letter followed by its destination square, such as "Nf3" for a Knight moving to f3 and "e4" for a Pawn moving to e4. Special moves include castling, noted as "O-O" for King's side and "O-O-O" for Queen's side, and captures, indicated by adding "x" before the destination square, like "Bxc4" for a Bishop capturing on c4. Check is marked with a "+", as in "Qd5+", and checkmate is marked with a "#", such as "Qd5#". This notation system provides a structured way to record and communicate moves in chess.
     </p>
 

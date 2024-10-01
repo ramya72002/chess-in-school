@@ -179,9 +179,9 @@ const M1: React.FC = () => {
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Principles of Attacking: To improve your chess game, we need to know the 5 Principles of Attacking! Focus on key strategies such as ensuring king safety by castling early to maintain a solid pawn structure. Coordinate your pieces to work together for defense and counterattacks, and control key squares to limit your opponent’s options while enhancing your strategic position. Avoid weaknesses by positioning your pieces and pawns to prevent vulnerabilities that your opponent can exploit. Exchange pieces of equal value to simplify the position or gain a strategic advantage, and once ahead in material, simplify the position further to reduce complexity and improve manageability of the game.
     </p>
 

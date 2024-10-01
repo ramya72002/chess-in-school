@@ -174,9 +174,6 @@ const M1: React.FC = () => {
     {isLoadingPage && <Loading />}
     <h3>4.2 Pawn Promotion</h3>
     
-    <p>
-        Pawn promotion occurs when a pawn advances to the eighth rank (or first rank for Black) and is promoted to a queen, rook, bishop, or knight. While the queen is the most common choice for promotion due to its power, there are situations where promoting to a knight, rook, or bishop (a process known as underpromotion) can be strategically advantageous. The timing and choice of promotion are critical and can significantly impact the outcome of the game, particularly in the endgame.
-    </p>
     
     <section className="chessboard-info">
         {/* Video Section */}
@@ -185,20 +182,22 @@ const M1: React.FC = () => {
                 <source src="/videos/video1.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-        </div>
+        </div><p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
+        Pawn promotion occurs when a pawn advances to the eighth rank (or first rank for Black) and is promoted to a queen, rook, bishop, or knight. While the queen is the most common choice for promotion due to its power, there are situations where promoting to a knight, rook, or bishop (a process known as underpromotion) can be strategically advantageous. The timing and choice of promotion are critical and can significantly impact the outcome of the game, particularly in the endgame.
+    </p>
+    
         <br />
-        <p>
+        <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
             In addition to Ranks and Files, there are also Diagonals on the chessboard. Diagonals are
             the slanting lines that connect squares of the same color. Each Diagonal is named based on
             its starting and ending squares, such as A1-H8.
         </p>
         <br />
-        <p>
+        <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
             While Diagonals are important for understanding board dynamics, they are not commonly
             referenced in game notations. For now, we will simply introduce the concept and move
             forward.
         </p>
-        <br />
     </section>
 
     {/* Navigation Buttons */}

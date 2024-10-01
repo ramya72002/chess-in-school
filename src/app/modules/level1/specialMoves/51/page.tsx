@@ -172,37 +172,37 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
   {isLoadingPage && <Loading />}
-  <h3>4. Special Moves: Now let us understand a few special moves</h3>
+  <h3>4.1 Castling</h3>
 
   <section className="special-moves">
-    <h4>4.1 Castling</h4>
+   
 
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
-    <p>
+        </div><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Castling is a unique move in chess involving the king and a rook, primarily for defensive purposes. To castle, several conditions must be met: neither the king nor the rook can have moved previously, the squares between them must be unoccupied, and the king must not be in check, nor can it move through or land on a square under attack. During castling, the king moves two squares towards the rook, and the rook moves to the square immediately next to the king. This maneuver can be performed on either side of the board. Kingside castling involves the king moving towards the h-file rook, while queenside castling involves the king moving towards the a-file rook.
-    </p>
+    </p><br />
     
-    <p>The three rules of castling in chess are as follows:</p>
-    <ol>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>The three rules of castling in chess are as follows:</p>
+    <ol style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <li>The King and Rook involved in the castling move must not have moved previously.</li>
       <li>There must be no pieces between the Rook and King on the castling side.</li>
       <li>Neither the King nor any squares on the castling side can be under check during the castling move.</li>
-    </ol>
+    </ol><br />
     
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Kingside castling, also known as short castling, is a strategic chess move where the king moves two squares toward the rook on its starting side, and the rook then moves to the square right next to the king. This maneuver is primarily used to increase the king's safety by positioning it behind a protective wall of pawns and connecting the rooks, which enhances their ability to work together. For kingside castling to be legal, several conditions must be met: neither the king nor the rook involved in the castling move can have moved earlier in the game, there must be no pieces between the king and the rook, and the king cannot be in check or move through or land on a square that is under attack. Kingside castling is typically faster than queenside castling because it involves fewer squares, allowing the king to reach safety quickly and enabling the rook to take an active role in the game.
-    </p>
+    </p><br />
     
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Queenside castling, also known as long castling, is a strategic chess move where the king moves two squares toward the rook on the queen's side of the board, and the rook then moves to the square right next to the king. This move aims to enhance the king's safety while also bringing the rook into a more active and central position on the board. For queenside castling to be legal, several conditions must be met: the king and the rook involved in the castling must not have moved earlier in the game, there must be no pieces between the king and the rook, and the king cannot be in check, nor can it pass through or land on a square that is under attack.
-    </p>
+    </p><br />
     
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Compared to kingside castling, queenside castling often takes more time to set up because it involves more squares and usually requires more preparation, such as moving the queen and another piece out of the way. However, it can be a powerful move, as it often places the king in a more central position while allowing the rook to immediately control an important central file.
     </p>
   </section>

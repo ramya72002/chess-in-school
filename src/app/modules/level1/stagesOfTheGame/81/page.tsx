@@ -172,16 +172,15 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
     {isLoadingPage && <Loading />}
-    <h3>7. 3 Stages of the Game: Opening, Middlegame and Endgame</h3>
     <h3>7.1: The Opening</ h3>
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In the opening, our primary goals are to establish a strong pawn structure, ensure king safety, and develop our pieces efficiently. We start by controlling the center with our pawns, which allows us to open lines for our pieces and set a solid foundation for the rest of the game. Castling early is crucial—it secures our king and connects the rooks, preparing them for future coordination. Rapidly developing our knights and bishops to active squares helps us avoid falling behind and losing tempo. Controlling more space enhances our piece mobility and restricts our opponent’s options. Importantly, we must avoid premature attacks; focusing on completing our development before launching any aggressive moves is key to maintaining a strong position.
     </p>
 

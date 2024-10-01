@@ -180,39 +180,39 @@ const M1: React.FC = () => {
     </video>
   </div>
 
-  <section className="king-details">
-    <p>
+  <section className="king-details"><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Understanding the pieces—Now, let us delve into the details of each piece and understand their unique features and movements. This will help you grasp how each piece contributes to the overall strategy of the game.
-    </p>
-    <ul>
+    </p><br />
+    <ul style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       <li>
         <strong>King:</strong> The king is undoubtedly the most crucial piece in chess; losing it means losing the game. It moves only one square in any direction. Protecting your king through castling and attacking your opponent's king are essential strategies. In the endgame, the king's role becomes even more pivotal. If you are curious about endgames or castling, do not worry—these concepts will become clear as we advance through our journey.
-      </li>
+      </li><br />
       <li>
         The king moves one square in any direction.
-      </li>
+      </li><br />
       <li>
         The goal is to avoid checkmate while trying to checkmate the opponent at the same time.
-      </li>
+      </li><br />
       <li>
         <strong>Castling:</strong> The king can castle with a rook to move to safety.
-      </li>
+      </li><br />
       <li>
         <strong>Endgame Importance:</strong> The king becomes more active in the endgame.
-      </li>
+      </li><br />
       <li>
         <strong>Safety:</strong> Keep the king safe by castling early.
       </li>
-    </ul>
-    <p>
+    </ul><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       In this position, the squares highlighted on the board indicate where the King can move. However, it is important to remember that for any piece to move to a square, it must not be blocked by one of its own pieces.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Additionally, if an opponent's piece occupies a square, your piece can move to that square only by capturing the opponent's piece.
-    </p>
-    <p>
+    </p><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       For example, the King cannot move to E5 because it is already occupied by its own pawn. Similarly, the King can move to E3 only after capturing the opponent’s Knight.
-    </p>
+    </p><br />
   </section>
 
   {/* Navigation Buttons */}

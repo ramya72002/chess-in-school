@@ -186,37 +186,36 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
     {isLoadingPage && <Loading />}
-    <h3>6. Understanding Piece Exchanges</h3>
     <h3>6.5 Material Down</h3>
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
-    <p>
+        </div><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, being "material down" refers to having fewer or less valuable pieces or pawns than your opponent, resulting in a numerical or positional disadvantage. This can happen in a couple of ways. First, you might lose a piece like a knight, bishop, or even a queen without gaining a piece of equal or greater value in return. Additionally, players sometimes sacrifice material intentionally to gain positional advantages or launch an attack, but if the compensation is not sufficient, this can leave them material down.
-    </p>
+    </p><br />
 
-    <p>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Being material down presents significant challenges, especially in defense. With fewer pieces, it becomes harder to defend your position, protect your king, and maintain control over key squares on the board.
-    </p>
+    </p><br />
 
-    <h5>Disadvantages of Being Material Down</h5>
-    <ul>
+    <h5 style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>Disadvantages of Being Material Down</h5>
+    <ul style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         <li><strong>Limited Offensive Potential:</strong> When you're material down, you have fewer resources for launching effective attacks. This limitation can make it hard to create winning chances and apply pressure on your opponent.</li>
         <li><strong>Endgame Difficulties:</strong> In the endgame, being down in material is particularly problematic. Your opponent's extra pieces or pawns can be used to create decisive threats, such as promoting a pawn, which can be challenging to counter.</li>
     </ul>
 
-    <h5>Strategies to Compensate for Material Loss</h5>
-    <ul>
+    <h5 style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>Strategies to Compensate for Material Loss</h5>
+    <ul style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         <li><strong>Creating Counterplay:</strong> To offset a material disadvantage, focus on creating active threats and targeting weak points in your opponent’s position. Launching a counterattack can sometimes turn the game in your favor.</li>
         <li><strong>Positional Play:</strong> Strong piece placement, control of key squares, and a solid pawn structure can sometimes compensate for being material down. This approach makes it harder for your opponent to fully capitalize on their material advantage.</li>
         <li><strong>Avoiding Further Trades:</strong> When material down, it is crucial to avoid unnecessary exchanges of pieces. Such trades can simplify the position and highlight your material deficit, making it even more challenging to recover.</li>
-    </ul>
+    </ul><br />
 
-    <h5>When to Consider Sacrificing More Material</h5>
-    <p>
+    <h5 style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>When to Consider Sacrificing More Material</h5>
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         <strong>Dynamic Compensation:</strong> In certain situations, sacrificing additional material can lead to significant positional advantages, create an unstoppable attack, or force a draw. This dynamic compensation can sometimes turn the tables on your opponent, shifting the balance of power.
     </p>
 

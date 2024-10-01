@@ -197,7 +197,7 @@ const M1: React.FC = () => {
   return (
     <div className="lesson-content">
     {isLoadingPage && <Loading />}
-    <h3>4.2 Dark Side</h3>
+    <h3>3.2 Dark Side</h3>
   
     <div className="video-container">
       <video controls width="100%">
@@ -206,8 +206,8 @@ const M1: React.FC = () => {
       </video>
     </div>
   
-    <section className="arraignment-details">
-    <p>
+    <section className="arraignment-details"><br />
+    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       On the dark side, the arrangement mirrors that of the light side, with the board also positioned to have a white square on the right. Here, the back row features the same sequence of pieces, but the black queen starts on a black square, maintaining symmetry. The pawns stand ready to push forward, matching their opponent’s moves. This standardized setup ensures that both sides begin with identical formations, creating a balanced and fair environment for tactical maneuvers and strategic play as the game unfolds.
     </p>
      

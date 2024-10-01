@@ -178,9 +178,9 @@ const M1: React.FC = () => {
             <source src="/videos/video1.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-        </div>
+        </div><br />
 
-    <p>
+    <p  style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         As we transition into the middlegame, our focus shifts to maintaining the initiative. Creating continuous threats and forcing our opponent to respond can lead to a decisive advantage. We must constantly ensure our king’s safety while looking for opportunities to exploit weaknesses in our opponent’s position. Strategic planning becomes crucial—develop a long-term plan based on the position's strengths and weaknesses, such as targeting weak pawns or establishing strong outposts. Tactical awareness is equally important; be vigilant for opportunities like forks, pins, and skewers, and be ready to capitalize on combinations. Harmonizing our pieces to work together effectively can maximize their potential and create threats.
     </p>
 

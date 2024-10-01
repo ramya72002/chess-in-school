@@ -180,23 +180,23 @@ const M1: React.FC = () => {
       </video>
     </div>
   
-    <section className="bishop-details">
-      <p>
+    <section className="bishop-details"><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         The bishop is a long-range piece that moves diagonally across the board, confined to squares of its color complex, either light or dark. Controlling open diagonals is essential for maintaining the bishop’s activity, as it performs best when unblocked. The bishop pair, with one on each color, offers a significant advantage by covering both light and dark squares, enhancing the player’s control over the board.
-      </p>
-      <p>
+      </p><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         The squares highlighted on the board indicate where the bishop can move. Again, remember that for any piece to move to a square, it must not be blocked by one of its own pieces.
-      </p>
-      <p>
+      </p><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Additionally, if an opponent's piece occupies a square, your piece can move to that square only by capturing the opponent's piece.
-      </p>
-      <p>
+      </p><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         For example, the Light Squared Bishop cannot move to C6 because it is already occupied by its own pawn. However, the bishop can move to G2, but only after capturing the opponent’s knight.
-      </p>
-      <p>
+      </p><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Previously, we looked at an example with the light-squared bishop. Now, let us look at an example with the dark-squared bishop:
-      </p>
-      <p>
+      </p><br />
+      <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Similarly, the Dark Squared Bishop cannot move to F6 because it is already occupied by its own pawn. However, the bishop can move to F2, but only after capturing the opponent’s knight.
       </p>
     </section>
