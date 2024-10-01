@@ -5,7 +5,6 @@ import { useRouter } from 'next/navigation';
 import { FaPuzzlePiece,FaTrophy,FaSignOutAlt, FaQuestionCircle, FaGraduationCap, FaChalkboardTeacher, FaCalendarAlt, FaNewspaper } from 'react-icons/fa';
 import axios from 'axios';
 import './side.scss';
-import './si.scss';
 import { UserDetails } from './types/types';
 
 interface SidebarProps {
