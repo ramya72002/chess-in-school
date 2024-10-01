@@ -198,23 +198,23 @@ const Sidebar1: React.FC = () => {
     if (title.startsWith("1.")) {
       return userCourses.includes("thechessboard");
     } 
-    // else if (title.startsWith("2.")) {  //temper
-    //   return userCourses.includes("introductiontopieces");
-    // } else if (title.startsWith("3.")) {
-    //   return userCourses.includes("arrangnmentofpieces");
-    // } else if (title.startsWith("4.")) {
-    //   return userCourses.includes("specialmoves");
-    // } else if (title.startsWith("5.")) {
-    //   return userCourses.includes("winninginchess");
-    // } else if (title.startsWith("6.")) {
-    //   return userCourses.includes("understandingpieceexchanges");
-    // } else if (title.startsWith("7.")) {
-    //   return userCourses.includes("stagesofthegame");
-    // } else if (title.startsWith("8.")) {
-    //   return userCourses.includes("notation");
-    // }else if (title.startsWith("9.")) {
-    //     return userCourses.includes("chessgame");
-    // }
+    else if (title.startsWith("2.")) {
+      return userCourses.includes("introductiontopieces");
+    } else if (title.startsWith("3.")) {
+      return userCourses.includes("arrangnmentofpieces");
+    } else if (title.startsWith("4.")) {
+      return userCourses.includes("specialmoves");
+    } else if (title.startsWith("5.")) {
+      return userCourses.includes("winninginchess");
+    } else if (title.startsWith("6.")) {
+      return userCourses.includes("understandingpieceexchanges");
+    } else if (title.startsWith("7.")) {
+      return userCourses.includes("stagesofthegame");
+    } else if (title.startsWith("8.")) {
+      return userCourses.includes("notation");
+    }else if (title.startsWith("9.")) {
+        return userCourses.includes("chessgame");
+    }
     return false;
   };
 
