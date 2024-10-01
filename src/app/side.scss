@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&family=Matemasie&display=swap');
+
 .sidebar {
   width: 350px;
   height: 100vh;
@@ -15,7 +15,7 @@
     width: 0;
     overflow: hidden;
   }
-  
+
   @media (max-width: 768px) {
     width: 0;
     transform: translateX(-100%);
@@ -35,50 +35,24 @@
     .avatar {
       border-radius: 50%;
       border: 5px solid #ddd;
-      cursor: pointer; /* Add cursor pointer for clickable avatars */
+      cursor: pointer;
       object-fit: cover;
     }
-    .name {
-      font-size: 2.5rem;
-      
-      color: #e91e63; // Bright pink
-      font-weight: bold;
-      font-family: 'Baloo Bhaina 2', cursive; // Playful, kid-friendly font
-      margin-bottom: 10px;
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    
+
     .role {
       font-family: 'Montserrat', sans-serif;
       font-size: 2rem;
       font-weight: bold;
-      color: #0075d4; // Cool blue for variety
-      // background-color: #ffffff;
+      color: #0075d4;
       padding: 10px 20px;
       border-radius: 30px;
       margin-bottom: 15px;
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
-    
-    .profile-id {
-      font-size: 1.5rem;
-      color: #ff5722; // Bright orange
-      // background-color: #ffffff;
-      padding: 8px 15px;
-      border-radius: 20px;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .profile-container:hover {
-      transform: scale(1.05); // Slight zoom-in effect on hover
-      transition: transform 0.3s ease;
-    }
 
     .viewProfile {
-      margin-top: 1px;
       padding: 10px 20px;
       background-color: #007bff;
-      font-family: 'Montserrat', sans-serif;
       color: white;
       border: none;
       border-radius: 5px;
@@ -89,77 +63,7 @@
         background-color: #0056b3;
       }
     }
-
-    .avatarSelection {
-      position: absolute;
-      top: 50px; /* Adjust based on your layout */
-      left: 50%;
-      transform: translateX(-50%);
-      background: #ffeb3b; /* Bright yellow background */
-      border: 2px solid #f44336; /* Bright red border */
-      padding: 20px; /* Increased padding for more space */
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      z-index: 10;
-      height: 500px;
-      width: 960px; /* Adjust width if necessary */
-      color: #000;
-      font-family: 'Montserrat', sans-serif;
-    
-      .avatarTabs {
-        display: flex;
-        justify-content: space-between;
-    
-        .avatarTab {
-          flex: 1;
-          
-          .avatarList {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px; /* Increased gap for better spacing */
-    
-            .avatarOption {
-              cursor: pointer;
-              margin: 10px; /* Increased margin for better spacing */
-              transition: transform 0.3s; /* Smooth transition on hover */
-    
-              &:hover {
-                transform: scale(1.1); /* Slightly increase size on hover */
-              }
-    
-              img {
-                border-radius: 50%;
-                width: 100px;
-                height: 100px;
-                border: 2px solid #2196f3; /* Bright blue border */
-                transition: border-color 0.3s; /* Smooth transition for border color on hover */
-    
-                &:hover {
-                  border-color: #4caf50; /* Change border color to bright green on hover */
-                }
-              }
-            }
-          }
-        }
-      }
-    }
   }
-
-  .avatarSelection {
-    position: relative;
-    /* other styles */
-  }
-  
-  .closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
 
   .nav {
     display: flex;
@@ -181,7 +85,6 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 1.2rem;
       font-weight: bold;
-
       &:hover {
         background-color: #e9ecef;
         color: #007bff;
@@ -250,23 +153,101 @@
           background-color: #8a2be2;
         }
       }
-        &.school {
-          background-color: #888211; /* BlueViolet */
-          color: rgb(243, 244, 243);
-  
-          &:hover {
-            background-color: #8f9a12;
-          }
-      }
-      &.logout {
-        background-color: #ee2e08; /* BlueViolet */
-        color: white;
+
+      &.school {
+        background-color: #888211; /* BlueViolet */
+        color: rgb(243, 244, 243);
 
         &:hover {
-          background-color: #d3340c;
+          background-color: #8f9a12;
+        }
+    }
+    &.logout {
+      background-color: #ee2e08; /* BlueViolet */
+      color: white;
+
+      &:hover {
+        background-color: #d3340c;
+      }
+    }
+
+  }
+  }
+}
+
+// Full-Screen Modal Styles
+.avatarModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8); // Darker overlay for full-screen
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+
+  .modalContent {
+    background: #ffeb3b;
+    border-radius: 8px;
+    padding: 20px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; // Added for close button positioning
+
+    .closeButton {
+      background: transparent;
+      border: none;
+      font-size: 24px;
+      color: #555;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    .avatarTabs {
+      display: flex;
+      flex-direction: column; // Stack tabs vertically
+      width: 100%;
+      height: 100%;
+      overflow-y: auto; // Allow scrolling if content overflows
+
+      .avatarTab {
+        flex: 1;
+        padding: 10px;
+
+        h3 {
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+
+        .avatarList {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          .avatarOption {
+            margin: 5px;
+            cursor: pointer;
+
+            img {
+              border-radius: 50%;
+              border: 2px solid #ddd;
+              transition: transform 0.3s;
+
+              &:hover {
+                transform: scale(1.1);
+              }
+            }
+          }
         }
       }
-
     }
   }
 }
