@@ -50,10 +50,6 @@ body {
   background-color: rgb(235, 233, 233);;
 }
 
-.sidebar {
-  width: 350px; /* Adjust the width as needed */
-  background-color: rgb(235, 231, 231); /* Adjust the background color as needed */
-}
 
 .content-container {
   flex: 1;
