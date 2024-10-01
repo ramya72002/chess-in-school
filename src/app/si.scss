@@ -1,0 +1,39 @@
+.menu-button {
+    display: none;
+    position: absolute;
+    top: 23px;
+    left: 5px;
+    z-index: 1000;
+    background-color: #ffffff;
+    color: #4b4b4b;
+    border: none;
+    padding: 0.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .menu-button {
+      display: block;
+    }
+  
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+    }
+  
+    .sidebar.open {
+      transform: translateX(0);
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .menu-button {
+      display: none;
+    }
+  
+    .sidebar {
+      transform: none;
+    }
+  }
+  
