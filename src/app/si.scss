@@ -11,8 +11,7 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  
-  @media (max-width: 768px) {
+  @media (max-width: 2000px) {
     .menu-button {
       display: block;
     }
@@ -27,7 +26,7 @@
     }
   }
   
-  @media (min-width: 769px) {
+  @media (min-width: 2001px) {
     .menu-button {
       display: none;
     }
