@@ -12,7 +12,7 @@ interface CoursePaths {
 
 const coursePaths: CoursePaths = {
   'theChessboard': '/modules/level1/introduction/11',
-  'introductionToPieces': '//modules/level1/introductionToPieces/31',
+  'introductionToPieces': '/modules/level1/introductionToPieces/31',
   'ArrangnmentOfPieces': '/modules/level1/ArrangnmentOfPieces/41',
   'specialMoves': '/modules/level1/specialMoves/51',
   'winningInChess': '/modules/level1/winningInChess/61',

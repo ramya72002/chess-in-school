@@ -149,6 +149,7 @@
     width: 100%;
     overflow-y: auto; /* Enable vertical scrolling */
     padding-right: 10px; /* Add some padding to avoid content touching the scrollbar */
+    cursor: pointer;
 
     .navItem {
       display: flex;
