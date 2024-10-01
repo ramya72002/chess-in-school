@@ -196,38 +196,29 @@ const M1: React.FC = () => {
   };
   return (
     <div className="lesson-content">
-      {isLoadingPage && <Loading />}
-      <h3>4.2 Dark Side</h3>
-      
-      <section className="chessboard-info">
-        {/* Video Section */}
-        <div className="video-container">
-          <video controls width="100%">
-            <source src="/videos/video1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <h2>The Chessboard</h2>
-        <p>
-  As discussed earlier, every square on the board has a unique "first name" and "last name."
-  The first name corresponds to the letter of the File (the vertical column), and the last name
-  corresponds to the number of the Rank (the horizontal row).
-</p><br />
-
-<p>
-  For example, take the square highlighted in the image: D4. The first name is "D," which is
-  the File the square is on, and the last name is "4," representing the 4th Rank. Together, they
-  form the square's unique identifier: D4.
-</p><br />
-
-      </section>
-
-      {/* Navigation Buttons */}
-      <section className="navigation-buttons">
-        <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>
-        <button onClick={handleNextClick} className="next-button">Next</button>
-      </section>
+    {isLoadingPage && <Loading />}
+    <h3>4.2 Dark Side</h3>
+  
+    <div className="video-container">
+      <video controls width="100%">
+        <source src="/videos/video1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
     </div>
+  
+    <section className="arraignment-details">
+    <p>
+      On the dark side, the arrangement mirrors that of the light side, with the board also positioned to have a white square on the right. Here, the back row features the same sequence of pieces, but the black queen starts on a black square, maintaining symmetry. The pawns stand ready to push forward, matching their opponent’s moves. This standardized setup ensures that both sides begin with identical formations, creating a balanced and fair environment for tactical maneuvers and strategic play as the game unfolds.
+    </p>
+     
+    </section>
+  
+    {/* Navigation Buttons */}
+    <section className="navigation-buttons">
+      <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>
+      <button onClick={handleNextClick} className="next-button">Next</button>
+    </section>
+  </div>
   );
 };
 
