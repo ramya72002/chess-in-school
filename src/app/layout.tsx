@@ -97,7 +97,7 @@ export default function RootLayout({
                     pathname === "/modules/level1/notation/91" ||
                     pathname === "/modules/level1/chessGame/101") && (
                       <Sidebar1/>
-                    )}
+                  )}
 
                   {/* level2 knight */}
                   {(pathname === "/modules/level2/chessOpening/11" ||
@@ -136,7 +136,7 @@ export default function RootLayout({
                     pathname === "/modules/level2/gameAnalysis/81" ||
                     pathname === "/modules/level2/chessStudyPlan/91") && (
                       <Sidebar2/>
-                    )}
+                  )}
 
                   <div className="content-container">
                     {(pathname === "/admin" ||
@@ -146,7 +146,7 @@ export default function RootLayout({
                       pathname === "/admin/StudentDetails") && <AdminHeader />}
                     
                     {/* Conditional rendering of the hamburger button */}
-                    {pathname !== "/" && (
+                    {pathname !== "/" && !pathname.startsWith("/modules/level1/") && !pathname.startsWith("/modules/level2/") && (
                       <button className="menu-button" onClick={toggleSidebar}>
                         ☰
                       </button>
