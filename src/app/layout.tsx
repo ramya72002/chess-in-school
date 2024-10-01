@@ -33,11 +33,6 @@ export default function RootLayout({
             <SearchParamsWrapper>
               {(afterschool) => (
                 <>
-                  {/* Menu Button for Mobile and Tablet */}
-                  <button className="menu-button" onClick={toggleSidebar}>
-                    ☰
-                  </button>
-
                   {/* Sidebar logic */}
                   {(pathname === "/portalhome" ||
                     pathname === "/imagepuzzle" ||
@@ -149,6 +144,14 @@ export default function RootLayout({
                       pathname === "/admin/admin_tournaments" ||
                       pathname === "/admin/admin_image_demo" ||
                       pathname === "/admin/StudentDetails") && <AdminHeader />}
+                    
+                    {/* Conditional rendering of the hamburger button */}
+                    {pathname !== "/" && (
+                      <button className="menu-button" onClick={toggleSidebar}>
+                        ☰
+                      </button>
+                    )}
+                    
                     {pathname === "/" ? (
                       <SignIn />
                     ) : (
