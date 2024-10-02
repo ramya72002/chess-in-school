@@ -169,10 +169,16 @@ const M1: React.FC = () => {
             course_title: "chessGame",
             status: 'Completed',
           });
+          const updateLevelResponse = await axios.post('https://backend-chess-tau.vercel.app/updatelevelcompleted', {
+            email: storedUserDetails.email,
+            level: "Level 2"
+          });
+          if(updateLevelResponse.status==200){
   
-          // Call API to update status to "In Progress"
-        router.push('/Afterschool1'); // Redirect to the M2 page
-          
+           
+        router.push('/portalhome'); // Redirect to the M2 page
+          }
+          console.error('Error updating plz try again', error);
         }
       } catch (error) {
         console.error('Error updating course status:', error);
@@ -307,7 +313,7 @@ const M1: React.FC = () => {
       {/* Navigation Buttons */}
       <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>
-        <button onClick={handleNextClick} className="next-button">Next</button>
+        <button onClick={handleNextClick} className="next-button">Go To Next Level</button>
       </section>
     </div>
   );

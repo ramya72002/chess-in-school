@@ -19,7 +19,7 @@ const coursePaths: CoursePaths = {
   'understandingPieceExchanges': '/modules/level1/understandingPieceExchanges/71',
   'stagesOfTheGame': '/modules/level1/stagesOfTheGame/81',
   'notation': '/modules/level1/notation/91',
-  'chessGame': '/modules/level1/chessStudyPlan/101'
+  'chessGame': '/modules/level1/chessGame/101'
 
 };
 
