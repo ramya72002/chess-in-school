@@ -129,24 +129,28 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
         >
           <FaCalendarAlt /> Learning
         </a>
-        <a href="/arena/puzzleArena" className="navItem teachers">
-          <FaPuzzlePiece /> Puzzle Arena
-        </a>
-        <a onClick={async () => {
-          // Handle sign out logic here
-          const email = localStorage.getItem('email');
-          if (email) {
-            try {
-              await axios.post('https://backend-chess-tau.vercel.app/delete_session_inschool', { email });
-              localStorage.clear();
+        
+        {userDetails?.level !== "Level 1" && (
+          <a href="/arena/puzzleArena" className="navItem teachers">
+            <FaPuzzlePiece /> Puzzle Arena
+          </a>
+        )}
+
+        <a
+          onClick={async () => {
+            const email = localStorage.getItem('email');
+            if (email) {
+              try {
+                await axios.post('https://backend-chess-tau.vercel.app/delete_session_inschool', { email });
+                localStorage.clear();
               router.push('/');
-            } catch (error) {
-              console.error('Error during sign out:', error);
-            }
-          } else {
-            localStorage.clear();
+              } catch (error) {
+                console.error('Error during sign out:', error);
+              }
+            } else {
+              localStorage.clear();
             router.push('/');
-          }
+            }
         }} className="navItem logout">
           <FaSignOutAlt /> Logout
         </a>
