@@ -248,7 +248,7 @@ const M1: React.FC = () => {
       {puzzlesWithStatus.map((puzzle, index) => (
         <div key={index} className="practice-item">
           <p>{puzzle.category}: {puzzle.title}</p>
-          <p>Date&Time:{puzzle.dateAndtime} </p>
+          {/* <p>Date&Time:{puzzle.dateAndtime} </p> */}  
           <p>{puzzle?.statusFlag}</p>
 
           <p>Total Score: {puzzle.scoreSum}/{puzzle.total_puz_count} </p>
