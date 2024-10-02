@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./side2.scss";
-import { useRouter } from "next/navigation";
+import { useRouter,usePathname } from "next/navigation";
 
 // Define the topics structure (unchanged)
 const topics = [
@@ -101,6 +101,7 @@ const Sidebar2: React.FC = () => {
   const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
   const [userCourses, setUserCourses] = useState<string[]>([]);
   const [showAlert, setShowAlert] = useState(false); // Add state for alert
+  const currentPath = usePathname(); 
   useEffect(() => {
     const fetchUserCourses = async () => {
       const userDetailsString = localStorage.getItem('userDetails');
@@ -110,25 +111,21 @@ const Sidebar2: React.FC = () => {
       if (email) {
         try {
           const response = await axios.get(`https://backend-chess-tau.vercel.app/getinschooldetails?email=${email}`);
+          const data = response.data;
 
-        const data = response.data;
-        console.log("pp", data["data"]["registered_inschool_courses"]);
-
-        // Check if registered_inschool_courses exists and is an array
-        if (data && data["data"] && Array.isArray(data["data"]["registered_inschool_courses"])) {
-          const courseTitles = data["data"]["registered_inschool_courses"]
-            .map((course: { course_title: string }) => course.course_title.trim().toLowerCase());
-          setUserCourses(courseTitles);
-          console.log("pp", userCourses);
-        } else {
-          console.error("Data is not available or registered_inschool_courses is not an array");
+          if (data && data["data"] && Array.isArray(data["data"]["registered_inschool_courses"])) {
+            const courseTitles = data["data"]["registered_inschool_courses"]
+              .map((course: { course_title: string }) => course.course_title.trim().toLowerCase());
+            setUserCourses(courseTitles);
+          } else {
+            setUserCourses([]);
+          }
+        } catch (error) {
+          console.error("Error fetching user courses:", error);
           setUserCourses([]);
         }
-      } catch (error) {
-        console.error("Error fetching user courses:", error);
-        setUserCourses([]);
       }
-    }};
+    };
 
     fetchUserCourses();
   }, []);
@@ -195,14 +192,13 @@ const Sidebar2: React.FC = () => {
       "9.1 Chess Study Plan": "/modules/level2/chessStudyPlan/91"
     };
 
-    const submoduleTitles = Object.keys(submodulePaths);
-    if (submoduleTitles.includes(title) && isAccessible(title)) {
-      const path = submodulePaths[title];
+    const path = submodulePaths[title];
+    if (path && isAccessible(title)) {
       router.push(path);
     } else {
-      setShowAlert(true); // Show alert popup  
+      setShowAlert(true);
     }
-      };
+  };
       const closeAlert = () => setShowAlert(false); // Close the alert popup
 
 
@@ -227,6 +223,60 @@ const Sidebar2: React.FC = () => {
       return userCourses.includes("chessStudyplan");
     }
     return false;
+  };
+  const isActive = (submoduleTitle: string) => {
+    const submodulePaths: Record<string, string> = {
+      "1.1 Opening Principles": "/modules/level2/chessOpening/11",
+      "1.2 White Opening": "/modules/level2/chessOpening/12",
+      "1.3 Black Opening": "/modules/level2/chessOpening/13",
+      
+      // Tactics [1]
+      "2.1 Pins & Skewers": "/modules/level2/tactics1/21",
+      "2.2 Forks & Double Attacks": "/modules/level2/tactics1/22",
+      "2.3 Removal of Defender": "/modules/level2/tactics1/23",
+      "2.4 Deflection": "/modules/level2/tactics1/24",
+      "2.5 Decoy": "/modules/level2/tactics1/25",
+  
+      // Tactics [2]
+      "3.1 Overloading": "/modules/level2/tactics2/31",
+      "3.2 X-Ray attack": "/modules/level2/tactics2/32",
+      "3.3 Zwischenzug (Intermezzo)": "/modules/level2/tactics2/33",
+      "3.4 Desperado": "/modules/level2/tactics2/34",
+      "3.5 Interference": "/modules/level2/tactics2/35",
+      "3.6 Back Rank Tactics": "/modules/level2/tactics2/36",
+  
+      // Positional Calculations
+      "4.1 Middlegame: Art of Calculation": "/modules/level2/positionalCalculations/41",
+      "4.2 Pawn Structures": "/modules/level2/positionalCalculations/42",
+      "4.3 Piece Activity": "/modules/level2/positionalCalculations/43",
+      "4.4 Manoeuvring": "/modules/level2/positionalCalculations/44",
+  
+      // Strategy & Planning
+      "5.1 Pawn breaks": "/modules/level2/strategyAndPlanning/51",
+      "5.2 Weak squares": "/modules/level2/strategyAndPlanning/52",
+      "5.3 Piece coordination": "/modules/level2/strategyAndPlanning/53",
+  
+      // Checks & Checkmates
+      "6.1 Mate in 1": "/modules/level2/checkAndCheckmates/61",
+      "6.2 Mate in 2": "/modules/level2/checkAndCheckmates/62",
+  
+      // Checkmate Patterns
+      "7.1 Anastasia’s Mate": "/modules/level2/checkmatePatterns/71",
+      "7.2 Back Rank Mate": "/modules/level2/checkmatePatterns/72",
+      "7.3 Blackburne’s Mate": "/modules/level2/checkmatePatterns/73",
+      "7.4 Box Mate (Rook Mate)": "/modules/level2/checkmatePatterns/74",
+      "7.5 Fool's Mate": "/modules/level2/checkmatePatterns/75",
+      "7.6 Morphy's Mate": "/modules/level2/checkmatePatterns/76",
+      "7.7 Scholar's Mate": "/modules/level2/checkmatePatterns/77",
+      "7.8 Smothered Mate": "/modules/level2/checkmatePatterns/78",
+  
+      // Game Analysis
+      "8.1 Game Analysis": "/modules/level2/gameAnalysis/81",
+  
+      // Chess Study Plan
+      "9.1 Chess Study Plan": "/modules/level2/chessStudyPlan/91"
+    };
+    return currentPath === submodulePaths[submoduleTitle];
   };
 
   return (
@@ -261,7 +311,7 @@ const Sidebar2: React.FC = () => {
                 <div className="submodules">
                   {topic.submodules.map((submodule, subIndex) => (
                     <div
-                      className={`submodule ${submodule.completed ? "completed" : ""}`}
+                      className={`submodule ${submodule.completed ? "completed" : ""}${isActive(submodule.title) ? "active" : ""}`}
                       key={subIndex}
                       onClick={() => handleSubmoduleClick(submodule.title)}
                     >
@@ -275,15 +325,15 @@ const Sidebar2: React.FC = () => {
           </div>
         </div>
       )}
-     {showAlert && (
-  <div className="alert-popup">
+    {showAlert && (
+        <div className="alert-popup">
     <div className="alert-content">
       <h2>Module Access Restricted</h2>
       <p>It looks like you've made great progress! To continue, please complete the previous modules to unlock this one.</p>
       <button className="close-button" onClick={closeAlert}>Got It</button>
     </div>
-  </div>
-)}
+        </div>
+      )}
 
     </div>
   );
