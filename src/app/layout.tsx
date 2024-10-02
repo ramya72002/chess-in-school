@@ -8,7 +8,7 @@ import "./globals.css";
 import "./si.scss";
 import SignIn from "./signin/page";
 import { Suspense, useState } from "react"; // Import useState for managing sidebar state
-import Sidebar1 from "./sidebar1";
+import Sidebar1 from "./sidebar1"; 
 import Sidebar2 from "./sidebar2";
 
 const inter = Inter({ subsets: ["latin"] });
