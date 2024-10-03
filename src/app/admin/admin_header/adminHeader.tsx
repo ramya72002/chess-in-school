@@ -40,6 +40,11 @@ const AdminHeader = () => {
                             <p>Student Details</p>
                         </a>
                     </li>
+                    <li className="menuItem">
+                        <a href="/admin/RegisteredList">
+                            <p>Registered List</p>
+                        </a>
+                    </li>
                     <li className="menuItem1">
                         <button className="logoutButton" onClick={handleLogout}>
                             <p>Log Out</p>
