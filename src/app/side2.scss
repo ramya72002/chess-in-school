@@ -172,7 +172,8 @@
       background-color: rgb(243, 146, 10); /* Or any color you want */
   }
   &.active {
-    background-color: #3cc91d; // Change to desired highlight color
+    color: white;
+    background-color: #28a745; // Change to desired highlight color
     font-weight: bold; // Optional: change font weight for emphasis
   }
     .icon {
