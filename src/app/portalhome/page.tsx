@@ -36,7 +36,6 @@ const Hero = () => {
   
     fetchUserDetails();
   }, []);
-  
 
   const getActiveClass = (level: string) => {
     if (!userDetails) return '';
@@ -76,39 +75,58 @@ const Hero = () => {
             <svg className="connector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 10" preserveAspectRatio="none">
               <line x1="0" y1="5" x2="1000" y2="5" stroke="white" strokeWidth="5"/>
             </svg>
+
             <div className={`step ${getActiveClass('Level 1')}`}>
-            <div className="icon pawn">♟</div>              <p>Pawn</p>
+              <div className="icon">
+                <img src="/images/chessicons/4.png" alt="Pawn" className="chess-icon" />
+              </div>
+              <p>Pawn</p>
               <p>(Beginner)</p>
             </div>
+
             <div className={`step ${getActiveClass('Level 2')}`}>
-              <div className="icon knight">♞</div>
+              <div className="icon">
+                <img src="/images/chessicons/1.png" alt="Knight" className="chess-icon" />
+              </div>
               <p>Knight</p>
               <p>(Intermediate)</p>
             </div>
+
             <div className={`step ${getActiveClass('Level 3')}`}>
-              <div className="icon bishop">♝</div>
+              <div className="icon">
+                <img src="/images/chessicons/5.png" alt="Bishop" className="chess-icon" />
+              </div>
               <p>Bishop</p>
               <p>(Proficient)</p>
             </div>
+
             <div className={`step ${getActiveClass('Level 4')}`}>
-              <div className="icon rook">♜</div>
+              <div className="icon">
+                <img src="/images/chessicons/6.png" alt="Rook" className="chess-icon" />
+              </div>
               <p>Rook</p>
               <p>(Advanced)</p>
             </div>
+
             <div className={`step ${getActiveClass('Level 5')}`}>
-              <div className="icon queen">♛</div>
+              <div className="icon">
+                <img src="/images/chessicons/2.png" alt="Queen" className="chess-icon" />
+              </div>
               <p>Queen</p>
               <p>(Expert)</p>
             </div>
+
             <div className={`step ${getActiveClass('Level 6')}`}>
-              <div className="icon king">♔</div>
+              <div className="icon">
+                <img src="/images/chessicons/3.png" alt="King" className="chess-icon" />
+              </div>
               <p>King</p>
               <p>(Master)</p>
             </div>
           </div>
         </div>
-
-        <div className="journey">
+      </div>
+      <div className="journey">
           <div className="level">
             <h3>Level Details</h3>
             <div className="steps">
@@ -157,9 +175,6 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
-
-     
     </div>
     </div>
   );
