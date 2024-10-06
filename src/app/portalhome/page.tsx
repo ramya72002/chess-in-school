@@ -127,54 +127,66 @@ const Hero = () => {
         </div>
       </div>
       <div className="journey">
-          <div className="level">
-            <h3>Level Details</h3>
-            <div className="steps">
-              <div className="step">
-                <div className="icon">♟</div>
-                <div>
-                  <h4>1. Pawn</h4>
-                  <p>Players who are preparing for casual tournaments and need to refine their middlegame tactics and overall strategy.</p>
-                </div>
-              </div>
-              <div className="step">
-                <div className="icon">♞</div>
-                <div>
-                  <h4>2. Knight</h4>
-                  <p>Players who are competing in club-rated tournaments and need to focus on game analysis and improving their overall play.</p>
-                </div>
-              </div>
-              <div className="step">
-                <div className="icon">♝</div>
-                <div>
-                  <h4>3. Bishop</h4>
-                  <p>Players who have some tournament experience and need to learn advanced endgames, opening responses, and notation.</p>
-                </div>
-              </div>
-              <div className="step">
-                <div className="icon">♜</div>
-                <div>
-                  <h4>4. Rook</h4>
-                  <p>Players who are preparing for regional tournaments and need to work on tournament preparation and advanced strategies.</p>
-                </div>
-              </div>
-              <div className="step">
-                <div className="icon">♛</div>
-                <div>
-                  <h4>5. Queen</h4>
-                  <p>Players who are ready for professional tournaments and need to refine advanced strategies and compete at a higher level.</p>
-                </div>
-              </div>
-              <div className="step">
-                <div className="icon">♔</div>
-                <div>
-                  <h4>6. King</h4>
-                  <p>Players who need professional training from titled coaches like International Masters (IM) and Grand Masters (GM).</p>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div className="level">
+    <h3>Level Details</h3>
+    <div className="steps">
+      <div className="step">
+        <div className="icon">
+          <img src="/images/characters/pawn.png" alt="Pawn Icon" />
         </div>
+        <div>
+          <h4>1. Pawn</h4>
+          <p>Players who are preparing for casual tournaments and need to refine their middlegame tactics and overall strategy.</p>
+        </div>
+      </div>
+      <div className="step">
+        <div className="icon">
+          <img src="/images/characters/pawn.png" alt="Pawn Icon" />
+        </div>
+        <div>
+          <h4>1. Pawn</h4>
+          <p>Players who are preparing for casual tournaments and need to refine their middlegame tactics and overall strategy.</p>
+        </div>
+      </div>
+      <div className="step">
+        <div className="icon">
+          <img src="/images/characters/pawn.png" alt="Pawn Icon" />
+        </div>
+        <div>
+          <h4>1. Pawn</h4>
+          <p>Players who are preparing for casual tournaments and need to refine their middlegame tactics and overall strategy.</p>
+        </div>
+      </div>
+      <div className="step">
+        <div className="icon">
+          <img src="/images/characters/pawn.png" alt="Pawn Icon" />
+        </div>
+        <div>
+          <h4>1. Pawn</h4>
+          <p>Players who are preparing for casual tournaments and need to refine their middlegame tactics and overall strategy.</p>
+        </div>
+      </div>
+      <div className="step">
+        <div className="icon">
+          <img src="/images/characters/pawn.png" alt="Pawn Icon" />
+        </div>
+        <div>
+          <h4>1. Pawn</h4>
+          <p>Players who are preparing for casual tournaments and need to refine their middlegame tactics and overall strategy.</p>
+        </div>
+      </div>
+      <div className="step">
+        <div className="icon">
+          <img src="/images/characters/pawn.png" alt="Pawn Icon" />
+        </div>
+        <div>
+          <h4>1. Pawn</h4>
+          <p>Players who are preparing for casual tournaments and need to refine their middlegame tactics and overall strategy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
     </div>
   );
