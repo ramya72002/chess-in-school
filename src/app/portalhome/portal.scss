@@ -46,52 +46,63 @@
 
   .journey {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-bottom: 20px;
-
+  
     .level {
-      flex: 1;
-      margin: 0 10px;
-
+      width: 100%; /* Make sure the level container spans across the full width */
+      margin: 20px;
+      padding: 20px;
+      background-color: #1d3557; /* Darker background for contrast */
+      border-radius: 10px; /* Softer, rounded corners */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  
       h3 {
         color: #ffffff;
-        font-size: 20px;
-        margin-bottom: 10px;
+        font-size: 28px;
         text-align: center;
+        margin-bottom: 20px;
       }
-
+  
       .steps {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Two columns */
-        gap: 10px; /* Space between items */
-        
-        .step {
-          display: flex;
-          align-items: center;
-          padding: 10px;
-          border: 1px solid rgb(53, 52, 52);
-          background-color: #a8dadc;
-          border-radius: 5px;
-      
-          .icon {
-            font-size: 80px;
-            margin-right: 10px;
-          }
-      
-          h4 {
-            margin: 0 0 5px 0;
-            color: #1d3557;
-          }
-      
-          p {
-            margin: 0;
-            color: #457b9d;
+        grid-template-columns: repeat(2, 1fr); /* Display in 2 columns */
+        gap: 20px; /* Space between each step */
+      }
+  
+      .step {
+        display: flex;
+        align-items: center;
+        background-color: #a8dadc;
+        padding: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  
+        .icon {
+          flex-shrink: 0; /* Prevent icon from shrinking */
+          width: 100px; /* Consistent icon size */
+          height: 200px;
+          margin-right: 5px;
+          img {
+            width: 100%; /* Make image fit the icon box */
+            border-radius: 50%; /* Round icon images */
           }
         }
+  
+        h4 {
+          margin: 0;
+          font-size: 20px;
+          color: #1d3557;
+        }
+  
+        p {
+          margin: 5px 0 0 0;
+          font-size: 16px;
+          color: #457b9d;
+        }
       }
-      
     }
   }
+ 
  
 
 }
