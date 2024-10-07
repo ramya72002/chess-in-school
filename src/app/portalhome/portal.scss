@@ -44,9 +44,11 @@
   
 
   .journey {
+    
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+ 
   
     .level {
       width: 100%; /* Make sure the level container spans across the full width */
@@ -110,30 +112,32 @@
   align-items: center;
   position: relative;
   margin-top: 10px;
+  color:black;
   
 
   .level {
     display: flex;
     align-items: center;
     justify-content: space-between;  // This line spaces the icons evenly
-    background-color: #2b87e2;
-    padding: 10px;
+    background-color: #a8dadc;    padding: 10px;
     border-radius: 10px;
     width: 100%; // Ensure the level container spans the entire width
     gap: 30px; /* Adjust gap as needed */
     position: relative;
     z-index: 1;
+    color:black;
 
     .step {
+      color:black;
       display: flex;
       flex-direction: column;
       align-items: center;
       position: relative;
       z-index: 1;
-      background-color: #2b87e2;
-      border-radius: 50%;
       padding: 10px;
       overflow: hidden;
+      
+
   
       .icon {
         width: 100px;
@@ -150,8 +154,9 @@
       }
   
       p {
-        color: #fff;
+        // color: #fff;
         font-size: 10px;
+        font-weight: bold;
       }
   
       &.active {
