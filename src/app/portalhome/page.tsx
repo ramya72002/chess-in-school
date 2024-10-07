@@ -66,7 +66,7 @@ const Hero = () => {
       <div className="hero">
         <div className="headers">
           <h2>
-            Chess Journey 
+            Your Chess Journey 
           </h2>
         </div>
 
@@ -82,7 +82,7 @@ const Hero = () => {
                 <img src="/images/chessicons/4.png" alt="Pawn" className="chess-icon" />
               </div>
               <p>Pawn</p>
-              <p>(Beginner)</p>
+              <p>(Absolute Beginners)</p>
             </div>
 
             <div className={`step ${getActiveClass('Level 2')}`}>
@@ -90,7 +90,7 @@ const Hero = () => {
                 <img src="/images/chessicons/1.png" alt="Knight" className="chess-icon" />
               </div>
               <p>Knight</p>
-              <p>(Intermediate)</p>
+              <p>(Novice Players)</p>
             </div>
 
             <div className={`step ${getActiveClass('Level 3')}`}>
@@ -98,7 +98,7 @@ const Hero = () => {
                 <img src="/images/chessicons/5.png" alt="Bishop" className="chess-icon" />
               </div>
               <p>Bishop</p>
-              <p>(Proficient)</p>
+              <p>(Intermediate Players)</p>
             </div>
 
             <div className={`step ${getActiveClass('Level 4')}`}>
@@ -106,7 +106,7 @@ const Hero = () => {
                 <img src="/images/chessicons/6.png" alt="Rook" className="chess-icon" />
               </div>
               <p>Rook</p>
-              <p>(Advanced)</p>
+              <p>(Advanced Players)</p>
             </div>
 
             <div className={`step ${getActiveClass('Level 5')}`}>
@@ -114,7 +114,7 @@ const Hero = () => {
                 <img src="/images/chessicons/2.png" alt="Queen" className="chess-icon" />
               </div>
               <p>Queen</p>
-              <p>(Expert)</p>
+              <p>(Expert Players)</p>
             </div>
 
             <div className={`step ${getActiveClass('Level 6')}`}>
@@ -122,7 +122,7 @@ const Hero = () => {
                 <img src="/images/chessicons/3.png" alt="King" className="chess-icon" />
               </div>
               <p>King</p>
-              <p>(Master)</p>
+              <p>(Mastery Level)</p>
             </div>
           </div>
         </div>

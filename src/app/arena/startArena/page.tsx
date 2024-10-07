@@ -140,8 +140,7 @@ const StartArena = () => {
               <th>Date Added</th>
               <th>Level</th>
               <th>Category</th>
-              <th>Name</th>
-              <th>Score</th>
+              <th>Name</th> 
             </tr>
           </thead>
           <tbody>
@@ -149,8 +148,7 @@ const StartArena = () => {
               <td>{date}</td>
               <td>{level}</td>
               <td>{category}</td>
-              <td>{title}</td>
-              <td>{score}</td>
+              <td>{title}</td> 
             </tr>
           </tbody>
         </table>

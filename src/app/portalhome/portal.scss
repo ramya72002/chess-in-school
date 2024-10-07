@@ -38,8 +38,7 @@
     border-radius: 12px; /* Rounder corners for a softer look */
     padding: 20px; /* Space inside the border */
     margin: 20px 0; /* Space outside the border */
-    background-color: #2b87e2; /* Light, engaging background color */
-     font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
+    background-color: #1d3557;     font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
     color: #f9fbfb; /* Contrasting text color for better readability */
   }
   
@@ -65,7 +64,7 @@
   
       .steps {
         display: grid;
-        grid-template-columns: repeat(2, 1fr); /* Display in 2 columns */
+        grid-template-columns: repeat(1, 1fr); /* Display in 2 columns */
         gap: 20px; /* Space between each step */
       }
   
@@ -77,8 +76,8 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   
         .icon {
-          flex-shrink: 0; /* Prevent icon from shrinking */
-          width: 100px; /* Consistent icon size */ 
+          flex-shrink: 0;
+          width: 100px;
           height: 200px;
           margin-right: 5px;
           img {
