@@ -132,7 +132,7 @@ const StartArena = () => {
 
   return (
     <div className="container">
-      <h2 className="title">{title}</h2>
+      <h2 className="titlemain">{title}</h2>
       <div className="infoTable">
         <table>
           <thead>
