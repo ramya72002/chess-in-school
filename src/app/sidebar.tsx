@@ -115,6 +115,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       <nav className="nav">
         <a
           onClick={() => {
+            toggleSidebar();
             if (userDetails) {
               const level = userDetails.level;
               if (level === "Level 1") router.push("/Afterschool1");
