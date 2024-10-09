@@ -10,6 +10,7 @@ import SignIn from "./signin/page";
 import { Suspense, useState, useEffect } from "react";
 import Sidebar1 from "./sidebar1"; 
 import Sidebar2 from "./sidebar2";
+import MenuButton from "./MenuBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,16 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false); // Manage sidebar open/close state
-
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen); // Toggle sidebar state
+    setSidebarOpen((prev) => !prev);
   };
    // Close sidebar when window resizes to mobile view
    useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
-        setIsSidebarOpen(false); // Automatically close sidebar in mobile view
+        setSidebarOpen(false); // Automatically close sidebar in mobile view
       }
     };
 
@@ -69,8 +69,7 @@ export default function RootLayout({
                     pathname === "/Afterschool1" ||
                     pathname === "/Afterschool2" ||
                     pathname === "/coaching") && (
-                      <Sidebar isOpen={isSidebarOpen} />
-                    )}
+                      <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />                    )}
 
                   {/* level1 pawn */}
                   {(pathname === "/modules/level1/introduction/11" ||
@@ -160,9 +159,7 @@ export default function RootLayout({
                     
                     {/* Conditional rendering of the hamburger button */}
                     {pathname !== "/" && pathname !== "/signin" && !pathname.startsWith("/modules/level1/") && !pathname.startsWith("/modules/level2/") && !pathname.startsWith("/admin") &&(
-                      <button className="menu-button" onClick={toggleSidebar}>
-                        ☰
-                      </button>
+                      <MenuButton onClick={toggleSidebar} />
                     )}
                     
                     {pathname === "/" ? (

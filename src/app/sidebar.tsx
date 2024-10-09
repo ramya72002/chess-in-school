@@ -9,11 +9,11 @@ import { UserDetails } from './types/types';
 
 interface SidebarProps {
   isOpen: boolean;
+  toggleSidebar: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const router = useRouter();
-  const [sidebarOpen, setSidebarOpen] = useState(isOpen);
   const [profilePic, setProfilePic] = useState('/images/portal/b4.png');
   const [showAvatarOptions, setShowAvatarOptions] = useState(false);
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
@@ -107,7 +107,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
           <Image src={profilePic} alt="Profile Picture" width={200} height={200} className="avatar" />
         </div>
         <div className="role">{userDetails?.child_name?.first}</div>
-        <button onClick={() => router.push('/portalhome')} className="viewProfile">
+        <button onClick={() => { router.push('/portalhome'); toggleSidebar(); }} className="viewProfile">
           Home
         </button>
       </div>
@@ -131,7 +131,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
         </a>
         
         {userDetails?.level !== "Level 1" && (
-          <a href="/arena/puzzleArena" className="navItem teachers">
+          <a
+            onClick={() => {
+              router.push("/arena/puzzleArena");
+              toggleSidebar(); // Close sidebar after navigation
+            }}
+            className="navItem teachers"
+          >
             <FaPuzzlePiece /> Puzzle Arena
           </a>
         )}
@@ -143,15 +149,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen }) => {
               try {
                 await axios.post('https://backend-chess-tau.vercel.app/delete_session_inschool', { email });
                 localStorage.clear();
-              router.push('/');
+                router.push('/');
               } catch (error) {
                 console.error('Error during sign out:', error);
               }
             } else {
               localStorage.clear();
-            router.push('/');
+              router.push('/');
             }
-        }} className="navItem logout">
+            toggleSidebar(); // Close sidebar on logout
+          }}
+          className="navItem logout"
+        >
           <FaSignOutAlt /> Logout
         </a>
       </nav>
