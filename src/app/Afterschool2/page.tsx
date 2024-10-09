@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import withAuth from '../withAuth';
 import './Afterschool2.scss';
 import axios from 'axios';
+import Loading from '../Loading';
 
 interface CoursePaths {
   [key: string]: string;
@@ -42,6 +43,7 @@ interface CourseStatus {
 const MyAccount = () => {
   const router = useRouter();
   const [courseStatuses, setCourseStatuses] = useState<{ [key: string]: CourseStatus }>({});
+  const [loading, setLoading] = useState(false); // Loading state
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -78,6 +80,7 @@ const MyAccount = () => {
     const path = coursePaths[courseTitle];
     if (path) {
       try {
+        setLoading(true);  // Show loading animation
         const userDetailsString = localStorage.getItem('userDetails');
         const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
 
@@ -108,44 +111,17 @@ const MyAccount = () => {
         }
       } catch (error) {
         console.error('Error updating course status:', error);
+      } finally {
+        setLoading(false);  // Hide loading animation
       }
     } else {
       console.error('Path not found for course:', courseTitle);
     }
   };
 
-  const handleCompleteCourse = async (courseTitle: string) => {
-    try {
-      const userDetailsString = localStorage.getItem('userDetails');
-      const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-
-      if (storedUserDetails && storedUserDetails.email) {
-        // Call API to mark course as completed
-        const response = await axios.post('https://backend-chess-tau.vercel.app/update_registered_courses_inschool', {
-          email: storedUserDetails.email,
-          course_title: courseTitle,
-          status: 'Completed',
-        });
-
-        if (response.data.success) {
-          console.log('Course marked as completed');
-
-          // Update local status
-          setCourseStatuses(prev => ({
-            ...prev,
-            [courseTitle]: { ...prev[courseTitle], status: 'Completed', completed: 100 }
-          }));
-        } else {
-          console.error('Failed to mark course as completed:', response.data.message);
-        }
-      }
-    } catch (error) {
-      console.error('Error marking course as completed:', error);
-    }
-  };
-
   return (
     <div className="account-page">
+      {loading &&<Loading />}
       <header className="account-header">
         <h1>Knight Learning Path</h1>
       </header>

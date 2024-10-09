@@ -27,8 +27,8 @@ const M1: React.FC = () => {
 
   const puzzles = [
     { title: "Overloading- Part 1", level: "Knight", category: "Middlegame", dateAndtime: "2024-09-21T13:57", total_puz_count: 9, statusFlag: "Not Started" },
-    { title: "Overloading - Part 2", level: "Knight", category: "Middlegame", dateAndtime: "2024-09-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
-    { title: "Overloading - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-09-21T13:48", total_puz_count: 9, statusFlag: "Not Started" }
+    { title: "Overloading- Part 2", level: "Knight", category: "Middlegame", dateAndtime: "2024-09-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
+    { title: "Overloading- Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-09-21T13:48", total_puz_count: 9, statusFlag: "Not Started" }
   ];
 
   

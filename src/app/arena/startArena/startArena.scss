@@ -4,12 +4,8 @@
   background-color: #15dd6f;
 }
 
-.title {
-  font-size: 24px;
-  text-align: center;
-  color: #c74316;
-  margin-bottom: 20px;
-  font-weight: bold;
+.titlemain{
+ 
 }
 
 .imageGallery {
@@ -65,11 +61,17 @@
         background-color: #003366;
         color: white;
       }
+      tr {
+        background-color: white;
+        color: black;
+      }
     }
   }
   
-  .title {
-    margin-top: 20px;
+  .titlemain { 
+    text-align: center; 
+    margin-bottom: 20px;
+    font-weight: bold; 
     font-size: 24px;
     color: #333;
   }

@@ -132,7 +132,7 @@ const StartArena = () => {
 
   return (
     <div className="container">
-      <h2 className="title">{title}</h2>
+      <h2 className="titlemain">{title}</h2>
       <div className="infoTable">
         <table>
           <thead>
@@ -140,8 +140,7 @@ const StartArena = () => {
               <th>Date Added</th>
               <th>Level</th>
               <th>Category</th>
-              <th>Name</th>
-              <th>Score</th>
+              <th>Name</th> 
             </tr>
           </thead>
           <tbody>
@@ -149,8 +148,7 @@ const StartArena = () => {
               <td>{date}</td>
               <td>{level}</td>
               <td>{category}</td>
-              <td>{title}</td>
-              <td>{score}</td>
+              <td>{title}</td> 
             </tr>
           </tbody>
         </table>

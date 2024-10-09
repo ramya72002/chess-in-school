@@ -17,24 +17,22 @@ const Hero = () => {
       if (typeof window !== 'undefined') {
         const userDetailsString = localStorage.getItem('userDetails');
         const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-  
+
         if (storedUserDetails) {
-          console.log("localt", storedUserDetails.level);
           setUserDetails(storedUserDetails); // Set user details from localStorage
-  
+
           try {
             const response = await axios.get(
               `https://backend-chess-tau.vercel.app/getinschooldetails?email=${storedUserDetails.email}`
             );
             setUserDetails(response.data.data); // Update with data from API
-            console.log("api", response.data.data);
           } catch (error) {
             console.error('Error fetching user details:', error);
           }
         }
       }
     };
-  
+
     fetchUserDetails();
   }, []);
 
@@ -56,77 +54,115 @@ const Hero = () => {
     return currentLevel <= userLevel ? 'active' : 'inactive';
   };
 
+  const getConnectorWidth = () => {
+    if (!userDetails) return '0%'; // Always return '0%' as a string
+
+    const levelMap: { [key: string]: number } = {
+      "Level 1": 8,
+      "Level 2": 20,
+      "Level 3": 40,
+      "Level 4": 60,
+      "Level 5": 80,
+      "Level 6": 100,
+    };
+
+    const userLevel = levelMap[userDetails.level];
+
+    return `${userLevel}%`; // Return as a string
+  };
+
+  const getConnectorColor = () => {
+    if (!userDetails) return 'white';
+
+    const levelMap: { [key: string]: number } = {
+      "Level 1": 1,
+      "Level 2": 2,
+      "Level 3": 3,
+      "Level 4": 4,
+      "Level 5": 5,
+      "Level 6": 6,
+    };
+
+    const userLevel = levelMap[userDetails.level];
+
+    return userLevel > 0 ? '#f26722' : 'white'; // Change color based on the highest active level
+  };
+
   if (!userDetails) {
-    // If userDetails is null, return null to prevent rendering the page
-    return null;
+    return null; // If userDetails is null, return null to prevent rendering the page
   }
 
   return (
     <div style={{ padding: '20px' }}>
       <div className="hero">
         <div className="headers">
-          <h2>
-            Chess Journey 
-          </h2>
+          <h2>Your Chess Journey</h2>
         </div>
 
-      <div className="journey-container">
-        <div className="chess-journey">
-          <div className="level">
-            <svg className="connector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 10" preserveAspectRatio="none">
-              <line x1="0" y1="5" x2="1000" y2="5" stroke="white" strokeWidth="5"/>
-            </svg>
+        <div className="journey-container">
+          <div className="chess-journey">
+            <div className="level">
+              <svg className="connector" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 10" preserveAspectRatio="none">
+                <line
+                  x1="0"
+                  y1="5"
+                  x2={getConnectorWidth()} // Use the width directly
+                  y2="5"
+                  stroke={getConnectorColor()}
+                  strokeWidth="5"
+                />
+              </svg>
 
-            <div className={`step ${getActiveClass('Level 1')}`}>
-              <div className="icon">
-                <img src="/images/chessicons/4.png" alt="Pawn" className="chess-icon" />
+              <div className={`step ${getActiveClass('Level 1')}`}>
+                <div className="icon">
+                  <img src="/images/chessicons/4.png" alt="Pawn" className="chess-icon" />
+                </div>
+                <p>Pawn</p>
+                <p>(Absolute Beginners)</p>
               </div>
-              <p>Pawn</p>
-              <p>(Beginner)</p>
-            </div>
 
-            <div className={`step ${getActiveClass('Level 2')}`}>
-              <div className="icon">
-                <img src="/images/chessicons/1.png" alt="Knight" className="chess-icon" />
+              <div className={`step ${getActiveClass('Level 2')}`}>
+                <div className="icon">
+                  <img src="/images/chessicons/1.png" alt="Knight" className="chess-icon" />
+                </div>
+                <p>Knight</p>
+                <p>(Novice Players)</p>
               </div>
-              <p>Knight</p>
-              <p>(Intermediate)</p>
-            </div>
 
-            <div className={`step ${getActiveClass('Level 3')}`}>
-              <div className="icon">
-                <img src="/images/chessicons/5.png" alt="Bishop" className="chess-icon" />
+              <div className={`step ${getActiveClass('Level 3')}`}>
+                <div className="icon">
+                  <img src="/images/chessicons/5.png" alt="Bishop" className="chess-icon" />
+                </div>
+                <p>Bishop</p>
+                <p>(Intermediate Players)</p>
               </div>
-              <p>Bishop</p>
-              <p>(Proficient)</p>
-            </div>
 
-            <div className={`step ${getActiveClass('Level 4')}`}>
-              <div className="icon">
-                <img src="/images/chessicons/6.png" alt="Rook" className="chess-icon" />
+              <div className={`step ${getActiveClass('Level 4')}`}>
+                <div className="icon">
+                  <img src="/images/chessicons/3.png" alt="Rook" className="chess-icon" />
+                </div>
+                <p>Rook</p>
+                <p>(Advanced Players)</p>
               </div>
-              <p>Rook</p>
-              <p>(Advanced)</p>
-            </div>
 
-            <div className={`step ${getActiveClass('Level 5')}`}>
-              <div className="icon">
-                <img src="/images/chessicons/2.png" alt="Queen" className="chess-icon" />
+              <div className={`step ${getActiveClass('Level 5')}`}>
+                <div className="icon">
+                  <img src="/images/chessicons/6.png" alt="Queen" className="chess-icon" />
+                </div>
+                <p>Queen</p>
+                <p>(Expert Players)</p>
               </div>
-              <p>Queen</p>
-              <p>(Expert)</p>
-            </div>
 
-            <div className={`step ${getActiveClass('Level 6')}`}>
-              <div className="icon">
-                <img src="/images/chessicons/3.png" alt="King" className="chess-icon" />
+              <div className={`step ${getActiveClass('Level 6')}`}>
+                <div className="icon">
+                  <img src="/images/chessicons/2.png" alt="King" className="chess-icon" />
+                </div>
+                <p>King</p>
+                <p>(Mastery Level)</p>
               </div>
-              <p>King</p>
-              <p>(Master)</p>
             </div>
           </div>
         </div>
-      </div>
       <div className="journey">
   <div className="level">
     <h3>Level Details</h3>
@@ -188,7 +224,7 @@ const Hero = () => {
     </div>
   </div>
 </div>
-    </div>
+      </div>
     </div>
   );
 };
