@@ -1,5 +1,4 @@
 "use client";
-
 import { Inter } from "next/font/google";
 import { usePathname, useSearchParams } from "next/navigation";
 import Sidebar from "./sidebar";
@@ -27,7 +26,7 @@ export default function RootLayout({
    // Close sidebar when window resizes to mobile view
    useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 2068) {
         setIsSidebarOpen(false); // Automatically close sidebar in mobile view
       }
     };
@@ -71,7 +70,6 @@ export default function RootLayout({
                     pathname === "/coaching") && (
                       <Sidebar isOpen={isSidebarOpen} />
                     )}
-
                   {/* level1 pawn */}
                   {(pathname === "/modules/level1/introduction/11" ||
                     pathname === "/modules/level1/theChessboard/21" ||
@@ -111,7 +109,6 @@ export default function RootLayout({
                     pathname === "/modules/level1/chessGame/101") && (
                       <Sidebar1/>
                   )}
-
                   {/* level2 knight */}
                   {(pathname === "/modules/level2/chessOpening/11" ||
                     pathname === "/modules/level2/chessOpening/12" ||

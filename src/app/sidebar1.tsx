@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./side2.scss";
+import "./side1.scss";
 import { useRouter,usePathname } from "next/navigation";
 
 // Updated topics structure with new data
