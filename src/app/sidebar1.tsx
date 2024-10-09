@@ -103,6 +103,23 @@ const Sidebar1: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const currentPath = usePathname(); 
 
+  const handleResize = () => {
+    if (window.innerWidth <= 768) {
+      setIsSidebarMinimized(true); // Minimize sidebar on small screens
+    } else {
+      setIsSidebarMinimized(false); // Maximize sidebar on larger screens
+    }
+  };
+
+  useEffect(() => {
+    handleResize(); // Call it initially to set the correct sidebar state
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     const fetchUserCourses = async () => {
       const userDetailsString = localStorage.getItem('userDetails');

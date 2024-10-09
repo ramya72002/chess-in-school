@@ -7,7 +7,7 @@ import AdminHeader from "./admin/admin_header/adminHeader";
 import "./globals.css";
 import "./si.scss";
 import SignIn from "./signin/page";
-import { Suspense, useState } from "react"; // Import useState for managing sidebar state
+import { Suspense, useState, useEffect } from "react";
 import Sidebar1 from "./sidebar1"; 
 import Sidebar2 from "./sidebar2";
 
@@ -24,6 +24,19 @@ export default function RootLayout({
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen); // Toggle sidebar state
   };
+   // Close sidebar when window resizes to mobile view
+   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsSidebarOpen(false); // Automatically close sidebar in mobile view
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check on component mount
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <html lang="en">
