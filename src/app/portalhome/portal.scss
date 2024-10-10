@@ -228,5 +228,72 @@ body {
       padding: 5px; // Adjusted padding for mobile
     }
   }
+  .journey {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  
+    .level {
+      width: 100%; /* Full width for mobile */
+      padding: 20px;
+      background-color: #1d3557; /* Darker background for contrast */
+      border-radius: 10px; /* Softer, rounded corners */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  
+      h3 {
+        color: #ffffff;
+        font-size: 15px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+  
+      .steps {
+        display: flex;
+        flex-direction: column; /* Stacks steps vertically */
+        gap: 20px; /* Space between each step */
+      }
+  
+      .step {
+        display: flex;
+        flex-direction: column; /* Stacks icon and content vertically */
+        align-items: center; /* Center-aligns content */
+        background-color: #a8dadc;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 2px; /* Adds padding around the step */
+  
+        .icon {
+          width: 600px; /* Fixed width for the icon */
+          height: 200px; /* Fixed height for the icon */
+          margin-bottom: 0px; /* Spacing between icon and text */
+          display: flex; /* Flexbox to center the icon */
+          justify-content: center; /* Center horizontally */
+          align-items: center; /* Center vertically */
+  
+          img {
+            max-width: 100%; /* Ensures the image is responsive */
+            height: 100%; /* Keeps aspect ratio */
+          }
+        }
+  
+        .content {
+          text-align: center; /* Center-aligns text */
+          
+          h4 {
+            margin: 0;
+            font-size: 1px;
+            font-weight: bold;
+            color: #1d3557;
+          }
+  
+          p {
+            margin: 5px 0 0; /* Adjusts margin for paragraph */
+            font-size: 1px;
+            color: #457b9d;
+          }
+        }
+      }
+    }
+  }
   
 }
