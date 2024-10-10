@@ -129,6 +129,7 @@ const Sidebar2: React.FC = () => {
   const toggleSidebar = () => setIsSidebarMinimized(!isSidebarMinimized);
   const handleGoBack = () => router.push('/Afterschool2');
   const handleSubmoduleClick = (title: string) => {
+    toggleSidebar()
     const submodulePaths: Record<string, string> = {
         // Chess Openings
         "1.1 Opening Principles": "/modules/level2/chessOpening/11",
