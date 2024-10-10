@@ -156,6 +156,7 @@ const Sidebar1: React.FC = () => {
   const handleGoBack = () => router.push('/Afterschool1');
 
   const handleSubmoduleClick = (title: string) => {
+    toggleSidebar()
     const submodulePaths: Record<string, string> = {
 
       "1.1 Introduction": "/modules/level1/introduction/11",
