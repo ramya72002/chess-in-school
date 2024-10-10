@@ -1,15 +1,20 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&family=Matemasie&display=swap');
+
+body {
+  overflow-x: hidden; // Prevent horizontal scrolling
+}
+
 .hero {
   background-color: #2b87e2;
   border-radius: 5px;
   padding: 20px;
+  max-width: 100vw; // Ensure the hero section doesn't exceed the viewport width
 
   .headers {
     text-align: center;
     margin-bottom: 20px;
-  
+
     h2 {
       text-align: center;
       margin: 0;
@@ -19,8 +24,6 @@
       background: linear-gradient(90deg, #fdfdfd, #ffffff, #fcfcfc); /* Gradient background */
       -webkit-background-clip: text; /* Clipping the background to text */
       -webkit-text-fill-color: transparent; 
-      // -webkit-text-stroke: 1px rgb(4, 0, 255);/* Text color becomes transparent to show gradient */
-
       letter-spacing: 3px; /* More spacing between letters */
       animation: textGlow 1.5s ease-in-out infinite alternate; /* Glow animation */
       
@@ -32,26 +35,23 @@
     }
   }
   
-  
   .journey-container {
     border: 2px solid #505050; /* Bright, playful border color */
     border-radius: 12px; /* Rounder corners for a softer look */
     padding: 20px; /* Space inside the border */
     margin: 20px 0; /* Space outside the border */
-    background-color: #1d3557;     font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
+    background-color: #1d3557; 
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
     color: #f9fbfb; /* Contrasting text color for better readability */
   }
   
-
   .journey {
-    
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
- 
   
     .level {
-      width: 100%; /* Make sure the level container spans across the full width */
+      width: 100%; /* Full width for mobile */
       padding: 20px;
       background-color: #1d3557; /* Darker background for contrast */
       border-radius: 10px; /* Softer, rounded corners */
@@ -67,7 +67,7 @@
   
       .steps {
         display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Display in 2 columns */
+        grid-template-columns: repeat(1, 1fr); /* Display in 1 column for mobile */
         gap: 20px; /* Space between each step */
       }
   
@@ -75,7 +75,6 @@
         display: flex;
         align-items: center;
         background-color: #a8dadc;
-        // padding: 5px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   
         .icon {
@@ -99,33 +98,30 @@
       }
     }
   }
- 
- 
-
 }
+
 .chess-journey {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  // margin-top: 10px;
-  color:black;
-  
+  color: black;
 
   .level {
     display: flex;
     align-items: center;
-    justify-content: space-between;  // This line spaces the icons evenly
-    background-color: #a8dadc;    padding: 10px;
+    justify-content: space-between; // Space icons evenly
+    background-color: #a8dadc;    
+    padding: 10px;
     border-radius: 10px;
     width: 100%; // Ensure the level container spans the entire width
-    gap: 30px; /* Adjust gap as needed */
+    gap: 20px; // Reduced gap for mobile
     position: relative;
     z-index: 1;
-    color:black;
+    color: black;
 
     .step {
-      color:black;
+      color: black;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -133,9 +129,7 @@
       z-index: 1;
       padding: 10px;
       overflow: hidden;
-      
 
-  
       .icon {
         width: 100px;
         height: 100px;
@@ -151,7 +145,6 @@
       }
   
       p {
-        // color: #fff;
         font-size: 10px;
         font-weight: bold;
       }
@@ -163,7 +156,6 @@
       }
     }
   }
- 
 
   .connector {
     position: absolute;
@@ -174,14 +166,12 @@
     z-index: 1;
     transform: translateY(-100%);
   }
+  
   .chess-icon {
     width: 130px;
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
     padding: 10px;
-    // transform: translateY(10%);
   }
-  
-  
 }
