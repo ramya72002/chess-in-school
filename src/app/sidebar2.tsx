@@ -267,38 +267,38 @@ const Sidebar2: React.FC = () => {
     return currentPath === submodulePaths[submoduleTitle];
   };
   return (
-    <div className={`course-content ${isSidebarMinimized ? "minimized" : ""}`}>
-      <div className="header">
+    <div className={`course-content2 ${isSidebarMinimized ? "minimized" : ""}`}>
+      <div className="header2">
         {!isSidebarMinimized && (
-          <button className="go-back-button" onClick={handleGoBack}>
+          <button className="go-back-button2" onClick={handleGoBack}>
             &lt;
           </button>
         )}
-        <button className="toggle-button" onClick={toggleSidebar}>
+        <button className="toggle-button2" onClick={toggleSidebar}>
           {isSidebarMinimized ? "☰" : "☰"}
         </button>
       </div>
       {!isSidebarMinimized && (
-        <div className="module">
-          <div className="module-header">
+        <div className="module2">
+          <div className="module-header2">
             <span>Knight level</span>
             <span className="progress">
               <span className="topics-count">{topics.length} Topics</span>
             </span>
           </div>
-          <div className="topics">
+          <div className="topics2">
             {topics.map((topic, index) => (
               <div
-                className={`topic ${topic.completed ? "completed" : ""}`}
+                className={`topic2 ${topic.completed ? "completed" : ""}`}
                 key={index}
               >
                 <div>
                   <span className="title">{topic.title}</span>
                 </div>
-                <div className="submodules">
+                <div className="submodules2">
                   {topic.submodules.map((submodule, subIndex) => (
                     <div
-                      className={`submodule ${submodule.completed ? "completed" : ""} ${isActive(submodule.title) ? "active" : ""}`}
+                      className={`submodule2 ${submodule.completed ? "completed" : ""} ${isActive(submodule.title) ? "active" : ""}`}
                       key={subIndex}
                       onClick={() => handleSubmoduleClick(submodule.title)}
                     >
@@ -313,11 +313,11 @@ const Sidebar2: React.FC = () => {
         </div>
       )}
       {showAlert && (
-        <div className="alert-popup">
-    <div className="alert-content">
+        <div className="alert-popup2">
+    <div className="alert-content2">
       <h2>Module Access Restricted</h2>
       <p>It looks like you've made great progress! To continue, please complete the previous modules to unlock this one.</p>
-      <button className="close-button" onClick={closeAlert}>Got It</button>
+      <button className="close-button2" onClick={closeAlert}>Got It</button>
     </div>
         </div>
       )}

@@ -1,18 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-.course-content {
-  width: 350px;
-  max-height: 100vh;
-  overflow-y: auto;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: width 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
+.course-content2 {
+  position: absolute; // Position absolutely within the sidebar container
+  top: 0; // Align to the top edge of the sidebar container
+  left: 0; // Align to the left edge
+  width: 350px; // Fixed width for the course content
+  max-height: 100vh; // Max height for overflow management
+  overflow-y: auto; // Enable vertical scroll if content overflows
+  background-color: #ffffff; // Background color
+  border-radius: 12px; // Rounded corners
+  padding: 10px; // Padding for inner content
+  transition: width 0.3s ease; // Transition for smooth width changes
+  font-family: 'Montserrat', sans-serif; // Font styling
+  z-index: 10; // Higher z-index to overlay on content
+
 
   &.minimized {
-    width: 40px;
+    background-color: #ffffff00;
+    height: 100%;
+    width: 40px !important; // Ensure this width is applied
   }
 
   &::-webkit-scrollbar {
@@ -20,26 +26,26 @@
   }
 
   &::-webkit-scrollbar-track {
-    background-color: #e6e6e6;
+    // background-color: #e6e6e6;
     border-radius: 12px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #888888;
+    // background-color: #888888;
     border-radius: 12px;
 
     &:hover {
-      background-color: #555555;
+      // background-color: #555555;
     }
   }
 
-  .header {
+  .header2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
 
-    .toggle-button {
+    .toggle-button2 {
       color: #000000;
       border: none;
       border-radius: 50%;
@@ -58,14 +64,14 @@
       }
     }
 
-    .go-back-button {
+    .go-back-button2 {
       background-color: #0056b3;
       color: #ffffff;
       border: none;
       border-radius: 8px;
-      padding: 8px 10px;
+      padding: 5px 10px;
       cursor: pointer;
-      font-size: 12px;
+      font-size: 15px;
       transition: background-color 0.3s ease;
 
       &:hover {
@@ -74,8 +80,8 @@
     }
   }
 
-  .module {
-    .module-header {
+  .module2 {
+    .module-header2 {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -101,8 +107,8 @@
       }
     }
 
-    .topics {
-      .topic {
+    .topics2 {
+      .topic2 {
         display: flex;
         flex-direction: column;
         padding: 12px 0;
@@ -143,7 +149,7 @@
           background-color: #28a745;
         }
 
-        .submodules {
+        .submodules2 {
           margin-top: 8px;
           padding-left: 20px;
 
@@ -152,7 +158,7 @@
       }
     }
   }
-  .submodule {
+  .submodule2 {
     display: flex;
     align-items: center;
     padding: 8px 0;
@@ -194,7 +200,7 @@
     }
   }
 
-  .alert-popup {
+  .alert-popup2 {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -212,7 +218,7 @@
     justify-content: center;
     text-align: center;
   
-    .alert-content {
+    .alert-content2 {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -233,7 +239,7 @@
         line-height: 1.5;
       }
   
-      .close-button {
+      .close-button2 {
         background-color: #4caf50;
         color: #ffffff;
         border: none;
@@ -270,6 +276,9 @@
 
 // Media query for mobile view
 @media (max-width: 768px) {
+  .course-content2 {
+    width: 280px;
+  }
   .sidebar {
     width: 100%;
     position: absolute;
@@ -286,7 +295,7 @@
       transform: translateX(0%);
     }
 
-    .toggle-button {
+    .toggle-button2 {
       display: inline-block;
       background-color: #007bff;
       color: white;
@@ -300,7 +309,7 @@
       margin-bottom: 1rem;
     }
 
-    .submodule {
+    .submodule2 {
       font-size: 0.9rem;
       margin-bottom: 0.5rem;
     }
