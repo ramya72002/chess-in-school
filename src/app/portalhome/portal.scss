@@ -202,15 +202,59 @@ body {
         flex-direction: column; // Ensure icon and text stack vertically
         align-items: center; // Center align vertically
 
+          p {
+            display: none; // Hide the p tag inside the icon class for mobile view
+          }
+
         .icon {
-          width: 80px; // Adjusted size for mobile
-          height: 80px; // Adjusted size for mobile
+          width: 180px; // Adjusted size for mobile
+          height: 85px; // Adjusted size for mobile
           font-size: 50px; // Adjusted font size for mobile
           margin-bottom: 5px; // Reduced margin for mobile
+          border-radius: 0;
+          background-color: transparent;
+          border: none;
+          padding: 0;
+
+          
+
+          img.chess-icon{
+            border-radius: 0;
+            padding: 0;
+            border: none;
+            width: 100%;
+            height: auto;
+            &.pawn {
+              content: url("/images/portal/1.png"); // Mobile version for pawn
+            }
+            &.knight {
+              content: url("/images/portal/2.png"); // Mobile version for knight
+            }
+            &.bishop {
+              content: url("/images/portal/3.png"); // Mobile version for bishop
+            }
+            &.rook {
+              content: url("/images/portal/4.png"); // Mobile version for rook
+            }
+            &.queen {
+              content: url("/images/portal/5.png"); // Mobile version for queen
+            }
+            &.king {
+              content: url("/images/portal/6.png"); // Mobile version for king
+            }
+          }
         }
-  
+
         p {
           font-size: 12px; // Slightly larger font for better readability
+        }
+
+        &.active {
+          .icon {
+            padding: 3px;
+            border-radius: 4px;
+            background-color: #f26722;
+          }
         }
       }
     }
