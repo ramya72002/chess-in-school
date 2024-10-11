@@ -152,6 +152,11 @@ body {
       &.active {
         .icon {
           background-color: #f26722;
+          cursor: pointer;
+        }
+        &:hover {
+           transform: scale(1.05); // Slightly increase size for emphasis
+          transition: background-color 0.3s, transform 0.3s; // Smooth transition
         }
       }
     }
@@ -254,6 +259,7 @@ body {
             padding: 3px;
             border-radius: 4px;
             background-color: #f26722;
+            cursor: pointer;
           }
         }
       }

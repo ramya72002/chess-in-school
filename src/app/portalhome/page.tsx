@@ -6,9 +6,10 @@ import './portal.scss';
 import { UserDetails, UpcomingActivity } from '../types/types';
 import Loading from '../Loading';
 import withAuth from '../withAuth';
+import router, { useRouter } from 'next/navigation';
 
 const Hero = () => {
-  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
+  const router = useRouter();  const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [upcomingActivities, setUpcomingActivities] = useState<UpcomingActivity[]>([]);
   const [loading, setLoading] = useState(false);
 
@@ -53,7 +54,12 @@ const Hero = () => {
 
     return currentLevel <= userLevel ? 'active' : 'inactive';
   };
-
+  const handleImageClick = (level: string) => {
+    // Only allow navigation if the level is active
+    if (getActiveClass(`Level ${level}`) === 'active') {
+      router.push(`/Afterschool${level}`); // Redirect to the corresponding level page
+    }
+  };
   const getConnectorWidth = () => {
     if (!userDetails) return '0%'; // Always return '0%' as a string
 
@@ -108,11 +114,11 @@ const Hero = () => {
                   x2={getConnectorWidth()} // Use the width directly
                   y2="5"
                   stroke={getConnectorColor()}
-                  strokeWidth="5"
+                  strokeWidth="10"
                 />
               </svg>
 
-              <div className={`step ${getActiveClass('Level 1')}`}>
+              <div className={`step ${getActiveClass('Level 1')}`} onClick={() => handleImageClick('1')}>
                 <div className="icon">
                   <img src="/images/chessicons/4.png" alt="Pawn" className="chess-icon pawn" />
                 </div>
@@ -120,7 +126,7 @@ const Hero = () => {
                 <p>(Absolute Beginners)</p>
               </div>
 
-              <div className={`step ${getActiveClass('Level 2')}`}>
+              <div className={`step ${getActiveClass('Level 2')}`} onClick={() => handleImageClick('2')}>
                 <div className="icon">
                   <img src="/images/chessicons/1.png" alt="Knight" className="chess-icon knight" />
                 </div>
@@ -128,7 +134,7 @@ const Hero = () => {
                 <p>(Novice Players)</p>
               </div>
 
-              <div className={`step ${getActiveClass('Level 3')}`}>
+              <div className={`step ${getActiveClass('Level 3')}`} onClick={() => handleImageClick('3')}>
                 <div className="icon">
                   <img src="/images/chessicons/5.png" alt="Bishop" className="chess-icon bishop" />
                 </div>
@@ -136,7 +142,7 @@ const Hero = () => {
                 <p>(Intermediate Players)</p>
               </div>
 
-              <div className={`step ${getActiveClass('Level 4')}`}>
+              <div className={`step ${getActiveClass('Level 4')}`} onClick={() => handleImageClick('4')}>
                 <div className="icon">
                   <img src="/images/chessicons/3.png" alt="Rook" className="chess-icon rook" />
                 </div>
@@ -144,7 +150,7 @@ const Hero = () => {
                 <p>(Advanced Players)</p>
               </div>
 
-              <div className={`step ${getActiveClass('Level 5')}`}>
+              <div className={`step ${getActiveClass('Level 5')}`} onClick={() => handleImageClick('5')}>
                 <div className="icon">
                   <img src="/images/chessicons/6.png" alt="Queen" className="chess-icon queen" />
                 </div>
@@ -152,7 +158,7 @@ const Hero = () => {
                 <p>(Expert Players)</p>
               </div>
 
-              <div className={`step ${getActiveClass('Level 6')}`}>
+              <div className={`step ${getActiveClass('Level 6')}`} onClick={() => handleImageClick('6')}>
                 <div className="icon">
                   <img src="/images/chessicons/2.png" alt="King" className="chess-icon king" />
                 </div>
