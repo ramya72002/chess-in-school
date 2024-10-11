@@ -40,12 +40,11 @@
     margin-bottom: 16px;
 
     .toggle-button {
-      background-color: #333333;
-      color: #ffffff;
+      color: #000000;
       border: none;
       border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      width: 10px;
+      height:10px;
       padding: 0;
       cursor: pointer;
       font-size: 20px;
@@ -55,7 +54,6 @@
       transition: background-color 0.3s ease, transform 0.3s ease;
 
       &:hover {
-        background-color: #555555;
         transform: scale(1.1);
       }
     }

@@ -284,7 +284,7 @@ const Sidebar1: React.FC = () => {
           </button>
         )}
         <button className="toggle-button" onClick={toggleSidebar}>
-          {isSidebarMinimized ? ">" : "<"}
+          {isSidebarMinimized ? "☰" : "☰"}
         </button>
       </div>
       {!isSidebarMinimized && (
