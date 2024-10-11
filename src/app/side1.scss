@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .course-content {
-  width: 350px;
-  max-height: 100vh;
-  overflow-y: auto;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  transition: width 0.3s ease;
-  font-family: 'Montserrat', sans-serif;
+  position: absolute; // Position absolutely within the sidebar container
+  top: 0; // Align to the top edge of the sidebar container
+  left: 0; // Align to the left edge
+  width: 350px; // Fixed width for the course content
+  max-height: 100vh; // Max height for overflow management
+  overflow-y: auto; // Enable vertical scroll if content overflows
+  // background-color: #ffffff; // Background color
+  border-radius: 12px; // Rounded corners
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); // Shadow for depth
+  padding: 10px; // Padding for inner content
+  transition: width 0.3s ease; // Transition for smooth width changes
+  font-family: 'Montserrat', sans-serif; // Font styling
+  z-index: 10; // Higher z-index to overlay on content
+
 
   &.minimized {
     width: 40px !important; // Ensure this width is applied
@@ -20,16 +25,16 @@
   }
 
   &::-webkit-scrollbar-track {
-    background-color: #e6e6e6;
+    // background-color: #e6e6e6;
     border-radius: 12px;
   }
 
   &::-webkit-scrollbar-thumb {
-    background-color: #888888;
+    // background-color: #888888;
     border-radius: 12px;
 
     &:hover {
-      background-color: #555555;
+      // background-color: #555555;
     }
   }
 
@@ -38,25 +43,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-
-    .toggle-button {
-      color: #ffffff;
-      border: none;
-      border-radius: 50%;
-      width: 20px;
-      height: 20px;
-      padding: 0;
-      cursor: pointer;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-    }
 
     .go-back-button {
       background-color: #0056b3;
