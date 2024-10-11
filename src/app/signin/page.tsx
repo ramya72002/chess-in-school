@@ -39,35 +39,53 @@ const SignIn = () => {
   };
 
   const signIn = async (emailToSignIn: string) => {
+    // Check if the email is "nsriramya7@gmail.com"
+    if (emailToSignIn === 'nsriramya7@gmail.com'||emailToSignIn === 'sumit.compliance@gmail.com') {
+      // If email matches, directly navigate to portalhome
+      localStorage.setItem('email', emailToSignIn);
+      const userDetailsResponse = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
+        params: { email: emailToSignIn }
+      });
+
+      localStorage.setItem('userDetails', JSON.stringify(userDetailsResponse.data.data));
+
+      localStorage.setItem('signin', "true");
+      router.push('/portalhome');
+      return;
+    }
+  
+    // Validate the email format
     if (!validateEmail(emailToSignIn)) {
       setEmailError('Please enter a valid email address');
       return;
     }
+  
     setEmailError('');
     setLoading(true); // Start loading
+  
     try {
       const deviceType = getDeviceType(); // Get device type
-
+  
       const loginResponse = await axios.post('https://backend-chess-tau.vercel.app/signin_inschool', {
         email: emailToSignIn,
         device_name: deviceType // Send device type to the backend
       });
-
+  
       if (loginResponse.data.success) {
         if (loginResponse.data.device) {
-          // Automatically handle logout from previous device
           handleLogoutFromPreviousDevice();
-          return; // Stop further processing
+          return;
         }
-        setShowOtpInput(loginResponse.data.otp_required); // Show OTP input if required
+  
+        setShowOtpInput(loginResponse.data.otp_required);
         localStorage.setItem('email', emailToSignIn);
-
+  
         const userDetailsResponse = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
           params: { email: emailToSignIn }
         });
-
+  
         localStorage.setItem('userDetails', JSON.stringify(userDetailsResponse.data.data));
-
+  
         if (!loginResponse.data.otp_required) {
           localStorage.setItem('signin', "true");
           router.push('/portalhome');
@@ -82,6 +100,7 @@ const SignIn = () => {
       setLoading(false); // End loading
     }
   };
+  
 
   // Function to handle logout from the previous device
   const handleLogoutFromPreviousDevice = async () => {
