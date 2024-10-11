@@ -12,7 +12,7 @@
   font-family: 'Montserrat', sans-serif;
 
   &.minimized {
-    width: 80px;
+    width: 40px;
   }
 
   &::-webkit-scrollbar {
@@ -43,8 +43,8 @@
       color: #000000;
       border: none;
       border-radius: 50%;
-      width: 10px;
-      height:10px;
+      width: 30px;
+      height: 30px;
       padding: 0;
       cursor: pointer;
       font-size: 20px;
@@ -63,9 +63,9 @@
       color: #ffffff;
       border: none;
       border-radius: 8px;
-      padding: 12px 24px;
+      padding: 8px 10px;
       cursor: pointer;
-      font-size: 18px;
+      font-size: 12px;
       transition: background-color 0.3s ease;
 
       &:hover {
@@ -269,8 +269,8 @@
 }
 
 // Media query for mobile view
-@media only screen and (max-width: 768px) {
-  .sidebar {
+@media (max-width: 768px) {
+  .course-content {
     width: 250px; // Minimized sidebar for mobile view
   }
 }
