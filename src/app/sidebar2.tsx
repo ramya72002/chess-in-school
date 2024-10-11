@@ -271,11 +271,11 @@ const Sidebar2: React.FC = () => {
       <div className="header">
         {!isSidebarMinimized && (
           <button className="go-back-button" onClick={handleGoBack}>
-            Go Back
+            &lt;
           </button>
         )}
         <button className="toggle-button" onClick={toggleSidebar}>
-          {isSidebarMinimized ? ">" : "<"}
+          {isSidebarMinimized ? "☰" : "☰"}
         </button>
       </div>
       {!isSidebarMinimized && (
