@@ -41,6 +41,7 @@ const SignIn = () => {
   const signIn = async (emailToSignIn: string) => {
     // Check if the email is "nsriramya7@gmail.com"
     if (emailToSignIn === 'nsriramya7@gmail.com'||emailToSignIn === 'sumit.compliance@gmail.com') {
+      setLoading(true);
       // If email matches, directly navigate to portalhome
       localStorage.setItem('email', emailToSignIn);
       const userDetailsResponse = await axios.get('https://backend-chess-tau.vercel.app/getinschooldetails', {
