@@ -136,7 +136,7 @@ const MyAccount = () => {
 
           return (
             <div key={index}>
-              <div className="course-image-container">
+              <div className="course-image-container" onClick={() => handleViewProgress(course)}>
                 <Image
                   src={courseImages[course]}
                   alt={course}
