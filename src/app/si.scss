@@ -1,18 +1,28 @@
 .menu-button {
   display: none;
   position: absolute;
-  top: 23px;
-  left: 5px;
+  top: 21px;
+  left: 18px;
   z-index: 1000;
-  color: #4b4b4b;
+  color: #000000;
   border: none;
-  padding: 0.2rem;
-  font-size: 1.5rem;
+  padding: rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
 @media (max-width: 2000px) {
   .menu-button {
+  display: none;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 1000;
+  color: #363636;
+  border: none;
+  padding: rem;
+  font-size: 1.5rem;
+  cursor: pointer;
     display: block; // Show the menu button on smaller screens
   }
 
