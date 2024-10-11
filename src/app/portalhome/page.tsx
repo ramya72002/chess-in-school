@@ -93,7 +93,6 @@ const Hero = () => {
   }
 
   return (
-    <div style={{ padding: '20px' }}>
       <div className="hero">
         <div className="headers">
           <h2>Your Chess Journey</h2>
@@ -225,7 +224,6 @@ const Hero = () => {
   </div>
 </div>
       </div>
-    </div>
   );
 };
 
