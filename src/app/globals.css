@@ -24,7 +24,7 @@
 .scrollable-content {
   overflow-y: auto;
   max-height: calc(100vh - 5px); /* Adjust the height as needed */
-  padding-right: 10px; /* Optional: To add some space for the scrollbar */
+  /* padding-right: 10px; Optional: To add some space for the scrollbar */
 }
 
 body {
