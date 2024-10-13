@@ -211,7 +211,7 @@ body {
     font-weight: bold;
   }
 }
-  }
+  
 
   .chess-journey {
     flex-direction: column; // Change to vertical layout for mobile
@@ -219,7 +219,7 @@ body {
     .level {
       flex-direction: column; // Stack levels vertically
       align-items: center; // Center the items
-      gap: 10px; // Adjusted gap for mobile
+      gap: 1px; // Adjusted gap for mobile
 
       .step {
         flex-direction: column; // Ensure icon and text stack vertically
@@ -230,22 +230,19 @@ body {
           }
 
         .icon {
-          width: 180px; // Adjusted size for mobile
-          height: 85px; // Adjusted size for mobile
+          width: 250px; // Adjusted size for mobile
+          height: 120px; // Adjusted size for mobile
           font-size: 50px; // Adjusted font size for mobile
-          margin-bottom: 5px; // Reduced margin for mobile
           border-radius: 0;
           background-color: transparent;
           border: none;
           padding: 0;
 
-          
-
           img.chess-icon{
             border-radius: 0;
             padding: 0;
             border: none;
-            width: 100%;
+            width: 90%;
             height: auto;
             &.pawn {
               content: url("/images/portal/1.png"); // Mobile version for pawn
@@ -281,18 +278,14 @@ body {
           }
         }
       }
-    }
-
-    .connector {
-      position: relative; // Adjusted to keep it in line with new layout
-      height: calc(100% - 80px); // Adjust height for vertical alignment
-      background-color: #fff; // Color for the connector
-      display: none;
-    }
-    
-    .chess-icon {
-      width: 100px; // Adjusted size for mobile
-      height: 80px; // Adjusted size for mobile
-      padding: 5px; // Adjusted padding for mobile
-    }
-  }}
+    }}
+} .connector {
+  position: relative; // Adjusted to keep it in line with new layout
+  height: calc(100% - 80px); // Adjust height for vertical alignment
+  background-color: #fff; // Color for the connector
+  display: none;
+}.chess-icon {
+  width: 200px; // Adjusted size for mobile
+  height: 80px; // Adjusted size for mobile
+  padding: 5px; // Adjusted padding for mobile
+}}
