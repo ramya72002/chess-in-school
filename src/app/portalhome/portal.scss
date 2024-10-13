@@ -183,11 +183,59 @@ body {
 }
 
 @media (max-width: 768px) {
+  .learn-more {
+    display: flex;
+    justify-content: center; // Center the button or section on mobile
+    align-items: center;
+    margin: 20px 0; // Add some spacing around the button
+
+    button {
+      padding: 10px 20px; // Increase padding for easier touch interaction
+      font-size: 16px; // Make the text slightly larger for readability
+      font-weight: bold;
+      background-color: #06d6a0; // Maintain a vibrant color for the button
+      color: #fff;
+      border: none;
+      border-radius: 8px; // Round the edges slightly for a modern look
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow for depth
+
+      &:hover {
+        background-color: #05c586; // Slight color change on hover
+        transform: scale(1.05); // Slightly enlarge on hover for emphasis
+        transition: all 0.3s ease; // Smooth transition effect
+      }
+    }
+  }
+
+  .learn-more-text {
+    text-align: center; // Center the text for mobile
+    font-size: 14px; // Adjust text size for better readability on small screens
+    color: #ffffff; // Ensure text color contrasts with background
+    margin-bottom: 15px; // Add space below the text for clarity
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // Adjusting icon alignment and size for mobile view
+  .learn-more-icon {
+    display: block; // Ensure it's visible on mobile
+    margin: 0 auto; // Center the icon horizontally
+    width: 50px; // Adjust the size to fit mobile view
+    height: 50px; // Adjust the size to fit mobile view
+
+    img {
+      width: 100%; // Make the image responsive
+      height: auto; // Maintain aspect ratio
+    }
+  }
+
   .hero {
-   
     .headers {
-      
-   
   h2 {
     font-size: 20px; 
     font-weight: bold;
