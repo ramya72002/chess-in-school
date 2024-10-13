@@ -7,9 +7,9 @@ body {
 
 .hero {
   background-color: #2b87e2;
-  // border-radius: 5px;
   padding: 20px;
   max-width: 100vw; // Ensure the hero section doesn't exceed the viewport width
+  overflow: hidden; // Prevent overflow
 
   .headers {
     text-align: center;
@@ -18,45 +18,42 @@ body {
     h2 {
       text-align: center;
       margin: 0;
-      font-size: 40px; /* Larger font size */
-      font-weight: bold; /* Bold text */
+      font-size: 40px;
+      font-weight: bold;
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(90deg, #fdfdfd, #ffffff, #fcfcfc); /* Gradient background */
-      -webkit-background-clip: text; /* Clipping the background to text */
+      background: linear-gradient(90deg, #fdfdfd, #ffffff, #fcfcfc);
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent; 
-      letter-spacing: 3px; /* More spacing between letters */
-      animation: textGlow 1.5s ease-in-out infinite alternate; /* Glow animation */
-      
+      letter-spacing: 3px;
+      animation: textGlow 1.5s ease-in-out infinite alternate;
+
       span {
-        color: #06d6a0; /* Bright, contrasting color for dynamic text */
-        font-size: 72px; /* Slightly larger for emphasis */
-        animation: textGlow 1.5s ease-in-out infinite alternate; /* Same glow animation */
+        color: #06d6a0;
+        font-size: 72px;
       }
+    }}
+    .journey-container {
+      border: 2px solid #505050; /* Bright, playful border color */
+      border-radius: 12px; /* Rounder corners for a softer look */
+      padding: 5px; /* Space inside the border */
+      margin: 20px 0; /* Space outside the border */
+      background-color: #1d3557; 
+      font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
+      color: #f9fbfb;
     }
-  }
-  
-  .journey-container {
-    border: 2px solid #505050; /* Bright, playful border color */
-    border-radius: 12px; /* Rounder corners for a softer look */
-    padding: 5px; /* Space inside the border */
-    margin: 20px 0; /* Space outside the border */
-    background-color: #1d3557; 
-    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
-    color: #f9fbfb; /* Contrasting text color for better readability */
-  }
-  
+
   .journey {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
-  
+
     .level {
-      width: 100%; /* Full width for mobile */
+      width: 100%; // Full width for mobile
       padding: 20px;
-      background-color: #1d3557; /* Darker background for contrast */
-      border-radius: 10px; /* Softer, rounded corners */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-  
+      background-color: #1d3557; // Darker background for contrast
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
       h3 {
         color: #ffffff;
         font-size: 28px;
@@ -64,176 +61,149 @@ body {
         font-weight: bold;
         margin-bottom: 20px;
       }
-  
+
       .steps {
         display: grid;
-        grid-template-columns: repeat(1, 1fr); /* Display in 1 column for mobile */
-        gap: 20px; /* Space between each step */
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+
+        .step {
+          display: flex;
+          align-items: flex-start; // Align items to the start
+          background-color: #a8dadc;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          padding: 10px; // Add padding for better spacing
+          border-radius: 5px;
+
+          .icon {
+            flex-shrink: 0;
+            width: 100px;
+            height: 200px;
+          }
+
+          h4 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1d3557;
+          }
+
+          .level-description {
+            margin: 1px 0 0 0;
+            font-size: 16px;
+            color: #457b9d;
+            overflow: hidden; // Prevent overflow
+            display: -webkit-box; // Required for the clamping effect
+            -webkit-box-orient: vertical; // Orient the box vertically
+            -webkit-line-clamp: 3; // Limit to 3 lines
+
+            &.expanded {
+              display: block; // Expand to show all text
+              -webkit-line-clamp: unset; // Remove line limit when expanded
+            }
+          }
+        }
       }
-  
-      .step {
-        display: flex;
-        align-items: center;
-        background-color: #a8dadc;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  
-        .icon {
-          flex-shrink: 0;
-          width: 100px;
-          height: 200px;
-        }
-  
-        h4 {
-          margin: 0;
-          font-size: 20px;
-          font-weight: bold;
-          color: #1d3557;
-        }
-  
-        p {
-          margin: 1px 0 0 0;
-          font-size: 16px;
-          color: #457b9d;
+
+      button {
+        background-color: #f26722; // Button color
+        color: white; // Text color
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+          background-color: #d45d1a; // Darker shade on hover
         }
       }
     }
   }
-}
-
-.chess-journey {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  color: black;
-
-  .level {
+  .chess-journey {
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between; // Space icons evenly
-    background-color: #a8dadc;    
-    padding: 10px;
-    border-radius: 10px;
-    width: 100%; // Ensure the level container spans the entire width
-    gap: 20px; // Reduced gap for mobile
     position: relative;
-    z-index: 1;
     color: black;
-
-    .step {
-      color: black;
+  
+    .level {
       display: flex;
-      flex-direction: column;
       align-items: center;
+      justify-content: space-between; // Space icons evenly
+      background-color: #a8dadc;    
+      padding: 10px;
+      border-radius: 10px;
+      width: 100%; // Ensure the level container spans the entire width
+      gap: 20px; // Reduced gap for mobile
       position: relative;
       z-index: 1;
-      padding: 10px;
-      overflow: hidden;
-
-      .icon {
-        width: 100px;
-        height: 100px;
-        border: 3px solid #fff;
-        border-radius: 50%;
+      color: black;
+  
+      .step {
+        color: black;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        font-size: 80px;
-        margin-bottom: 10px;
-        background-color: #2b87e2;
-        z-index: 2; /* Ensure the icon is above the line */
-      }
+        position: relative;
+        z-index: 1;
+        padding: 10px;
+        overflow: hidden;
   
-      p {
-        font-size: 10px;
-        font-weight: bold;
-      }
-  
-      &.active {
         .icon {
-          background-color: #f26722;
-          cursor: pointer;
+          width: 100px;
+          height: 100px;
+          border: 3px solid #fff;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 80px;
+          margin-bottom: 10px;
+          background-color: #2b87e2;
+          z-index: 2; /* Ensure the icon is above the line */
         }
-        &:hover {
-           transform: scale(1.05); // Slightly increase size for emphasis
-          transition: background-color 0.3s, transform 0.3s; // Smooth transition
+    
+        p {
+          font-size: 10px;
+          font-weight: bold;
+        }
+    
+        &.active {
+          .icon {
+            background-color: #f26722;
+            cursor: pointer;
+          }
+          &:hover {
+             transform: scale(1.05); // Slightly increase size for emphasis
+            transition: background-color 0.3s, transform 0.3s; // Smooth transition
+          }
         }
       }
     }
-  }
-
-  .connector {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    height: 10px;
-    z-index: 1;
-    transform: translateY(-100%);
+  
+    .connector {
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      z-index: 1;
+      transform: translateY(-100%);
+      
+    }
     
+    .chess-icon {
+      width: 130px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 10px;
+    }
   }
   
-  .chess-icon {
-    width: 130px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
-    padding: 10px;
-  }
 }
-
 @media (max-width: 768px) {
-  .learn-more {
-    display: flex;
-    justify-content: center; // Center the button or section on mobile
-    align-items: center;
-    margin: 20px 0; // Add some spacing around the button
-
-    button {
-      padding: 10px 20px; // Increase padding for easier touch interaction
-      font-size: 16px; // Make the text slightly larger for readability
-      font-weight: bold;
-      background-color: #06d6a0; // Maintain a vibrant color for the button
-      color: #fff;
-      border: none;
-      border-radius: 8px; // Round the edges slightly for a modern look
-      cursor: pointer;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Add a subtle shadow for depth
-
-      &:hover {
-        background-color: #05c586; // Slight color change on hover
-        transform: scale(1.05); // Slightly enlarge on hover for emphasis
-        transition: all 0.3s ease; // Smooth transition effect
-      }
-    }
-  }
-
-  .learn-more-text {
-    text-align: center; // Center the text for mobile
-    font-size: 14px; // Adjust text size for better readability on small screens
-    color: #ffffff; // Ensure text color contrasts with background
-    margin-bottom: 15px; // Add space below the text for clarity
-    font-family: 'Comic Sans MS', cursive, sans-serif;
-
-    p {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
-  // Adjusting icon alignment and size for mobile view
-  .learn-more-icon {
-    display: block; // Ensure it's visible on mobile
-    margin: 0 auto; // Center the icon horizontally
-    width: 50px; // Adjust the size to fit mobile view
-    height: 50px; // Adjust the size to fit mobile view
-
-    img {
-      width: 100%; // Make the image responsive
-      height: auto; // Maintain aspect ratio
-    }
-  }
-
   .hero {
     .headers {
   h2 {
@@ -325,73 +295,4 @@ body {
       height: 80px; // Adjusted size for mobile
       padding: 5px; // Adjusted padding for mobile
     }
-  }
-  .journey {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  
-    .level {
-      width: 100%; /* Full width for mobile */
-      padding: 20px;
-      background-color: #1d3557; /* Darker background for contrast */
-      border-radius: 10px; /* Softer, rounded corners */
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-  
-      h3 {
-        color: #ffffff;
-        font-size: 15px;
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-  
-      .steps {
-        display: flex;
-        flex-direction: column; /* Stacks steps vertically */
-        gap: 20px; /* Space between each step */
-      }
-  
-      .step {
-        display: flex;
-        flex-direction: column; /* Stacks icon and content vertically */
-        align-items: center; /* Center-aligns content */
-        background-color: #a8dadc;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        padding: 2px; /* Adds padding around the step */
-  
-        .icon {
-          width: 600px; /* Fixed width for the icon */
-          height: 200px; /* Fixed height for the icon */
-          margin-bottom: 0px; /* Spacing between icon and text */
-          display: flex; /* Flexbox to center the icon */
-          justify-content: center; /* Center horizontally */
-          align-items: center; /* Center vertically */
-  
-          img {
-            max-width: 100%; /* Ensures the image is responsive */
-            height: 100%; /* Keeps aspect ratio */
-          }
-        }
-  
-        .content {
-          text-align: center; /* Center-aligns text */
-          
-          h4 {
-            margin: 0;
-            font-size: 1px;
-            font-weight: bold;
-            color: #1d3557;
-          }
-  
-          p {
-            margin: 5px 0 0; /* Adjusts margin for paragraph */
-            font-size: 1px;
-            color: #457b9d;
-          }
-        }
-      }
-    }
-  }
-  
-}
+  }}
