@@ -89,19 +89,24 @@ body {
           }
 
           .level-description {
-            margin: 1px 0 0 0;
             font-size: 16px;
             color: #457b9d;
             overflow: hidden; // Prevent overflow
-            display: -webkit-box; // Required for the clamping effect
-            -webkit-box-orient: vertical; // Orient the box vertically
-            -webkit-line-clamp: 3; // Limit to 3 lines
-
-            &.expanded {
-              display: block; // Expand to show all text
-              -webkit-line-clamp: unset; // Remove line limit when expanded
+          
+          
+            @media (max-width: 768px) {
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 3;
+          
+              &.expanded {
+                display: block;
+                -webkit-line-clamp: unset; // Remove clamping for mobile view when expanded
+              }
             }
           }
+          
         }
       }
 
@@ -222,11 +227,11 @@ body {
       gap: 1px; // Adjusted gap for mobile
 
       .step {
-        flex-direction: column; // Ensure icon and text stack vertically
+        flex-direction: column; // Ensure   and text stack vertically
         align-items: center; // Center align vertically
 
           p {
-            display: none; // Hide the p tag inside the icon class for mobile view
+            display: none; // Hide the p tag inside the   class for mobile view
           }
 
         .icon {
