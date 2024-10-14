@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&family=Matemasie&display=swap');
+
+body {
+  overflow-x: hidden; // Prevent horizontal scrolling
+}
+
+.hero {
+  background-color: #2b87e2;
+  padding: 20px;
+  max-width: 100vw; // Ensure the hero section doesn't exceed the viewport width
+  overflow: hidden; // Prevent overflow
+
+  .headers { 
+
+  }
+    .journey-container {
+      border: 2px solid #505050; /* Bright, playful border color */
+      border-radius: 12px; /* Rounder corners for a softer look */
+      // padding: 10px; /* Space inside the border */
+      margin: 10px 0; /* Space outside the border */
+      background-color: #1d3557; 
+      font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun, kid-friendly font */
+      color: #f9fbfb;
+    }
+
+  .journey {
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    .level {
+      width: 100%; // Full width for mobile
+      // padding: 20px;
+      background-color: #1d3557; // Darker background for contrast
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+      h3 {
+        color: #ffffff;
+        font-size: 28px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+
+        .step {
+          display: flex;
+          align-items: center; // Align items to the start
+          background-color: #a8dadc;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+          padding:5px; // Add padding for better spacing
+          border-radius: 5px;
+
+          .icon {
+            flex-shrink: 0;
+            width: 100px;
+            height: 160px;
+          }
+
+          h4 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1d3557;
+          }
+
+          .level-description {
+            font-size: 16px;
+            color: #457b9d;
+            overflow: hidden; // Prevent overflow
+          
+          
+            @media (max-width: 768px) {
+              overflow: hidden;
+              display: -webkit-box;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 3;
+          
+              &.expanded {
+                display: block;
+                -webkit-line-clamp: unset; // Remove clamping for mobile view when expanded
+              }
+            }
+          }
+          
+        }
+      }
+
+      button {
+        background-color: #f26722; // Button color
+        color: white; // Text color
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+
+        &:hover {
+          background-color: #d45d1a; // Darker shade on hover
+        }
+      }
+    }
+  } 
+  
+}
+ 
