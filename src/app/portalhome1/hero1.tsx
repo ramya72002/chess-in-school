@@ -155,7 +155,7 @@ const Hero1 = () => {
           {/* Level 6 */}
           <div className="step">
             <div className="icon">
-              <img src="/images/characters/King.png" alt="King Icon" />
+            <img src="/images/characters/King.png" alt="King Icon" />
             </div>
             <div>
               <h4>Level 6: King (Mastery Level)</h4>
