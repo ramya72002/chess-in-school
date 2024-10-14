@@ -45,10 +45,10 @@ const Hero1 = () => {
             <div>
               <h4>Level 1: Pawn (Absolute Beginners)</h4>
               <p className={`level-description ${expandedLevels.level1 ? 'expanded' : ''}`}>
-                In chess, the journey starts with the humble pawn. At this foundational level, you’ll begin by learning the basic rules of the game...
-                {expandedLevels.level1 && (
+              In chess, the journey starts with the humble pawn. At this foundational level,              
+                 {expandedLevels.level1 && (
                   <span>
-                    {' '}Learn the different movements and captures for each piece, as well as how to checkmate your opponent with simple strategies.
+                    {' '}you’ll begin by learning the basic rules of the game, understanding how each piece moves, and grasping the concept of check and checkmate. You'll also be introduced to opening principles like controlling the center and developing your pieces. By the end of the Pawn level, you'll have a solid understanding of the board and be ready to play your first games.
                   </span>
                 )}
               </p>
@@ -68,10 +68,10 @@ const Hero1 = () => {
             <div>
               <h4>Level 2: Knight (Novice Players)</h4>
               <p className={`level-description ${expandedLevels.level2 ? 'expanded' : ''}`}>
-                Now that you've mastered the basics, it's time to step into the shoes of the agile knight. At this level, we’ll focus on more advanced piece coordination...
+              Now that you've mastered the basics, it's time to step into the shoes of the agile knight. 
                 {expandedLevels.level2 && (
                   <span>
-                    {' '}You'll learn to identify forks, pins, and how to develop your pieces effectively.
+                    {' '}At this level, we’ll focus on more advanced piece coordination and basic tactics like forks, pins, and skewers. You’ll learn the importance of mobility and positioning, as well as how to plan your moves ahead. By the end of the Knight level, you'll be ready to tackle more competitive games and begin recognizing key tactical opportunities.
                   </span>
                 )}
               </p>
@@ -91,10 +91,10 @@ const Hero1 = () => {
             <div>
               <h4>Level 3: Bishop (Intermediate Players)</h4>
               <p className={`level-description ${expandedLevels.level3 ? 'expanded' : ''}`}>
-                In the Bishop level, players will refine their understanding of the game by focusing on strategy and planning. This level introduces advanced concepts...
+              In the Bishop level, players will refine their understanding of the game by focusing on strategy and planning. 
                 {expandedLevels.level3 && (
                   <span>
-                    {' '}like pawn structures, exchanging pieces for strategic advantages, and more.
+                    {' '}This level introduces advanced concepts such as controlling diagonals, piece exchanges, and improving board vision. You’ll also dive into more complex tactics, including double attacks and discovered checks. By mastering this level, you will develop the ability to think several moves ahead and begin constructing more strategic play.
                   </span>
                 )}
               </p>
@@ -114,10 +114,10 @@ const Hero1 = () => {
             <div>
               <h4>Level 4: Rook (Advanced Players)</h4>
               <p className={`level-description ${expandedLevels.level4 ? 'expanded' : ''}`}>
-                As you enter the Rook level, you are now ready to build a solid understanding of endgames, positional play, and deeper strategic concepts...
+              As you enter the Rook level, you are now ready to build a solid understanding of endgames, positional play, and deeper strategic concepts. 
                 {expandedLevels.level4 && (
                   <span>
-                    {' '}You'll learn the importance of open files, piece activity, and how to coordinate multiple pieces in complex positions.
+                    {' '}We will focus on controlling open files, using rooks effectively, and mastering common endgame techniques. You’ll also begin analyzing games more critically, improving your decision-making under pressure. By the end of the Rook level, you’ll be proficient at both attacking and defending in various positions.
                   </span>
                 )}
               </p>
@@ -137,10 +137,10 @@ const Hero1 = () => {
             <div>
               <h4>Level 5: Queen (Expert Players)</h4>
               <p className={`level-description ${expandedLevels.level5 ? 'expanded' : ''}`}>
-                The Queen is the most powerful piece, and at this level, you will gain a commanding presence on the board. This stage emphasizes mastering the art of attack...
+              The Queen is the most powerful piece, and at this level, you will gain a commanding presence on the board. 
                 {expandedLevels.level5 && (
                   <span>
-                    {' '}You'll learn advanced tactics such as sacrificing material for long-term initiative and handling complex middlegame positions.
+                    {' '}This stage emphasizes mastering the art of attack and defense, opening theory, and deep positional understanding. Players will delve into complex combinations, advanced sacrifices, and learn how to capitalize on imbalances in material and position. By the end of this level, you’ll have the tools to dominate most games and prepare for high-level competition.
                   </span>
                 )}
               </p>
@@ -160,10 +160,10 @@ const Hero1 = () => {
             <div>
               <h4>Level 6: King (Mastery Level)</h4>
               <p className={`level-description ${expandedLevels.level6 ? 'expanded' : ''}`}>
-                Reaching the King level signifies mastery of the game. Here, you’ll polish your overall chess knowledge, combining everything you've learned from openings...
+              Reaching the King level signifies mastery of the game. Here, you’ll polish your overall chess knowledge, combining everything you've learned from openings, middlegames, and endgames. 
                 {expandedLevels.level6 && (
                   <span>
-                    {' '}endgames, and middlegames to refine your style and achieve a high level of consistency in play.
+                    {' '}You will focus on advanced strategic play, game preparation, and studying famous grandmaster games. At this level, you’ll learn how to navigate high-level competitions, optimize time management, and approach chess with a grandmaster mindset. The King level will turn you into a well-rounded expert, ready to excel at the highest levels of the game.
                   </span>
                 )}
               </p>
