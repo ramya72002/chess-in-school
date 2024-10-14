@@ -7,13 +7,12 @@ body {
 
 .hero {
   background-color: #2b87e2;
-  padding: 20px;
   max-width: 100vw; // Ensure the hero section doesn't exceed the viewport width
   overflow: hidden; // Prevent overflow
 
   .headers {
     text-align: center;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 
     h2 {
       text-align: center;
@@ -285,12 +284,6 @@ body {
       }
     }}
 } .connector {
-  position: relative; // Adjusted to keep it in line with new layout
-  height: calc(100% - 80px); // Adjust height for vertical alignment
-  background-color: #fff; // Color for the connector
+   
   display: none;
-}.chess-icon {
-  width: 200px; // Adjusted size for mobile
-  height: 80px; // Adjusted size for mobile
-  padding: 5px; // Adjusted padding for mobile
-}}
+} }
