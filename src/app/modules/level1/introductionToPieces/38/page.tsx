@@ -200,6 +200,7 @@ const M1: React.FC = () => {
 
       <header className="fixed-header">
     <h3>2.8: Understanding the Queen</h3>
+    </header>
   
     <div className="video-container">
       <video controls width="100%">
