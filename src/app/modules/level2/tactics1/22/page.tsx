@@ -171,9 +171,14 @@ const M1: React.FC = () => {
     };
   return (
     <div className="lesson-content">
-      {isLoadingPage && <Loading />}
+       {isLoadingPage && <Loading />}
+
+
+      <header className="fixed-header">
       <h3>2.2 Forks and Double Attacks</h3>
       
+      </header>
+
       <section className="chessboard-info">
         {/* Video Section */}
         <div className="video-container">

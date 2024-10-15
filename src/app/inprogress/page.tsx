@@ -10,6 +10,8 @@ const InProgress: React.FC = () => {
     <div className="lesson-content">
       <h1>Basics Of Chess</h1>
       
+      </header>
+
       <section className="chessboard-info">
         {/* Video Section */}
         <div className="video-container">

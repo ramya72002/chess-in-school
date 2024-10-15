@@ -195,12 +195,17 @@ const M1: React.FC = () => {
     };
   return (
     <div className="lesson-content">
-    {isLoadingPage && <Loading />}
+     {isLoadingPage && <Loading />}
+
+
+      <header className="fixed-header">
     <h3>4.3 En Passant</h3>
     
     
     
-    <section className="chessboard-info">
+    </header>
+
+      <section className="chessboard-info">
         {/* Video Section */}
         <div className="video-container">
             <video controls width="100%">
