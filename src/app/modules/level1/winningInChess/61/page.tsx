@@ -171,7 +171,10 @@ const M1: React.FC = () => {
     };
   return (
     <div className="lesson-content">
-    {isLoadingPage && <Loading />}
+     {isLoadingPage && <Loading />}
+
+
+      <header className="fixed-header">
     <h3>5.1 Checkmate</h3>
     <div className="video-container">
           <video controls width="100%">
@@ -188,7 +191,9 @@ const M1: React.FC = () => {
         This diagram shows how the Black King and Queen work together to checkmate the White King. The Queen delivers the check while the Black King controls key escape squares. With no safe moves left for the White King, this position results in a checkmate.
     </p><br />
 
-    <section className="chessboard-info">
+    </header>
+
+      <section className="chessboard-info">
         
         <br />
         <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>

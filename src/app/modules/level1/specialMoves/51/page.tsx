@@ -171,7 +171,10 @@ const M1: React.FC = () => {
     };
   return (
     <div className="lesson-content">
-  {isLoadingPage && <Loading />}
+   {isLoadingPage && <Loading />}
+
+
+      <header className="fixed-header">
   <h3>4.1 Castling</h3>
 
   <section className="special-moves">
