@@ -170,8 +170,11 @@ const M1: React.FC = () => {
     <div className="lesson-content">
       {isLoadingPage && <Loading />}
 
-      <h3>1.1 Introduction</h3>
 
+      <header className="fixed-header">
+      <h3>1.1 Introduction</h3>
+      </header>
+      
       <section className="chessboard-info">
         {/* Video Section */}
         <div className="video-container">

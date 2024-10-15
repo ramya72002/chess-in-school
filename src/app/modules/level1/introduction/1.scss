@@ -7,6 +7,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #f7f7f7; /* Light grey for a modern background */
 }
+
+
 .theme-practice {
   background-color: #861cdd;
   border: 1px solid #000;
@@ -170,7 +172,7 @@ margin-bottom: 20px; // Space below the category boxes
   }
   
   .chessboard-info {
-    margin-bottom: 20px;
+    margin-top: 80px;
 
     .p{
       font-family: 'Montserrat', sans-serif;
@@ -319,4 +321,34 @@ margin-bottom: 20px; // Space below the category boxes
       }
     }
   }
+}
+.fixed-header {
+  h3 {
+    margin: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 25px; /* Adjust font size as needed */
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* Adjust as needed */
+    z-index: 1; /* Ensure it stays on top */
+    padding: 10px 20px;
+  
+    h3 {
+      margin: 0;
+      margin-right: 20px;
+      margin-top: 0px;
+      font-size: 24px; /* Adjust font size as needed */
+      text-align: center;
+    }
+  }
+  
+
 }
