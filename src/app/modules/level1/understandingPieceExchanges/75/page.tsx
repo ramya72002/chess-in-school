@@ -190,6 +190,7 @@ const M1: React.FC = () => {
 
       <header className="fixed-header">
     <h3>6.5 Material Down</h3>
+    </header>
     <div className="video-container">
           <video controls width="100%">
             <source src="/videos/video1.mp4" type="video/mp4" />
