@@ -176,6 +176,7 @@ const M1: React.FC = () => {
 
       <header className="fixed-header">
   <h3>4.1 Castling</h3>
+  </header>
 
   <section className="special-moves">
    

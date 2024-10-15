@@ -175,6 +175,7 @@ const M1: React.FC = () => {
 
       <header className="fixed-header">
   <h3>2.5: Understanding the Rook</h3>
+  </header>
 
   <div className="video-container">
     <video controls width="100%">
