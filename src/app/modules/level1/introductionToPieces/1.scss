@@ -167,7 +167,7 @@ margin-bottom: 20px; // Space below the category boxes
     margin-bottom: 20px;
 
     .video-container {
-      margin-bottom: 20px;
+      margin-top: 60px;
       text-align: center;
 
       video {
@@ -308,3 +308,17 @@ margin-bottom: 20px; // Space below the category boxes
     }
   }
 
+  .fixed-header {
+    // Your existing styles...
+  
+    /* Add margin-bottom to create a gap between the header and the video */
+    margin-bottom: 20px; // Adjust the value for the gap size as needed
+  }
+  
+  .media-container {
+    // Your existing styles...
+  
+    /* Add padding-top or margin-top to create a gap between the video and the previous element (if needed) */
+    padding-top: 20px; // Adjust this value as needed
+  }
+  

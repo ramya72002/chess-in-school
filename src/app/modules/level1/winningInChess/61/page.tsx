@@ -24,6 +24,7 @@ const M1: React.FC = () => {
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [puzzlesWithStatus, setPuzzlesWithStatus] = useState<Puzzle[]>([]);
   const [isLoadingPage, setIsLoadingPage] = useState(false); // Add a state to manage page loading
+  const [showVideo, setShowVideo] = useState(false); // Add a state to manage page loading
 
   const puzzles = [
     { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
@@ -176,12 +177,25 @@ const M1: React.FC = () => {
 
       <header className="fixed-header">
     <h3>5.1 Checkmate</h3>
-    <div className="video-container">
-          <video controls width="100%">
-            <source src="/videos/video1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div><br />
+    </header>
+    <div className="media-container">
+          {!showVideo ? (
+            <img
+              src="/images/thumbnail.png" // Placeholder image
+              alt="Introduction Thumbnail"
+              className="intro-image"
+              onClick={() => setShowVideo(true)} // Show video when image is clicked
+              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+            />
+          ) : (
+            <video controls playsInline width="100%">
+              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
+        </div>
+        
+        <br />
     
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Understanding and avoiding checkmates in chess is crucial for players. Checkmate occurs when the opponent’s king is placed in a position of direct threat, or "check," from which there is no escape. This ends the game, granting victory to the player who delivered the checkmate. To achieve checkmate, you must coordinate your pieces to control key squares around the king, ensuring that all escape routes are blocked. This often involves using a combination of rooks, queens, and sometimes bishops or knights to deliver the check and cover the king’s potential moves. Learning common checkmate patterns, such as using a queen and king, two rooks, or a rook and king combination, is essential for improving your game. Additionally, always ensure your king has an escape route to avoid being checkmated. The key is to create a situation where the king is in check and cannot move to any safe square, be protected by another piece, or block the attack, thus ending the game with a decisive victory.
@@ -191,7 +205,7 @@ const M1: React.FC = () => {
         This diagram shows how the Black King and Queen work together to checkmate the White King. The Queen delivers the check while the Black King controls key escape squares. With no safe moves left for the White King, this position results in a checkmate.
     </p><br />
 
-    </header>
+    
 
       <section className="chessboard-info">
         

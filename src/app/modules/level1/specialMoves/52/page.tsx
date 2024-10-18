@@ -24,6 +24,7 @@ const M1: React.FC = () => {
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [puzzlesWithStatus, setPuzzlesWithStatus] = useState<Puzzle[]>([]);
   const [isLoadingPage, setIsLoadingPage] = useState(false); // Add a state to manage page loading
+  const [showVideo, setShowVideo] = useState(false); // Add a state to manage page loading
 
   const puzzles = [
     { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
@@ -179,15 +180,26 @@ const M1: React.FC = () => {
     
     
     </header>
-
-      <section className="chessboard-info">
-        {/* Video Section */}
-        <div className="video-container">
-            <video controls width="100%">
-                <source src="/videos/video1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+ {/* Video Section */}
+        <div className="media-container">
+          {!showVideo ? (
+            <img
+              src="/images/thumbnail.png" // Placeholder image
+              alt="Introduction Thumbnail"
+              className="intro-image"
+              onClick={() => setShowVideo(true)} // Show video when image is clicked
+              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+            />
+          ) : (
+            <video controls playsInline width="100%">
+              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
-        </div><p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
+          )}
+        </div>
+        
+      <section className="chessboard-info">
+       <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Pawn promotion occurs when a pawn advances to the eighth rank (or first rank for Black) and is promoted to a queen, rook, bishop, or knight. While the queen is the most common choice for promotion due to its power, there are situations where promoting to a knight, rook, or bishop (a process known as underpromotion) can be strategically advantageous. The timing and choice of promotion are critical and can significantly impact the outcome of the game, particularly in the endgame.
     </p>
     
