@@ -24,6 +24,7 @@ const M1: React.FC = () => {
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [puzzlesWithStatus, setPuzzlesWithStatus] = useState<Puzzle[]>([]);
   const [isLoadingPage, setIsLoadingPage] = useState(false); // Add a state to manage page loading
+  const [showVideo, setShowVideo] = useState(false); // Add a state to manage page loading
 
   const puzzles = [
     { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
@@ -207,11 +208,21 @@ const M1: React.FC = () => {
 
       <section className="chessboard-info">
         {/* Video Section */}
-        <div className="video-container">
-            <video controls width="100%">
-                <source src="/videos/video1.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
+        <div className="media-container">
+          {!showVideo ? (
+            <img
+              src="/images/thumbnail.png" // Placeholder image
+              alt="Introduction Thumbnail"
+              className="intro-image"
+              onClick={() => setShowVideo(true)} // Show video when image is clicked
+              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+            />
+          ) : (
+            <video controls playsInline width="100%">
+              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
+          )}
         </div>
         <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         En passant is a special pawn capture that occurs when a pawn moves two squares forward, and an adjacent opposing pawn captures it as if it had only moved one square. This capture must be made immediately after the opponent's pawn makes its two-square move, or the opportunity is lost. The en passant capture is time-sensitive; if not taken immediately, the option disappears. Strategically, en passant can be used to disrupt your opponent's pawn structure and open lines for your pieces.

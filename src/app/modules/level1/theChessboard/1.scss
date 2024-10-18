@@ -7,6 +7,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #f7f7f7; /* Light grey for a modern background */
 }
+
+
 .theme-practice {
   background-color: #861cdd;
   border: 1px solid #000;
@@ -161,16 +163,22 @@ margin-bottom: 20px; // Space below the category boxes
   }
   
   h3 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
+    font-weight: bold;
     color: #000000; /* Bright yet professional red */
     margin-bottom: 20px;
     text-align: center;
   }
   
   .chessboard-info {
-    margin-bottom: 20px;
+    margin-top: 80px;
 
-    .video-container {
+    .p{
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .media-container {
       margin-bottom: 20px;
       text-align: center;
 
@@ -190,7 +198,7 @@ margin-bottom: 20px; // Space below the category boxes
     p {
       font-family: 'Montserrat', sans-serif;
       font-size: 16px;
-      color: #7f8c8d; /* Soft grey for text */
+      color: #232424; /* Soft grey for text */
       margin-bottom: 10px;
     }
 
@@ -212,7 +220,6 @@ margin-bottom: 20px; // Space below the category boxes
         }
 
         p {
-          font-family: 'Montserrat', sans-serif;
           font-size: 14px;
           color: #2c3e50; /* Deep, readable color */
         }
@@ -240,7 +247,6 @@ margin-bottom: 20px; // Space below the category boxes
     }
 
     p {
-      font-family: 'Montserrat', sans-serif;
       font-size: 16px;
       color: #7f8c8d;
       margin-bottom: 15px;
@@ -313,4 +319,47 @@ margin-bottom: 20px; // Space below the category boxes
       }
     }
   }
+}
+.fixed-header {
+  h3 {
+    margin: 0;
+    margin-right: 20px;
+    margin-top: 20px;
+    font-size: 23px; /* Adjust font size as needed */
+    text-align: center;
+  }
+}
+.fixed-header {
+  margin-bottom: 20px; // Adjust this value to your desired gap
+}
+
+.chessboard-info {
+  padding-top: 20px; // You can also adjust this to create space from the top
+}
+@media (max-width: 768px) {
+  .chessboard-info {
+    margin-top: 80px;
+
+    .p{
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* Adjust as needed */
+    z-index: 1; /* Ensure it stays on top */
+    padding: 10px 20px;
+  
+    h3 {
+      margin: 0;
+      margin-right: 20px;
+      margin-top: 0px;
+      font-size: 22px; /* Adjust font size as needed */
+      text-align: center;
+    }
+  }
+  
+
 }

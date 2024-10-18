@@ -24,12 +24,12 @@ const M1: React.FC = () => {
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [puzzlesWithStatus, setPuzzlesWithStatus] = useState<Puzzle[]>([]);
   const [isLoadingPage, setIsLoadingPage] = useState(false); // Add a state to manage page loading
+  const [showVideo, setShowVideo] = useState(false); // Add a state to manage page loading// New state to toggle between image and video
 
   const puzzles = [
     { title: "Forks and Double Attacks - Part 3", level: "Knight", category: "Middlegame", dateAndtime: "2024-08-21T13:54", total_puz_count: 9, statusFlag: "Not Started" },
     { title: "hih", level: "Pawn", category: "Endgame", dateAndtime: "2024-09-19T12:42", total_puz_count: 1, statusFlag: "Not Started" }
   ];
-
 
   const handleButtonClick = async (
     level:string,
@@ -176,11 +176,21 @@ const M1: React.FC = () => {
 
       <section className="chessboard-info">
         {/* Video Section */}
-        <div className="video-container">
-          <video controls playsInline width="100%">
-            <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="media-container">
+          {!showVideo ? (
+            <img
+              src="/images/thumbnail.png" // Placeholder image
+              alt="Introduction Thumbnail"
+              className="intro-image"
+              onClick={() => setShowVideo(true)} // Show video when image is clicked
+              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+            />
+          ) : (
+            <video controls playsInline width="100%">
+              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          )}
         </div>
         <br />
         <p>
