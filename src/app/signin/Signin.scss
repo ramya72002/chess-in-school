@@ -96,3 +96,42 @@
 .text-black {
   color: #000;
 }
+@media (min-width: 601px) and (max-width: 1024px) {
+  .signup-form {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    padding: 1.25rem; // Slightly more padding for tablets
+    max-width: 80%; // Adjust form width for tablets
+    margin: 0 auto; // Center the form horizontally
+  }
+
+  h2 {
+    font-size: 1.75rem; // Adjust heading size for tablets
+  }
+
+  .signup-input,
+  .signup-button {
+    font-size: 1.1rem; // Adjust input/button font size for tablets
+  }
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; // Ensure it takes the full screen height
+}
+
+.text-red-500 {
+  color: #f56565;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-black {
+  color: #000;
+}
