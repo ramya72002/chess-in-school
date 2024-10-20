@@ -97,6 +97,12 @@
   color: #000;
 }
 @media (min-width: 601px) and (max-width: 1024px) {
+  .signup-background {
+    background-image: url('/images/signupbg2.png'); /* Use a different background image for tablets */
+    background-size: cover; /* Ensure the new image covers the entire background */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+  }
   .signup-form {
     position: relative;
     left: 0;
