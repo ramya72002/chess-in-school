@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -145,11 +146,15 @@ const M1: React.FC = () => {
   
     const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
-    const storedEmail = localStorage.getItem('email');
+    const userDetailsString = localStorage.getItem('userDetails');
+    const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+    if (storedUserDetails) {
+          setUserDetails(storedUserDetails);
+    }
     try {
       // Sample data to send in the POST request
       const requestData = {
-        email: storedEmail,
+        email: storedUserDetails.email,
           course_title: 'introductionToPieces',
           completed: 14
         };
@@ -178,23 +183,25 @@ const M1: React.FC = () => {
       <h3 >2.1 Introduction to Pieces</h3>
       </header>
 
-        <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div>
-
+      <div className="media-container">
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://youtu.be/vGWIQkp-63k"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div>
   
   <section className="pieces-introduction">
 
