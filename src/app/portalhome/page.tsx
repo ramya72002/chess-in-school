@@ -76,7 +76,7 @@ const Hero = () => {
     if (!userDetails) return '0%';
 
     const levelMap: { [key: string]: number } = {
-      'Level 1': 8,
+      'Level 1': 7,
       'Level 2': 20,
       'Level 3': 40,
       'Level 4': 60,
