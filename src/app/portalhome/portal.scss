@@ -152,7 +152,7 @@ body {
         align-items: center;
         position: relative;
         z-index: 1;
-        padding: 10px;
+        // padding: 10px;
         overflow: hidden;
   
         .icon {
@@ -218,73 +218,78 @@ body {
 }
   
 
-  .chess-journey {
-    flex-direction: column; // Change to vertical layout for mobile
-    
-    .level {
-      flex-direction: column; // Stack levels vertically
-      align-items: center; // Center the items
-      gap: 1px; // Adjusted gap for mobile
+.chess-journey {
+  flex-direction: column; // Vertical layout for mobile
 
-      .step {
-        flex-direction: column; // Ensure   and text stack vertically
-        align-items: center; // Center align vertically
+  .level {
+    flex-direction: column; // Stack levels vertically
+    align-items: center; // Center the items
+    gap: 0; // Removed gap for mobile
 
-          p {
-            display: none; // Hide the p tag inside the   class for mobile view
-          }
+    .step {
+      flex-direction: column; // Stack icon and text vertically
+      align-items: center; // Center align vertically
 
-        .icon {
-          width: 250px; // Adjusted size for mobile
-          height: 120px; // Adjusted size for mobile
-          font-size: 50px; // Adjusted font size for mobile
+      p {
+        display: none; // Hide the text in mobile view
+      }
+
+      .icon {
+        width: 300px; // Adjusted size for mobile
+        height: 150px; // Adjusted size for mobile
+        font-size: 50px; // Adjusted font size for mobile
+        border-radius: 0;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        margin: 0; // Remove any potential margin
+
+        img.chess-icon {
           border-radius: 0;
-          background-color: transparent;
+          gap: 0; // Ensure no gap between images
+          padding: 0; // Remove any padding
+          margin: 0; // Remove any margin between images
           border: none;
-          padding: 0;
+          width: 100%; // Ensure the image takes full width of the container
+          height: 60%; // Ensure the image takes full height of the container
 
-          img.chess-icon{
-            border-radius: 0;
-            padding: 0;
-            border: none;
-            width: 90%;
-            height: auto;
-            &.pawn {
-              content: url("/images/portal/1.png"); // Mobile version for pawn
-            }
-            &.knight {
-              content: url("/images/portal/2.png"); // Mobile version for knight
-            }
-            &.bishop {
-              content: url("/images/portal/3.png"); // Mobile version for bishop
-            }
-            &.rook {
-              content: url("/images/portal/4.png"); // Mobile version for rook
-            }
-            &.queen {
-              content: url("/images/portal/5.png"); // Mobile version for queen
-            }
-            &.king {
-              content: url("/images/portal/6.png"); // Mobile version for king
-            }
+          &.pawn {
+            content: url("/images/portal/1.png"); // Mobile version for pawn
           }
-        }
-
-        p {
-          font-size: 12px; // Slightly larger font for better readability
-        }
-
-        &.active {
-          .icon {
-            padding: 3px;
-            border-radius: 4px;
-            background-color: #f26722;
-            cursor: pointer;
+          &.knight {
+            content: url("/images/portal/2.png"); // Mobile version for knight
+          }
+          &.bishop {
+            content: url("/images/portal/3.png"); // Mobile version for bishop
+          }
+          &.rook {
+            content: url("/images/portal/4.png"); // Mobile version for rook
+          }
+          &.queen {
+            content: url("/images/portal/5.png"); // Mobile version for queen
+          }
+          &.king {
+            content: url("/images/portal/6.png"); // Mobile version for king
           }
         }
       }
-    }}
-} .connector {
+
+      p {
+        font-size: 12px; // Slightly larger font for better readability
+      }
+
+      &.active {
+        .icon {
+          padding: 3px;
+          border-radius: 4px;
+          background-color: #f26722;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}}
+ .connector {
    
   display: none;
 } }
