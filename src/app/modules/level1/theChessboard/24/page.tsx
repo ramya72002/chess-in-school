@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -145,11 +146,15 @@ const M1: React.FC = () => {
   
     const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
-    const storedEmail = localStorage.getItem('email');
+    const userDetailsString = localStorage.getItem('userDetails');
+    const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+    if (storedUserDetails) {
+          setUserDetails(storedUserDetails);
+    }
     try {
       // Sample data to send in the POST request
       const requestData = {
-        email: storedEmail,
+        email: storedUserDetails.email,
           course_title: 'theChessboard',
           completed: 64
         };
@@ -182,21 +187,23 @@ const M1: React.FC = () => {
       <section className="chessboard-info">
         {/* Video Section */}
         <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://youtu.be/VYy3Ip2RKhg"
+            controls
+            playing
+            width="100%"
+          />
+        )}
+      </div><br />
         <p>
   Similarly, let us dive deeper into understanding Ranks on a chessboard.
 </p><br />

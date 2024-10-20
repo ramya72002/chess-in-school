@@ -145,11 +145,15 @@ const M1: React.FC = () => {
   
     const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
-    const storedEmail = localStorage.getItem('email');
+    const userDetailsString = localStorage.getItem('userDetails');
+    const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
+    if (storedUserDetails) {
+          setUserDetails(storedUserDetails);
+    }
     try {
       // Sample data to send in the POST request
       const requestData = {
-        email: storedEmail,
+        email: storedUserDetails.email,
           course_title: 'checkmatePatterns',
           completed: 48
         };
