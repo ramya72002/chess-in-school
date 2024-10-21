@@ -258,20 +258,20 @@ margin-bottom: 20px; // Space below the category boxes
   .navigation-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    // margin-top: 2px;
 
     button {
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
-      background-color: #e74c3c; /* Bold red for buttons */
+      background-color: #0e95ee; /* Bold red for buttons */
       color: #ffffff;
       font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #c0392b; /* Darker shade for hover */
+        background-color: #3498db; /* Darker shade for hover */
       }
     }
   }

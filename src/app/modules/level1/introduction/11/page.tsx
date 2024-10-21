@@ -32,42 +32,6 @@ const M1: React.FC = () => {
     { title: "hih", level: "Pawn", category: "Endgame", dateAndtime: "2024-09-19T12:42", total_puz_count: 1, statusFlag: "Not Started" }
   ];
 
-  const handleButtonClick = async (
-    level:string,
-    title: string,
-    category: string,
-    date_time: string,
-    puzzle_no: number,
-    score: string,
-    index: number
-  ) => {
-    setLoading((prevLoading) => ({ ...prevLoading, [index]: true }));
-    const userDetailsString = localStorage.getItem('userDetails');
-    const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-    const email = storedUserDetails?.email;
-
-    if (email) {
-      try {
-        const createArenaApiUrl = 'https://backend-chess-tau.vercel.app/create_Arena_user_inschool';
-        const imagesApiUrl = `https://backend-chess-tau.vercel.app/images/title?level=${encodeURIComponent(level)}&category=${encodeURIComponent(category)}&title=${encodeURIComponent(title)}`;
-
-        const createArenaResponse = await axios.post(createArenaApiUrl, { email, category, title, puzzle_no });
-
-        if (createArenaResponse.data.success) {
-          const imagesResponse = await axios.get(imagesApiUrl);
-          router.push(`/arena/startArena?title=${encodeURIComponent(title)}&level=${encodeURIComponent(level)}&category=${encodeURIComponent(category)}&date_time=${encodeURIComponent(date_time)}&score=${encodeURIComponent(score)}`);
-        } else {
-          setError('Failed to create or update PuzzleArena. Please try again later.');
-        }
-      } catch (error) {
-        console.error('Error during API calls:', error);
-        setError('An error occurred while processing your request. Please try again later.');
-      } finally {
-        setLoading((prevLoading) => ({ ...prevLoading, [index]: false }));
-      }
-    }
-  };
-
   useEffect(() => {
     const fetchUserDetails = async () => {
       if (typeof window !== 'undefined') {
@@ -226,12 +190,13 @@ const M1: React.FC = () => {
 </p><br />
 
         
-      </section>
+      
 
       {/* Navigation Buttons */}
       <section className="navigation-buttons">
         <button className="previous-button"></button>
         <button onClick={handleNextClick} className="next-button">Next</button>
+      </section>
       </section>
     </div>
   );
