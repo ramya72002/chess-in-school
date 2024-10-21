@@ -98,7 +98,7 @@ const topics = [
   
 const Sidebar1: React.FC = () => {
   const router = useRouter();
-  const [isSidebarMinimized, setIsSidebarMinimized] = useState(true);
+  const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
   const [userCourses, setUserCourses] = useState<string[]>([]);
   const [showAlert, setShowAlert] = useState(false);
   const currentPath = usePathname(); 
@@ -107,7 +107,7 @@ const Sidebar1: React.FC = () => {
     if (window.innerWidth <= 768) {
       setIsSidebarMinimized(true); // Minimize sidebar on small screens
     } else {
-      setIsSidebarMinimized(true); // Maximize sidebar on larger screens
+      setIsSidebarMinimized(false); // Maximize sidebar on larger screens
     }
   };
 
