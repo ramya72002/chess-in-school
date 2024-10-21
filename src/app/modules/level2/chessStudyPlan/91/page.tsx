@@ -146,14 +146,14 @@ const M1: React.FC = () => {
     const handleNextClick = async () => {
     setIsLoadingPage(true); // Set loading state before making the request
     const userDetailsString = localStorage.getItem('userDetails');
-    const storedUserDetails = userDetailsString ? JSON.parse(userDetailsString) : null;
-    if (storedUserDetails) {
-          setUserDetails(storedUserDetails);
+    const storedUserDetails1 = userDetailsString ? JSON.parse(userDetailsString) : null;
+    if (storedUserDetails1) {
+          setUserDetails(storedUserDetails1);
     }
     try {
       // Sample data to send in the POST request
       const requestData = {
-        email: storedUserDetails.email,
+        email: storedUserDetails1.email,
           course_title: 'chessStudyPlan',
           completed: 100
         };
