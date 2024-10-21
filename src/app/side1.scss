@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 .course-content1 {
-  position: absolute; // Position absolutely within the sidebar container
+  // position: absolute; // Position absolutely within the sidebar container
   top: 0; // Align to the top edge of the sidebar container
   left: 0; // Align to the left edge
   width: 350px; // Fixed width for the course content
@@ -276,6 +276,7 @@
 
 @media (max-width: 768px) {
   .course-content1 {
+    position: absolute;
     width: 300px;
   }
   .sidebar {
