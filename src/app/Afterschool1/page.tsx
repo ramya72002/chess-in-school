@@ -45,6 +45,7 @@ const MyAccount = () => {
   const router = useRouter();
   const [courseStatuses, setCourseStatuses] = useState<{ [key: string]: CourseStatus }>({});
   const [loading, setLoading] = useState(false); // Loading state
+  const [showModal, setShowModal] = useState(false); // Modal state temp
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -60,8 +61,8 @@ const MyAccount = () => {
           if (response.data.success) {
             const registeredCourses = response.data.data.registered_inschool_courses;
             const statuses = registeredCourses.reduce((acc: { [key: string]: CourseStatus }, course: { course_title: string, status: string, completed: number }) => {
-              acc[course.course_title] = { status: course.status, completed: course.completed };
-              return acc;
+                acc[course.course_title] = { status: course.status, completed: course.completed };
+                return acc;
             }, {});
 
             setCourseStatuses(statuses);
@@ -79,6 +80,13 @@ const MyAccount = () => {
 
   const handleViewProgress = async (courseTitle: string) => {
     const path = coursePaths[courseTitle];
+    
+    if (courseTitle === 'specialMoves') {
+      // Show the modal instead of alert temp
+      setShowModal(true);
+      return;
+    }
+
     if (path) {
       try {
         setLoading(true);
@@ -107,18 +115,18 @@ const MyAccount = () => {
             }
           }
 
-            // Navigate to the course path
-            router.push(path);
-          }
-        } catch (error) {
-          console.error('Error updating course status:', error);
-        } finally {
-          setLoading(false);  // Hide loading animation
+          // Navigate to the course path
+          router.push(path);
         }
-      } else {
-        console.error('Path not found for course:', courseTitle);
+      } catch (error) {
+        console.error('Error updating course status:', error);
+      } finally {
+        setLoading(false);  // Hide loading animation
       }
-    };
+    } else {
+      console.error('Path not found for course:', courseTitle);
+    }
+  };
 
   return (
     <div className="account-page">
@@ -149,7 +157,6 @@ const MyAccount = () => {
                   <div className="status-container">
                     <button
                       className={`status-button ${courseStatus?.status.replace(' ', '-') || 'Not-Started'}`}
-                      onClick={() => handleViewProgress(course)}
                       disabled={!isCurrentCourseClickable}
                     >
                       {courseStatus?.status || 'Not Started'}
@@ -164,6 +171,21 @@ const MyAccount = () => {
           );
         })}
       </section>
+
+      {/* Modal */}
+      {showModal && (
+        <div className={`modal ${showModal ? 'active' : ''}`}>
+          <div className="modal-content">
+            <div className="modal-header">Access Denied</div>
+            <div className="modal-body">
+              You currently do not have access to this module. Your trainer will be in touch with further instructions.
+            </div>
+            <button className="modal-close" onClick={() => setShowModal(false)}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

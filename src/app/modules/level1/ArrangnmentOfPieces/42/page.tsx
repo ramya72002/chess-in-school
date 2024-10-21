@@ -184,7 +184,8 @@ const M1: React.FC = () => {
         });
 
         if (response1.data.success) {
-          router.push('/modules/level1/specialMoves/51');
+          router.push('/Afterschool1');
+          // router.push('/modules/level1/specialMoves/51'); temp
 
           
            
