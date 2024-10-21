@@ -98,7 +98,7 @@ const topics = [
   
 const Sidebar1: React.FC = () => {
   const router = useRouter();
-  const [isSidebarMinimized, setIsSidebarMinimized] = useState(false);
+  const [isSidebarMinimized, setIsSidebarMinimized] = useState(true);
   const [userCourses, setUserCourses] = useState<string[]>([]);
   const [showAlert, setShowAlert] = useState(false);
   const currentPath = usePathname(); 
@@ -107,7 +107,7 @@ const Sidebar1: React.FC = () => {
     if (window.innerWidth <= 768) {
       setIsSidebarMinimized(true); // Minimize sidebar on small screens
     } else {
-      setIsSidebarMinimized(false); // Maximize sidebar on larger screens
+      setIsSidebarMinimized(true); // Maximize sidebar on larger screens
     }
   };
 
@@ -199,12 +199,15 @@ const Sidebar1: React.FC = () => {
     };
 
     const path = submodulePaths[title];
-    if (path && isAccessible(title)) {
-      router.push(path);
-    } else {
-      setShowAlert(true);
-    }
-  };
+  if (path && isAccessible(title)) {
+    // Minimize sidebar and save state to localStorage
+    setIsSidebarMinimized(true);
+    localStorage.setItem("sidebarMinimized", "true"); // Store state in localStorage
+    router.push(path); // Navigate to the route
+  } else {
+    setShowAlert(true);
+  }
+};
       const closeAlert = () => setShowAlert(false); // Close the alert popup
 
 
