@@ -53,7 +53,15 @@ h1 {
   position: relative;
   width: 95%;
   height: 150px;
+  cursor: pointer; // Add pointer cursor when clickable
+
+  &.disabled {
+    pointer-events: none; // Disables click
+    // opacity: 0.1; // Makes the container look disabled
+    cursor: not-allowed; // Shows a "not-allowed" cursor
+  }
 }
+
 
 .course-image {
   object-fit: cover;
