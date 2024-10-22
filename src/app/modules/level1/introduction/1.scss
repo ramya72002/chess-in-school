@@ -13,7 +13,7 @@ body {
 
  
 .lesson-content { 
-  max-height: calc(100vh - 20px); /* Adjust as needed */
+  max-height: 100vh; /* Adjust as needed */
   overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
   padding: 10px 20px;
   box-sizing: border-box;
