@@ -2,7 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Lilita+One&family=Matemasie&display=swap');
 
 body {
-  overflow-x: hidden; // Prevent horizontal scrolling
+  overflow: hidden; // Prevent horizontal scrolling
+  @media (max-width: 768px) {
+    overflow-y: auto; // Allow vertical scrolling on mobile
+  }
 }
 
 .hero {
@@ -42,90 +45,93 @@ body {
       color: #f9fbfb;
     }
 
-  .journey {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-
-    .level {
-      width: 100%; // Full width for mobile
-      padding: 20px;
-      background-color: #1d3557; // Darker background for contrast
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-      h3 {
-        color: #ffffff;
-        font-size: 28px;
-        text-align: center;
-        font-weight: bold;
-        margin-bottom: 20px;
-      }
-
-      .steps {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
-
-        .step {
-          display: flex;
-          align-items: center; // Align items to the start
-          background-color: #a8dadc;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          padding:5px; // Add padding for better spacing
-          border-radius: 5px;
-
-          .icon {
-            flex-shrink: 0;
-            width: 100px;
-            height: 170px;
-          }
-
-          h4 {
-            margin: 0;
-            font-size: 20px;
-            font-weight: bold;
-            color: #1d3557;
-          }
-
-          .level-description {
-            font-size: 16px;
-            color: #457b9d;
-            overflow: hidden; // Prevent overflow
-          
-          
-            @media (max-width: 768px) {
-              overflow: hidden;
-              display: -webkit-box;
-              -webkit-box-orient: vertical;
-              -webkit-line-clamp: 3;
-          
-              &.expanded {
-                display: block;
-                -webkit-line-clamp: unset; // Remove clamping for mobile view when expanded
+    .journey {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
+      
+      // padding: 10px; // Optional: Add padding around the journey
+    
+      .level {
+        max-height: 400px; // Set a maximum height for the container
+      overflow-y: auto; // Enable vertical scrolling
+        width: 100%; // Full width for mobile
+        padding: 20px;
+        background-color: #1d3557; // Darker background for contrast
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    
+        h3 {
+          color: #ffffff;
+          font-size: 28px;
+          text-align: center;
+          font-weight: bold;
+          margin-bottom: 20px;
+        }
+    
+        .steps {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 20px;
+    
+          .step {
+            display: flex;
+            align-items: center; // Align items to the start
+            background-color: #a8dadc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            padding: 5px; // Add padding for better spacing
+            border-radius: 5px;
+    
+            .icon {
+              flex-shrink: 0;
+              width: 100px;
+              height: 170px;
+            }
+    
+            h4 {
+              margin: 0;
+              font-size: 20px;
+              font-weight: bold;
+              color: #1d3557;
+            }
+    
+            .level-description {
+              font-size: 16px;
+              color: #457b9d;
+              overflow: hidden; // Prevent overflow
+    
+              @media (max-width: 768px) {
+                // overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+    
+                &.expanded {
+                  display: block;
+                  -webkit-line-clamp: unset; // Remove clamping for mobile view when expanded
+                }
               }
             }
           }
-          
-        }
-      }
-
-      button {
-        background-color: #f26722; // Button color
-        color: white; // Text color
-        border: none;
-        padding: 8px 25px;
-        font-size: 12px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 10px;
-
-        &:hover {
-          background-color: #d45d1a; // Darker shade on hover
+    
+          button {
+            background-color: #f26722; // Button color
+            color: white; // Text color
+            border: none;
+            padding: 8px 25px;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+    
+            &:hover {
+              background-color: #d45d1a; // Darker shade on hover
+            }
+          }
         }
       }
     }
-  }
+    
   .chess-journey {
     display: flex;
     justify-content: center;
@@ -211,6 +217,7 @@ body {
   }
   
 }
+ 
 @media (max-width: 768px) {
   .hero {
     .headers {
