@@ -145,8 +145,11 @@ const MyAccount = () => {
 
           return (
             <div key={index}>
-              <div className="course-image-container" onClick={() => handleViewProgress(course)}>
-                <Image
+              <div
+                className={`course-image-container ${!isCurrentCourseClickable ? 'disabled' : ''}`}
+                onClick={isCurrentCourseClickable ? () => handleViewProgress(course) : undefined}
+              >              
+              <Image
                   src={courseImages[course]}
                   alt={course}
                   layout="fill"
