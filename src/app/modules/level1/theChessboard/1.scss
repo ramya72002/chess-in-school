@@ -2,153 +2,19 @@
 
 body {
   height: 100%;
+
+  // max-height: calc(100vh - 20px); 
+  overflow: hidden;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #f7f7f7; /* Light grey for a modern background */
 }
 
-
-.theme-practice {
-  background-color: #861cdd;
-  border: 1px solid #000;
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-
-  .filter-container {
-    margin-bottom: 10px;
-
-    p {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.5rem; 
-      margin-bottom: 30px;
-      margin-top: 10px;
-      color: white;
-    }
-  }
-
-  .category-boxes {
-    display: flex;
-justify-content: space-around; // Distribute space evenly
-margin-bottom: 20px; // Space below the category boxes
-
-  }
-
-  .category-box {
-    background-color: #48b906; // Default background color
-    border: 1px solid #e3dbdb; // Border color
-    padding: 10px 20px; // Padding inside the box
-    color: white; // Text color
-    width: 200px;
-    text-align: center;
-    cursor: pointer; // Pointer cursor on hover
-    transition: background-color 0.3s ease, transform 0.3s ease; // Smooth transition for background color and transform
-  
-    &:hover {
-      background-color: #3a9706; // Darker green on hover
-      transform: scale(1.05); // Slight zoom effect on hover
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); // Shadow effect
-    }
-  
-    &.Opening {
-      background-color: #d59114; // Custom color for Opening
-      &:hover {
-        background-color: #b57612; // Darker shade on hover
-      }
-      &.active {
-        background-color: #ff9e01; // Highlight color for active tab
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
-        transform: scale(1.1); // Slightly larger scale for active tab
-      }
-    }
-  
-    &.Middlegame {
-      background-color: #00a6ff; // Custom color for Middlegame
-      &:hover {
-        background-color: #008dcc; // Darker shade on hover
-      }
-      &.active {
-        background-color: #1912f3; // Highlight color for active tab
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
-        transform: scale(1.1); // Slightly larger scale for active tab
-      }
-    }
-  
-    &.Endgame {
-      background-color: #73bf9a; // Custom color for Endgame
-      &:hover {
-        background-color: #7ac19c; // Darker shade on hover
-      }
-      &.active {
-        background-color: #0cc155; // Highlight color for active tab
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
-        transform: scale(1.1); // Slightly larger scale for active tab
-      }
-    }
-  
-    &.Mixed {
-      background-color: #cc5f00; // Custom color for Mixed
-      &:hover {
-        background-color: #a64c00; // Darker shade on hover
-      }
-      &.active {
-        background-color: rgb(218, 66, 12); // Highlight color for active tab
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); // Enhanced shadow effect
-        transform: scale(1.1); // Slightly larger scale for active tab
-      }
-    }
-  
-   
-  }
-
-  .practice-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #5ecd32;
-    border: 1px solid #000;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-
-    p {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      color: white;
-    }
-
-    .clickable-link {
-      cursor: pointer;
-      color: blue; /* Add styles to indicate it's clickable */
-      text-decoration: underline;
-    }
-
-    .start-button, .return-button, .completed-button {
-      padding: 5px 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: #FFA500;
-      border: 1px solid #000;
-      color: white;
-    }
-
-    .join-button {
-      padding: 5px 10px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      background-color: #ff5500;
-      border: 1px solid #000;
-      color: white;
-    }
-  }
-}
-
+ 
 .lesson-content { 
-  max-width: 1200px;
-  margin: 0 auto;
+  max-height: 100vh; /* Adjust as needed */
+  overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
   padding: 10px 20px;
   box-sizing: border-box;
   background-color: #ffffff;
@@ -172,15 +38,17 @@ margin-bottom: 20px; // Space below the category boxes
   }
   
   .chessboard-info {
-    margin-top: 80px;
+    margin-top: 30px;
 
     .p{
       font-family: 'Montserrat', sans-serif;
     }
 
-    .media-container {
+    .video-container {
       margin-bottom: 20px;
       text-align: center;
+
+
 
       video {
         max-width: 100%;
@@ -228,6 +96,7 @@ margin-bottom: 20px; // Space below the category boxes
 
     .chessboard-info,
     .pieces-info {
+      max-height: calc(100vh - 20px); 
       background-color: #fdfefe; /* Very light blue tint for a modern look */
     }
   }
@@ -256,20 +125,20 @@ margin-bottom: 20px; // Space below the category boxes
   .navigation-buttons {
     display: flex;
     justify-content: space-between;
-    margin-top: 40px;
+    // margin-top: 2px;
 
     button {
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
-      background-color: #e74c3c; /* Bold red for buttons */
+      background-color: #0e95ee; /* Bold red for buttons */
       color: #ffffff;
       font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s;
 
       &:hover {
-        background-color: #c0392b; /* Darker shade for hover */
+        background-color: #3498db; /* Darker shade for hover */
       }
     }
   }
@@ -325,23 +194,26 @@ margin-bottom: 20px; // Space below the category boxes
     margin: 0;
     margin-right: 20px;
     margin-top: 20px;
-    font-size: 23px; /* Adjust font size as needed */
+    margin-bottom: 20px;
+    font-size: 20px; /* Adjust font size as needed */
     text-align: center;
   }
 }
-.fixed-header {
-  margin-bottom: 20px; // Adjust this value to your desired gap
-}
 
-.chessboard-info {
-  padding-top: 20px; // You can also adjust this to create space from the top
-}
 @media (max-width: 768px) {
-  .chessboard-info {
-    margin-top: 80px;
-
-    .p{
-      font-family: 'Montserrat', sans-serif;
+  .media-container {
+    margin-top: 60px; // Adds space between the header and the video
+    text-align: center;
+    margin-bottom: 10px;
+  
+    .intro-image {
+      max-width: 100%;
+      height: auto;
+    }
+  
+    video {
+      max-width: 100%;
+      height: auto;
     }
   }
   .fixed-header {
@@ -356,7 +228,7 @@ margin-bottom: 20px; // Space below the category boxes
       margin: 0;
       margin-right: 20px;
       margin-top: 0px;
-      font-size: 22px; /* Adjust font size as needed */
+      font-size: 20px; /* Adjust font size as needed */
       text-align: center;
     }
   }
