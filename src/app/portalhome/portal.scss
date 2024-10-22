@@ -177,7 +177,7 @@ body {
     
         &.active {
           .icon {
-            border-radius: 5px;
+            border-radius: 50px;
             background-color: #f26722;
             cursor: pointer;
           }
@@ -241,7 +241,7 @@ body {
       .icon {
         width: 270px; // Adjusted size for mobile
         height: 70px; // Adjusted size for mobile
-        border-radius: 0;
+        border-radius: 0px;
         background-color: transparent;
         border: none;
         padding: 0; // Remove padding to avoid gaps
@@ -285,8 +285,8 @@ body {
 
       &.active {
         .icon {
-          // padding: 3px;
-          // border-radius: 4px;
+          padding: 3px;
+          border-radius: 0px;
           background-color: #f26722;
           cursor: pointer;
         }
