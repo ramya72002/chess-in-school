@@ -163,7 +163,7 @@ export default function RootLayout({
                     {pathname === "/" ? (
                       <SignIn />
                     ) : (
-                      <div className="scrollable-content">{children}</div>
+                      <div>{children}</div>
                     )}
                   </div>
                 </>
