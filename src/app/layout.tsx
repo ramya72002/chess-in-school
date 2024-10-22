@@ -156,10 +156,13 @@ export default function RootLayout({
                     )}
                     
                     {pathname === "/" ? (
-                      <SignIn />
-                    ) : (
-                      <div>{children}</div>
-                    )}
+                            <SignIn />
+                          ) : (
+                            <>
+                              {children}
+                            </>
+                          )}
+
                   </div>
         
         </div>

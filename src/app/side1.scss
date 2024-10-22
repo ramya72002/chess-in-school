@@ -5,8 +5,8 @@
   top: 0; // Align to the top edge of the sidebar container
   left: 0; // Align to the left edge
   width: 350px; // Fixed width for the course content
-  max-height: 100vh; // Max height for overflow management
-  overflow-y: auto; // Enable vertical scroll if content overflows
+  max-height: calc(100vh - 20px); 
+    overflow-y: auto; // Enable vertical scroll if content overflows
   background-color: #ffffff; // Background color
   border-radius: 12px; // Rounded corners
   padding: 10px; // Padding for inner content
