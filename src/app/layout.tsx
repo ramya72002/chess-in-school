@@ -1,12 +1,12 @@
 "use client";
 import { Inter } from "next/font/google";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname} from "next/navigation";
 import Sidebar from "./sidebar";
 import AdminHeader from "./admin/admin_header/adminHeader";
 import "./globals.css";
 import "./si.scss";
 import SignIn from "./signin/page";
-import { Suspense, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Sidebar1 from "./sidebar1"; 
 import Sidebar2 from "./sidebar2";
 import MenuButton from "./MenuBar";
@@ -41,11 +41,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="layout-container">
-          <Suspense fallback={<div>Loading...</div>}>
-            <SearchParamsWrapper>
-              {(afterschool) => (
-                <>
-                  {/* Sidebar logic */}
+              
                   {(pathname === "/portalhome" ||
                     pathname === "/imagepuzzle" ||
                     pathname === "/arena/puzzleArena" ||
@@ -70,7 +66,6 @@ export default function RootLayout({
                     pathname === "/coaching") && (
                       <Sidebar isOpen={sidebarOpen} toggleSidebar={toggleSidebar} />                    )}
 
-                  {/* level1 pawn */}
                   {(pathname === "/modules/level1/introduction/11" ||
                     pathname === "/modules/level1/theChessboard/21" ||
                     pathname === "/modules/level1/theChessboard/22" ||
@@ -166,26 +161,9 @@ export default function RootLayout({
                       <div>{children}</div>
                     )}
                   </div>
-                </>
-              )}
-            </SearchParamsWrapper>
-          </Suspense>
+        
         </div>
       </body>
     </html>
   );
-}
-
-// Define the type for SearchParamsWrapper's props
-interface SearchParamsWrapperProps {
-  children: (afterschool: string | null) => React.ReactNode;
-}
-
-// SearchParamsWrapper Component
-function SearchParamsWrapper({ children }: SearchParamsWrapperProps) {
-  const searchParams = useSearchParams();
-  const afterschool = searchParams.get("afterschool");
-
-  // Pass the afterschool value to the children function
-  return <>{children(afterschool)}</>;
 }
