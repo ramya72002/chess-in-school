@@ -125,18 +125,18 @@ body {
   .navigation-buttons {
     display: flex;
     justify-content: space-between;
-    // margin-top: 2px;
-
+    margin-bottom: 20px; // Adjust the value as needed for the desired spacing
+  
     button {
       padding: 10px 20px;
       border: none;
       border-radius: 5px;
-      background-color: #0e95ee; /* Bold red for buttons */
+      background-color: #0e95ee; /* Bold blue for buttons */
       color: #ffffff;
       font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s;
-
+  
       &:hover {
         background-color: #3498db; /* Darker shade for hover */
       }
