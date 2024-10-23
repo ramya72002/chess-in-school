@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -182,8 +183,9 @@ const M1: React.FC = () => {
           });
   
           if (response1.data.success) {
+            router.push('/Afterschool1');
 
-            router.push('/modules/level1/winningInChess/61'); // Redirect to the M2 page  
+            // router.push('/modules/level1/winningInChess/61'); // temp
             
              
           } else {
@@ -213,21 +215,24 @@ const M1: React.FC = () => {
       <section className="chessboard-info">
         {/* Video Section */}
         <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div>
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=TWgcG2MOLA8"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div>
         <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         En passant is a special pawn capture that occurs when a pawn moves two squares forward, and an adjacent opposing pawn captures it as if it had only moved one square. This capture must be made immediately after the opponent's pawn makes its two-square move, or the opportunity is lost. The en passant capture is time-sensitive; if not taken immediately, the option disappears. Strategically, en passant can be used to disrupt your opponent's pawn structure and open lines for your pieces.
         </p>

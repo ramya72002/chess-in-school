@@ -219,10 +219,11 @@ const Sidebar1: React.FC = () => {
       return userCourses.includes("introductiontopieces");
     } else if (title.startsWith("3.")) {
       return userCourses.includes("arrangnmentofpieces");
-    } else {return false}
-    // if (title.startsWith("4.")) { temp
-    //   return userCourses.includes("specialmoves");
-    // } else if (title.startsWith("5.")) {
+    } else if (title.startsWith("4.")) { 
+      return userCourses.includes("specialmoves");
+    } 
+    else {return false}
+    // else if (title.startsWith("5.")) { temp
     //   return userCourses.includes("winninginchess");
     // } else if (title.startsWith("6.")) {
     //   return userCourses.includes("understandingpieceexchanges");

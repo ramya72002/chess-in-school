@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -186,22 +187,26 @@ const M1: React.FC = () => {
   <section className="special-moves">
    
 
-    <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+  <div className="media-container">
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=TWgcG2MOLA8"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div>
+        <br />
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Castling is a unique move in chess involving the king and a rook, primarily for defensive purposes. To castle, several conditions must be met: neither the king nor the rook can have moved previously, the squares between them must be unoccupied, and the king must not be in check, nor can it move through or land on a square under attack. During castling, the king moves two squares towards the rook, and the rook moves to the square immediately next to the king. This maneuver can be performed on either side of the board. Kingside castling involves the king moving towards the h-file rook, while queenside castling involves the king moving towards the a-file rook.
     </p><br />
