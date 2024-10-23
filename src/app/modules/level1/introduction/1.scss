@@ -9,12 +9,12 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #f7f7f7; /* Light grey for a modern background */
+  /* Removed overflow: hidden to allow scrolling on mobile */
 }
 
- 
-.lesson-content { 
-  height: 100vh;
-    overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
+.lesson-content {
+  height: calc(100vh - 80px); /* Deduct space for the header and bottom buttons */
+  overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
   padding: 10px 20px;
   box-sizing: border-box;
   background-color: #ffffff;
@@ -27,7 +27,6 @@ body {
     margin-bottom: 20px;
     text-align: center;
   }
-  
   h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
@@ -120,26 +119,34 @@ body {
       color: #7f8c8d;
       margin-bottom: 15px;
     }
-  }
+  
+}
 
-  .navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px; // Adjust the value as needed for the desired spacing
-  
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      background-color: #0e95ee; /* Bold blue for buttons */
-      color: #ffffff;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-  
-      &:hover {
-        background-color: #3498db; /* Darker shade for hover */
-      }
+.navigation-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1); /* Shadow to make it stand out */
+  display: flex;
+  justify-content: space-between;
+  z-index: 10; /* Ensure it's above other elements */
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0e95ee; /* Bold blue for buttons */
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #3498db; /* Darker shade for hover */
+    }
     }
   }
   
@@ -201,6 +208,15 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .lesson-content {
+    height: calc(100vh - 60px); /* Adjust height to account for fixed buttons on mobile */
+  }
+
+  .navigation-buttons {
+    padding: 10px;
+  }
+}
 @media (max-width: 768px) {
   .media-container {
     margin-top: 60px; // Adds space between the header and the video
