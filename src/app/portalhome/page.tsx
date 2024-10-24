@@ -40,6 +40,12 @@ const Hero = () => {
 
     fetchUserDetails();
   }, []);
+  useEffect(() => {
+    document.body.style.overflowY = 'auto'; // Ensure scroll is enabled when navigating back
+    return () => {
+      document.body.style.overflowY = 'hidden'; // Clean up if needed when navigating away
+    };
+  }, []);
 
   const getActiveClass = (level: string) => {
     if (!userDetails) return '';
