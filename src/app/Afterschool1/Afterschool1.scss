@@ -179,6 +179,8 @@ h1 {
 @media (max-width: 1024px) {
 
   .account-page {
+    height: 100vh;
+    overflow-y: auto; 
     font-family: Arial, sans-serif;
     background-color: whitesmoke;
     background-size: cover;
