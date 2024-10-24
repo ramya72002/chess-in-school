@@ -11,7 +11,7 @@ body {
 }
 
 .lesson-content {
-  height: calc(100vh - 80px); /* Deduct space for the header and bottom buttons */
+  height: 100vh; /* Deduct space for the header and bottom buttons */
   overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
   padding: 10px 20px;
   box-sizing: border-box;
