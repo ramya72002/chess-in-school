@@ -77,6 +77,12 @@ const MyAccount = () => {
 
     fetchUserDetails();
   }, []);
+  useEffect(() => {
+    document.body.style.overflowY = 'auto'; // Ensure scroll is enabled when navigating back
+    return () => {
+      document.body.style.overflowY = 'hidden'; // Clean up if needed when navigating away
+    };
+  }, []);
 
   const handleViewProgress = async (courseTitle: string) => {
     const path = coursePaths[courseTitle];
