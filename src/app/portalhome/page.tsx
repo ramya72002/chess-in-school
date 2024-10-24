@@ -41,9 +41,25 @@ const Hero = () => {
     fetchUserDetails();
   }, []);
   useEffect(() => {
-    document.body.style.overflowY = 'auto'; // Ensure scroll is enabled when navigating back
+    // Function to check if the viewport is mobile-sized
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        document.body.style.overflowY = 'auto'; // Enable scroll for mobile
+      } else {
+        document.body.style.overflowY = 'hidden'; // Disable scroll for larger screens
+      }
+    };
+
+    // Set the initial overflow style
+    handleResize();
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      document.body.style.overflowY = 'hidden'; // Clean up if needed when navigating away
+      // Clean up the event listener
+      window.removeEventListener('resize', handleResize);
+      document.body.style.overflowY = 'hidden'; // Reset overflow when unmounting
     };
   }, []);
 
