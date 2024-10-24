@@ -180,7 +180,7 @@ const M1: React.FC = () => {
 
 
       <header className="fixed-header">
-    <h3>2.4: Understanding the Bishop</h3>
+    <h3>2.4 Understanding the Bishop</h3>
     </header>
   
     <div className="media-container">

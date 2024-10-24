@@ -179,8 +179,8 @@ const M1: React.FC = () => {
    {isLoadingPage && <Loading />}
 
 
-      <header className="fixed-header">
-  <h3>2.6: Understanding the Knight</h3>
+      <header  className="fixed-header">
+  <h3>2.6 Understanding the Knight</h3>
   </header>
 
   <div className="media-container">
