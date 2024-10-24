@@ -135,7 +135,7 @@ body {
   z-index: 10; /* Ensure it's above other elements */
 
   button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     background-color: #0e95ee; /* Bold blue for buttons */
@@ -214,7 +214,7 @@ body {
   }
 
   .navigation-buttons {
-    padding: 10px;
+    padding: 5px;
   }
 }
 @media (max-width: 768px) {
