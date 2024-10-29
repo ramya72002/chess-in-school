@@ -11,7 +11,7 @@ body {
 }
 
 .lesson-content {
-  height: calc(100vh - 80px); /* Deduct space for the header and bottom buttons */
+  height: 100vh; /* Deduct space for the header and bottom buttons */
   overflow-y: auto; /* Enable vertical scroll if content exceeds max height */
   padding: 10px 20px;
   box-sizing: border-box;
@@ -135,7 +135,7 @@ body {
   z-index: 10; /* Ensure it's above other elements */
 
   button {
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     background-color: #0e95ee; /* Bold blue for buttons */
@@ -214,7 +214,7 @@ body {
   }
 
   .navigation-buttons {
-    padding: 10px;
+    padding: 5px;
   }
 }
 @media (max-width: 768px) {
