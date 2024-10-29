@@ -221,6 +221,34 @@ body {
  
 @media (max-width: 768px) {
   .hero {
+    .journey-container {
+      .step {
+        position: relative;
+
+        .icon {
+          position: relative;
+        }
+
+        button {
+          position: absolute;
+          top: 41px; /* Adjust as needed to place above image */
+          left: 80%;
+          transform: translateX(-50%);
+          width: auto; 
+          padding: 2px 15px;
+          font-size: 10px;
+          border-radius: 5px;
+          background-color: #0a7c5e;
+          color: white;
+          text-align: center;
+          z-index: 2;
+
+          &:hover {
+            background-color: #04b08a;
+          }
+        }
+      }
+    }
     .headers {
   h2 {
     font-size: 20px; 

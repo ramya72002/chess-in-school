@@ -40,8 +40,8 @@ const Hero = () => {
 
     fetchUserDetails();
   }, []);
+
   useEffect(() => {
-    // Function to check if the viewport is mobile-sized
     const handleResize = () => {
       if (window.innerWidth <= 768) {
         document.body.style.overflowY = 'auto'; // Enable scroll for mobile
@@ -50,14 +50,10 @@ const Hero = () => {
       }
     };
 
-    // Set the initial overflow style
     handleResize();
-
-    // Listen for window resize events
     window.addEventListener('resize', handleResize);
 
     return () => {
-      // Clean up the event listener
       window.removeEventListener('resize', handleResize);
       document.body.style.overflowY = 'hidden'; // Reset overflow when unmounting
     };
@@ -88,6 +84,7 @@ const Hero = () => {
   const isMobile = () => {
     return window.innerWidth <= 768; // Change this value based on your design requirements
   };
+
   const handleImageClick = (level: string) => {
     if (getActiveClass(`Level ${level}`) === 'active') {
       router.push(`/Afterschool${level}`); // Redirect to the corresponding level page
@@ -106,25 +103,38 @@ const Hero = () => {
       'Level 6': 100,
     };
 
-  const userLevel = levelMap[userDetails.level];
-  return `${userLevel}%`;
-};
-
-const getConnectorColor = () => {
-  if (!userDetails) return 'white';
-
-  const levelMap: { [key: string]: number } = {
-    'Level 1': 1,
-    'Level 2': 2,
-    'Level 3': 3,
-    'Level 4': 4,
-    'Level 5': 5,
-    'Level 6': 6,
+    const userLevel = levelMap[userDetails.level];
+    return `${userLevel}%`;
   };
 
-  const userLevel = levelMap[userDetails.level];
-  return userLevel > 0 ? '#f26722' : 'white'; // Change color based on the highest active level
-};
+  const getConnectorColor = () => {
+    if (!userDetails) return 'white';
+
+    const levelMap: { [key: string]: number } = {
+      'Level 1': 1,
+      'Level 2': 2,
+      'Level 3': 3,
+      'Level 4': 4,
+      'Level 5': 5,
+      'Level 6': 6,
+    };
+
+    const userLevel = levelMap[userDetails.level];
+    return userLevel > 0 ? '#f26722' : 'white';
+  };
+
+  const handleInfoClick = (level: string) => {
+    const infoMessages: { [key: string]: string } = {
+      'Level 1': 'This is the Pawn level for absolute beginners in chess.',
+      'Level 2': 'Knight level for novice players.',
+      'Level 3': 'Bishop level, suited for intermediate players.',
+      'Level 4': 'Rook level for advanced players.',
+      'Level 5': 'Queen level for expert players.',
+      'Level 6': 'King level, representing mastery in chess.',
+    };
+
+    alert(infoMessages[level] || 'No information available.');
+  };
 
   if (!userDetails) {
     return null; // If userDetails is null, return null to prevent rendering the page
@@ -143,7 +153,7 @@ const getConnectorColor = () => {
               <line
                 x1="0"
                 y1="5"
-                x2={getConnectorWidth()} // Use the width directly
+                x2={getConnectorWidth()}
                 y2="5"
                 stroke={getConnectorColor()}
                 strokeWidth="10"
@@ -156,6 +166,7 @@ const getConnectorColor = () => {
               </div>
               <p>Pawn</p>
               <p>(Absolute Beginners)</p>
+              <button onClick={() => handleInfoClick('Level 1')}>Learn_more</button>
             </div>
 
             <div className={`step ${getActiveClass('Level 2')}`} onClick={() => handleImageClick('2')}>
@@ -164,6 +175,7 @@ const getConnectorColor = () => {
               </div>
               <p>Knight</p>
               <p>(Novice Players)</p>
+              <button onClick={() => handleInfoClick('Level 2')}>Learn_more</button>
             </div>
 
             <div className={`step ${getActiveClass('Level 3')}`} onClick={() => handleImageClick('3')}>
@@ -172,6 +184,7 @@ const getConnectorColor = () => {
               </div>
               <p>Bishop</p>
               <p>(Intermediate Players)</p>
+              <button onClick={() => handleInfoClick('Level 3')}>Learn_more</button>
             </div>
 
             <div className={`step ${getActiveClass('Level 4')}`} onClick={() => handleImageClick('4')}>
@@ -180,6 +193,7 @@ const getConnectorColor = () => {
               </div>
               <p>Rook</p>
               <p>(Advanced Players)</p>
+              <button onClick={() => handleInfoClick('Level 4')}>Learn_more</button>
             </div>
 
             <div className={`step ${getActiveClass('Level 5')}`} onClick={() => handleImageClick('5')}>
@@ -188,6 +202,7 @@ const getConnectorColor = () => {
               </div>
               <p>Queen</p>
               <p>(Expert Players)</p>
+              <button onClick={() => handleInfoClick('Level 5')}>Learn_more</button>
             </div>
 
             <div className={`step ${getActiveClass('Level 6')}`} onClick={() => handleImageClick('6')}>
@@ -196,11 +211,12 @@ const getConnectorColor = () => {
               </div>
               <p>King</p>
               <p>(Mastery Level)</p>
+              <button onClick={() => handleInfoClick('Level 6')}>Learn_more</button>
             </div>
           </div>
         </div>
       </div>
-     <Hero1 />
+      <Hero1 />
     </div>
   );
 };
