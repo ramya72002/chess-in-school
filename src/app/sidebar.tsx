@@ -119,7 +119,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             if (userDetails) {
               const level = userDetails.level;
               if (level === "Level 1") router.push("/Afterschool1");
-              else if (level === "Level 2") router.push("/Afterschool2");
+              else if (level === "Level 2") alert("Coming Soon! Level 2 content will be available shortly.");
               else if (level === "Level 3") router.push("/Afterschool3");
               else if (level === "Level 4") router.push("/Afterschool4");
               else if (level === "Level 5") router.push("/Afterschool5");
@@ -134,7 +134,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         {userDetails?.level !== "Level 1" && (
           <a
             onClick={() => {
-              router.push("/arena/puzzleArena");
+              alert("Puzzle Arena Coming Soon! will be available shortly.")
               toggleSidebar(); // Close sidebar after navigation
             }}
             className="navItem teachers"

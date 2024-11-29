@@ -89,10 +89,16 @@ const Hero = () => {
     return window.innerWidth <= 768; // Change this value based on your design requirements
   };
   const handleImageClick = (level: string) => {
+    if (level === '2') {
+      alert('Coming Soon');
+      return; // Prevents further actions for Level 2
+    }
+  
     if (getActiveClass(`Level ${level}`) === 'active') {
       router.push(`/Afterschool${level}`); // Redirect to the corresponding level page
     }
   };
+  
 
   const getConnectorWidth = () => {
     if (!userDetails) return '0%';
@@ -158,7 +164,7 @@ const getConnectorColor = () => {
               <p>(Absolute Beginners)</p>
             </div>
 
-            <div className={`step ${getActiveClass('Level 2')}`}  >
+            <div className={`step ${getActiveClass('Level 2')}`} onClick={() => handleImageClick('2') }>
               <div className="icon">
                 <img src="/images/chessicons/1.png" alt="Knight" className="chess-icon knight" />
               </div>
