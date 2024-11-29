@@ -316,7 +316,7 @@ const Sidebar2: React.FC = () => {
         <div className="alert-popup2">
     <div className="alert-content2">
       <h2>Module Access Restricted</h2>
-      <p>You currently do not have access to this module. Your trainer will be in touch with further instructions.</p>
+      <p>Please Complete previous modules to unlock.</p>
       <button className="close-button2" onClick={closeAlert}>Got It</button>
     </div>
         </div>

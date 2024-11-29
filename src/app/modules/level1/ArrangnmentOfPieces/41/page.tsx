@@ -204,8 +204,7 @@ const M1: React.FC = () => {
       </div>
   
 
-  <section className="arraignment-details"><br />
-  
+      <section className="chessboard-info">  
   
 
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>

@@ -207,6 +207,7 @@ const M1: React.FC = () => {
         )}
       </div>
         <br />
+        <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Castling is a unique move in chess involving the king and a rook, primarily for defensive purposes. To castle, several conditions must be met: neither the king nor the rook can have moved previously, the squares between them must be unoccupied, and the king must not be in check, nor can it move through or land on a square under attack. During castling, the king moves two squares towards the rook, and the rook moves to the square immediately next to the king. This maneuver can be performed on either side of the board. Kingside castling involves the king moving towards the h-file rook, while queenside castling involves the king moving towards the a-file rook.
     </p><br />
@@ -229,7 +230,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Compared to kingside castling, queenside castling often takes more time to set up because it involves more squares and usually requires more preparation, such as moving the queen and another piece out of the way. However, it can be a powerful move, as it often places the king in a more central position while allowing the rook to immediately control an important central file.
     </p>
-  </section>
+    </section></section>
 
   {/* Navigation Buttons */}
   <section className="navigation-buttons">

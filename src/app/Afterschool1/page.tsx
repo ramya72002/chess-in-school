@@ -181,7 +181,7 @@ const MyAccount = () => {
           <div className="modal-content">
             <div className="modal-header">Access Denied</div>
             <div className="modal-body">
-              You currently do not have access to this module. Your trainer will be in touch with further instructions.
+            <p>Please Complete previous modules to unlock.</p>
             </div>
             <button className="modal-close" onClick={() => setShowModal(false)}>
               Close

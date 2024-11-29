@@ -203,8 +203,7 @@ const M1: React.FC = () => {
         )}
       </div>
 
-  <section className="king-details"><br />
-    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
+      <section className="chessboard-info">    <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Understanding the pieces—Now, let us delve into the details of each piece and understand their unique features and movements. This will help you grasp how each piece contributes to the overall strategy of the game.
     </p><br />
     <ul style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>

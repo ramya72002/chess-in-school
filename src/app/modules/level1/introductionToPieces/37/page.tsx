@@ -204,7 +204,7 @@ const M1: React.FC = () => {
         )}
       </div>
 
-  <section className="pawn-details"><br />
+      <section className="chessboard-info"><br />
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
       Pawns are worth one point each, making them the least valuable pieces on the board. Despite their low value, they play a crucial role in controlling key squares and forming the foundation of strategic play. Their coordinated movements can create strong structures, bolster defenses, or initiate attacks.
     </p><br />
