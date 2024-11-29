@@ -206,7 +206,7 @@ const M1: React.FC = () => {
 
 
       <header className="fixed-header">
-    <h3>8.1 Notations</h3>
+    <h3>8 Notations</h3>
     </header>
     <div className="media-container">
         {!showVideo ? (
