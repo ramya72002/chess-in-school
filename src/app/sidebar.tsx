@@ -1,12 +1,12 @@
 "use client";
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FaPuzzlePiece, FaSignOutAlt, FaCalendarAlt } from 'react-icons/fa';
 import axios from 'axios';
 import './side.scss';
 import { UserDetails } from './types/types';
-
+import CommingSoon from './commingsoon'; // Import the modal component
 interface SidebarProps {
   isOpen: boolean;
   toggleSidebar: () => void;
@@ -17,6 +17,18 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const [profilePic, setProfilePic] = useState('/images/portal/b4.png');
   const [showAvatarOptions, setShowAvatarOptions] = useState(false);
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState('');
+
+  const openModal = (message: React.SetStateAction<string>) => {
+    setModalContent(message);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalContent('');
+  };
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -102,6 +114,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
+        <CommingSoon isOpen={modalOpen} onClose={closeModal} content={modalContent} />
       <div className="profile">
         <div className="avatarContainer" onClick={() => setShowAvatarOptions(true)}>
           <Image src={profilePic} alt="Profile Picture" width={200} height={200} className="avatar" />
@@ -115,32 +128,29 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
       <nav className="nav">
         <a
           onClick={() => {
-            toggleSidebar();
-            if (userDetails) {
-              const level = userDetails.level;
-              if (level === "Level 1") router.push("/Afterschool1");
-              else if (level === "Level 2") alert("Coming Soon! Level 2 content will be available shortly.");
-              else if (level === "Level 3") router.push("/Afterschool3");
-              else if (level === "Level 4") router.push("/Afterschool4");
-              else if (level === "Level 5") router.push("/Afterschool5");
-              else if (level === "Level 6") router.push("/Afterschool6");
+            if (userDetails?.level === "Level 1") {
+              router.push("/Afterschool1")            
+            } 
+            if (userDetails?.level === "Level 2") {
+              openModal("Coming Soon! Level 2 content will be available shortly.");
+            } else if (userDetails?.level === "Level 3") {
+              router.push("/Afterschool3");
             }
           }}
           className="navItem school"
         >
           <FaCalendarAlt /> Learning
         </a>
-        
+
         {userDetails?.level !== "Level 1" && (
-          <a
-            onClick={() => {
-              alert("Puzzle Arena Coming Soon! will be available shortly.")
-              toggleSidebar(); // Close sidebar after navigation
-            }}
+        <a
+          onClick={() => {
+            openModal("Puzzle Arena Coming Soon! Will be available shortly.");
+          }}
             className="navItem teachers"
-          >
-            <FaPuzzlePiece /> Puzzle Arena
-          </a>
+        >
+          <FaPuzzlePiece /> Puzzle Arena
+        </a>
         )}
 
         <a
@@ -155,8 +165,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
                 console.error('Error during sign out:', error);
               }
             } else {
-              localStorage.clear();
-              router.push('/');
+            localStorage.clear();
+            router.push('/');
             }
             toggleSidebar(); // Close sidebar on logout
           }}

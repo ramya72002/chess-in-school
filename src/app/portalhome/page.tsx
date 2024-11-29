@@ -9,13 +9,24 @@ import Loading from '../Loading';
 import withAuth from '../withAuth';
 import { useRouter } from 'next/navigation';
 import Hero1 from '../portalhome1/hero1';
+import Commingsoon from '../commingsoon';
 
 const Hero = () => {
   const router = useRouter();
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
-  const [upcomingActivities, setUpcomingActivities] = useState<UpcomingActivity[]>([]);
-  const [loading, setLoading] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState('');
+
+  const openModal = (message: React.SetStateAction<string>) => {
+    setModalContent(message);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setModalContent('');
+  };
 
   useEffect(() => {
     const fetchUserDetails = async () => {
@@ -90,10 +101,10 @@ const Hero = () => {
   };
   const handleImageClick = (level: string) => {
     if (level === '2') {
-      alert('Coming Soon');
-      return; // Prevents further actions for Level 2
+      openModal("Coming Soon! Level 2 content will be available shortly.");
+      return;
     }
-  
+
     if (getActiveClass(`Level ${level}`) === 'active') {
       router.push(`/Afterschool${level}`); // Redirect to the corresponding level page
     }
@@ -112,25 +123,25 @@ const Hero = () => {
       'Level 6': 100,
     };
 
-  const userLevel = levelMap[userDetails.level];
-  return `${userLevel}%`;
-};
-
-const getConnectorColor = () => {
-  if (!userDetails) return 'white';
-
-  const levelMap: { [key: string]: number } = {
-    'Level 1': 1,
-    'Level 2': 2,
-    'Level 3': 3,
-    'Level 4': 4,
-    'Level 5': 5,
-    'Level 6': 6,
+    const userLevel = levelMap[userDetails.level];
+    return `${userLevel}%`;
   };
 
-  const userLevel = levelMap[userDetails.level];
+  const getConnectorColor = () => {
+    if (!userDetails) return 'white';
+
+    const levelMap: { [key: string]: number } = {
+      'Level 1': 1,
+      'Level 2': 2,
+      'Level 3': 3,
+      'Level 4': 4,
+      'Level 5': 5,
+      'Level 6': 6,
+    };
+
+    const userLevel = levelMap[userDetails.level];
   return userLevel > 0 ? '#f26722' : 'white'; // Change color based on the highest active level
-};
+  };
 
   if (!userDetails) {
     return null; // If userDetails is null, return null to prevent rendering the page
@@ -206,7 +217,8 @@ const getConnectorColor = () => {
           </div>
         </div>
       </div>
-     <Hero1 />
+      <Commingsoon isOpen={modalOpen} onClose={closeModal} content={modalContent} />
+      <Hero1 />
     </div>
   );
 };
