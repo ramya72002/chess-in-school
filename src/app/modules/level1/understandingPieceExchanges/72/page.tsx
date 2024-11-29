@@ -7,7 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
-
+import ReactPlayer from 'react-player';
 interface Puzzle {
   level:string;
   category: string;
@@ -182,21 +182,25 @@ const M1: React.FC = () => {
       <header className="fixed-header">
      <h3>6.2 Exchange Up</h3></header>
      <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=ajvI0feNzP0"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
 
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, being "exchange up" refers to gaining a material advantage by capturing a higher-value piece, typically a rook, in exchange for a lower-value piece, usually a knight or bishop. The value of this exchange lies in the material gain: in standard piece valuation, a rook is worth five points, while a knight or bishop is worth three points. Therefore, capturing a rook in exchange for a knight or bishop results in a net gain of two points.
@@ -209,7 +213,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         When aiming for an exchange up in chess, it is important to identify key moments that can lead to a material advantage. Look for tactical opportunities where your opponent's rook is vulnerable to a trade with your knight or bishop, especially if this exchange results in a material gain or weakens their position. Additionally, trading a knight or bishop for a rook can help simplify the position, making it easier to transition into the endgame and improving your chances of winning.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

@@ -7,7 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
-
+import ReactPlayer from 'react-player';
 interface Puzzle {
   level:string;
   category: string;
@@ -183,21 +183,25 @@ const M1: React.FC = () => {
     <h3>6.1 Fair Trade</h3>
     </header>
     <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=Vw4iK6f-jiA"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
 
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, fair trade refers to the exchange of pieces of equal value, maintaining balance in material and ensuring that neither player gains an immediate advantage from the trade. Pawns, worth one point, are the most basic units and are often exchanged with other pawns in the opening to control the center or create open lines. Knights and bishops, each worth three points, are typically traded with each other when players seek to simplify the position or create specific strategic opportunities. Rooks, valued at 5 points, are often exchanged in the endgame to reduce material and head towards a more manageable conclusion. Queens, worth nine points, are usually traded to neutralize threats or transition into a simpler, more predictable endgame.
@@ -210,7 +214,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         However, there are situations where trading pieces might not be advisable. For example, if you have a positional advantage, where your piece holds a strong position or exerts significant influence on the board, it might be better to avoid trading. Another reason to refrain from trading is when your piece has greater dynamic potential than your opponent's. If your piece is more active or has the potential to become more powerful, keeping it on the board might allow you to leverage its strength to gain an advantage.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

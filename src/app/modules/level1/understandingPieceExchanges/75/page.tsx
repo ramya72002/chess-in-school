@@ -7,7 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
-
+import ReactPlayer from 'react-player';
 interface Puzzle {
   level:string;
   category: string;
@@ -193,21 +193,25 @@ const M1: React.FC = () => {
     <h3>6.5 Material Down</h3>
     </header>
     <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=DNhnqjdAiFE"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, being "material down" refers to having fewer or less valuable pieces or pawns than your opponent, resulting in a numerical or positional disadvantage. This can happen in a couple of ways. First, you might lose a piece like a knight, bishop, or even a queen without gaining a piece of equal or greater value in return. Additionally, players sometimes sacrifice material intentionally to gain positional advantages or launch an attack, but if the compensation is not sufficient, this can leave them material down.
     </p><br />
@@ -233,7 +237,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         <strong>Dynamic Compensation:</strong> In certain situations, sacrificing additional material can lead to significant positional advantages, create an unstoppable attack, or force a draw. This dynamic compensation can sometimes turn the tables on your opponent, shifting the balance of power.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

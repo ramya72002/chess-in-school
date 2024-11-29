@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -184,23 +185,27 @@ const M1: React.FC = () => {
      <h3>5.5 Capture</h3>
      </header>
      <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div>
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=e4euakawuZc"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div>
  
         <br />
+        <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Removing an opponent’s piece from the board by moving one of your pieces to its square is known as a normal capture. Normal captures involve moving a piece to a square occupied by an opponent’s piece to remove it from the board. Special captures include en passant, a special pawn capture, castling, which involves moving the king and rook in a single move, and pawn promotion, which allows a pawn to be replaced by any other piece upon reaching the opposite end of the board.
     </p><br />
@@ -208,7 +213,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         This is an illustration of the queen capturing the pawn on c4.
     </p>
- 
+    </section>
 
     {/* Navigation Buttons */}
     <section className="navigation-buttons">

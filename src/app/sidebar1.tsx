@@ -222,19 +222,17 @@ const Sidebar1: React.FC = () => {
     } else if (title.startsWith("4.")) { 
       return userCourses.includes("specialmoves");
     } 
-    else {return false}
-    // else if (title.startsWith("5.")) { temp
-    //   return userCourses.includes("winninginchess");
-    // } else if (title.startsWith("6.")) {
-    //   return userCourses.includes("understandingpieceexchanges");
-    // } else if (title.startsWith("7.")) {
-    //   return userCourses.includes("stagesofthegame");
-    // } else if (title.startsWith("8.")) {
-    //   return userCourses.includes("notation");
-    // }else if (title.startsWith("9.")) {
-    //     return userCourses.includes("chessgame");
-    // }
-    return false;
+    else if (title.startsWith("5.")) {
+      return userCourses.includes("winninginchess");
+    } else if (title.startsWith("6.")) {
+      return userCourses.includes("understandingpieceexchanges");
+    } else if (title.startsWith("7.")) {
+      return userCourses.includes("stagesofthegame");
+    } else if (title.startsWith("8.")) {
+      return userCourses.includes("notation");
+    }else if (title.startsWith("9.")) {
+        return userCourses.includes("chessgame");
+    }  else {return false}
   };
 
   const isActive = (submoduleTitle: string) => {

@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -183,26 +184,30 @@ const M1: React.FC = () => {
     <h3>7.1: The Opening</ h3>
     </header>
     <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=iZofvLratd4"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
 
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In the opening, our primary goals are to establish a strong pawn structure, ensure king safety, and develop our pieces efficiently. We start by controlling the center with our pawns, which allows us to open lines for our pieces and set a solid foundation for the rest of the game. Castling early is crucial—it secures our king and connects the rooks, preparing them for future coordination. Rapidly developing our knights and bishops to active squares helps us avoid falling behind and losing tempo. Controlling more space enhances our piece mobility and restricts our opponent’s options. Importantly, we must avoid premature attacks; focusing on completing our development before launching any aggressive moves is key to maintaining a strong position.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

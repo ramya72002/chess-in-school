@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -207,23 +208,27 @@ const M1: React.FC = () => {
       <header className="fixed-header">
      <h3>5.6 Draw</h3></header>
      <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=Ze_H4altK2I"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div>
+        <br />
  
-
+        <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         A draw in chess occurs when neither player wins, resulting in a tie where each player receives half a point. Common types of draws include stalemate, which happens when a player has no legal moves and their king is not in check, ending the game in a draw. Another type is threefold repetition, where the game is drawn if an identical position occurs three times with the same player to move and the same available moves. Additionally, the fifty-move rule allows a draw to be claimed if fifty consecutive moves are made without any pawn movement or piece capture.
     </p><br />
@@ -231,7 +236,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         A draw in chess can occur in several ways. Insufficient material happens when neither player has enough pieces to checkmate the opponent, such as in a king versus king scenario. Players can also agree to a draw at any point during the game, often in equal or unclear positions. Additionally, a draw can be forced through perpetual check, where one player gives a series of checks that the opponent cannot escape from, leading to an endless cycle of checks.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

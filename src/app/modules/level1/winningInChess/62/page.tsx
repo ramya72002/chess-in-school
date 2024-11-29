@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -184,22 +185,26 @@ const M1: React.FC = () => {
      <h3>5.2 Checks</h3>
      </header>
      <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div>
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=Mt7TO_wN020"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div>
     <br />
+    <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, a check occurs when a king is directly attacked by an opponent's piece, which requires an immediate response. Players can respond to a check by moving the king, blocking the attack, or capturing the attacking piece. Strategically, checks can be used to force the opponent into specific moves, creating tactical opportunities. There are different types of checks, with key examples including the double check and discovered check.
     </p><br />
@@ -211,7 +216,9 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         When defending against a check in chess, there are three primary rules to follow. First, you can "Fight" by using another piece to capture the attacking piece. Second, you can "Fend" by blocking the check with another piece. Lastly, you can "Flight" by moving the king out of the line of attack. It is important to note that in the case of a check, you must choose one of these defensive moves; no other move is allowed.
     </p>
-
+    <p>  </p>
+    <p>  </p>
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

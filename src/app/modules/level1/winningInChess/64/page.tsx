@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -183,28 +184,33 @@ const M1: React.FC = () => {
       <header className="fixed-header">
      <h3>5.4 Attack & Defense</h3></header>
      <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
-
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=VZW94M_zaVs"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div>
+        
+        <br />
+        <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Principles of Attacking: To improve your chess game, we need to know the 5 Principles of Attacking! Focus on key strategies such as ensuring king safety by castling early to maintain a solid pawn structure. Coordinate your pieces to work together for defense and counterattacks, and control key squares to limit your opponent’s options while enhancing your strategic position. Avoid weaknesses by positioning your pieces and pawns to prevent vulnerabilities that your opponent can exploit. Exchange pieces of equal value to simplify the position or gain a strategic advantage, and once ahead in material, simplify the position further to reduce complexity and improve manageability of the game.
     </p>
 
      
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

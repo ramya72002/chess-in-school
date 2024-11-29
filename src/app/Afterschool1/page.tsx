@@ -87,12 +87,6 @@ const MyAccount = () => {
   const handleViewProgress = async (courseTitle: string) => {
     const path = coursePaths[courseTitle];
     
-    if (courseTitle === 'winningInChess') {
-      // Show the modal instead of alert temp
-      setShowModal(true);
-      return;
-    }
-
     if (path) {
       try {
         setLoading(true);

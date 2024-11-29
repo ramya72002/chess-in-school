@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -208,21 +209,25 @@ const M1: React.FC = () => {
     <h3>7.3: The Endgame</h3>
     </header>
     <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=VuOyZT7gsVQ"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
 
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Finally, the endgame is where our plans come to fruition. The primary objective here is often to promote a pawn to a queen or another powerful piece to secure a decisive material advantage. Mastering the concept of opposition in king and pawn endgames is key to gaining crucial tempos and improving our position. The king, which was a passive piece earlier, becomes a powerful force in the endgame, actively participating in both attack and defense. Simplification is another important strategy—trading pieces down to a simpler endgame can be advantageous, especially when we have a material lead. Effective time management becomes critical as the game approaches its final stage to avoid blunders under pressure.
@@ -231,7 +236,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In conclusion, each stage of the game demands a different approach and understanding. By mastering the opening, middlegame, and endgame, we can enhance our chess skills and increase our chances of victory.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

@@ -7,7 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
-
+import ReactPlayer from 'react-player';
 interface Puzzle {
   level:string;
   category: string;
@@ -155,7 +155,7 @@ const M1: React.FC = () => {
       const requestData = {
         email: storedUserDetails.email,
           course_title: 'understandingPieceExchanges',
-          completed: 80
+          completed: 100
         };
     
         // Make the POST request to the API
@@ -184,22 +184,25 @@ const M1: React.FC = () => {
     <h3>6.4 Material Up</h3>
     </header>
     <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
-
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=OIOv2KdP3m4"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         In chess, being "material up" means having more valuable pieces or pawns than your opponent, providing you with either a numerical or positional advantage. To gain a material advantage, you can focus on capturing your opponent’s pieces—such as a knight, bishop, or even a queen—without losing a piece of equal or greater value. Additionally, winning extra pawns can give you an edge, especially if it leads to passed pawns or weakens your opponent's pawn structure.
     </p><br />
@@ -215,7 +218,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         However, being material up can lead to common pitfalls. Overconfidence may cause players to overlook their opponent’s threats or make careless moves. Additionally, having a material advantage does not always guarantee victory. Ignoring important positional factors, such as king safety, pawn structure, or piece activity, can result in blunders or stalemates.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

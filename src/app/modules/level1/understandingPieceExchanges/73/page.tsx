@@ -7,7 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
-
+import ReactPlayer from 'react-player';
 interface Puzzle {
   level:string;
   category: string;
@@ -184,22 +184,25 @@ const M1: React.FC = () => {
     <h3>6.3 Exchange Down</h3>
     </header>
     <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
-
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=2Ja4AU17u94"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Being 'exchange down' in chess refers to a material disadvantage where you have traded a higher-value piece, typically a rook, for a lower-value piece, usually a knight or bishop. In standard piece valuation, a rook is worth five points, while a knight or bishop is worth three points. Losing a rook in exchange for a knight or bishop results in a net loss of two points. Being exchange down can make the endgame more difficult, as rooks are often more powerful in open positions and can control more squares than knights or bishops. Additionally, losing a rook means giving up control of open files and ranks, which can make it harder to exert pressure on the opponent and control key areas of the board.
     </p><br />
@@ -207,7 +210,7 @@ const M1: React.FC = () => {
     <p style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         Being exchange down can be strategically acceptable in certain situations. Positional compensation can justify the decision if it leads to significant advantages, such as control of the center, a strong pawn structure, or a powerful knight or bishop. Additionally, dynamic potential plays a role, where the activity of your remaining pieces or the creation of threats can offset the material loss, especially in the middlegame. However, there are risks associated with being exchange down. It can leave you in a vulnerable position, particularly susceptible to an opponent's attack if they effectively utilize their rooks to dominate the board. The endgame also becomes more challenging when down in material, as the opponent's rooks can outmaneuver your minor pieces, making it difficult to defend or create winning chances.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>

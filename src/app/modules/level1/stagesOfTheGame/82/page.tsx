@@ -7,6 +7,7 @@ import '../../introduction/1.scss';
 import { UserDetails } from '../../../../types/types';
 import withAuth from '@/app/withAuth';
 import Loading from '@/app/Loading';
+import ReactPlayer from 'react-player';
 
 interface Puzzle {
   level:string;
@@ -183,26 +184,29 @@ const M1: React.FC = () => {
     <h3>7.2: The Middlegame</h3>
     </header>
     <div className="media-container">
-          {!showVideo ? (
-            <img
-              src="/images/thumbnail.png" // Placeholder image
-              alt="Introduction Thumbnail"
-              className="intro-image"
-              onClick={() => setShowVideo(true)} // Show video when image is clicked
-              style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
-            />
-          ) : (
-            <video controls playsInline width="100%">
-              <source src="/videos/level1/1.1.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          )}
-        </div><br />
-
+        {!showVideo ? (
+          <img
+            src="/images/thumbnail.png" // Placeholder image
+            alt="Introduction Thumbnail"
+            className="intro-image"
+            onClick={() => setShowVideo(true)} // Show video when image is clicked
+            style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+          />
+        ) : (
+          <ReactPlayer
+            url="https://www.youtube.com/watch?v=yGX2b4p7vuI"
+            controls
+            playing
+            width="100%"
+            height="650px"
+          />
+        )}
+      </div><br />
+        <section className="chessboard-info">
     <p  style={{ fontFamily: 'Montserrat, sans-serif', color: 'black', fontSize: '16px' }}>
         As we transition into the middlegame, our focus shifts to maintaining the initiative. Creating continuous threats and forcing our opponent to respond can lead to a decisive advantage. We must constantly ensure our king’s safety while looking for opportunities to exploit weaknesses in our opponent’s position. Strategic planning becomes crucial—develop a long-term plan based on the position's strengths and weaknesses, such as targeting weak pawns or establishing strong outposts. Tactical awareness is equally important; be vigilant for opportunities like forks, pins, and skewers, and be ready to capitalize on combinations. Harmonizing our pieces to work together effectively can maximize their potential and create threats.
     </p>
-
+    </section>
     {/* Navigation Buttons */}
     <section className="navigation-buttons">
         <button onClick={handlePreviousClick} className="previous-button">Previous Page</button>
